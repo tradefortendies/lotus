@@ -216,7 +216,7 @@ const VisionNew = () => {
             }}
             style={
               windowWidth > 500
-                ? { x: '64px', top: 'calc(50% + 223px)' }
+                ? { x: '64px', top: 'calc(50% + 220px)' }
                 : { x: '34px', top: 'calc(50% + 160px)' }
             }>
             <Growth />
