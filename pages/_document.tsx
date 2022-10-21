@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.lotusgang.com/" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL} />
         <meta
           property="og:image"
           content={`${process.env.NEXT_PUBLIC_BASE_URL}/img/share.png`}
