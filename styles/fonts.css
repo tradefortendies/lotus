@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'garet';
+  src: url('/fonts/garet-book-webfont.woff2') format('woff2'),
+    url('/fonts/garet-book-webfont.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'garet';
+  src: url('/fonts/garet-bold-webfont.woff2') format('woff2'),
+    url('/fonts/garet-bold-webfont.woff') format('woff');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'garet';
+  src: url('/fonts/garet-heavy-webfont.woff2') format('woff2'),
+    url('/fonts/garet-heavy-webfont.woff') format('woff');
+  font-weight: 900;
+}
