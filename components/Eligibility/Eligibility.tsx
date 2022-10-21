@@ -15,8 +15,6 @@ function Eligibility() {
   const [connectedAtLeastOnce, setConnectedAtLeastOnce] = useState(false)
   const [checkingEligibility, setCheckingEligibility] = useState(false)
 
-  console.log('Public Key', publicKey?.toString())
-
   const checkNfts = async () => {
     if (!publicKey) {
       setCalculatedWhitelist(false)
@@ -78,7 +76,6 @@ function Eligibility() {
                   }}>
                   <div
                     onMouseOver={(e) => {
-                      console.log(e.currentTarget)
                       const el: HTMLDivElement =
                         e.currentTarget as HTMLDivElement
                       const btn = el.querySelector('button')
@@ -91,7 +88,6 @@ function Eligibility() {
                       btn.style.backgroundColor = theme.primaryColor
                     }}
                     onMouseOut={(e) => {
-                      console.log(e.currentTarget)
                       const el: HTMLDivElement =
                         e.currentTarget as HTMLDivElement
                       const btn = el.querySelector('button')

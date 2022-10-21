@@ -6,8 +6,6 @@ function LoadingCursor() {
   const loadingRef = useRef<HTMLDivElement>(null)
   const theme = useContext(ThemeContext)
 
-  console.log(theme)
-
   useEffect(() => {
     document.addEventListener('mousemove', (e) => {
       if (!loadingRef.current) {

@@ -226,10 +226,7 @@ const VisionNew = () => {
 
       // intro section 1
       if (latest < window.innerHeight * 3) {
-        console.log('intro 1')
-
         visionContainer.current.style.opacity = '0'
-        // scrollContainer.current.style.scrollSnapType = 'y mandatory'
         visionLabels.current.style.opacity = '0'
         valuesLabels.current.style.opacity = '0'
         headerContainer.current.style.opacity = '1'
@@ -243,9 +240,6 @@ const VisionNew = () => {
         latest >= window.innerHeight * 3 &&
         latest < window.innerHeight * 9
       ) {
-        console.log('vision')
-
-        // scrollContainer.current.style.scrollSnapType = 'none'
         visionContainer.current.style.opacity = '1'
         valuesContainer.current.style.opacity = '0'
         headerContainer.current.style.opacity = '0'
@@ -260,7 +254,6 @@ const VisionNew = () => {
         ) as HTMLButtonElement
 
         if (visionHomeBtn) {
-          console.log(visionHomeBtn)
           visionHomeBtn.style.pointerEvents = 'auto'
         }
 
@@ -283,10 +276,8 @@ const VisionNew = () => {
         latest >= window.innerHeight * 9 &&
         latest < window.innerHeight * 16.5
       ) {
-        console.log('values')
         clearTimeout(visionLabelsTimer)
 
-        // scrollContainer.current.style.scrollSnapType = 'none'
         valuesContainer.current.style.opacity = '1'
         valuesLabels.current.style.opacity = '1'
         scrollArrowContainer.current.style.opacity = '1'
@@ -320,8 +311,6 @@ const VisionNew = () => {
 
         // final section
       } else if (latest >= window.innerHeight * 16.5) {
-        console.log('final')
-        // scrollContainer.current.style.scrollSnapType = 'none'
         finalContainer.current.style.opacity = '1'
         headerContainer.current.style.opacity = '0'
 
@@ -484,7 +473,6 @@ const VisionNew = () => {
                   href="/"
                   className="!text-white !border-white !bg-transparent !ml-auto pointer-events-none !rounded-full !px-4"
                   onMouseOver={(e) => {
-                    console.log('hi')
                     e.currentTarget.classList.remove(
                       '!bg-transparent',
                       '!border-white'
