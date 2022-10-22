@@ -11,7 +11,7 @@ export const Learning = () => {
       viewBox="0 0 432 261"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="max-w-full">
+      className="max-w-[90%] lg:max-w-full">
       <rect
         x="1.5"
         y="1.51709"
@@ -44,7 +44,7 @@ export const Frisson = () => {
       viewBox="0 0 432 260"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="max-w-full">
+      className="max-w-[90%] lg:max-w-full">
       <rect
         x="1.5"
         y="1.5"
@@ -77,7 +77,7 @@ export const Growth = () => {
       viewBox="0 0 432 260"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="max-w-full">
+      className="max-w-[90%] lg:max-w-full">
       <rect
         x="1.5"
         y="1.5"

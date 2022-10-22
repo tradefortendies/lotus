@@ -172,7 +172,7 @@ const VisionNew = () => {
       )
 
       setValuesCards(
-        <div className="relative w-[87%] -translate-x-[20px] lg:-translate-x-[0] -translate-y-[140px] h-full mx-auto ml-auto lg:mr-0 lg:w-[80%] lg:-translate-y-[80px]">
+        <div className="relative w-[87%] -translate-x-[10px] lg:-translate-x-[0] -translate-y-[110px] h-full mx-auto ml-auto lg:mr-0 lg:w-[80%] lg:-translate-y-[80px]">
           <motion.div
             ref={valuesCardLearning}
             className="absolute top-[50%]"
@@ -198,7 +198,7 @@ const VisionNew = () => {
             style={
               windowWidth > 500
                 ? { x: '32px', top: 'calc(50% + 110px)' }
-                : { x: '15px', top: 'calc(50% + 80px)' }
+                : { x: '18px', top: 'calc(50% + 60px)' }
             }>
             <Frisson />
           </motion.div>
@@ -217,7 +217,7 @@ const VisionNew = () => {
             style={
               windowWidth > 500
                 ? { x: '64px', top: 'calc(50% + 220px)' }
-                : { x: '34px', top: 'calc(50% + 160px)' }
+                : { x: '36px', top: 'calc(50% + 120px)' }
             }>
             <Growth />
           </motion.div>
