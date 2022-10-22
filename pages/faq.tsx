@@ -68,7 +68,7 @@ const faqs = [
           manage our community and build our flagship products:{' '}
           <strong>The LILYPAD</strong> and{' '}
           <a
-            href="https://www.notion.so/lotusgang/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+            href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
             target="_blank"
             rel="noreferrer"
             className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
@@ -192,7 +192,7 @@ const faqs = [
         <p>
           We are building the <strong>LILYPAD</strong> and upgrading the{' '}
           <a
-            href="https://www.notion.so/lotusgang/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+            href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
             target="_blank"
             rel="noreferrer"
             className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
@@ -235,7 +235,7 @@ const faqs = [
           <li>
             Built the{' '}
             <a
-              href="https://www.notion.so/lotusgang/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+              href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
               target="_blank"
               rel="noreferrer"
               className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
