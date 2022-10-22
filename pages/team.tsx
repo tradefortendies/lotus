@@ -23,7 +23,7 @@ const teamMembers = [
   },
   {
     name: 'Kylie',
-    position: 'Head Moderator',
+    position: 'Head of Moderation',
     avatar: '/img/team/kylie.jpg',
     bio: 'Kylie is Community and Moderation Manager for several established NFT projects on Solana. With over 5 years of experience leading software development teams, Kylie seeks to bring her Web2 knowledge and expertise to Web3, and ultimately disrupt conventional processes through unconventional means.',
     twitter: 'kyliegendernft',
