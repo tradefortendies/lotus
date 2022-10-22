@@ -198,7 +198,7 @@ const VisionNew = () => {
             style={
               windowWidth > 500
                 ? { x: '32px', top: 'calc(50% + 110px)' }
-                : { x: '18px', top: 'calc(50% + 60px)' }
+                : { x: '18px', top: 'calc(50% + 68px)' }
             }>
             <Frisson />
           </motion.div>
@@ -217,7 +217,7 @@ const VisionNew = () => {
             style={
               windowWidth > 500
                 ? { x: '64px', top: 'calc(50% + 220px)' }
-                : { x: '36px', top: 'calc(50% + 120px)' }
+                : { x: '36px', top: 'calc(50% + 135px)' }
             }>
             <Growth />
           </motion.div>
