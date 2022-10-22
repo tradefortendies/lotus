@@ -214,8 +214,9 @@ function Eligibility() {
                           SOL
                         </h3>
                         <p className="pr-10 font-sans">
-                          If you do not stake your LOTUS, you are able to mint
-                          for{' '}
+                          If you do not{' '}
+                          <span className="px-6 mx-1 rounded-md bg-lily-black"></span>{' '}
+                          your LOTUS, you are able to mint for{' '}
                           <span className="px-2 mx-1 rounded-md bg-lily-black"></span>
                           SOL. It is reserved for you for a window of time.
                         </p>
