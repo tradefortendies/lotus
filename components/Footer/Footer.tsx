@@ -6,6 +6,10 @@ import { ThemeContext } from '../Theme'
 
 const navLinks = [
   {
+    text: 'Library',
+    href: 'https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2',
+  },
+  {
     text: 'Lotus Gang',
     href: 'https://magiceden.io/marketplace/lotus_gang_nft',
   },
