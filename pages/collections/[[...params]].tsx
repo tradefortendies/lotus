@@ -73,20 +73,29 @@ const LotusGang: NextPage<{
                 <div className="grid grid-cols-6">
                   <div>
                     <ul>
-                      {traits.map((trait, index) => {
+                      {traits.map((trait, traitIndex) => {
                         return (
-                          <li className="my-4 font-bold first:mt-0" key={index}>
+                          <li
+                            className="my-4 font-bold first:mt-0"
+                            key={traitIndex}>
                             {trait.trait_type}
                             <ul
                               className={clsx(
                                 'mt-2 text-sm font-normal',
-                                index > 0 && 'hidden'
+                                traitIndex > 0 && 'hidden'
                               )}>
-                              {trait.values.map((value) => {
+                              {trait.values.map((value, valueIndex) => {
                                 return (
-                                  <li className="flex items-center gap-2 py-1">
-                                    <input type="checkbox" />
-                                    {value}
+                                  <li className="w-full" key={valueIndex}>
+                                    <label
+                                      className="flex items-center w-full gap-2 py-1"
+                                      htmlFor={`${traitIndex} + ${valueIndex}`}>
+                                      <input
+                                        type="checkbox"
+                                        id={`${traitIndex} + ${valueIndex}`}
+                                      />
+                                      {value}
+                                    </label>
                                   </li>
                                 )
                               })}
