@@ -7,6 +7,7 @@ import LotusGangNftsJson from '../../data/lotus-gang.json'
 import Meta from '../../components/Meta'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import Button from '../../components/Button'
 
 const lotusGangNfts = LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] }
 
@@ -105,23 +106,26 @@ const LotusGang: NextPage<{
                       })}
                     </ul>
                   </div>
-                  <div className="grid w-full grid-cols-4 col-span-5 gap-4">
-                    {nfts.map((nft) => {
-                      return (
-                        <div className="p-4 bg-gray-100">
-                          <Link
-                            href={`/collections/lotus-gang/${nft.address}`}
-                            passHref>
-                            <a>
-                              <img src={nft.image} />
-                              <div className="mt-4">
-                                <h3 className="font-bold">{nft.name}</h3>
-                              </div>
-                            </a>
-                          </Link>
-                        </div>
-                      )
-                    })}
+                  <div className="flex flex-col items-center col-span-5">
+                    <div className="grid w-full grid-cols-4 gap-4 mb-16">
+                      {nfts.map((nft) => {
+                        return (
+                          <div className="p-4 bg-gray-100">
+                            <Link
+                              href={`/collections/lotus-gang/${nft.address}`}
+                              passHref>
+                              <a>
+                                <img src={nft.image} />
+                                <div className="mt-4">
+                                  <h3 className="font-bold">{nft.name}</h3>
+                                </div>
+                              </a>
+                            </Link>
+                          </div>
+                        )
+                      })}
+                    </div>
+                    <Button>Load More</Button>
                   </div>
                 </div>
               </div>
