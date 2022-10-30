@@ -10,17 +10,8 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import filter from 'lodash/filter'
-import lotusGang from '../../../data/lotus-gang.json'
-
-type Nft = {
-  address: string
-  name: string
-  image: string
-  attributes: {
-    trait_type: string
-    value: string
-  }[]
-}
+import LotusGangNftsJson from '../../../data/lotus-gang.json'
+import { Nft } from '../../../types'
 
 const collections = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.params || !req.query.params.length) {
@@ -29,14 +20,14 @@ const collections = async (req: NextApiRequest, res: NextApiResponse) => {
     })
   }
 
-  const lotusNfts = lotusGang as { nfts: Nft[] }
+  const lotusGangNfts = LotusGangNftsJson as { traits: string[]; nfts: Nft[] }
   const collection: string = req.query.params[0]
   const address: string = req.query.params[1] ? String(req.query.params[1]) : ''
   const traits: string = req.query.traits ? String(req.query.traits) : ''
   const page: number = req.query.page ? Number(req.query.page) : 0
   const perPage: number = 20
 
-  let filteredNfts: Nft[] = lotusNfts.nfts
+  let filteredNfts: Nft[] = lotusGangNfts.nfts
 
   if (collection !== 'lotus-gang') {
     return res.json({

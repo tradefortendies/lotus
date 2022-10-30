@@ -1,4 +1,82 @@
 {
+    "traits": [
+      {
+        "trait_type": "Background",
+        "values": [
+          "Orange",
+          "Blue",
+          "Green",
+          "Pink",
+          "Red"
+        ]
+      },
+      {
+        "trait_type": "Type",
+        "values": [
+          "Human",
+          "Undead",
+          "Ascended"
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "values": [
+          "Green Vardi",
+          "Black Vardi",
+          "Blue Vardi",
+          "Red Vardi",
+          "Blue Sari",
+          "Yellow Sari",
+          "Red Sari",
+          "Orange Sari",
+          "Green Track Suit",
+          "Red Track Suit",
+          "Black track Suit",
+          "Black Hoodie",
+          "Blue Hoodie",
+          "Red Hoodie",
+          "Plain Black Tee",
+          "Sherwani",
+          "Navy",
+          "Airforce",
+          "Suit",
+          "Samurai",
+          "Dark Samurai",
+          "Vengeance Tracksuit",
+          "No Clothes"
+        ]
+      },
+      {
+        "trait_type": "Head",
+        "values": [
+        ]
+      },
+      {
+        "trait_type": "Facial Hair",
+        "values": [
+        ]
+      },
+      {
+        "trait_type": "Helmet",
+        "values": [
+        ]
+      },
+      {
+        "trait_type": "Accessory 1",
+        "values": [
+        ]
+      },
+      {
+        "trait_type": "Accessory 2",
+        "values": [
+        ]
+      },
+      {
+        "trait_type": "Accessory 3",
+        "values": [
+        ]
+      }
+    ],
     "nfts": [
     {
       "address": "FWDUvozZaQ8WNqYUHPrBDZNGDhwHMKQG8whnrFdoSqHq",
