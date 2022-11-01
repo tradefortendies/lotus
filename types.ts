@@ -12,3 +12,10 @@ export type Nft = {
     value: string
   }[]
 }
+
+export type NftApiResponse = {
+  total: number
+  page: number
+  perPage: number
+  nfts: Nft[]
+}
