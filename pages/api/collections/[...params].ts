@@ -5,6 +5,7 @@
  * /api/collections/lotus-gang
  * /api/collections/lotus-gang?page=2
  * /api/collections/lotus-gang?traits=background:Orange,type:Undead,facial%20hair:Beard
+ * /api/collections/lotus-gang?traits=background:Orange|Blue,type:Undead,facial%20hair:Beard
  * /api/collections/lotus-gag/FWDUvozZaQ8WNqYUHPrBDZNGDhwHMKQG8whnrFdoSqHq
  */
 
@@ -44,8 +45,14 @@ const collections = async (req: NextApiRequest, res: NextApiResponse) => {
     console.log(attrs)
 
     attrs.map((attr) => {
-      filteredNfts = filter(filteredNfts, {
-        attributes: [{ trait_type: attr[0], value: attr[1] }],
+      filteredNfts = filter(filteredNfts, (o) => {
+        const values =
+          attr[1].indexOf('|') > -1 ? attr[1].split('|') : [attr[1]]
+        return (
+          o.attributes.findIndex((item) => {
+            return item.trait_type === attr[0] && values.includes(item.value)
+          }) > -1
+        )
       }) as Nft[]
     })
   }
