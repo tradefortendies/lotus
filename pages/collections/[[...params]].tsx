@@ -166,8 +166,9 @@ const LotusGang: NextPage<{
                 </div>
                 <CollectionListing
                   total={total}
-                  page={page}
-                  perPage={perPage}
+                  showing={
+                    (page + 1) * perPage < total ? (page + 1) * perPage : total
+                  }
                   traits={traits}
                   nfts={nfts}
                   loadMore={loadMore}

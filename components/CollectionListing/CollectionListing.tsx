@@ -5,16 +5,14 @@ import Button from '../Button'
 
 function CollectionListing({
   total,
-  page,
-  perPage,
+  showing,
   traits,
   nfts,
   loadMore,
   filter,
 }: {
   total: number
-  page: number
-  perPage: number
+  showing: number
   traits: Trait[]
   nfts: Nft[]
   loadMore: () => void
@@ -59,7 +57,7 @@ function CollectionListing({
       </div>
       <div className="flex flex-col items-center col-span-5">
         <p className="w-full pb-4 text-sm italic text-left">
-          Showing {(page + 1) * perPage} of {total}
+          Showing {showing} of {total}
         </p>
         <div className="grid w-full grid-cols-4 gap-4 mb-16">
           {nfts.map((nft, nftIndex) => {
