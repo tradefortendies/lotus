@@ -16,10 +16,22 @@ const LotusGang: NextPage<{
   collection: string
   collectionTitle: string
   traits: Trait[]
+  total: number
+  page: number
+  perPage: number
   nfts: Nft[]
   nft: Nft[]
   address: string | false
-}> = ({ collectionTitle, traits, nfts, nft, address }) => {
+}> = ({
+  collectionTitle,
+  traits,
+  total,
+  page,
+  perPage,
+  nfts,
+  nft,
+  address,
+}) => {
   const [detailOpen, setDetailOpen] = useState<boolean>(false)
   const router = useRouter()
 
@@ -54,7 +66,13 @@ const LotusGang: NextPage<{
                     Lotus Gang
                   </h1>
                 </div>
-                <CollectionListing traits={traits} nfts={nfts} />
+                <CollectionListing
+                  total={total}
+                  page={page}
+                  perPage={perPage}
+                  traits={traits}
+                  nfts={nfts}
+                />
               </div>
             </div>
             <Footer />
@@ -103,6 +121,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       collectionTitle: titleCase(query.params[0].replace(/-/gi, ' ')),
       traits: lotusGangNfts.traits,
       address: query.params[1] || false,
+      total: nftsReq?.total,
+      page: nftsReq?.page,
+      perPage: nftsReq?.perPage,
       nfts: nftsReq?.nfts || {},
       nft: nftReq?.nfts || {},
     },

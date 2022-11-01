@@ -3,7 +3,19 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import Button from '../Button'
 
-function CollectionListing({ traits, nfts }: { traits: Trait[]; nfts: Nft[] }) {
+function CollectionListing({
+  total,
+  page,
+  perPage,
+  traits,
+  nfts,
+}: {
+  total: number
+  page: number
+  perPage: number
+  traits: Trait[]
+  nfts: Nft[]
+}) {
   return (
     <div className="grid grid-cols-6">
       <div>
@@ -39,6 +51,9 @@ function CollectionListing({ traits, nfts }: { traits: Trait[]; nfts: Nft[] }) {
         </ul>
       </div>
       <div className="flex flex-col items-center col-span-5">
+        <p className="w-full pb-4 text-sm italic text-left">
+          Showing {(page + 1) * perPage} of {total}
+        </p>
         <div className="grid w-full grid-cols-4 gap-4 mb-16">
           {nfts.map((nft, nftIndex) => {
             return (
