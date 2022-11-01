@@ -49,16 +49,53 @@
       {
         "trait_type": "Head",
         "values": [
+          "Green Bandana",
+          "Orange Bandana",
+          "Red Bandana",
+          "Blue Bandana",
+          "Yellow Bandana",
+          "Black Bandana",
+          "Blue Bandana",
+          "Red Bhangra",
+          "Green Bhangra",
+          "Black Bhangra",
+          "Red Dupatta",
+          "Black Dupatta",
+          "Blue Dupatta",
+          "Green Dupatta",
+          "Pig Tails",
+          "Guy hair",
+          "Girl Hair",
+          "Buzz Cut",
+          "Jazzy Hair",
+          "Saiyan Hair",
+          "Rice",
+          "Strawhat",
+          "Bun",
+          "Korean Gat",
+          "Black Cap",
+          "Thai Crown",
+          "Bharatanatyam",
+          "Navy",
+          "Airforce",
+          "Samurai",
+          "Dark Samurai",
+          "No Head"
         ]
       },
       {
         "trait_type": "Facial Hair",
         "values": [
+          "Beard",
+          "No Beard"
         ]
       },
       {
         "trait_type": "Helmet",
         "values": [
+          "Helmet",
+          "Vengeance Helmet",
+          "No Helmet"
         ]
       },
       {
