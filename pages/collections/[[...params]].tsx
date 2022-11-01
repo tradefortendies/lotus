@@ -12,28 +12,55 @@ import CollectionListing from '../../components/CollectionListing'
 
 const lotusGangNfts = LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] }
 
+const buildNftApiUrl = ({ page }: { page: number }): string => {
+  let apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/lotus-gang?`
+
+  if (page) {
+    apiUrl += `page=${page}`
+  }
+
+  return apiUrl
+}
+
 const LotusGang: NextPage<{
   collection: string
   collectionTitle: string
   traits: Trait[]
   total: number
-  page: number
+  pageOrig: number
   perPage: number
-  nfts: Nft[]
+  nftsOrig: Nft[]
   nft: Nft[]
   address: string | false
 }> = ({
   collectionTitle,
   traits,
   total,
-  page,
+  pageOrig,
   perPage,
-  nfts,
+  nftsOrig,
   nft,
   address,
 }) => {
-  const [detailOpen, setDetailOpen] = useState<boolean>(false)
   const router = useRouter()
+  const [detailOpen, setDetailOpen] = useState<boolean>(false)
+  const [page, setPage] = useState<number>(pageOrig)
+  const [nfts, setNfts] = useState<Nft[]>(nftsOrig)
+
+  const loadMore = async () => {
+    const nftsReq = await fetch(
+      buildNftApiUrl({
+        page: page + 1,
+      })
+    ).then((res) => res.json())
+
+    if (!nftsReq.nfts) {
+      return
+    }
+
+    setNfts(nfts.concat(nftsReq.nfts))
+    setPage(page + 1)
+  }
 
   useEffect(() => {
     setDetailOpen(Boolean(address))
@@ -72,6 +99,7 @@ const LotusGang: NextPage<{
                   perPage={perPage}
                   traits={traits}
                   nfts={nfts}
+                  loadMore={loadMore}
                 />
               </div>
             </div>
@@ -122,9 +150,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       traits: lotusGangNfts.traits,
       address: query.params[1] || false,
       total: nftsReq?.total,
-      page: nftsReq?.page,
+      pageOrig: nftsReq?.page,
       perPage: nftsReq?.perPage,
-      nfts: nftsReq?.nfts || {},
+      nftsOrig: nftsReq?.nfts || {},
       nft: nftReq?.nfts || {},
     },
   }

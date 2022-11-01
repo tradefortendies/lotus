@@ -9,12 +9,14 @@ function CollectionListing({
   perPage,
   traits,
   nfts,
+  loadMore,
 }: {
   total: number
   page: number
   perPage: number
   traits: Trait[]
   nfts: Nft[]
+  loadMore: () => void
 }) {
   return (
     <div className="grid grid-cols-6">
@@ -70,7 +72,7 @@ function CollectionListing({
             )
           })}
         </div>
-        <Button>Load More</Button>
+        <Button onClick={() => loadMore()}>Load More</Button>
       </div>
     </div>
   )
