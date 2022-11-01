@@ -10,6 +10,7 @@ function CollectionListing({
   traits,
   nfts,
   loadMore,
+  filter,
 }: {
   total: number
   page: number
@@ -17,6 +18,7 @@ function CollectionListing({
   traits: Trait[]
   nfts: Nft[]
   loadMore: () => void
+  filter: (trait: string, value: string, state: boolean) => void
 }) {
   return (
     <div className="grid grid-cols-6">
@@ -28,8 +30,8 @@ function CollectionListing({
                 {trait.trait_type}
                 <ul
                   className={clsx(
-                    'mt-2 text-sm font-normal',
-                    traitIndex > 0 && 'hidden'
+                    'mt-2 text-sm font-normal'
+                    // traitIndex > 0 && 'hidden'
                   )}>
                   {trait.values.map((value, valueIndex) => {
                     return (
@@ -40,6 +42,9 @@ function CollectionListing({
                           <input
                             type="checkbox"
                             id={`${traitIndex} + ${valueIndex}`}
+                            onChange={(e) =>
+                              filter(trait.trait_type, value, e.target.checked)
+                            }
                           />
                           {value}
                         </label>
