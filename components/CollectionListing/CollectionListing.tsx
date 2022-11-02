@@ -28,40 +28,44 @@ function CollectionListing({
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
                 <Disclosure>
-                  <Disclosure.Button className="flex items-center justify-between w-full">
-                    {trait.trait_type}
-                    <AiOutlinePlus />
-                  </Disclosure.Button>
-                  <Disclosure.Panel>
-                    <ul
-                      className={clsx(
-                        'mt-2 text-sm font-normal'
-                        // traitIndex > 0 && 'hidden'
-                      )}>
-                      {trait.values.map((value, valueIndex) => {
-                        return (
-                          <li className="w-full" key={valueIndex}>
-                            <label
-                              className="flex items-center w-full gap-2 py-1"
-                              htmlFor={`${traitIndex} + ${valueIndex}`}>
-                              <input
-                                type="checkbox"
-                                id={`${traitIndex} + ${valueIndex}`}
-                                onChange={(e) =>
-                                  filter(
-                                    trait.trait_type,
-                                    value,
-                                    e.target.checked
-                                  )
-                                }
-                              />
-                              {value}
-                            </label>
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </Disclosure.Panel>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex items-center justify-between w-full">
+                        {trait.trait_type}
+                        {open ? <AiOutlineMinus /> : <AiOutlinePlus />}
+                      </Disclosure.Button>
+                      <Disclosure.Panel>
+                        <ul
+                          className={clsx(
+                            'mt-2 text-sm font-normal'
+                            // traitIndex > 0 && 'hidden'
+                          )}>
+                          {trait.values.map((value, valueIndex) => {
+                            return (
+                              <li className="w-full" key={valueIndex}>
+                                <label
+                                  className="flex items-center w-full gap-2 py-1"
+                                  htmlFor={`${traitIndex} + ${valueIndex}`}>
+                                  <input
+                                    type="checkbox"
+                                    id={`${traitIndex} + ${valueIndex}`}
+                                    onChange={(e) =>
+                                      filter(
+                                        trait.trait_type,
+                                        value,
+                                        e.target.checked
+                                      )
+                                    }
+                                  />
+                                  {value}
+                                </label>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      </Disclosure.Panel>
+                    </>
+                  )}
                 </Disclosure>
               </li>
             )
