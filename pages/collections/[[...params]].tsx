@@ -131,6 +131,30 @@ const LotusGang: NextPage<{
     setPage(0)
   }
 
+  const reset = async () => {
+    const nftsReq = await fetch(
+      buildNftApiUrl({
+        page: 0,
+        filters: {},
+      })
+    ).then((res) => res.json())
+
+    if (!nftsReq.nfts) {
+      return
+    }
+
+    const filters = document.querySelectorAll('[data-filter]')
+    filters.forEach((filter) => {
+      const f = filter as HTMLInputElement
+      f.checked = false
+    })
+
+    setNfts(nftsReq.nfts)
+    setFilters({})
+    setTotal(nftsReq.total)
+    setPage(0)
+  }
+
   useEffect(() => {
     setDetailOpen(Boolean(address))
   }, [address])
@@ -143,7 +167,7 @@ const LotusGang: NextPage<{
         <CollectionDetail
           isOpen={detailOpen}
           onClose={() => {
-            router.back()
+            router.push('/collections/lotus-gang')
           }}
           nft={nft[0]}
         />
@@ -171,6 +195,7 @@ const LotusGang: NextPage<{
                   nfts={nfts}
                   loadMore={loadMore}
                   filter={filter}
+                  reset={reset}
                 />
               </div>
             </div>

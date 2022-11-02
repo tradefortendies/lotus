@@ -3,6 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
+import { GrPowerReset } from 'react-icons/gr'
 import Button from '../Button'
 
 function CollectionListing({
@@ -12,6 +13,7 @@ function CollectionListing({
   nfts,
   loadMore,
   filter,
+  reset,
 }: {
   total: number
   showing: number
@@ -19,10 +21,19 @@ function CollectionListing({
   nfts: Nft[]
   loadMore: () => void
   filter: (trait: string, value: string, state: boolean) => void
+  reset: () => void
 }) {
   return (
     <div className="grid grid-cols-6">
-      <div>
+      <div className="sticky top-0">
+        <div className="w-full pr-8 mt-[35px]">
+          <button
+            onClick={() => reset()}
+            className="flex items-center justify-start w-full gap-4 px-4 py-3 transition bg-slate-50 hover:bg-slate-100">
+            <GrPowerReset />
+            Reset
+          </button>
+        </div>
         <ul className="mt-10">
           {traits.map((trait, traitIndex) => {
             return (
@@ -49,6 +60,7 @@ function CollectionListing({
                                   <input
                                     type="checkbox"
                                     id={`${traitIndex} + ${valueIndex}`}
+                                    data-filter
                                     onChange={(e) =>
                                       filter(
                                         trait.trait_type,
