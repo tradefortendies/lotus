@@ -1,120 +1,110 @@
 {
-    "traits": [
-      {
-        "trait_type": "Background",
-        "values": [
-          "Orange",
-          "Blue",
-          "Green",
-          "Pink",
-          "Red"
-        ]
-      },
-      {
-        "trait_type": "Type",
-        "values": [
-          "Human",
-          "Undead",
-          "Ascended"
-        ]
-      },
-      {
-        "trait_type": "Clothing",
-        "values": [
-          "Green Vardi",
-          "Black Vardi",
-          "Blue Vardi",
-          "Red Vardi",
-          "Blue Sari",
-          "Yellow Sari",
-          "Red Sari",
-          "Orange Sari",
-          "Green Track Suit",
-          "Red Track Suit",
-          "Black track Suit",
-          "Black Hoodie",
-          "Blue Hoodie",
-          "Red Hoodie",
-          "Plain Black Tee",
-          "Sherwani",
-          "Navy",
-          "Airforce",
-          "Suit",
-          "Samurai",
-          "Dark Samurai",
-          "Vengeance Tracksuit",
-          "No Clothes"
-        ]
-      },
-      {
-        "trait_type": "Head",
-        "values": [
-          "Green Bandana",
-          "Orange Bandana",
-          "Red Bandana",
-          "Blue Bandana",
-          "Yellow Bandana",
-          "Black Bandana",
-          "Blue Bandana",
-          "Red Bhangra",
-          "Green Bhangra",
-          "Black Bhangra",
-          "Red Dupatta",
-          "Black Dupatta",
-          "Blue Dupatta",
-          "Green Dupatta",
-          "Pig Tails",
-          "Guy hair",
-          "Girl Hair",
-          "Buzz Cut",
-          "Jazzy Hair",
-          "Saiyan Hair",
-          "Rice",
-          "Strawhat",
-          "Bun",
-          "Korean Gat",
-          "Black Cap",
-          "Thai Crown",
-          "Bharatanatyam",
-          "Navy",
-          "Airforce",
-          "Samurai",
-          "Dark Samurai",
-          "No Head"
-        ]
-      },
-      {
-        "trait_type": "Facial Hair",
-        "values": [
-          "Beard",
-          "No Beard"
-        ]
-      },
-      {
-        "trait_type": "Helmet",
-        "values": [
-          "Helmet",
-          "Vengeance Helmet",
-          "No Helmet"
-        ]
-      },
-      {
-        "trait_type": "Accessory 1",
-        "values": [
-        ]
-      },
-      {
-        "trait_type": "Accessory 2",
-        "values": [
-        ]
-      },
-      {
-        "trait_type": "Accessory 3",
-        "values": [
-        ]
-      }
-    ],
-    "nfts": [
+  "traits": [
+    {
+      "trait_type": "Background",
+      "values": ["Orange", "Blue", "Green", "Pink", "Red"]
+    },
+    {
+      "trait_type": "Type",
+      "values": ["Human", "Undead", "Ascended"]
+    },
+    {
+      "trait_type": "Clothing",
+      "values": [
+        "Green Vardi",
+        "Black Vardi",
+        "Blue Vardi",
+        "Red Vardi",
+        "Blue Sari",
+        "Yellow Sari",
+        "Red Sari",
+        "Orange Sari",
+        "Green Track Suit",
+        "Red Track Suit",
+        "Black track Suit",
+        "Black Hoodie",
+        "Blue Hoodie",
+        "Red Hoodie",
+        "Plain Black Tee",
+        "Sherwani",
+        "Navy",
+        "Airforce",
+        "Suit",
+        "Samurai",
+        "Dark Samurai",
+        "Vengeance Tracksuit",
+        "No Clothes"
+      ]
+    },
+    {
+      "trait_type": "Head",
+      "values": [
+        "Green Bandana",
+        "Orange Bandana",
+        "Red Bandana",
+        "Blue Bandana",
+        "Yellow Bandana",
+        "Black Bandana",
+        "Blue Bandana",
+        "Red Bhangra",
+        "Green Bhangra",
+        "Black Bhangra",
+        "Red Dupatta",
+        "Black Dupatta",
+        "Blue Dupatta",
+        "Green Dupatta",
+        "Pig Tails",
+        "Guy hair",
+        "Girl Hair",
+        "Buzz Cut",
+        "Jazzy Hair",
+        "Saiyan Hair",
+        "Rice",
+        "Strawhat",
+        "Bun",
+        "Korean Gat",
+        "Black Cap",
+        "Thai Crown",
+        "Bharatanatyam",
+        "Navy",
+        "Airforce",
+        "Samurai",
+        "Dark Samurai",
+        "No Head"
+      ]
+    },
+    {
+      "trait_type": "Facial Hair",
+      "values": ["Beard", "No Beard"]
+    },
+    {
+      "trait_type": "Helmet",
+      "values": ["Helmet", "Vengeance Helmet", "No Helmet"]
+    },
+    {
+      "trait_type": "Accessory 1",
+      "values": [
+        "Yellow Scouter",
+        "Green Scouter",
+        "Red Scouter",
+        "Red Shades",
+        "Neo Shades",
+        "Specs",
+        "Earring",
+        "Bindi",
+        "No Accessory"
+      ]
+    },
+    {
+      "trait_type": "Accessory 2",
+      "values": ["No Accessory", "Chain", "Diamon Chain"]
+    },
+    {
+      "trait_type": "Accessory 3",
+      "values": ["No Accessory", "Cigarette", "Joint", "Mask"]
+    }
+  ],
+  "nfts": [
     {
       "address": "FWDUvozZaQ8WNqYUHPrBDZNGDhwHMKQG8whnrFdoSqHq",
       "name": "Lotus Lad #1",
