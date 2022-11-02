@@ -42,7 +42,6 @@ const collections = async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (traits) {
     const attrs: string[][] = traits.split(',').map((trait) => trait.split(':'))
-    console.log(attrs)
 
     attrs.map((attr) => {
       filteredNfts = filter(filteredNfts, (o) => {

@@ -43,8 +43,6 @@ const buildNftApiUrl = ({
     apiUrl += `page=${page}`
   }
 
-  console.log('apiUrl', apiUrl)
-
   return apiUrl
 }
 
