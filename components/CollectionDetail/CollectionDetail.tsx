@@ -1,5 +1,6 @@
 import { Nft } from '../../types'
 import { Dialog } from '@headlessui/react'
+import Button from '../Button'
 
 function CollectionDetail({
   isOpen,
@@ -36,6 +37,14 @@ function CollectionDetail({
                   )
                 })}
               </dl>
+              <Button
+                href={`https://magiceden.io/item-details/${nft.address}`}
+                target="_blank"
+                rel="noreferrer"
+                size="sm"
+                className="mt-8">
+                Buy on MagicEden
+              </Button>
             </div>
           </Dialog.Panel>
         </div>
