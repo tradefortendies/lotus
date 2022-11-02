@@ -1,6 +1,8 @@
 import { Trait, Nft } from '../../types'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { Disclosure } from '@headlessui/react'
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import Button from '../Button'
 
 function CollectionListing({
@@ -21,35 +23,46 @@ function CollectionListing({
   return (
     <div className="grid grid-cols-6">
       <div>
-        <ul>
+        <ul className="mt-10">
           {traits.map((trait, traitIndex) => {
             return (
-              <li className="my-4 font-bold first:mt-0" key={traitIndex}>
-                {trait.trait_type}
-                <ul
-                  className={clsx(
-                    'mt-2 text-sm font-normal'
-                    // traitIndex > 0 && 'hidden'
-                  )}>
-                  {trait.values.map((value, valueIndex) => {
-                    return (
-                      <li className="w-full" key={valueIndex}>
-                        <label
-                          className="flex items-center w-full gap-2 py-1"
-                          htmlFor={`${traitIndex} + ${valueIndex}`}>
-                          <input
-                            type="checkbox"
-                            id={`${traitIndex} + ${valueIndex}`}
-                            onChange={(e) =>
-                              filter(trait.trait_type, value, e.target.checked)
-                            }
-                          />
-                          {value}
-                        </label>
-                      </li>
-                    )
-                  })}
-                </ul>
+              <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
+                <Disclosure>
+                  <Disclosure.Button className="flex items-center justify-between w-full">
+                    {trait.trait_type}
+                    <AiOutlinePlus />
+                  </Disclosure.Button>
+                  <Disclosure.Panel>
+                    <ul
+                      className={clsx(
+                        'mt-2 text-sm font-normal'
+                        // traitIndex > 0 && 'hidden'
+                      )}>
+                      {trait.values.map((value, valueIndex) => {
+                        return (
+                          <li className="w-full" key={valueIndex}>
+                            <label
+                              className="flex items-center w-full gap-2 py-1"
+                              htmlFor={`${traitIndex} + ${valueIndex}`}>
+                              <input
+                                type="checkbox"
+                                id={`${traitIndex} + ${valueIndex}`}
+                                onChange={(e) =>
+                                  filter(
+                                    trait.trait_type,
+                                    value,
+                                    e.target.checked
+                                  )
+                                }
+                              />
+                              {value}
+                            </label>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </Disclosure.Panel>
+                </Disclosure>
               </li>
             )
           })}
