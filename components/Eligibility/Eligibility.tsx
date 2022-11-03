@@ -10,7 +10,7 @@ function Eligibility() {
   const { publicKey } = useWallet()
   const theme = useContext(ThemeContext)
   const [calculatedWhitelist, setCalculatedWhitelist] = useState(false)
-  const [hasWhitelist, setHasWhitelist] = useState(false)
+  const [eligible, setEligible] = useState(false)
   const [mintNumber, setMintNumber] = useState(0)
   const [connectedAtLeastOnce, setConnectedAtLeastOnce] = useState(false)
   const [checkingEligibility, setCheckingEligibility] = useState(false)
@@ -19,7 +19,7 @@ function Eligibility() {
     if (!publicKey) {
       setCalculatedWhitelist(false)
       setMintNumber(0)
-      setHasWhitelist(false)
+      setEligible(false)
       return
     }
 
@@ -33,7 +33,7 @@ function Eligibility() {
 
     setCalculatedWhitelist(true)
     setMintNumber(eligibilityData.mintCount)
-    setHasWhitelist(eligibilityData.hasWhitelist)
+    setEligible(eligibilityData.eligible)
     setCheckingEligibility(false)
   }
 
@@ -118,7 +118,7 @@ function Eligibility() {
                   'flex flex-col justify-center col-span-3 space-y-6',
                   !connectedAtLeastOnce && 'lg:opacity-0'
                 )}>
-                {hasWhitelist && (
+                {eligible && (
                   <>
                     <h2 className="font-sans text-5xl lg:text-7xl">
                       Yes! You&apos;re eligible for the whitelist mint.
@@ -135,7 +135,7 @@ function Eligibility() {
                     </WalletMultiButton>
                   </>
                 )}
-                {!hasWhitelist && (
+                {!eligible && (
                   <>
                     <h2 className="font-sans text-4xl lg:pr-16 lg:text-6xl">
                       Unfortunately you’re not eligible for the whitelist mint.
@@ -183,7 +183,7 @@ function Eligibility() {
                   'flex flex-col justify-center col-span-3 space-y-6 mt-16 lg:mt-0',
                   !connectedAtLeastOnce && 'lg:opacity-0'
                 )}>
-                {hasWhitelist && (
+                {eligible && (
                   <>
                     <div
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
@@ -227,7 +227,7 @@ function Eligibility() {
                     </div>
                   </>
                 )}
-                {!hasWhitelist && (
+                {!eligible && (
                   <>
                     <div
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
