@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { PublicKey } from '@solana/web3.js'
 import { Metaplex } from '@metaplex-foundation/js'
 import { connection } from '../../lib/connection'
+import WalletWhitelist from '../../data/whitelist.json'
 
 const getEligibility = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.address) {
@@ -10,11 +11,13 @@ const getEligibility = async (req: NextApiRequest, res: NextApiResponse) => {
     })
   }
 
+  const address = String(req.query.address)
+
   try {
     const metaplex = new Metaplex(connection)
 
     const ownedNfts: any = await metaplex.nfts().findAllByOwner({
-      owner: new PublicKey(req.query.address),
+      owner: new PublicKey(address),
     })
 
     const lotusNfts = ownedNfts.filter(
@@ -29,11 +32,15 @@ const getEligibility = async (req: NextApiRequest, res: NextApiResponse) => {
         '4SR9PtoA4vmzT3GpYEPHsuvcD8KQXqdMQ7AHuaBzmfDt'
     )
 
+    const walletWhitelist = WalletWhitelist.wallets.includes(address)
+
     res.json({
+      whitelist: walletWhitelist,
       lotusGang: lotusNfts.length,
       rapPack: rapPackNfts.length,
-      hasWhitelist: lotusNfts.length + rapPackNfts.length > 0,
-      mintCount: lotusNfts.length + rapPackNfts.length * 8,
+      eligible: walletWhitelist || lotusNfts.length + rapPackNfts.length > 0,
+      mintCount:
+        (walletWhitelist ? 1 : 0) + (lotusNfts.length + rapPackNfts.length * 8),
     })
   } catch (e: any) {
     res.json({
