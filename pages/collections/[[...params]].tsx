@@ -193,6 +193,7 @@ const LotusGang: NextPage<{
                   }
                   traits={traits}
                   nfts={nfts}
+                  filters={filters}
                   loadMore={loadMore}
                   filter={filter}
                   reset={reset}

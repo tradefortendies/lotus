@@ -11,6 +11,7 @@ function CollectionListing({
   showing,
   traits,
   nfts,
+  filters,
   loadMore,
   filter,
   reset,
@@ -19,6 +20,9 @@ function CollectionListing({
   showing: number
   traits: Trait[]
   nfts: Nft[]
+  filters: {
+    [key: string]: string[]
+  }
   loadMore: () => void
   filter: (trait: string, value: string, state: boolean) => void
   reset: () => void
@@ -56,11 +60,14 @@ function CollectionListing({
                               <li className="w-full" key={valueIndex}>
                                 <label
                                   className="flex items-center w-full gap-2 py-1"
-                                  htmlFor={`${traitIndex} + ${valueIndex}`}>
+                                  htmlFor={`${trait.trait_type}-${value}`}>
                                   <input
                                     type="checkbox"
-                                    id={`${traitIndex} + ${valueIndex}`}
+                                    id={`${trait.trait_type}-${value}`}
                                     data-filter
+                                    checked={filters[
+                                      trait.trait_type
+                                    ]?.includes(value)}
                                     onChange={(e) =>
                                       filter(
                                         trait.trait_type,
