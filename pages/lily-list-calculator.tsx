@@ -100,6 +100,7 @@ const LilyListCalculator: NextPage = () => {
                 <a
                   href="https://magiceden.io/marketplace/lotus_gang_nft"
                   target="_blank"
+                  rel="noreferrer"
                   className="mt-12 mx-auto flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] transition duration-1000 hover:rotate-[360deg]"
                   style={{
                     backgroundColor: theme.primaryColor,
