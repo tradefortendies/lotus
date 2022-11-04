@@ -11,8 +11,11 @@ import Footer from '../components/Footer'
 
 const LilyListCalculator: NextPage = () => {
   const theme = useContext(ThemeContext)
-  const [lotusCount, setLotusCount] = useState<number>(0)
-  const lotusLimit = 10
+  const [lotusCount, setLotusCount] = useState<number>(1000)
+  const lotusLimits = {
+    upper: 1010,
+    lower: 1000,
+  }
 
   return (
     <>
@@ -42,7 +45,7 @@ const LilyListCalculator: NextPage = () => {
                     <div className="flex items-center justify-center gap-4 mt-8">
                       <button
                         onClick={() => {
-                          if (lotusCount <= 0) {
+                          if (lotusCount <= lotusLimits.lower) {
                             return
                           }
 
@@ -50,7 +53,7 @@ const LilyListCalculator: NextPage = () => {
                         }}
                         className={clsx(
                           'p-4 transition bg-white rounded-full hover:scale-110',
-                          lotusCount <= 0 &&
+                          lotusCount <= lotusLimits.lower &&
                             'opacity-50 cursor-default hover:scale-100'
                         )}>
                         <AiOutlineMinus />
@@ -60,7 +63,7 @@ const LilyListCalculator: NextPage = () => {
                       </span>
                       <button
                         onClick={() => {
-                          if (lotusCount >= lotusLimit) {
+                          if (lotusCount >= lotusLimits.upper) {
                             return
                           }
 
@@ -68,7 +71,7 @@ const LilyListCalculator: NextPage = () => {
                         }}
                         className={clsx(
                           'p-4 transition bg-white rounded-full hover:scale-110',
-                          lotusCount >= lotusLimit &&
+                          lotusCount >= lotusLimits.upper &&
                             'opacity-50 cursor-default hover:scale-100'
                         )}>
                         <AiOutlinePlus />
@@ -78,7 +81,7 @@ const LilyListCalculator: NextPage = () => {
                     <p
                       className={clsx(
                         'absolute w-full text-sm text-center -translate-x-1/2 text-lily-black bottom-6 left-1/2 opacity-0 transition',
-                        lotusCount >= lotusLimit && 'opacity-100'
+                        lotusCount >= lotusLimits.upper && 'opacity-100'
                       )}>
                       Nice try! However, there are only 4,000 Lotuses.
                     </p>
