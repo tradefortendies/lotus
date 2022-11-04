@@ -1,14 +1,16 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { gsap } from 'gsap'
 import clsx from 'clsx'
+import { BsArrowRight, BsArrowDown } from 'react-icons/bs'
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { BsArrowRight } from 'react-icons/bs'
-import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 
 const LilyListCalculator: NextPage = () => {
+  const theme = useContext(ThemeContext)
   const [lotusCount, setLotusCount] = useState<number>(0)
 
   return (
@@ -31,7 +33,9 @@ const LilyListCalculator: NextPage = () => {
                 </h1>
 
                 <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-                  <div className="relative w-full px-8 pt-12 pb-16 text-center rounded-md bg-lily-red text-lily-black">
+                  <div
+                    className="relative w-full px-8 pt-12 pb-16 text-center rounded-md text-lily-black"
+                    style={{ background: theme.primaryColor }}>
                     <h2 className="text-2xl">Lotuses</h2>
 
                     <div className="flex items-center justify-center gap-4 mt-8">
@@ -78,8 +82,11 @@ const LilyListCalculator: NextPage = () => {
                       Nice try! However, there are only 4,000 Lotuses.
                     </p>
                   </div>
-                  <BsArrowRight className="text-5xl text-white" />
-                  <div className="w-full px-8 pt-12 pb-16 text-center rounded-md bg-lily-red text-lily-black">
+                  <BsArrowRight className="hidden text-5xl text-white md:block" />
+                  <BsArrowDown className="text-2xl text-white md:hidden" />
+                  <div
+                    className="w-full px-8 pt-12 pb-16 text-center rounded-md text-lily-black"
+                    style={{ background: theme.primaryColor }}>
                     <h2 className="text-2xl">LILY List</h2>
 
                     <div className="flex items-center justify-center gap-4 mt-8">
@@ -89,6 +96,35 @@ const LilyListCalculator: NextPage = () => {
                     </div>
                   </div>
                 </div>
+
+                <a
+                  href="https://magiceden.io/marketplace/lotus_gang_nft"
+                  target="_blank"
+                  className="mt-12 mx-auto flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] transition duration-1000 hover:rotate-[360deg]"
+                  style={{
+                    backgroundColor: theme.primaryColor,
+                  }}>
+                  Buy Now
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5.46702 14.583L14.3059 5.74412"
+                      stroke="#222222"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M14.3059 14.0762V5.74284H5.97257"
+                      stroke="#222222"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
             <Footer />
