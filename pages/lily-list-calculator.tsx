@@ -12,6 +12,7 @@ import Footer from '../components/Footer'
 const LilyListCalculator: NextPage = () => {
   const theme = useContext(ThemeContext)
   const [lotusCount, setLotusCount] = useState<number>(0)
+  const lotusLimit = 10
 
   return (
     <>
@@ -55,11 +56,11 @@ const LilyListCalculator: NextPage = () => {
                         <AiOutlineMinus />
                       </button>
                       <span className="px-12 py-4 bg-white rounded-full">
-                        {lotusCount}
+                        <>{new Intl.NumberFormat('en-US').format(lotusCount)}</>
                       </span>
                       <button
                         onClick={() => {
-                          if (lotusCount >= 10) {
+                          if (lotusCount >= lotusLimit) {
                             return
                           }
 
@@ -67,7 +68,7 @@ const LilyListCalculator: NextPage = () => {
                         }}
                         className={clsx(
                           'p-4 transition bg-white rounded-full hover:scale-110',
-                          lotusCount >= 10 &&
+                          lotusCount >= lotusLimit &&
                             'opacity-50 cursor-default hover:scale-100'
                         )}>
                         <AiOutlinePlus />
@@ -77,7 +78,7 @@ const LilyListCalculator: NextPage = () => {
                     <p
                       className={clsx(
                         'absolute w-full text-sm text-center -translate-x-1/2 text-lily-black bottom-6 left-1/2 opacity-0 transition',
-                        lotusCount >= 10 && 'opacity-100'
+                        lotusCount >= lotusLimit && 'opacity-100'
                       )}>
                       Nice try! However, there are only 4,000 Lotuses.
                     </p>
@@ -91,7 +92,7 @@ const LilyListCalculator: NextPage = () => {
 
                     <div className="flex items-center justify-center gap-4 mt-8">
                       <span className="px-12 py-4 bg-white rounded-full">
-                        {lotusCount}
+                        {new Intl.NumberFormat('en-US').format(lotusCount)}
                       </span>
                     </div>
                   </div>
