@@ -464,12 +464,12 @@ const VisionNew = () => {
                   Vision
                 </Button>
                 <Button
-                  type="pill-ouline"
+                  type="pill-outline"
                   className="!text-white !border-white !cursor-default">
                   Values
                 </Button>
                 <Button
-                  type="pill-ouline"
+                  type="pill-outline"
                   href="/"
                   className="!text-white !border-white !bg-transparent !ml-auto pointer-events-none !rounded-full !px-4"
                   onMouseOver={(e) => {
@@ -515,7 +515,7 @@ const VisionNew = () => {
               className="absolute w-full mx-auto transition duration-500 -translate-x-1/2 opacity-0 pointer-events-none top-10 max-w-7xl left-1/2">
               <div className="absolute left-0 flex w-full gap-4 px-4 xl:px-0 xl:gap-6">
                 <Button
-                  type="pill-ouline"
+                  type="pill-outline"
                   className="!text-neutral-800 !border-neutral-800 !cursor-default !bg-white">
                   Vision
                 </Button>
@@ -526,7 +526,7 @@ const VisionNew = () => {
                   Values
                 </Button>
                 <Button
-                  type="pill-ouline"
+                  type="pill-outline"
                   href="/"
                   className="!text-neutral-800 !border-neutral-800 !bg-transparent !ml-auto pointer-events-none !rounded-full !px-4"
                   onMouseOver={(e) => {
