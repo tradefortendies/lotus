@@ -14,7 +14,7 @@ type Props = {
   onClick?: () => void
   onMouseOver?: (e: any) => void
   onMouseOut?: (e: any) => void
-  type?: 'pill' | 'pill-ouline' | 'transparent'
+  type?: 'pill' | 'pill-outline' | 'transparent'
   arrow?: boolean
   size?: 'lg' | 'sm'
   underlineSpeed?: number
@@ -76,9 +76,13 @@ function Button({
   if (type === 'transparent') {
     btnClassNames += `font-mono text-base uppercase text-neutral-900 py-3 `
   } else {
-    if (type === 'pill-ouline') {
+    if (type === 'pill-outline') {
       btnClassNames +=
-        'font-sans rounded-full bg-transparent border border-black hover:bg-neutral-800 text-neutral-800 hover:text-white '
+        'font-sans rounded-full bg-transparent border border-black text-neutral-800 '
+      style = {
+        color: theme.primaryColor,
+        borderColor: theme.primaryColor,
+      }
     } else {
       btnClassNames += 'font-sans rounded-full border text-neutral-900 '
       style = {
