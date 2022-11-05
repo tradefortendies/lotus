@@ -309,6 +309,14 @@ const Home: NextPage = () => {
                       <Button
                         arrow={true}
                         type="transparent"
+                        href="/quantum-calculator"
+                        underlineSpeed={210}
+                        className="py-2">
+                        Quantum Calculator
+                      </Button>
+                      <Button
+                        arrow={true}
+                        type="transparent"
                         href="https://magiceden.io/marketplace/lotus_gang_nft"
                         target="_blank"
                         rel="noreferrer"
@@ -335,6 +343,14 @@ const Home: NextPage = () => {
                           width={220}
                           underlineSpeed={150}>
                           How can I mint LILY?
+                        </Button>
+                        <Button
+                          arrow={true}
+                          type="transparent"
+                          href="/quantum-calculator"
+                          width={220}
+                          underlineSpeed={150}>
+                          Quantum Calculator
                         </Button>
                         <Button
                           arrow={true}
