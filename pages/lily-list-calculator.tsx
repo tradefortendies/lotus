@@ -8,6 +8,7 @@ import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Button from '../components/Button'
 
 const LilyListCalculator: NextPage = () => {
   const theme = useContext(ThemeContext)
@@ -31,12 +32,20 @@ const LilyListCalculator: NextPage = () => {
         <div className="w-screen min-h-screen text-neutral-900 bg-lily-blue">
           <div className="relative">
             <div className="relative w-full text-white bg-neutral-900 pb-28">
-              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto text-center lg:px-8 lg:pt-56 max-w-7xl">
-                <h1 className="w-full mb-20 font-mono text-6xl lg:text-7xl">
-                  <strong>LILY</strong> <strong>List</strong> Calculator
-                </h1>
+              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
+                <div
+                  id="masthead"
+                  className="flex flex-col justify-between gap-4 lg:items-center lg:flex-row">
+                  <h1 className="w-full font-mono text-6xl lg:text-7xl">
+                    LILY List?
+                  </h1>
+                  <h2 className="font-sans text-xl lg:text-[29px] leading-normal">
+                    We developed a zero-knowledge quantum blockchain calculator
+                    to help answer the question of how to get LILY Listed.
+                  </h2>
+                </div>
 
-                <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+                <div className="flex flex-col items-center justify-between gap-8 mt-16 text-center md:flex-row">
                   <div
                     className="relative w-full px-8 pt-12 pb-16 text-center rounded-md text-lily-black"
                     style={{ background: theme.primaryColor }}>
@@ -101,35 +110,22 @@ const LilyListCalculator: NextPage = () => {
                   </div>
                 </div>
 
-                <a
+                <Button
                   href="https://magiceden.io/marketplace/lotus_gang_nft"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-12 mx-auto flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] transition duration-1000 hover:rotate-[360deg]"
-                  style={{
-                    backgroundColor: theme.primaryColor,
+                  className="mt-8 mr-auto"
+                  type="pill-outline"
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = theme.primaryColor
+                    e.target.style.color = '#303030'
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'transparent'
+                    e.target.style.color = theme.primaryColor
                   }}>
                   Buy Now
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M5.46702 14.583L14.3059 5.74412"
-                      stroke="#222222"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M14.3059 14.0762V5.74284H5.97257"
-                      stroke="#222222"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
+                </Button>
               </div>
             </div>
             <Footer />
