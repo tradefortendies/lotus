@@ -10,7 +10,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Button from '../components/Button'
 
-const LilyListCalculator: NextPage = () => {
+const QuantumCalculator: NextPage = () => {
   const theme = useContext(ThemeContext)
   const [lotusCount, setLotusCount] = useState<number>(1000)
   const lotusLimits = {
@@ -136,4 +136,4 @@ const LilyListCalculator: NextPage = () => {
   )
 }
 
-export default LilyListCalculator
+export default QuantumCalculator
