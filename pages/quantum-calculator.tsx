@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
-import { useState, useContext } from 'react'
+import { useState, useContext, Fragment } from 'react'
 import { gsap } from 'gsap'
 import clsx from 'clsx'
 import { BsArrowRight, BsArrowDown } from 'react-icons/bs'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import { Dialog, Transition } from '@headlessui/react'
+import Confetti from 'react-confetti'
 import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
@@ -13,6 +15,7 @@ import Button from '../components/Button'
 const QuantumCalculator: NextPage = () => {
   const theme = useContext(ThemeContext)
   const [lotusCount, setLotusCount] = useState<number>(1000)
+  const [wlModal, setWlModal] = useState<boolean>(false)
   const lotusLimits = {
     upper: 1010,
     lower: 1000,
@@ -74,6 +77,8 @@ const QuantumCalculator: NextPage = () => {
                         onClick={() => {
                           if (lotusCount >= lotusLimits.upper) {
                             return
+                          } else if (lotusCount >= lotusLimits.upper - 1) {
+                            setWlModal(true)
                           }
 
                           setLotusCount(lotusCount + 1)
@@ -131,6 +136,70 @@ const QuantumCalculator: NextPage = () => {
             <Footer />
           </div>
         </div>
+
+        {wlModal && <Confetti />}
+
+        <Transition appear show={wlModal} as={Fragment}>
+          <Dialog
+            as="div"
+            className="relative z-10"
+            onClose={() => setWlModal(false)}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0">
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex items-center justify-center min-h-full p-4 text-center">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95">
+                  <Dialog.Panel className="w-full max-w-xl px-16 py-12 overflow-hidden align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-2xl font-medium leading-6 text-gray-900">
+                      Congratulations!
+                    </Dialog.Title>
+                    <div className="mt-6">
+                      <p className="text-sm text-gray-500">
+                        You hacked the quantum calculator and for that we are
+                        rewarding you with a whitelist code. Claim it before
+                        someone else does.
+                      </p>
+
+                      <p className="my-6 text-xl font-bold uppercase">
+                        jkjfhai928hk
+                      </p>
+                    </div>
+
+                    <div className="mt-4">
+                      <a
+                        href="https://discord.gg/vs8VvHb35k"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex justify-center px-4 py-2 text-sm font-medium border border-transparent rounded-md text-lily-black focus:outline-none"
+                        style={{ background: theme.primaryColor }}
+                        onClick={() => setWlModal(false)}>
+                        Claim on Discord
+                      </a>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
       </>
     </>
   )
