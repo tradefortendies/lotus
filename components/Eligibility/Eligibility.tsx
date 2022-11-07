@@ -1,5 +1,6 @@
-import { useEffect, useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import clsx from 'clsx'
+import { gsap } from 'gsap'
 import { formatAddress } from '../../lib/helpers'
 import { ThemeContext } from '../Theme'
 import Button, { arrowIcon } from '../Button'
@@ -14,13 +15,6 @@ function Eligibility() {
   const [checkingEligibility, setCheckingEligibility] = useState(false)
 
   const checkNfts = async () => {
-    if (!publicKey) {
-      setCalculatedWhitelist(false)
-      setMintNumber(0)
-      setEligible(false)
-      return
-    }
-
     setConnectedAtLeastOnce(true)
     setCheckingEligibility(true)
 
@@ -35,6 +29,24 @@ function Eligibility() {
     setEligible(eligibilityData.eligible)
     setCheckingEligibility(false)
   }
+
+  const reset = () => {
+    setCalculatedWhitelist(false)
+    setMintNumber(0)
+    setEligible(false)
+  }
+
+  setTimeout(() => {
+    gsap.to('#eligibility-content div', {
+      scrollTrigger: {
+        trigger: '#eligibility',
+        start: 'top 130%',
+        toggleActions: 'restart none none reverse',
+      },
+      opacity: 1,
+      stagger: 0.25,
+    })
+  }, 1000)
 
   return (
     <div
@@ -75,8 +87,9 @@ function Eligibility() {
                 >
                   <input
                     type="text"
+                    required
                     className="w-full px-5 py-2 my-4 rounded-xl text-lily-black"
-                    placeholder="Wallet address..."
+                    placeholder="Enter wallet address..."
                     onChange={(e) => setPublicKey(e.target.value)}
                   />
                   <Button className="mr-auto" size="sm">
@@ -111,9 +124,18 @@ function Eligibility() {
                       </span>
                       .
                     </p>
-                    {/* <WalletMultiButton className="!bg-transparent !border !border-solid !rounded-full !font-normal !text-xl !font-sans !text-white !mx-auto lg:!ml-0 lg:!mr-auto !gap-1 !px-7 !py-6 !transition">
-                      {formatAddress(String(publicKey?.toString()))}
-                    </WalletMultiButton> */}
+                    <div>
+                      <p className="mt-8 mb-4">
+                        <strong>Wallet</strong>: {formatAddress(publicKey)}
+                      </p>
+                      <Button
+                        className="mr-auto"
+                        size="sm"
+                        onClick={() => reset()}
+                      >
+                        <>Change wallet {arrowIcon}</>
+                      </Button>
+                    </div>
                   </>
                 )}
                 {!eligible && (
@@ -154,9 +176,18 @@ function Eligibility() {
                     <p className="font-sans text-xl lg:text-3xl">
                       Or join the public mint.
                     </p>
-                    {/* <WalletMultiButton className="!bg-transparent !border !border-solid !rounded-full !font-normal !text-xl !font-sans !text-white !mx-auto lg:!ml-0 lg:!mr-auto !gap-1 !px-7 !py-6 !transition">
-                      {formatAddress(String(publicKey?.toString()))}
-                    </WalletMultiButton> */}
+                    <div>
+                      <p className="mt-8 mb-4">
+                        <strong>Wallet</strong>: {formatAddress(publicKey)}
+                      </p>
+                      <Button
+                        className="mr-auto"
+                        size="sm"
+                        onClick={() => reset()}
+                      >
+                        <>Change wallet {arrowIcon}</>
+                      </Button>
+                    </div>
                   </>
                 )}
               </div>
