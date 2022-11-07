@@ -76,8 +76,8 @@ function Eligibility() {
                   !connectedAtLeastOnce && 'lg:opacity-0'
                 )}
               >
-                <p className="mx-auto lg:mx-0 max-w-[18rem] mb-4 font-sans text-xl lg:text-2xl">
-                  Connect your wallet to see if you can mint.
+                <p className="mx-auto lg:mx-0 max-w-[26rem] mb-4 font-sans text-xl lg:text-3xl">
+                  Enter your wallet address to see if you can mint.
                 </p>
                 <form
                   onSubmit={(e) => {
@@ -88,7 +88,7 @@ function Eligibility() {
                   <input
                     type="text"
                     required
-                    className="w-full px-5 py-2 my-4 rounded-xl text-lily-black"
+                    className="w-full px-5 py-2 my-4 text-lg rounded-xl text-lily-black"
                     placeholder="Enter wallet address..."
                     onChange={(e) => setPublicKey(e.target.value)}
                   />
