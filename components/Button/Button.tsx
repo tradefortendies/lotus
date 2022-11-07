@@ -31,7 +31,8 @@ export const arrowIcon = (
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M6.56033 6.5L17.167 17.1067"
       stroke="currentColor"
@@ -114,7 +115,8 @@ function Button({
             opacity: underlineReverse
               ? Number(!isHovering)
               : Number(isHovering),
-          }}>
+          }}
+        >
           <div className="px-4 py-[2px] bg-[#7FFFB9]"></div>
           <div className="px-4 py-[2px] bg-[#FFD462]"></div>
           <div className="px-4 py-[2px] bg-[#FF9596]"></div>
@@ -157,7 +159,8 @@ function Button({
             } else {
               setIsHovering(false)
             }
-          }}>
+          }}
+        >
           {type === 'transparent' ? dashedHoverState : children}
         </a>
       </Link>
@@ -188,7 +191,8 @@ function Button({
           } else {
             setIsHovering(false)
           }
-        }}>
+        }}
+      >
         {type === 'transparent' ? dashedHoverState : children}
       </a>
     )
@@ -203,11 +207,12 @@ function Button({
         }
       }}
       onMouseOut={(e) => {
-        if (onMouseOver) {
-          onMouseOver(e)
+        if (onMouseOut) {
+          onMouseOut(e)
         }
       }}
-      title={title}>
+      title={title}
+    >
       {children}
       {arrow && arrowIcon}
     </button>
