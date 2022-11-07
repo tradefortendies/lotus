@@ -14,11 +14,11 @@ import Button from '../components/Button'
 
 const QuantumCalculator: NextPage = () => {
   const theme = useContext(ThemeContext)
-  const [lotusCount, setLotusCount] = useState<number>(1000)
+  const [lotusCount, setLotusCount] = useState<number>(0)
   const [wlModal, setWlModal] = useState<boolean>(false)
   const lotusLimits = {
-    upper: 1010,
-    lower: 1000,
+    upper: 4000,
+    lower: 0,
   }
 
   return (
