@@ -1,14 +1,13 @@
-import { useEffect, useState, useContext } from 'react'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import { useState, useContext } from 'react'
 import clsx from 'clsx'
+import { gsap } from 'gsap'
 import { formatAddress } from '../../lib/helpers'
 import { ThemeContext } from '../Theme'
 import Button, { arrowIcon } from '../Button'
 
 function Eligibility() {
-  const { publicKey } = useWallet()
   const theme = useContext(ThemeContext)
+  const [publicKey, setPublicKey] = useState('')
   const [calculatedWhitelist, setCalculatedWhitelist] = useState(false)
   const [eligible, setEligible] = useState(false)
   const [mintNumber, setMintNumber] = useState(0)
@@ -16,13 +15,7 @@ function Eligibility() {
   const [checkingEligibility, setCheckingEligibility] = useState(false)
 
   const checkNfts = async () => {
-    if (!publicKey) {
-      setCalculatedWhitelist(false)
-      setMintNumber(0)
-      setEligible(false)
-      return
-    }
-
+    setConnectedAtLeastOnce(true)
     setCheckingEligibility(true)
 
     const eligibilityReq = await fetch(
@@ -37,26 +30,42 @@ function Eligibility() {
     setCheckingEligibility(false)
   }
 
-  useEffect(() => {
-    setConnectedAtLeastOnce(true)
-    checkNfts()
-  }, [publicKey])
+  const reset = () => {
+    setCalculatedWhitelist(false)
+    setMintNumber(0)
+    setEligible(false)
+  }
+
+  setTimeout(() => {
+    gsap.to('#eligibility-content div', {
+      scrollTrigger: {
+        trigger: '#eligibility',
+        start: 'top 130%',
+        toggleActions: 'restart none none reverse',
+      },
+      opacity: 1,
+      stagger: 0.25,
+    })
+  }, 1000)
 
   return (
     <div
       id="eligibility"
-      className="pt-20 text-white pb-28 bg-lily-black lg:py-0">
+      className="pt-20 text-white pb-28 bg-lily-black lg:py-0"
+    >
       <div className="relative flex flex-col w-full px-8 mx-auto text-center lg:min-h-screen lg:justify-center lg:text-left max-w-7xl">
         <div
           className="w-full grid-cols-6 gap-4 lg:grid"
-          id="eligibility-content">
+          id="eligibility-content"
+        >
           {!calculatedWhitelist && (
             <>
               <div
                 className={clsx(
                   'col-span-4',
                   !connectedAtLeastOnce && 'lg:opacity-0'
-                )}>
+                )}
+              >
                 <h2 className="text-5xl md:text-7xl lg:text-[90px] font-mono leading-none">
                   Check LILY Eligibility
                 </h2>
@@ -65,49 +74,33 @@ function Eligibility() {
                 className={clsx(
                   'flex flex-col justify-center col-span-2 mt-16 lg:mt-0',
                   !connectedAtLeastOnce && 'lg:opacity-0'
-                )}>
+                )}
+              >
                 <p className="mx-auto lg:mx-0 max-w-[18rem] mb-4 font-sans text-xl lg:text-2xl">
                   Connect your wallet to see if you can mint.
                 </p>
-                <div
-                  className="flex mx-auto mt-2 border rounded-full lg:mt-0 lg:ml-0 lg:mr-auto grow-0"
-                  style={{
-                    borderColor: theme.primaryColor,
-                  }}>
-                  <div
-                    onMouseOver={(e) => {
-                      const el: HTMLDivElement =
-                        e.currentTarget as HTMLDivElement
-                      const btn = el.querySelector('button')
-
-                      if (!btn) {
-                        return
-                      }
-
-                      btn.classList.remove('!bg-transparent')
-                      btn.style.backgroundColor = theme.primaryColor
-                    }}
-                    onMouseOut={(e) => {
-                      const el: HTMLDivElement =
-                        e.currentTarget as HTMLDivElement
-                      const btn = el.querySelector('button')
-
-                      if (!btn) {
-                        return
-                      }
-
-                      btn.classList.add('!bg-transparent')
-                      btn.removeAttribute('style')
-                    }}>
-                    <WalletMultiButton className="!bg-transparent !rounded-full !font-normal !text-xl !font-sans !text-white !mr-auto !gap-1 !px-7 !py-6 !transition">
-                      {checkingEligibility ? (
-                        'Checking...'
-                      ) : (
-                        <>Connect {arrowIcon}</>
-                      )}
-                    </WalletMultiButton>
-                  </div>
-                </div>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    checkNfts()
+                  }}
+                >
+                  <input
+                    type="text"
+                    required
+                    className="w-full px-5 py-2 my-4 rounded-xl text-lily-black"
+                    placeholder="Enter wallet address..."
+                    onChange={(e) => setPublicKey(e.target.value)}
+                  />
+                  <Button className="mr-auto" size="sm">
+                    <>
+                      {checkingEligibility
+                        ? 'Checking...'
+                        : 'Check Eligibility'}{' '}
+                      {arrowIcon}
+                    </>
+                  </Button>
+                </form>
               </div>
             </>
           )}
@@ -117,7 +110,8 @@ function Eligibility() {
                 className={clsx(
                   'flex flex-col justify-center col-span-3 space-y-6',
                   !connectedAtLeastOnce && 'lg:opacity-0'
-                )}>
+                )}
+              >
                 {eligible && (
                   <>
                     <h2 className="font-sans text-5xl lg:text-7xl">
@@ -130,9 +124,18 @@ function Eligibility() {
                       </span>
                       .
                     </p>
-                    <WalletMultiButton className="!bg-transparent !border !border-solid !rounded-full !font-normal !text-xl !font-sans !text-white !mx-auto lg:!ml-0 lg:!mr-auto !gap-1 !px-7 !py-6 !transition">
-                      {formatAddress(String(publicKey?.toString()))}
-                    </WalletMultiButton>
+                    <div>
+                      <p className="mt-8 mb-4">
+                        <strong>Wallet</strong>: {formatAddress(publicKey)}
+                      </p>
+                      <Button
+                        className="mr-auto"
+                        size="sm"
+                        onClick={() => reset()}
+                      >
+                        <>Change wallet {arrowIcon}</>
+                      </Button>
+                    </div>
                   </>
                 )}
                 {!eligible && (
@@ -152,7 +155,8 @@ function Eligibility() {
                         viewBox="0 0 32 22"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="inline ml-2">
+                        className="inline ml-2"
+                      >
                         <path
                           d="M30.4675 11.0049H1.53418"
                           stroke="white"
@@ -172,9 +176,18 @@ function Eligibility() {
                     <p className="font-sans text-xl lg:text-3xl">
                       Or join the public mint.
                     </p>
-                    <WalletMultiButton className="!bg-transparent !border !border-solid !rounded-full !font-normal !text-xl !font-sans !text-white !mx-auto lg:!ml-0 lg:!mr-auto !gap-1 !px-7 !py-6 !transition">
-                      {formatAddress(String(publicKey?.toString()))}
-                    </WalletMultiButton>
+                    <div>
+                      <p className="mt-8 mb-4">
+                        <strong>Wallet</strong>: {formatAddress(publicKey)}
+                      </p>
+                      <Button
+                        className="mr-auto"
+                        size="sm"
+                        onClick={() => reset()}
+                      >
+                        <>Change wallet {arrowIcon}</>
+                      </Button>
+                    </div>
                   </>
                 )}
               </div>
@@ -182,12 +195,14 @@ function Eligibility() {
                 className={clsx(
                   'flex flex-col justify-center col-span-3 space-y-6 mt-16 lg:mt-0',
                   !connectedAtLeastOnce && 'lg:opacity-0'
-                )}>
+                )}
+              >
                 {eligible && (
                   <>
                     <div
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}>
+                      style={{ backgroundColor: theme.primaryColor }}
+                    >
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">
                           Mint for
@@ -206,7 +221,8 @@ function Eligibility() {
                     </div>
                     <div
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}>
+                      style={{ backgroundColor: theme.primaryColor }}
+                    >
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">
                           Mint for
@@ -231,7 +247,8 @@ function Eligibility() {
                   <>
                     <div
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}>
+                      style={{ backgroundColor: theme.primaryColor }}
+                    >
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">Buy a Lotus</h3>
                         <p className="pr-10 font-sans">
@@ -242,14 +259,16 @@ function Eligibility() {
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
                           target="_blank"
                           rel="noreferrer"
-                          className="!bg-white !text-neutral-800">
+                          className="!bg-white !text-neutral-800"
+                        >
                           Buy on Magic Eden
                         </Button>
                       </div>
                     </div>
                     <div
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}>
+                      style={{ backgroundColor: theme.primaryColor }}
+                    >
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">Buy a Rap Pack</h3>
                         <p className="pr-10 font-sans">
@@ -261,14 +280,16 @@ function Eligibility() {
                           href="https://exchange.art/series/The%20Rap%20Pack/nfts"
                           target="_blank"
                           rel="noreferrer"
-                          className="!bg-white !text-neutral-800">
+                          className="!bg-white !text-neutral-800"
+                        >
                           Buy on Exchange Art
                         </Button>
                       </div>
                     </div>
                     <div
                       className="flex gap-6 p-6 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}>
+                      style={{ backgroundColor: theme.primaryColor }}
+                    >
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">
                           Join Us On Discord
@@ -281,7 +302,8 @@ function Eligibility() {
                           href="https://discord.gg/vs8VvHb35k"
                           target="_blank"
                           rel="noreferrer"
-                          className="!bg-white !text-neutral-800">
+                          className="!bg-white !text-neutral-800"
+                        >
                           Join the Gang
                         </Button>
                       </div>

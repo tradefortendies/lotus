@@ -16,8 +16,7 @@ module.exports = {
         'lily-yellow': '#FFD462',
         'lily-tan': '#E9E1D1',
         'lily-black': '#303030',
-        'lily-success': '#7FFFB9',
-        'lily-error': '#FF9596',
+        'lily-red': '#FF9596',
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite',

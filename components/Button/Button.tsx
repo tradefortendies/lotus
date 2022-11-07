@@ -14,7 +14,7 @@ type Props = {
   onClick?: () => void
   onMouseOver?: (e: any) => void
   onMouseOut?: (e: any) => void
-  type?: 'pill' | 'pill-ouline' | 'transparent'
+  type?: 'pill' | 'pill-outline' | 'transparent'
   arrow?: boolean
   size?: 'lg' | 'sm'
   underlineSpeed?: number
@@ -31,7 +31,8 @@ export const arrowIcon = (
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M6.56033 6.5L17.167 17.1067"
       stroke="currentColor"
@@ -76,9 +77,13 @@ function Button({
   if (type === 'transparent') {
     btnClassNames += `font-mono text-base uppercase text-neutral-900 py-3 `
   } else {
-    if (type === 'pill-ouline') {
+    if (type === 'pill-outline') {
       btnClassNames +=
-        'font-sans rounded-full bg-transparent border border-black hover:bg-neutral-800 text-neutral-800 hover:text-white '
+        'font-sans rounded-full bg-transparent border border-black text-neutral-800 '
+      style = {
+        color: theme.primaryColor,
+        borderColor: theme.primaryColor,
+      }
     } else {
       btnClassNames += 'font-sans rounded-full border text-neutral-900 '
       style = {
@@ -110,7 +115,8 @@ function Button({
             opacity: underlineReverse
               ? Number(!isHovering)
               : Number(isHovering),
-          }}>
+          }}
+        >
           <div className="px-4 py-[2px] bg-[#7FFFB9]"></div>
           <div className="px-4 py-[2px] bg-[#FFD462]"></div>
           <div className="px-4 py-[2px] bg-[#FF9596]"></div>
@@ -153,7 +159,8 @@ function Button({
             } else {
               setIsHovering(false)
             }
-          }}>
+          }}
+        >
           {type === 'transparent' ? dashedHoverState : children}
         </a>
       </Link>
@@ -184,7 +191,8 @@ function Button({
           } else {
             setIsHovering(false)
           }
-        }}>
+        }}
+      >
         {type === 'transparent' ? dashedHoverState : children}
       </a>
     )
@@ -199,11 +207,12 @@ function Button({
         }
       }}
       onMouseOut={(e) => {
-        if (onMouseOver) {
-          onMouseOver(e)
+        if (onMouseOut) {
+          onMouseOut(e)
         }
       }}
-      title={title}>
+      title={title}
+    >
       {children}
       {arrow && arrowIcon}
     </button>
