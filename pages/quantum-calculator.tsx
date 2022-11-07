@@ -38,7 +38,8 @@ const QuantumCalculator: NextPage = () => {
               <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
                 <div
                   id="masthead"
-                  className="flex flex-col justify-between gap-4 lg:items-center lg:flex-row">
+                  className="flex flex-col justify-between gap-4 lg:gap-32 lg:items-center lg:flex-row"
+                >
                   <h1 className="w-full font-mono text-6xl lg:text-7xl">
                     LILY List?
                   </h1>
@@ -51,7 +52,8 @@ const QuantumCalculator: NextPage = () => {
                 <div className="flex flex-col items-center justify-between gap-8 mt-16 text-center md:flex-row">
                   <div
                     className="relative w-full px-8 pt-12 pb-16 text-center rounded-md text-lily-black"
-                    style={{ background: theme.primaryColor }}>
+                    style={{ background: theme.primaryColor }}
+                  >
                     <h2 className="text-2xl">Lotuses</h2>
 
                     <div className="flex items-center justify-center gap-4 mt-8">
@@ -67,7 +69,8 @@ const QuantumCalculator: NextPage = () => {
                           'p-4 transition bg-white rounded-full hover:scale-110',
                           lotusCount <= lotusLimits.lower &&
                             'opacity-50 cursor-default hover:scale-100'
-                        )}>
+                        )}
+                      >
                         <AiOutlineMinus />
                       </button>
                       <span className="px-12 py-4 bg-white rounded-full">
@@ -87,7 +90,8 @@ const QuantumCalculator: NextPage = () => {
                           'p-4 transition bg-white rounded-full hover:scale-110',
                           lotusCount >= lotusLimits.upper &&
                             'opacity-50 cursor-default hover:scale-100'
-                        )}>
+                        )}
+                      >
                         <AiOutlinePlus />
                       </button>
                     </div>
@@ -96,7 +100,8 @@ const QuantumCalculator: NextPage = () => {
                       className={clsx(
                         'absolute w-full text-sm text-center -translate-x-1/2 text-lily-black bottom-6 left-1/2 opacity-0 transition',
                         lotusCount >= lotusLimits.upper && 'opacity-100'
-                      )}>
+                      )}
+                    >
                       Nice try! However, there are only 4,000 Lotuses.
                     </p>
                   </div>
@@ -104,7 +109,8 @@ const QuantumCalculator: NextPage = () => {
                   <BsArrowDown className="text-2xl text-white md:hidden" />
                   <div
                     className="w-full px-8 pt-12 pb-16 text-center rounded-md text-lily-black"
-                    style={{ background: theme.primaryColor }}>
+                    style={{ background: theme.primaryColor }}
+                  >
                     <h2 className="text-2xl">LILY List</h2>
 
                     <div className="flex items-center justify-center gap-4 mt-8">
@@ -128,7 +134,8 @@ const QuantumCalculator: NextPage = () => {
                   onMouseOut={(e) => {
                     e.target.style.backgroundColor = 'transparent'
                     e.target.style.color = theme.primaryColor
-                  }}>
+                  }}
+                >
                   Buy Now
                 </Button>
               </div>
@@ -143,7 +150,8 @@ const QuantumCalculator: NextPage = () => {
           <Dialog
             as="div"
             className="relative z-10"
-            onClose={() => setWlModal(false)}>
+            onClose={() => setWlModal(false)}
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -151,7 +159,8 @@ const QuantumCalculator: NextPage = () => {
               enterTo="opacity-100"
               leave="ease-in duration-200"
               leaveFrom="opacity-100"
-              leaveTo="opacity-0">
+              leaveTo="opacity-0"
+            >
               <div className="fixed inset-0 bg-black bg-opacity-25" />
             </Transition.Child>
 
@@ -164,22 +173,25 @@ const QuantumCalculator: NextPage = () => {
                   enterTo="opacity-100 scale-100"
                   leave="ease-in duration-200"
                   leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95">
-                  <Dialog.Panel className="w-full max-w-xl px-16 py-12 overflow-hidden align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-xl px-6 py-12 overflow-hidden align-middle transition-all transform bg-white shadow-xl lg:px-20 rounded-2xl">
                     <Dialog.Title
                       as="h3"
-                      className="text-2xl font-medium leading-6 text-gray-900">
+                      className="text-2xl font-medium leading-6 text-gray-900"
+                    >
                       Congratulations!
                     </Dialog.Title>
                     <div className="mt-6">
                       <p className="text-sm text-gray-500">
                         You hacked the quantum calculator and for that we are
-                        rewarding you with a whitelist code. Claim it before
-                        someone else does.
+                        rewarding you with a LILY list code. Claim it our
+                        #💌|wl-code-redemption discord channel before someone
+                        else does.
                       </p>
 
                       <p className="my-6 text-xl font-bold uppercase">
-                        jkjfhai928hk
+                        CDXGL9GD
                       </p>
                     </div>
 
@@ -190,7 +202,8 @@ const QuantumCalculator: NextPage = () => {
                         rel="noreferrer"
                         className="inline-flex justify-center px-4 py-2 text-sm font-medium border border-transparent rounded-md text-lily-black focus:outline-none"
                         style={{ background: theme.primaryColor }}
-                        onClick={() => setWlModal(false)}>
+                        onClick={() => setWlModal(false)}
+                      >
                         Claim on Discord
                       </a>
                     </div>
