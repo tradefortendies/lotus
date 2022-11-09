@@ -94,7 +94,7 @@ const VibeoMeter: NextPage = () => {
 
                 <div
                   id="gauge"
-                  className="mx-16 transition duration-500 opacity-0 mt-28"
+                  className="mt-16 transition duration-500 opacity-0 lg:mt-24 lg:mx-28"
                 >
                   <GaugeChart
                     id="vibeometer"
