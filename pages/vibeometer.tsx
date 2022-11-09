@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { useEffect, useState, useContext } from 'react'
-import { useRouter } from 'next/router'
 import GaugeChart from 'react-gauge-chart'
 import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
@@ -10,9 +9,8 @@ import Button from '../components/Button'
 
 const VibeoMeter: NextPage = () => {
   const theme = useContext(ThemeContext)
-  const router = useRouter()
   const [percent, setPercent] = useState(0)
-  const finalPercent = router.query.num ? Number(router.query.num) : 0.8
+  const finalPercent = 0.245
 
   const calculate = () => {
     if (!percent) {
