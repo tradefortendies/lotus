@@ -87,3 +87,7 @@ body.scrollbar::-webkit-scrollbar-thumb {
 #header.slide.text-white.scroll-up {
   background: rgba(17, 17, 17, 0.9);
 }
+
+#gauge .text-group text {
+  transform: scale(0.7);
+}
