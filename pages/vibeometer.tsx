@@ -12,7 +12,7 @@ const VibeoMeter: NextPage = () => {
   const theme = useContext(ThemeContext)
   const router = useRouter()
   const [percent, setPercent] = useState(0)
-  const finalPercent = router.query.num ? Number(router.query.num) : 0.8
+  const finalPercent = 0.245
 
   const calculate = () => {
     if (!percent) {
