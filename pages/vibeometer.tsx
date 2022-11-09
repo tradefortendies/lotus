@@ -14,6 +14,18 @@ const VibeoMeter: NextPage = () => {
   const [percent, setPercent] = useState(0)
   const finalPercent = router.query.num ? Number(router.query.num) : 0.8
 
+  const calculate = () => {
+    if (!percent) {
+      setPercent(finalPercent)
+      return
+    }
+
+    setPercent(0)
+    setTimeout(() => {
+      setPercent(finalPercent)
+    }, 1000)
+  }
+
   useEffect(() => {
     setTimeout(() => {
       const gauge = document.querySelector('#gauge') as HTMLDivElement
@@ -22,12 +34,13 @@ const VibeoMeter: NextPage = () => {
         return
       }
 
-      const text = gauge.querySelector('.text-group') as HTMLDivElement
+      const text = gauge.querySelector('.text-group text') as HTMLDivElement
 
       if (!text) {
         return
       }
 
+      text.style.transform = 'scale(0.7)'
       gauge.style.opacity = '1'
     }, 1000)
   }, [])
@@ -58,17 +71,7 @@ const VibeoMeter: NextPage = () => {
                     <Button
                       type="pill-outline"
                       className="mt-8"
-                      onClick={() => {
-                        if (!percent) {
-                          setPercent(finalPercent)
-                          return
-                        }
-
-                        setPercent(0)
-                        setTimeout(() => {
-                          setPercent(finalPercent)
-                        }, 1000)
-                      }}
+                      onClick={() => calculate()}
                       onMouseOver={(e) => {
                         e.target.style.backgroundColor = theme.primaryColor
                         e.target.style.color = '#303030'
