@@ -20,6 +20,12 @@ const VibeoMeter: NextPage = () => {
         return
       }
 
+      const text = gauge.querySelector('.text-group') as HTMLDivElement
+
+      if (!text) {
+        return
+      }
+
       gauge.style.opacity = '1'
     }, 1000)
   }, [])
@@ -74,17 +80,17 @@ const VibeoMeter: NextPage = () => {
 
                 <div
                   id="gauge"
-                  className="mt-16 transition duration-500 opacity-0"
+                  className="mx-16 transition duration-500 opacity-0 mt-28"
                 >
                   <GaugeChart
                     id="vibeometer"
                     nrOfLevels={5}
                     colors={[
-                      '#99CAAA',
-                      '#F8D674',
-                      '#D18685',
-                      '#99B8F9',
-                      '#B8F5F7',
+                      '#7FFFB9',
+                      '#FFD462',
+                      '#FF9596',
+                      '#91B9FF',
+                      '#61FEFF',
                     ]}
                     percent={percent}
                     animDelay={0}
