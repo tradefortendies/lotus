@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useRouter } from 'next/router'
 import GaugeChart from 'react-gauge-chart'
+import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Button from '../components/Button'
 
 const VibeoMeter: NextPage = () => {
+  const theme = useContext(ThemeContext)
   const router = useRouter()
   const [percent, setPercent] = useState(0)
   const finalPercent = router.query.num ? Number(router.query.num) : 0.8
@@ -54,6 +56,8 @@ const VibeoMeter: NextPage = () => {
                       Vibeometer
                     </h1>
                     <Button
+                      type="pill-outline"
+                      className="mt-8"
                       onClick={() => {
                         if (!percent) {
                           setPercent(finalPercent)
@@ -65,7 +69,14 @@ const VibeoMeter: NextPage = () => {
                           setPercent(finalPercent)
                         }, 1000)
                       }}
-                      className="mt-8"
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = theme.primaryColor
+                        e.target.style.color = '#303030'
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = 'transparent'
+                        e.target.style.color = theme.primaryColor
+                      }}
                     >
                       Calculate
                     </Button>
