@@ -47,7 +47,7 @@ const VibeoMeter: NextPage = () => {
 
   return (
     <>
-      <Meta title="LILY List Calculator" />
+      <Meta title="Vibeometer" />
       <>
         <Header
           position="slide"
