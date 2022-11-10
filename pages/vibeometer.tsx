@@ -60,9 +60,9 @@ const VibeoMeter: NextPage = () => {
               <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
                 <div
                   id="masthead"
-                  className="flex flex-col justify-between gap-4 lg:gap-32 lg:items-center lg:flex-row"
+                  className="flex flex-col justify-between gap-4 lg:gap-32 lg:items-start lg:flex-row"
                 >
-                  <div className="flex flex-col items-start">
+                  <div>
                     <h1 className="w-full font-mono text-6xl lg:text-7xl">
                       Vibeometer
                     </h1>
@@ -92,7 +92,7 @@ const VibeoMeter: NextPage = () => {
 
                 <div
                   id="gauge"
-                  className="mt-16 transition duration-500 opacity-0 lg:mt-24 lg:mx-28"
+                  className="mt-16 transition duration-500 opacity-0 lg:mt-24 lg:mx-48"
                 >
                   <GaugeChart
                     id="vibeometer"
