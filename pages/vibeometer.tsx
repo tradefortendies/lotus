@@ -10,7 +10,7 @@ import Button from '../components/Button'
 const VibeoMeter: NextPage = () => {
   const theme = useContext(ThemeContext)
   const [percent, setPercent] = useState(0)
-  const finalPercent = 0.245
+  const finalPercent = 0.45
 
   const calculate = () => {
     if (!percent) {
