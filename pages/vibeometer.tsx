@@ -62,7 +62,7 @@ const VibeoMeter: NextPage = () => {
                   id="masthead"
                   className="flex flex-col justify-between gap-4 lg:gap-32 lg:items-center lg:flex-row"
                 >
-                  <div>
+                  <div className="flex flex-col items-start">
                     <h1 className="w-full font-mono text-6xl lg:text-7xl">
                       Vibeometer
                     </h1>
