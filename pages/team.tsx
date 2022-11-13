@@ -26,13 +26,13 @@ const teamMembers = [
     position: 'Head of Moderation',
     avatar: '/img/team/kylie.jpg',
     bio: 'Kylie is Community and Moderation Manager for several established NFT projects on Solana. With over 5 years of experience leading software development teams, Kylie seeks to bring her Web2 knowledge and expertise to Web3, and ultimately disrupt conventional processes through unconventional means.',
-    twitter: 'kyliegendernft',
+    twitter: '0xkyliegender',
   },
   {
     name: 'Chambaz',
     position: 'Head of Technology',
     avatar: '/img/team/chambaz.jpg',
-    bio: 'Chambaz is a senior engineering lead, with 15 years experience in full stack web2 development with a focus on frontend and creative technology. He has been building web3 apps and experiences across multiple chains since 2020 with a focus on the Solana ecosystem.',
+    bio: 'Chambaz is a Senior Software Engineer at Metaplex. With 15 years experience in full stack web2 development, Chambaz went full time crypto and NFTs in 2022. He has been building web3 apps and experiences across multiple chains since 2020 and now focuses predominantly on the Solana ecosystem.',
     twitter: 'chambaz',
   },
   {
@@ -87,7 +87,8 @@ const Team: NextPage = () => {
                 <div className="relative flex flex-col w-full min-h-screen px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
                   <div
                     id="masthead"
-                    className="flex flex-col justify-between gap-4 lg:items-center lg:flex-row">
+                    className="flex flex-col justify-between gap-4 lg:items-center lg:flex-row"
+                  >
                     <h1 className="w-full font-mono text-6xl opacity-0 lg:text-7xl">
                       Our team
                     </h1>
@@ -98,7 +99,8 @@ const Team: NextPage = () => {
                   </div>
                   <div
                     id="team-members"
-                    className="grid grid-cols-2 my-16 lg:grid-cols-3 lg:my-36 gap-x-6 lg:gap-x-10 gap-y-16">
+                    className="grid grid-cols-2 my-16 lg:grid-cols-3 lg:my-36 gap-x-6 lg:gap-x-10 gap-y-16"
+                  >
                     {teamMembers.map((member, index) => (
                       <TeamMember key={index} {...member} />
                     ))}
