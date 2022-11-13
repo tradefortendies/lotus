@@ -32,7 +32,7 @@ const teamMembers = [
     name: 'Chambaz',
     position: 'Head of Technology',
     avatar: '/img/team/chambaz.jpg',
-    bio: 'Chambaz is a senior engineering lead, with 15 years experience in full stack web2 development with a focus on frontend and creative technology. He has been building web3 apps and experiences across multiple chains since 2020 with a focus on the Solana ecosystem.',
+    bio: 'Chambaz is a Senior Software Engineer at Metaplex. With 15 years experience in full stack web2 development, Chambaz went full time crypto and NFTs in 2022. He has been building web3 apps and experiences across multiple chains since 2020 and now focuses predominantly on the Solana ecosystem.',
     twitter: 'chambaz',
   },
   {
