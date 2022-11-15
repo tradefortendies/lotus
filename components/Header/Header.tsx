@@ -160,9 +160,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -178,9 +176,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -191,9 +187,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -215,9 +209,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -228,9 +220,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -257,9 +247,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -270,9 +258,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
@@ -283,9 +269,7 @@ function Header({
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' &&
-                    !reverseColors &&
-                    'bg-white hover:bg-slate-50',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
