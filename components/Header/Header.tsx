@@ -188,6 +188,19 @@ function Header({
                   <a className="block p-4 cursor-pointer">Quantum Calculator</a>
                 </Link>
               </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' &&
+                    !reverseColors &&
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <Link href="/vibeometer">
+                  <a className="block p-4 cursor-pointer">Vibeometer</a>
+                </Link>
+              </li>
             </ul>
           </li>
           <li
