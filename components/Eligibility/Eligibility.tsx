@@ -206,35 +206,13 @@ function Eligibility() {
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">
                           Mint for
-                          <span className="mx-4 rounded-md px-14 bg-lily-black"></span>
-                        </h3>
-                        <p className="pr-10 font-sans">
-                          Gang Members who{' '}
-                          <span className="inline-block w-1/2 px-12 py-3 mx-1 translate-y-[7px] rounded-md bg-lily-black"></span>
-                          <span className="inline-block w-3/4 px-12 py-3 mx-1 translate-y-[7px] rounded-md bg-lily-black"></span>
-                          .
-                        </p>
-                        <Button className="!bg-white !text-neutral-800 cursor-help">
-                          <span className="px-12 py-3 mx-1 rounded-md bg-lily-black"></span>
-                        </Button>
-                      </div>
-                    </div>
-                    <div
-                      className="flex gap-6 p-8 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <div className="space-y-3">
-                        <h3 className="text-2xl uppercase">
-                          Mint for
                           <span className="px-5 mx-4 rounded-md bg-lily-black"></span>
                           SOL
                         </h3>
                         <p className="pr-10 font-sans">
-                          If you do not{' '}
+                          Those on the LILY List will be able to mint for{' '}
                           <span className="px-6 mx-1 rounded-md bg-lily-black"></span>{' '}
-                          your LOTUS, you are able to mint for{' '}
-                          <span className="px-2 mx-1 rounded-md bg-lily-black"></span>
-                          SOL. It is reserved for you for a window of time.
+                          SOL. It is reserved for you for a window of time
                         </p>
                         <Button className="!bg-white !text-neutral-800 cursor-help">
                           Mint on MagicEden
