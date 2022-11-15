@@ -351,7 +351,11 @@ function Header({
         />
       </header>
       <Transition.Root show={mobileMenuOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="relative z-[999999]"
+          onClose={setMobileMenuOpen}
+        >
           <div className="fixed inset-0" />
 
           <div className="fixed inset-0 overflow-hidden">
@@ -404,22 +408,22 @@ function Header({
                               </a>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/#eligibility" passHref>
+                              <Link href="/eligibility" passHref>
                                 <a>LILY</a>
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/#eligibility" passHref>
+                              <Link href="/vision" passHref>
                                 <a>Our Vision</a>
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/#eligibility" passHref>
+                              <Link href="/team" passHref>
                                 <a>Our Team</a>
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/#eligibility" passHref>
+                              <Link href="/faq" passHref>
                                 <a>FAQs</a>
                               </Link>
                             </li>
