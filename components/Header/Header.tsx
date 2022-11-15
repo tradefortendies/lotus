@@ -20,24 +20,6 @@ type Props = {
   position?: 'fixed' | 'absolute' | 'slide'
 }
 
-const navLinks = [
-  {
-    text: 'Our Vision',
-    href: '/vision',
-    underlineSpeed: 140,
-  },
-  {
-    text: 'Our Team',
-    href: '/team',
-    underlineSpeed: 125,
-  },
-  {
-    text: 'FAQs',
-    href: '/faq',
-    underlineSpeed: 90,
-  },
-]
-
 function Header({
   active,
   button = 'colored',
@@ -152,16 +134,74 @@ function Header({
         <ul className="hidden ml-auto font-mono uppercase xl:flex">
           <li
             className={clsx(
-              'relative mr-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent ml-12',
+              'border-b-2 mr-12 transition-[border] duration-300 border-transparent',
+              reverseColors && 'hover:border-white',
+              linkColor !== 'white' && !reverseColors && 'hover:border-black',
+              linkColor === 'white' && 'hover:border-white'
+            )}
+          >
+            <a
+              href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Library
+            </a>
+          </li>
+          <li
+            className={clsx(
+              'relative mr-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent',
+              linkColor !== 'white' && !reverseColors && 'hover:border-black',
+              linkColor === 'white' && 'hover:border-white'
+            )}
+          >
+            Tools
+            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px] pointer-events-none group-hover:pointer-events-auto">
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' &&
+                    !reverseColors &&
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <a
+                  href="https://floor.lotusgang.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-4 cursor-pointer"
+                >
+                  Floor Calculator
+                </a>
+              </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' &&
+                    !reverseColors &&
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <Link href="/quantum-calculator">
+                  <a className="block p-4 cursor-pointer">Quantum Calculator</a>
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li
+            className={clsx(
+              'relative mr-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent',
               linkColor !== 'white' && !reverseColors && 'hover:border-black',
               linkColor === 'white' && 'hover:border-white'
             )}
           >
             Collections
-            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px]">
+            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px] pointer-events-none group-hover:pointer-events-auto">
               <li
                 className={clsx(
-                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
                     'bg-white hover:bg-slate-50',
@@ -169,12 +209,12 @@ function Header({
                 )}
               >
                 <Link href="/eligibility" passHref>
-                  <a>LILY</a>
+                  <a className="block p-4 cursor-pointer">LILY</a>
                 </Link>
               </li>
               <li
                 className={clsx(
-                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
                     'bg-white hover:bg-slate-50',
@@ -185,6 +225,7 @@ function Header({
                   href="https://magiceden.io/marketplace/lotus_gang_nft"
                   target="_blank"
                   rel="noreferrer"
+                  className="block p-4 cursor-pointer"
                 >
                   Lotus Gang
                 </a>
@@ -198,88 +239,52 @@ function Header({
               linkColor === 'white' && 'hover:border-white'
             )}
           >
-            Tools
-            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px]">
+            About
+            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px] pointer-events-none group-hover:pointer-events-auto">
               <li
                 className={clsx(
-                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
                     'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link
-                  href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <a>Library</a>
+                <Link href="/vision" passHref>
+                  <a className="block p-4 cursor-pointer">Our Vision</a>
                 </Link>
               </li>
               <li
                 className={clsx(
-                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
                     'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <a
-                  href="https://floor.lotusgang.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Floor Calculator
-                </a>
+                <Link href="/team" passHref>
+                  <a className="block p-4 cursor-pointer">Our Team</a>
+                </Link>
               </li>
               <li
                 className={clsx(
-                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
                     'bg-white hover:bg-slate-50',
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/quantum-calculator">Quantum Calculator</Link>
+                <Link href="/faq" passHref>
+                  <a className="block p-4 cursor-pointer">FAQs</a>
+                </Link>
               </li>
             </ul>
           </li>
-          {navLinks.map((link, key) => {
-            return (
-              <li
-                data-nav={link.href === `/${active}` && 'active'}
-                key={key}
-                className={clsx(
-                  'border-b-2 transition-[border] duration-300 border-transparent',
-                  key > 0 && 'ml-12',
-                  link.href !== `/${active}` &&
-                    reverseColors &&
-                    'hover:border-white',
-                  link.href !== `/${active}` &&
-                    linkColor !== 'white' &&
-                    !reverseColors &&
-                    'hover:border-black',
-                  linkColor === 'white' && 'hover:border-white',
-                  link.href === `/${active}` &&
-                    linkColor === 'white' &&
-                    '!border-white',
-                  link.href === `/${active}` &&
-                    linkColor !== 'white' &&
-                    '!border-black'
-                )}
-              >
-                <Link href={link.href} passHref>
-                  <a>{link.text}</a>
-                </Link>
-              </li>
-            )
-          })}
           <li
             className={clsx(
-              'relative ml-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent',
+              'relative cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent',
               linkColor !== 'white' && !reverseColors && 'hover:border-black',
               linkColor === 'white' && 'hover:border-white'
             )}
@@ -406,36 +411,21 @@ function Header({
                                 <a>LILY</a>
                               </Link>
                             </li>
-                            {navLinks.map((link, key) => {
-                              return (
-                                <li
-                                  key={key}
-                                  className={clsx(
-                                    'border-b-2 transition duration-300 py-2',
-                                    link.href === `/${active}`
-                                      ? 'border-white'
-                                      : 'border-transparent',
-                                    link.href !== '#' && 'hover:border-white',
-                                    link.href === '#' && 'opacity-50'
-                                  )}
-                                >
-                                  <Link href={link.href} passHref>
-                                    <a
-                                      className={clsx(
-                                        link.href === '#' && 'cursor-help'
-                                      )}
-                                      title={
-                                        link.href === '#'
-                                          ? 'Coming soon...'
-                                          : ''
-                                      }
-                                    >
-                                      {link.text}
-                                    </a>
-                                  </Link>
-                                </li>
-                              )
-                            })}
+                            <li className="py-2 transition duration-300">
+                              <Link href="/#eligibility" passHref>
+                                <a>Our Vision</a>
+                              </Link>
+                            </li>
+                            <li className="py-2 transition duration-300">
+                              <Link href="/#eligibility" passHref>
+                                <a>Our Team</a>
+                              </Link>
+                            </li>
+                            <li className="py-2 transition duration-300">
+                              <Link href="/#eligibility" passHref>
+                                <a>FAQs</a>
+                              </Link>
+                            </li>
                           </ul>
                           <ul className="flex gap-4 mt-6">
                             <li>
