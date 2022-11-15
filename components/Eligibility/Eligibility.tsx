@@ -211,7 +211,7 @@ function Eligibility() {
                         </h3>
                         <p className="pr-10 font-sans">
                           Those on the LILY List will be able to mint for{' '}
-                          <span className="px-6 mx-1 rounded-md bg-lily-black"></span>{' '}
+                          <span className="px-4 mx-1 rounded-md bg-lily-black"></span>{' '}
                           SOL. It is reserved for you for a window of time
                         </p>
                         <Button className="!bg-white !text-neutral-800 cursor-help">
