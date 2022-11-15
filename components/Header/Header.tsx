@@ -152,36 +152,20 @@ function Header({
         <ul className="hidden ml-auto font-mono uppercase xl:flex">
           <li
             className={clsx(
-              'border-b-2 transition-[border] duration-300 border-transparent',
-              reverseColors && 'hover:border-white',
-              linkColor !== 'white' && !reverseColors && 'hover:border-black',
-              linkColor === 'white' && 'hover:border-white'
-            )}
-          >
-            <a
-              href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Library
-            </a>
-          </li>
-          <li
-            className={clsx(
               'relative mr-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent ml-12',
               linkColor !== 'white' && !reverseColors && 'hover:border-black',
               linkColor === 'white' && 'hover:border-white'
             )}
           >
             Collections
-            <ul className="absolute top-0 w-full pt-10 space-y-4 text-center -translate-x-1/2 left-1/2">
+            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px]">
               <li
                 className={clsx(
-                  'inline-block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
-                    'hover:border-lily-black',
-                  linkColor === 'white' && 'hover:border-white'
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
                 <Link href="/eligibility" passHref>
@@ -190,11 +174,11 @@ function Header({
               </li>
               <li
                 className={clsx(
-                  'inline-block transition-opacity duration-300 delay-200 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' &&
                     !reverseColors &&
-                    'hover:border-lily-black',
-                  linkColor === 'white' && 'hover:border-white'
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
                 <a
@@ -204,6 +188,62 @@ function Header({
                 >
                   Lotus Gang
                 </a>
+              </li>
+            </ul>
+          </li>
+          <li
+            className={clsx(
+              'relative mr-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent',
+              linkColor !== 'white' && !reverseColors && 'hover:border-black',
+              linkColor === 'white' && 'hover:border-white'
+            )}
+          >
+            Tools
+            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px]">
+              <li
+                className={clsx(
+                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' &&
+                    !reverseColors &&
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <Link
+                  href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <a>Library</a>
+                </Link>
+              </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' &&
+                    !reverseColors &&
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <a
+                  href="https://floor.lotusgang.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Floor Calculator
+                </a>
+              </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 p-4 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' &&
+                    !reverseColors &&
+                    'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <Link href="/quantum-calculator">Quantum Calculator</Link>
               </li>
             </ul>
           </li>
