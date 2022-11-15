@@ -272,9 +272,8 @@ function Eligibility() {
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">Buy a Rap Pack</h3>
                         <p className="pr-10 font-sans">
-                          Each piece in the RAP PACK enables you to mint
-                          <span className="px-2 mx-1 rounded-md bg-lily-black"></span>
-                          LILIES.
+                          Each wallet holding a RAP PACK will be airdropped 8
+                          LILIES
                         </p>
                         <Button
                           href="https://exchange.art/series/The%20Rap%20Pack/nfts"
