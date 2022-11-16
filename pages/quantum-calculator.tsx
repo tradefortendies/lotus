@@ -185,7 +185,7 @@ const QuantumCalculator: NextPage = () => {
                     <div className="mt-6">
                       <p className="text-sm text-gray-500">
                         You hacked the quantum calculator and for that we are
-                        rewarding you with a LILY list code. Claim it our
+                        rewarding you with a LILY list code. Claim it in our
                         #💌|wl-code-redemption discord channel before someone
                         else does.
                       </p>
