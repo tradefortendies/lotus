@@ -233,6 +233,22 @@ function Header({
                   Lotus Gang
                 </a>
               </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <a
+                  href="https://shop.thelotus.io"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-4 cursor-pointer"
+                >
+                  Shop
+                </a>
+              </li>
             </ul>
           </li>
           <li
@@ -399,6 +415,11 @@ function Header({
                               </a>
                             </li>
                             <li className="py-2 transition duration-300">
+                              <Link href="/eligibility" passHref>
+                                <a>LILY</a>
+                              </Link>
+                            </li>
+                            <li className="py-2 transition duration-300">
                               <a
                                 href="https://magiceden.io/marketplace/lotus_gang_nft"
                                 target="_blank"
@@ -408,9 +429,13 @@ function Header({
                               </a>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/eligibility" passHref>
-                                <a>LILY</a>
-                              </Link>
+                              <a
+                                href="https://shop.thelotus.io"
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Shop
+                              </a>
                             </li>
                             <li className="py-2 transition duration-300">
                               <Link href="/vision" passHref>
