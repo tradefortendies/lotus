@@ -13,11 +13,13 @@ const VibeoMeter: NextPage = () => {
   const theme = useContext(ThemeContext)
   const [percent, setPercent] = useState(0)
   const [wlModal, setWlModal] = useState<boolean>(false)
+  const [showWlBtn, setShowWlBtn] = useState<boolean>(false)
   const finalPercent = 0.9
 
   const calculate = () => {
     if (!percent) {
       setPercent(finalPercent)
+      setShowWlBtn(true)
       return
     }
 
@@ -85,21 +87,23 @@ const VibeoMeter: NextPage = () => {
                       >
                         Calculate
                       </Button>
-                      <Button
-                        type="pill-outline"
-                        className="mt-8"
-                        onClick={() => setWlModal(true)}
-                        onMouseOver={(e) => {
-                          e.target.style.backgroundColor = theme.primaryColor
-                          e.target.style.color = '#303030'
-                        }}
-                        onMouseOut={(e) => {
-                          e.target.style.backgroundColor = 'transparent'
-                          e.target.style.color = theme.primaryColor
-                        }}
-                      >
-                        LILY List
-                      </Button>
+                      {showWlBtn && (
+                        <Button
+                          type="pill-outline"
+                          className="mt-8"
+                          onClick={() => setWlModal(true)}
+                          onMouseOver={(e) => {
+                            e.target.style.backgroundColor = theme.primaryColor
+                            e.target.style.color = '#303030'
+                          }}
+                          onMouseOut={(e) => {
+                            e.target.style.backgroundColor = 'transparent'
+                            e.target.style.color = theme.primaryColor
+                          }}
+                        >
+                          LILY List
+                        </Button>
+                      )}
                     </div>
                   </div>
                   <h2 className="font-sans text-xl lg:text-[29px] leading-normal">
@@ -194,8 +198,8 @@ const VibeoMeter: NextPage = () => {
                     <div className="mt-6">
                       <p className="text-sm text-gray-500">
                         Curiosity killed the cat but it has given YOU a LILY
-                        List code. Claim it our #💌|wl-code-redemption discord
-                        channel before someone else does.
+                        List code. Claim it in our #💌|wl-code-redemption
+                        discord channel before someone else does.
                       </p>
 
                       <p className="my-6 text-xl font-bold uppercase">
