@@ -203,8 +203,8 @@ const VibeoMeter: NextPage = () => {
                       </p>
 
                       <p className="my-6 text-xl font-bold uppercase">
-                        NDN6CNE7
-                        {/* K62HRJPZ */}
+                        {/* NDN6CNE7 */}
+                        K62HRJPZ
                         {/* HWKFYUX2 */}
                       </p>
                     </div>
