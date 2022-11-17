@@ -191,7 +191,8 @@ const QuantumCalculator: NextPage = () => {
                       </p>
 
                       <p className="my-6 text-xl font-bold uppercase">
-                        CDXGL9GD
+                        {/* CDXGL9GD */}
+                        O22N2TH4
                       </p>
                     </div>
 
