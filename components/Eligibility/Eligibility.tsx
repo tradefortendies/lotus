@@ -204,15 +204,10 @@ function Eligibility() {
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <div className="space-y-3">
-                        <h3 className="text-2xl uppercase">
-                          Mint for
-                          <span className="px-5 mx-4 rounded-md bg-lily-black"></span>
-                          SOL
-                        </h3>
+                        <h3 className="text-2xl uppercase">Mint for 1 SOL</h3>
                         <p className="pr-10 font-sans">
-                          Those on the LILY List will be able to mint for{' '}
-                          <span className="px-3 mx-1 rounded-md bg-lily-black"></span>{' '}
-                          SOL. It is reserved for you for a window of time
+                          Those on the LILY List will be able to mint for 1 SOL.
+                          It is reserved for you for a window of time.
                         </p>
                         <Button className="!bg-white !text-neutral-800 cursor-help">
                           Mint on MagicEden
