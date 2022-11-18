@@ -236,7 +236,7 @@ function Eligibility() {
                             hour: '2-digit',
                             minute: '2-digit',
                           })}{' '}
-                          (16:00 UTC) and holding durint mint.
+                          (16:00 UTC) and holding during mint.
                         </p>
                         <Button
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
