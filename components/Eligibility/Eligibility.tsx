@@ -130,7 +130,8 @@ function Eligibility() {
                 {!eligible && (
                   <>
                     <h2 className="font-sans text-4xl lg:pr-16 lg:text-6xl">
-                      Unfortunately you're not eligible for the whitelist mint.
+                      Unfortunately you&apos;re not eligible for the whitelist
+                      mint.
                     </h2>
                     <p className="font-sans text-xl lg:text-3xl">
                       You can{' '}
