@@ -183,7 +183,7 @@ function Eligibility() {
                     >
                       <div className="space-y-3">
                         <h3 className="text-2xl uppercase">Mint for 1 SOL</h3>
-                        <p className="pr-10 font-sans">
+                        <p className="font-sans xl:pr-10">
                           Those on the LILY List will be able to mint for 1 SOL.
                           It is reserved for you for a window of time.
                         </p>
@@ -191,7 +191,7 @@ function Eligibility() {
                           href="https://magiceden.io/launchpad/lily"
                           target="_blank"
                           rel="noreferrer"
-                          className="!bg-white !text-neutral-800 cursor-help"
+                          className="!bg-white !text-neutral-800 text-base xl:text-lg"
                         >
                           Mint on MagicEden
                         </Button>
@@ -213,7 +213,7 @@ function Eligibility() {
                             minute: '2-digit',
                           })}
                         </h3>
-                        <ul>
+                        <ul className="text-sm xl:text-base">
                           <li>
                             <strong>Local</strong>:
                             {` ${mintDate.toLocaleDateString([], {
@@ -229,7 +229,7 @@ function Eligibility() {
                             <strong>UTC</strong>: 18/11/2022 16:00
                           </li>
                         </ul>
-                        <p className="pr-16 font-sans">
+                        <p className="font-sans xl:pr-16">
                           The <strong>only</strong> way to guarantee a spot is
                           by buying before{' '}
                           {mintDate.toLocaleTimeString([], {
@@ -242,7 +242,7 @@ function Eligibility() {
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
                           target="_blank"
                           rel="noreferrer"
-                          className="!bg-white !text-neutral-800"
+                          className="!bg-white !text-neutral-800 text-base xl:text-lg"
                         >
                           Buy on Magic Eden
                         </Button>
@@ -256,14 +256,14 @@ function Eligibility() {
                         <h3 className="text-2xl uppercase">
                           Mint in the public phase
                         </h3>
-                        <p className="pr-10 font-sans">
+                        <p className="font-sans xl:pr-10">
                           The public phase will open 1 hour after the WL phase.
                         </p>
                         <Button
                           href="https://magiceden.io/launchpad/lily"
                           target="_blank"
                           rel="noreferrer"
-                          className="!bg-white !text-neutral-800"
+                          className="!bg-white !text-neutral-800 text-base xl:text-lg"
                         >
                           Mint on Magic Eden
                         </Button>
