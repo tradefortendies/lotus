@@ -13,6 +13,7 @@ function Eligibility() {
   const [mintNumber, setMintNumber] = useState(0)
   const [connectedAtLeastOnce, setConnectedAtLeastOnce] = useState(false)
   const [checkingEligibility, setCheckingEligibility] = useState(false)
+  const mintDate = new Date('November 18, 2022 16:00:00 GMT+00:00')
 
   const checkNfts = async () => {
     setConnectedAtLeastOnce(true)
@@ -108,7 +109,7 @@ function Eligibility() {
             <>
               <div
                 className={clsx(
-                  'flex flex-col justify-center col-span-3 space-y-6',
+                  'flex flex-col justify-center col-span-3 space-y-6 pt-16 xl:pt-0',
                   !connectedAtLeastOnce && 'lg:opacity-0'
                 )}
               >
@@ -124,24 +125,13 @@ function Eligibility() {
                       </span>
                       .
                     </p>
-                    <div>
-                      <p className="mt-8 mb-4">
-                        <strong>Wallet</strong>: {formatAddress(publicKey)}
-                      </p>
-                      <Button
-                        className="mr-auto"
-                        size="sm"
-                        onClick={() => reset()}
-                      >
-                        <>Change wallet {arrowIcon}</>
-                      </Button>
-                    </div>
                   </>
                 )}
                 {!eligible && (
                   <>
                     <h2 className="font-sans text-4xl lg:pr-16 lg:text-6xl">
-                      Unfortunately you’re not eligible for the whitelist mint.
+                      Unfortunately you&apos;re not eligible for the whitelist
+                      mint.
                     </h2>
                     <p className="font-sans text-xl lg:text-3xl">
                       You can{' '}
@@ -176,18 +166,6 @@ function Eligibility() {
                     <p className="font-sans text-xl lg:text-3xl">
                       Or join the public mint.
                     </p>
-                    <div>
-                      <p className="mt-8 mb-4">
-                        <strong>Wallet</strong>: {formatAddress(publicKey)}
-                      </p>
-                      <Button
-                        className="mr-auto"
-                        size="sm"
-                        onClick={() => reset()}
-                      >
-                        <>Change wallet {arrowIcon}</>
-                      </Button>
-                    </div>
                   </>
                 )}
               </div>
@@ -204,17 +182,17 @@ function Eligibility() {
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <div className="space-y-3">
-                        <h3 className="text-2xl uppercase">
-                          Mint for
-                          <span className="px-5 mx-4 rounded-md bg-lily-black"></span>
-                          SOL
-                        </h3>
+                        <h3 className="text-2xl uppercase">Mint for 1 SOL</h3>
                         <p className="pr-10 font-sans">
-                          Those on the LILY List will be able to mint for{' '}
-                          <span className="px-3 mx-1 rounded-md bg-lily-black"></span>{' '}
-                          SOL. It is reserved for you for a window of time
+                          Those on the LILY List will be able to mint for 1 SOL.
+                          It is reserved for you for a window of time.
                         </p>
-                        <Button className="!bg-white !text-neutral-800 cursor-help">
+                        <Button
+                          href="https://magiceden.io/launchpad/lily"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="!bg-white !text-neutral-800 cursor-help"
+                        >
                           Mint on MagicEden
                         </Button>
                       </div>
@@ -227,11 +205,38 @@ function Eligibility() {
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
-                      <div className="space-y-3">
-                        <h3 className="text-2xl uppercase">Buy a Lotus</h3>
-                        <p className="pr-10 font-sans">
-                          The original collection. All LOTUS holders are
-                          eligible for whitelist for every LOTUS they hold.
+                      <div className="mx-auto space-y-3">
+                        <h3 className="text-2xl uppercase">
+                          Buy a Lotus before{' '}
+                          {mintDate.toLocaleTimeString([], {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}
+                        </h3>
+                        <ul>
+                          <li>
+                            <strong>Local</strong>:
+                            {` ${mintDate.toLocaleDateString([], {
+                              year: 'numeric',
+                              month: 'numeric',
+                              day: 'numeric',
+                            })} ${mintDate.toLocaleString([], {
+                              hour: '2-digit',
+                              minute: '2-digit',
+                            })}`}
+                          </li>
+                          <li>
+                            <strong>UTC</strong>: 18/11/2022 16:00
+                          </li>
+                        </ul>
+                        <p className="pr-16 font-sans">
+                          The <strong>only</strong> way to guarantee a spot is
+                          by buying before{' '}
+                          {mintDate.toLocaleTimeString([], {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}{' '}
+                          (16:00 UTC) and holding during mint.
                         </p>
                         <Button
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
@@ -248,45 +253,32 @@ function Eligibility() {
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <div className="space-y-3">
-                        <h3 className="text-2xl uppercase">Buy a Rap Pack</h3>
-                        <p className="pr-10 font-sans">
-                          Each wallet holding a RAP PACK will be airdropped 8
-                          LILIES
-                        </p>
-                        <Button
-                          href="https://exchange.art/series/The%20Rap%20Pack/nfts"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="!bg-white !text-neutral-800"
-                        >
-                          Buy on Exchange Art
-                        </Button>
-                      </div>
-                    </div>
-                    <div
-                      className="flex gap-6 p-6 rounded-lg text-neutral-800"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <div className="space-y-3">
                         <h3 className="text-2xl uppercase">
-                          Join Us On Discord
+                          Mint in the public phase
                         </h3>
                         <p className="pr-10 font-sans">
-                          Keep up to date with the latest methods of gaining
-                          access to the LILY Whitelist. There are not that many.
+                          The public phase will open 1 hour after the WL phase.
                         </p>
                         <Button
-                          href="https://discord.gg/vs8VvHb35k"
+                          href="https://magiceden.io/launchpad/lily"
                           target="_blank"
                           rel="noreferrer"
                           className="!bg-white !text-neutral-800"
                         >
-                          Join the Gang
+                          Mint on Magic Eden
                         </Button>
                       </div>
                     </div>
                   </>
                 )}
+              </div>
+              <div>
+                <p className="mt-8 mb-4">
+                  <strong>Wallet</strong>: {formatAddress(publicKey)}
+                </p>
+                <Button className="mr-auto" size="sm" onClick={() => reset()}>
+                  <>Change wallet {arrowIcon}</>
+                </Button>
               </div>
             </>
           )}
