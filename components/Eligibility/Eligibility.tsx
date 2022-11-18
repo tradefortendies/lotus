@@ -207,7 +207,7 @@ function Eligibility() {
                       <div className="mx-auto space-y-3">
                         <h3 className="text-2xl uppercase">
                           Buy a Lotus before{' '}
-                          {mintDate.toLocaleTimeString('en-US', {
+                          {mintDate.toLocaleTimeString([], {
                             hour: '2-digit',
                             minute: '2-digit',
                           })}
@@ -225,7 +225,7 @@ function Eligibility() {
                             })}`}
                           </li>
                           <li>
-                            <strong>UTC</strong>: 11/18/2022 4:00 PM
+                            <strong>UTC</strong>: 18/11/2022 16:00
                           </li>
                         </ul>
                         <p className="pr-16 font-sans">
@@ -235,7 +235,7 @@ function Eligibility() {
                             hour: '2-digit',
                             minute: '2-digit',
                           })}{' '}
-                          (4:00pm UTC) and holding durint mint.
+                          (16:00 UTC) and holding durint mint.
                         </p>
                         <Button
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
@@ -251,7 +251,7 @@ function Eligibility() {
                       className="flex gap-6 p-8 rounded-lg text-neutral-800"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
-                      <div className="mx-auto space-y-3">
+                      <div className="space-y-3">
                         <h3 className="text-2xl uppercase">
                           Mint in the public phase
                         </h3>
