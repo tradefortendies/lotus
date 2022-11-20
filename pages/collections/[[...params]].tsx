@@ -168,6 +168,10 @@ const LotusGang: NextPage<{
     setDetailOpen(Boolean(address))
   }, [address])
 
+  useEffect(() => {
+    reset()
+  }, [router.asPath])
+
   // Collection filter view
   return (
     <>
