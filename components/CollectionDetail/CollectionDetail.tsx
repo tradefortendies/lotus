@@ -15,14 +15,15 @@ function CollectionDetail({
     <Dialog
       open={isOpen}
       onClose={() => onClose()}
-      className="relative z-[99999]">
+      className="relative z-[99999]"
+    >
       {nft && (
         <div className="fixed inset-0 flex items-center justify-center p-4 bg-white bg-opacity-80">
-          <Dialog.Panel className="w-full max-w-lg p-8 bg-white rounded">
-            <img src={nft.image} />
-            <div className="pt-6">
-              <h1 className="text-xl font-bold">{nft.name}</h1>
-              <dl className="grid grid-cols-4 mt-6 text-xs md:text-sm">
+          <Dialog.Panel className="flex w-full p-8 bg-white rounded max-w-7xl">
+            <img className="mr-8" src={nft.image} />
+            <div className="w-full pt-6 bg-white">
+              <h1 className="text-5xl font-bold">{nft.name}</h1>
+              <dl className="grid grid-cols-4 my-8 text-sm md:text-base">
                 {nft.attributes.map((attr, index) => {
                   return (
                     <>
@@ -42,7 +43,8 @@ function CollectionDetail({
                 target="_blank"
                 rel="noreferrer"
                 size="sm"
-                className="mt-8">
+                className="mt-8"
+              >
                 Buy on MagicEden
               </Button>
             </div>
