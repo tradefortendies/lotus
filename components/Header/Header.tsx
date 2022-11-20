@@ -224,14 +224,9 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <a
-                  href="https://magiceden.io/marketplace/lotus_gang_nft"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block p-4 cursor-pointer"
-                >
-                  Lotus Gang
-                </a>
+                <Link href="/collections/lotus-gang" passHref>
+                  <a className="block p-4 cursor-pointer">Lotus Gang</a>
+                </Link>
               </li>
               <li
                 className={clsx(
@@ -420,13 +415,9 @@ function Header({
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <a
-                                href="https://magiceden.io/marketplace/lotus_gang_nft"
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                Lotus Gang
-                              </a>
+                              <Link href="/collections/lotus-gang" passHref>
+                                <a>Lotus Gang</a>
+                              </Link>
                             </li>
                             <li className="py-2 transition duration-300">
                               <a
