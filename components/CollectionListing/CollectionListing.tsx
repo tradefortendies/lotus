@@ -33,7 +33,8 @@ function CollectionListing({
         <div className="w-full pr-8 mt-[35px]">
           <button
             onClick={() => reset()}
-            className="flex items-center justify-start w-full gap-4 px-4 py-3 transition bg-slate-50 hover:bg-slate-100">
+            className="flex items-center justify-start w-full gap-4 px-4 py-3 transition bg-slate-50 hover:bg-slate-100"
+          >
             <GrPowerReset />
             Reset
           </button>
@@ -50,17 +51,24 @@ function CollectionListing({
                         {open ? <AiOutlineMinus /> : <AiOutlinePlus />}
                       </Disclosure.Button>
                       <Disclosure.Panel>
+                        <input
+                          className="w-full px-2 py-1 my-2 font-mono font-normal border-2 border-neutral-200 text-neutral-600"
+                          type="text"
+                          placeholder="Search..."
+                        />
                         <ul
                           className={clsx(
                             'mt-2 text-sm font-normal'
                             // traitIndex > 0 && 'hidden'
-                          )}>
+                          )}
+                        >
                           {trait.values.map((value, valueIndex) => {
                             return (
                               <li className="w-full" key={valueIndex}>
                                 <label
                                   className="flex items-center w-full gap-2 py-1"
-                                  htmlFor={`${trait.trait_type}-${value}`}>
+                                  htmlFor={`${trait.trait_type}-${value}`}
+                                >
                                   <input
                                     type="checkbox"
                                     id={`${trait.trait_type}-${value}`}
