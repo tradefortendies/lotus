@@ -2,26 +2,31 @@ import type { NextPage, GetServerSideProps } from 'next'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Nft, Trait, NftApiResponse } from '../../types'
-import { titleCase } from '../../lib/helpers'
 import LotusGangNftsJson from '../../data/lotus-gang.json'
+import lilyNftsJson from '../../data/lily.json'
 import Meta from '../../components/Meta'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import CollectionDetail from '../../components/CollectionDetail'
 import CollectionListing from '../../components/CollectionListing'
 
-const lotusGangNfts = LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] }
+const nftsJson = {
+  'lotus-gang': LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] },
+  lily: lilyNftsJson as { traits: Trait[]; nfts: Nft[] },
+}
 
 const buildNftApiUrl = ({
+  collection,
   page,
   filters,
 }: {
+  collection: string
   page: number
   filters: {
     [key: string]: string[]
   }
 }): string => {
-  let apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/lotus-gang?`
+  let apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/${collection}?`
 
   if (filters) {
     apiUrl += 'traits='
@@ -57,6 +62,7 @@ const LotusGang: NextPage<{
   nft: Nft[]
   address: string | false
 }> = ({
+  collection,
   collectionTitle,
   traits,
   totalOrig,
@@ -78,6 +84,7 @@ const LotusGang: NextPage<{
   const loadMore = async () => {
     const nftsReq = await fetch(
       buildNftApiUrl({
+        collection,
         page: page + 1,
         filters,
       })
@@ -117,6 +124,7 @@ const LotusGang: NextPage<{
 
     const nftsReq = await fetch(
       buildNftApiUrl({
+        collection,
         page: 0,
         filters,
       })
@@ -134,6 +142,7 @@ const LotusGang: NextPage<{
   const reset = async () => {
     const nftsReq = await fetch(
       buildNftApiUrl({
+        collection,
         page: 0,
         filters: {},
       })
@@ -167,7 +176,7 @@ const LotusGang: NextPage<{
         <CollectionDetail
           isOpen={detailOpen}
           onClose={() => {
-            router.push('/collections/lotus-gang')
+            router.push(`/collections/${collection}`)
           }}
           nft={nft[0]}
         />
@@ -186,10 +195,11 @@ const LotusGang: NextPage<{
                   className="flex items-center justify-between gap-4"
                 >
                   <h1 className="w-full mb-20 font-sans text-6xl font-bold lg:text-8xl">
-                    Lotus Gang
+                    {collectionTitle}
                   </h1>
                 </div>
                 <CollectionListing
+                  collection={collection}
                   total={total}
                   showing={
                     (page + 1) * perPage < total ? (page + 1) * perPage : total
@@ -217,23 +227,25 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   if (
     !query.params ||
     !query.params.length ||
-    query.params[0] !== 'lotus-gang'
+    (query.params[0] !== 'lotus-gang' && query.params[0] !== 'lily')
   ) {
     return {
       notFound: true,
     }
   }
 
+  const collectionJson = nftsJson[query.params[0]]
+  let collectionTitle: string = ''
   let nftsReq: NftApiResponse | null = null
   let nftReq: NftApiResponse | null = null
 
   nftsReq = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/lotus-gang`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/${query.params[0]}`
   ).then((res) => res.json())
 
   if (query.params[1]) {
     nftReq = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/lotus-gang/${query.params[1]}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/${query.params[0]}/${query.params[1]}`
     ).then((res) => res.json())
 
     if (!nftReq?.nfts?.length) {
@@ -243,11 +255,17 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     }
   }
 
+  if (query.params[0] === 'lotus-gang') {
+    collectionTitle = 'Lotus Gang'
+  } else if (query.params[0] === 'lily') {
+    collectionTitle = 'LILY'
+  }
+
   return {
     props: {
       collection: query.params[0],
-      collectionTitle: titleCase(query.params[0].replace(/-/gi, ' ')),
-      traits: lotusGangNfts.traits,
+      collectionTitle,
+      traits: collectionJson.traits,
       address: query.params[1] || false,
       totalOrig: nftsReq?.total,
       pageOrig: nftsReq?.page,

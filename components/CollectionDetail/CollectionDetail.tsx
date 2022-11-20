@@ -21,7 +21,7 @@ function CollectionDetail({
       {nft && (
         <div className="fixed inset-0 flex items-center justify-center p-4 bg-white bg-opacity-80">
           <Dialog.Panel className="flex w-full p-8 bg-white rounded max-w-7xl">
-            <img className="mr-8" src={nft.image} />
+            <img className="max-w-lg mr-8" src={nft.image} />
             <div className="w-full pt-6 bg-white">
               <h1 className="text-5xl font-bold">{nft.name}</h1>
               <h2 className="my-3 text-lg font-light text-neutral-500">

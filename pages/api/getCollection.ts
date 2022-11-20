@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { findIndex } from 'lodash'
 import { connection } from '../../lib/connection'
 import { Metaplex } from '@metaplex-foundation/js'
 import { PublicKey } from '@solana/web3.js'
@@ -80,8 +81,32 @@ const getCollection = async (req: NextApiRequest, res: NextApiResponse) => {
       error: 'No Candy Machine ID specified',
     })
   }
+
+  console.log(`Fetching mint addresses for ${req.query.candyMachineId}`)
+
   const candyMachineId = new PublicKey(String(req.query.candyMachineId))
-  const mintAddresses = await getMintAddresses(candyMachineId)
+  // const mintAddresses = await getMintAddresses(candyMachineId)
+  const mintAddresses = [
+    '3m4EiiCUyzbfWWpePH9akNnGYnF7iiB8XDEuB5nbEdJq',
+    'wgDYFcwwDqbgmNcGP6zfYm2NCMLctguYdDDvzb7yDp4',
+    'BzedhujnKfgWJeXJaaSC6RknmQaLFxKwgn129Mrsrn4F',
+    '7hgsuvutKXddYpdY1ddkBGA3a9CThgdAYif2GRAVHQ9G',
+    '83faC493zrJRQfrtmFPanEEprRA5Fw7iPVKzp6eZBTdi',
+    '5kEpoBvuKDEN9sv8nCRgPvf7MNnBNbaRRbz84YbTFi3d',
+    'BZGf1GZ1wUN7EzsuCuRnJB2BrUkHPc1j6BF7QdxUFnS6',
+    '9KsTxibnkmSWfyDtQDDBShjSDSNGSbcKphC1soEcrqmW',
+    '4hErirWq3MJgGe1vspEeCdRCw2PmiTG7qY4iCXURB4TV',
+    'GK7HzF646zodKSXKmKHXDdCQN5wdEL5qzqG2niSaEgfM',
+    '64ViDu5PrCUpRwBSGG45oUijDzvqZ9Dymdf2v7HpRMto',
+    'TCwy3om6qD7zGddndawUAD4niL1DMFe91jWm3zkpFBe',
+    'DQtfuZkePqMjMvQ8EAzwx9AfVhTAyqBBjNxFzwYPKG82',
+    'BNBQkEi7iY6r4USsdJT1CbNEZEWmGp1eG5he7e9ndRJM',
+    'GKrouG6MpbTYqrpDodVyzbGJH6Z1AFoPdpJF1cXb2hob',
+    'C2jMVYXAUhXKhgU5ywmuxcsRDXprEhpS2NYF86VwUEuh',
+    '2ZDUpbKdX8T9r89TMkPyhVv1jsHpPn9eEexGnxrYrLzj',
+    '98xEdxGeQoBV2sgLsJpWWSv47UFuBkbp75mTrnLbjsmS',
+    '9224VMBqrT6PYjhpsgTMfBKbv8FKAKhs7NwqnBitsT3h',
+  ]
 
   console.log(mintAddresses)
 
@@ -111,9 +136,37 @@ const getCollection = async (req: NextApiRequest, res: NextApiResponse) => {
     return aId > bId ? 1 : -1
   })
 
-  return {
+  const traits: any = []
+  formatted.map((nft) => {
+    console.log(nft)
+
+    nft.attributes?.map((attr, index) => {
+      if (!attr.trait_type) {
+        return
+      }
+
+      const traitIndex = findIndex(
+        traits,
+        (o: any) => o.trait_type === attr.trait_type
+      )
+
+      if (traitIndex < 0) {
+        traits.push({
+          trait_type: attr.trait_type,
+          values: [attr.value],
+        })
+      } else if (!traits[traitIndex].values.includes(attr.value)) {
+        traits[traitIndex].values.push(attr.value)
+      }
+
+      nft.attributes[index].trait_type = attr.trait_type.toLowerCase()
+    })
+  })
+
+  res.json({
+    traits,
     nfts: formatted,
-  }
+  })
 }
 
 export default getCollection

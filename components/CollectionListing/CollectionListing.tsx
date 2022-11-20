@@ -7,6 +7,7 @@ import { GrPowerReset } from 'react-icons/gr'
 import Button from '../Button'
 
 function CollectionListing({
+  collection,
   total,
   showing,
   traits,
@@ -16,6 +17,7 @@ function CollectionListing({
   filter,
   reset,
 }: {
+  collection: string
   total: number
   showing: number
   traits: Trait[]
@@ -107,7 +109,10 @@ function CollectionListing({
           {nfts.map((nft, nftIndex) => {
             return (
               <div className="p-4 bg-gray-100" key={nftIndex}>
-                <Link href={`/collections/lotus-gang/${nft.address}`} passHref>
+                <Link
+                  href={`/collections/${collection}/${nft.address}`}
+                  passHref
+                >
                   <a>
                     <img src={nft.image} />
                     <div className="mt-4">

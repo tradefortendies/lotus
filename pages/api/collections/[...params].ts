@@ -12,6 +12,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import filter from 'lodash/filter'
 import LotusGangNftsJson from '../../../data/lotus-gang.json'
+import LILYNftsJson from '../../../data/lily.json'
 import { Trait, Nft } from '../../../types'
 
 const collections = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -21,16 +22,19 @@ const collections = async (req: NextApiRequest, res: NextApiResponse) => {
     })
   }
 
-  const lotusGangNfts = LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] }
+  const nftJson: any = {
+    'lotus-gang': LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] },
+    lily: LILYNftsJson as { traits: Trait[]; nfts: Nft[] },
+  }
   const collection: string = req.query.params[0]
   const address: string = req.query.params[1] ? String(req.query.params[1]) : ''
   const traits: string = req.query.traits ? String(req.query.traits) : ''
   const page: number = req.query.page ? Number(req.query.page) : 0
   const perPage: number = 20
 
-  let filteredNfts: Nft[] = lotusGangNfts.nfts
+  let filteredNfts: Nft[] = nftJson[collection].nfts
 
-  if (collection !== 'lotus-gang') {
+  if (collection !== 'lotus-gang' && collection !== 'lily') {
     return res.json({
       error: 'Invalid collection',
     })

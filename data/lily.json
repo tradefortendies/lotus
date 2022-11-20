@@ -1,0 +1,1186 @@
+{
+  "traits": [
+    {
+      "trait_type": "Type",
+      "values": ["Male", "Female"]
+    },
+    {
+      "trait_type": "Background",
+      "values": [
+        "Sand",
+        "Midnight",
+        "Sky",
+        "Rose",
+        "Earth",
+        "Sea",
+        "Twilight",
+        "Gold"
+      ]
+    },
+    {
+      "trait_type": "Hands",
+      "values": [
+        "None",
+        "Wooden Sword",
+        "Hanzo",
+        "Gun",
+        "Kunai",
+        "Beer",
+        "Bindle",
+        "Chip",
+        "Brass Knuckles",
+        "Fire",
+        "Tennis Ball",
+        "Summon"
+      ]
+    },
+    {
+      "trait_type": "Origin",
+      "values": ["Andro", "Hollow"]
+    },
+    {
+      "trait_type": "Eyes",
+      "values": [
+        "Aloof",
+        "Keen",
+        "Concerned",
+        "Skeptical",
+        "Focus",
+        "Bored",
+        "Angry",
+        "Glow",
+        "Mischievous",
+        "Cheerful"
+      ]
+    },
+    {
+      "trait_type": "Mouth",
+      "values": ["Cheeky", "Chill", "Grin", "Toothpick", "Tune", "Calm"]
+    },
+    {
+      "trait_type": "Clothing",
+      "values": [
+        "Rabbit",
+        "Denim",
+        "Sea Dog",
+        "Friday",
+        "Puffer",
+        "White Hoodie (Up)",
+        "Lehenga (Up)",
+        "Tee",
+        "Penguin",
+        "Tracksuit",
+        "Black Hoodie",
+        "Vintage",
+        "Tatters",
+        "Sweetheart",
+        "Gi",
+        "Blazer"
+      ]
+    },
+    {
+      "trait_type": "Accessories",
+      "values": [
+        "",
+        "Roronoa",
+        "Headphones",
+        "White Headphones",
+        "Spike",
+        "Ring",
+        "None",
+        "Earphones",
+        "Bead-Earring"
+      ]
+    },
+    {
+      "trait_type": "Eyewear",
+      "values": ["None", "Square"]
+    },
+    {
+      "trait_type": "Hair",
+      "values": [
+        "Zoom",
+        "Mirror",
+        "Dreads",
+        "Pigtails",
+        "Buzz",
+        "Highpony",
+        "Croft",
+        "Puffpony",
+        "Bun",
+        "Akagami",
+        "Jet",
+        "Scruff",
+        "Rocky",
+        "Short",
+        ""
+      ]
+    },
+    {
+      "trait_type": "Headgear",
+      "values": [
+        "None",
+        "Soldier",
+        "Fisher",
+        "Brown Backwards Cap",
+        "Cap Strap",
+        "White Cap Strap",
+        "Kente",
+        "Backwards Cap",
+        "Beanie",
+        "Bandana"
+      ]
+    },
+    {
+      "trait_type": "Aura",
+      "values": ["None", "Wind", "Aqua", "Cherry"]
+    }
+  ],
+  "nfts": [
+    {
+      "address": "2ZDUpbKdX8T9r89TMkPyhVv1jsHpPn9eEexGnxrYrLzj",
+      "name": "LILY #751",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sand"
+        },
+        {
+          "trait_type": "hands",
+          "value": "None"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Aloof"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Cheeky"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Rabbit"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Zoom"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeifdz6mlr7xglzoexd4ubdgoyoyyqgw7yuqxihmf6gd5iwzcon5sk4.ipfs.nftstorage.link/693.png?ext=png"
+    },
+    {
+      "address": "BZGf1GZ1wUN7EzsuCuRnJB2BrUkHPc1j6BF7QdxUFnS6",
+      "name": "LILY #1724",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Midnight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Wooden Sword"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Keen"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Cheeky"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Denim"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Roronoa"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Mirror"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Soldier"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeih3c7jkgmd7elrygjjwjnmojhss3k2mtadpat2bm67hid6dqgva4a.ipfs.nftstorage.link/2705.png?ext=png"
+    },
+    {
+      "address": "9KsTxibnkmSWfyDtQDDBShjSDSNGSbcKphC1soEcrqmW",
+      "name": "LILY #1745",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sand"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Hanzo"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Concerned"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Cheeky"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Sea Dog"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Headphones"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Dreads"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Fisher"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeihblj4qv4s6ynwxwc7xnmvsz2aig2eavqrv3gac6spbjvktgyteg4.ipfs.nftstorage.link/6581.png?ext=png"
+    },
+    {
+      "address": "GKrouG6MpbTYqrpDodVyzbGJH6Z1AFoPdpJF1cXb2hob",
+      "name": "LILY #2211",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Midnight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Gun"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Skeptical"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Chill"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Friday"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "White Headphones"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Pigtails"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Brown Backwards Cap"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeig4dtqzxoqqpdin77uft6ostnsnbgejnbq47hfapfhbbbmyh3stq4.ipfs.nftstorage.link/2041.png?ext=png"
+    },
+    {
+      "address": "BNBQkEi7iY6r4USsdJT1CbNEZEWmGp1eG5he7e9ndRJM",
+      "name": "LILY #3199",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sky"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Kunai"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Focus"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Chill"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Puffer"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Spike"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Buzz"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeidrvq2cf77z3i3y2o36i37sy62lgbg22csiy5xof6sjs7fzh2ldli.ipfs.nftstorage.link/9494.png?ext=png"
+    },
+    {
+      "address": "5kEpoBvuKDEN9sv8nCRgPvf7MNnBNbaRRbz84YbTFi3d",
+      "name": "LILY #3356",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Rose"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Beer"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Aloof"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Chill"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "White Hoodie (Up)"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Ring"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Highpony"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Brown Backwards Cap"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeifhatkw6j5725sznjr3e52m5vm7wy3hxk6evm7r3fceeumbj6mn44.ipfs.nftstorage.link/4489.png?ext=png"
+    },
+    {
+      "address": "wgDYFcwwDqbgmNcGP6zfYm2NCMLctguYdDDvzb7yDp4",
+      "name": "LILY #3528",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Earth"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Bindle"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Bored"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Chill"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "White Hoodie (Up)"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Spike"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Croft"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeifldxvhanudi42d2crwlth5t2ov3xbfh7mdc7d4mkwkosujzlwqnq.ipfs.nftstorage.link/1211.png?ext=png"
+    },
+    {
+      "address": "83faC493zrJRQfrtmFPanEEprRA5Fw7iPVKzp6eZBTdi",
+      "name": "LILY #4054",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Earth"
+        },
+        {
+          "trait_type": "hands",
+          "value": "None"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Angry"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Grin"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Lehenga (Up)"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Puffpony"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeiccitpfp7s27gbuqbiz2fbsvzdainet6wfgb37g3mrtmgfss3ppbe.ipfs.nftstorage.link/1946.png?ext=png"
+    },
+    {
+      "address": "BzedhujnKfgWJeXJaaSC6RknmQaLFxKwgn129Mrsrn4F",
+      "name": "LILY #4095",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Midnight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "None"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Keen"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Chill"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Tee"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "White Headphones"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Bun"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "Wind"
+        }
+      ],
+      "image": "https://bafybeif5ao5ca3jwf36qqojpqtw4jxbid4uiheylzbhe3lfwweem5qtf6u.ipfs.nftstorage.link/7636.png?ext=png"
+    },
+    {
+      "address": "GK7HzF646zodKSXKmKHXDdCQN5wdEL5qzqG2niSaEgfM",
+      "name": "LILY #4175",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Midnight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Chip"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Hollow"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Glow"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Grin"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Penguin"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Akagami"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeigzpzb4fv46ersxglfuwnfvclvdzyjjxlv5snequ4lakdynu76bsu.ipfs.nftstorage.link/4525.png?ext=png"
+    },
+    {
+      "address": "3m4EiiCUyzbfWWpePH9akNnGYnF7iiB8XDEuB5nbEdJq",
+      "name": "LILY #4945",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sky"
+        },
+        {
+          "trait_type": "hands",
+          "value": "None"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Keen"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Toothpick"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Tracksuit"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Jet"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeiaqb6is5cwikdkyzh7nfp3zaj35pdz7me4hmlsvyr4edulpc3z5y4.ipfs.nftstorage.link/8069.png?ext=png"
+    },
+    {
+      "address": "64ViDu5PrCUpRwBSGG45oUijDzvqZ9Dymdf2v7HpRMto",
+      "name": "LILY #4984",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sand"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Brass Knuckles"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Mischievous"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Toothpick"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Black Hoodie"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Scruff"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Cap Strap"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeibwrkey4vincueijf72dnkrblless6iao6nv73rn3fbg2pnyz4gg4.ipfs.nftstorage.link/8616.png?ext=png"
+    },
+    {
+      "address": "7hgsuvutKXddYpdY1ddkBGA3a9CThgdAYif2GRAVHQ9G",
+      "name": "LILY #5404",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sea"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Fire"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Skeptical"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Tune"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Vintage"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Spike"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Zoom"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "White Cap Strap"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeib72ancztiapxhak7dcj4e3i3acyzv6ano75ducsyaps5jxwefdlu.ipfs.nftstorage.link/4251.png?ext=png"
+    },
+    {
+      "address": "98xEdxGeQoBV2sgLsJpWWSv47UFuBkbp75mTrnLbjsmS",
+      "name": "LILY #6180",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Twilight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Kunai"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Cheerful"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Chill"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Rabbit"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "None"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Rocky"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeibffkpaxuejj3gdxabmwuwjcmgy2pa2sbd4klcfzdibv6d3svhhoe.ipfs.nftstorage.link/595.png?ext=png"
+    },
+    {
+      "address": "C2jMVYXAUhXKhgU5ywmuxcsRDXprEhpS2NYF86VwUEuh",
+      "name": "LILY #6954",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Gold"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Tennis Ball"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Keen"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Calm"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Tatters"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Spike"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Short"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "None"
+        },
+        {
+          "trait_type": "aura",
+          "value": "Aqua"
+        }
+      ],
+      "image": "https://bafybeibioz2fof5lrmjulnpcdclgflduezt7dmajzpdkqhaixyhlwj3tie.ipfs.nftstorage.link/3191.png?ext=png"
+    },
+    {
+      "address": "9224VMBqrT6PYjhpsgTMfBKbv8FKAKhs7NwqnBitsT3h",
+      "name": "LILY #7604",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Midnight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Summon"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Aloof"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Toothpick"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Sweetheart"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Earphones"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": ""
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Kente"
+        },
+        {
+          "trait_type": "aura",
+          "value": "Cherry"
+        }
+      ],
+      "image": "https://bafybeif3ayxso3vlzrzknca53uvwts65z5zzfm7emzontm5fbrd3246hva.ipfs.nftstorage.link/4556.png?ext=png"
+    },
+    {
+      "address": "TCwy3om6qD7zGddndawUAD4niL1DMFe91jWm3zkpFBe",
+      "name": "LILY #8209",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Midnight"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Summon"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Concerned"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Toothpick"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Gi"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Dreads"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Backwards Cap"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeigk5vsshsoumohneg4xsvw2ucw3j7echx7aq4ngex2kf5l6pvgyiy.ipfs.nftstorage.link/2802.png?ext=png"
+    },
+    {
+      "address": "DQtfuZkePqMjMvQ8EAzwx9AfVhTAyqBBjNxFzwYPKG82",
+      "name": "LILY #8605",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Male"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sea"
+        },
+        {
+          "trait_type": "hands",
+          "value": "None"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Glow"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Grin"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Friday"
+        },
+        {
+          "trait_type": "accessories",
+          "value": ""
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "Square"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Scruff"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Beanie"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeicltnkhxrzfrsarrdcfswgoyts4omx2hn4lye2gpwsh3jo4ds54uq.ipfs.nftstorage.link/5419.png?ext=png"
+    },
+    {
+      "address": "4hErirWq3MJgGe1vspEeCdRCw2PmiTG7qY4iCXURB4TV",
+      "name": "LILY #9827",
+      "attributes": [
+        {
+          "trait_type": "type",
+          "value": "Female"
+        },
+        {
+          "trait_type": "background",
+          "value": "Sky"
+        },
+        {
+          "trait_type": "hands",
+          "value": "Kunai"
+        },
+        {
+          "trait_type": "origin",
+          "value": "Andro"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Angry"
+        },
+        {
+          "trait_type": "mouth",
+          "value": "Cheeky"
+        },
+        {
+          "trait_type": "clothing",
+          "value": "Blazer"
+        },
+        {
+          "trait_type": "accessories",
+          "value": "Bead-Earring"
+        },
+        {
+          "trait_type": "eyewear",
+          "value": "None"
+        },
+        {
+          "trait_type": "hair",
+          "value": "Pigtails"
+        },
+        {
+          "trait_type": "headgear",
+          "value": "Bandana"
+        },
+        {
+          "trait_type": "aura",
+          "value": "None"
+        }
+      ],
+      "image": "https://bafybeibjrrouhpvqmm4o3ofcottbralpqorm77pihsnels6j4wjbjsbuqq.ipfs.nftstorage.link/9171.png?ext=png"
+    }
+  ]
+}
