@@ -177,12 +177,15 @@ const LotusGang: NextPage<{
           colorChangeAnimation={false}
           iconHoverColorAnimations={false}
         />
-        <div className="w-screen min-h-screen bg-white text-neutral-900">
+        <div className="w-screen min-h-screen text-neutral-900 bg-lily-blue">
           <div className="relative">
-            <div className="relative w-full pb-28">
-              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
-                <div className="flex items-center justify-between gap-4">
-                  <h1 className="w-full mb-20 font-mono text-6xl lg:text-7xl">
+            <div className="relative w-full bg-white text-lily-black pb-28">
+              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
+                <div
+                  id="masthead"
+                  className="flex items-center justify-between gap-4"
+                >
+                  <h1 className="w-full mb-20 font-sans text-6xl font-bold lg:text-8xl">
                     Lotus Gang
                   </h1>
                 </div>
