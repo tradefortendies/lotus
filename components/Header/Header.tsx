@@ -180,17 +180,6 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/quantum-calculator">
-                  <a className="block p-4 cursor-pointer">Quantum Calculator</a>
-                </Link>
-              </li>
-              <li
-                className={clsx(
-                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
-                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
-                )}
-              >
                 <Link href="/vibeometer">
                   <a className="block p-4 cursor-pointer">Vibeometer</a>
                 </Link>
@@ -213,7 +202,7 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/eligibility" passHref>
+                <Link href="/collections/lily" passHref>
                   <a className="block p-4 cursor-pointer">LILY</a>
                 </Link>
               </li>
@@ -224,13 +213,24 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
+                <Link href="/collections/lotus-gang" passHref>
+                  <a className="block p-4 cursor-pointer">Lotus Gang</a>
+                </Link>
+              </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
                 <a
-                  href="https://magiceden.io/marketplace/lotus_gang_nft"
+                  href="https://shop.thelotus.io"
                   target="_blank"
                   rel="noreferrer"
                   className="block p-4 cursor-pointer"
                 >
-                  Lotus Gang
+                  Shop
                 </a>
               </li>
               <li
@@ -415,18 +415,14 @@ function Header({
                               </a>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/eligibility" passHref>
+                              <Link href="/collections/lily" passHref>
                                 <a>LILY</a>
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <a
-                                href="https://magiceden.io/marketplace/lotus_gang_nft"
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                Lotus Gang
-                              </a>
+                              <Link href="/collections/lotus-gang" passHref>
+                                <a>Lotus Gang</a>
+                              </Link>
                             </li>
                             <li className="py-2 transition duration-300">
                               <a
