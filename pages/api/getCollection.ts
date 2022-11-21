@@ -159,6 +159,7 @@ const getCollection = async (req: NextApiRequest, res: NextApiResponse) => {
         traits[traitIndex].values.push(attr.value)
       }
 
+      // @ts-ignore
       nft.attributes[index].trait_type = attr.trait_type.toLowerCase()
     })
   })
