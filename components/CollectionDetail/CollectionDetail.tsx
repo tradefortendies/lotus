@@ -40,7 +40,7 @@ function CollectionDetail({
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-5"
                     >
-                      <g clip-path="url(#clip0_1_43)">
+                      <g clipPath="url(#clip0_1_43)">
                         <path
                           d="M28.5884 105.326C29.6505 104.264 31.1109 103.644 32.6598 103.644H173.123C175.69 103.644 176.974 106.743 175.159 108.558L147.412 136.318C146.35 137.38 144.889 138 143.34 138H2.87653C0.309776 138 -0.973604 134.901 0.840829 133.086L28.5884 105.326Z"
                           fill="url(#paint0_linear_1_43)"
@@ -63,7 +63,7 @@ function CollectionDetail({
                           y2="169.663"
                           gradientUnits="userSpaceOnUse"
                         >
-                          <stop stop-color="#1E1E1E" />
+                          <stop stopColor="#1E1E1E" />
                         </linearGradient>
                         <linearGradient
                           id="paint1_linear_1_43"
@@ -73,7 +73,7 @@ function CollectionDetail({
                           y2="147.461"
                           gradientUnits="userSpaceOnUse"
                         >
-                          <stop stop-color="#1E1E1E" />
+                          <stop stopColor="#1E1E1E" />
                         </linearGradient>
                         <linearGradient
                           id="paint2_linear_1_43"
@@ -83,7 +83,7 @@ function CollectionDetail({
                           y2="158.491"
                           gradientUnits="userSpaceOnUse"
                         >
-                          <stop stop-color="#1E1E1E" />
+                          <stop stopColor="#1E1E1E" />
                         </linearGradient>
                         <clipPath id="clip0_1_43">
                           <rect width="176" height="138" fill="white" />
@@ -104,7 +104,7 @@ function CollectionDetail({
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-5"
                     >
-                      <g clip-path="url(#clip0_1_40)">
+                      <g clipPath="url(#clip0_1_40)">
                         <path
                           d="M79.1819 47.1814C96.405 47.3374 109.998 61.2147 109.754 78.3804C109.51 95.5523 95.472 109.099 78.3174 108.718C61.3574 108.344 48.0577 94.7661 48.1017 77.8749C48.1458 60.7155 62.0019 47.0255 79.1819 47.1814Z"
                           fill="#303030"
