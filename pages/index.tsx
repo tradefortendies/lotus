@@ -342,7 +342,7 @@ const Home: NextPage = () => {
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
                           target="_blank"
                           rel="noreferrer"
-                          width={150}
+                          width={120}
                           underlineSpeed={150}
                         >
                           Lotus Gang
@@ -353,7 +353,7 @@ const Home: NextPage = () => {
                           href="https://magiceden.io/marketplace/lily"
                           target="_blank"
                           rel="noreferrer"
-                          width={150}
+                          width={60}
                           underlineSpeed={150}
                         >
                           LILY
