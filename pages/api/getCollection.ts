@@ -85,34 +85,34 @@ const getCollection = async (req: NextApiRequest, res: NextApiResponse) => {
   console.log(`Fetching mint addresses for ${req.query.candyMachineId}`)
 
   const candyMachineId = new PublicKey(String(req.query.candyMachineId))
-  // const mintAddresses = await getMintAddresses(candyMachineId)
-  const mintAddresses = [
-    '3m4EiiCUyzbfWWpePH9akNnGYnF7iiB8XDEuB5nbEdJq',
-    'wgDYFcwwDqbgmNcGP6zfYm2NCMLctguYdDDvzb7yDp4',
-    'BzedhujnKfgWJeXJaaSC6RknmQaLFxKwgn129Mrsrn4F',
-    '7hgsuvutKXddYpdY1ddkBGA3a9CThgdAYif2GRAVHQ9G',
-    '83faC493zrJRQfrtmFPanEEprRA5Fw7iPVKzp6eZBTdi',
-    '5kEpoBvuKDEN9sv8nCRgPvf7MNnBNbaRRbz84YbTFi3d',
-    'BZGf1GZ1wUN7EzsuCuRnJB2BrUkHPc1j6BF7QdxUFnS6',
-    '9KsTxibnkmSWfyDtQDDBShjSDSNGSbcKphC1soEcrqmW',
-    '4hErirWq3MJgGe1vspEeCdRCw2PmiTG7qY4iCXURB4TV',
-    'GK7HzF646zodKSXKmKHXDdCQN5wdEL5qzqG2niSaEgfM',
-    '64ViDu5PrCUpRwBSGG45oUijDzvqZ9Dymdf2v7HpRMto',
-    'TCwy3om6qD7zGddndawUAD4niL1DMFe91jWm3zkpFBe',
-    'DQtfuZkePqMjMvQ8EAzwx9AfVhTAyqBBjNxFzwYPKG82',
-    'BNBQkEi7iY6r4USsdJT1CbNEZEWmGp1eG5he7e9ndRJM',
-    'GKrouG6MpbTYqrpDodVyzbGJH6Z1AFoPdpJF1cXb2hob',
-    'C2jMVYXAUhXKhgU5ywmuxcsRDXprEhpS2NYF86VwUEuh',
-    '2ZDUpbKdX8T9r89TMkPyhVv1jsHpPn9eEexGnxrYrLzj',
-    '98xEdxGeQoBV2sgLsJpWWSv47UFuBkbp75mTrnLbjsmS',
-    '9224VMBqrT6PYjhpsgTMfBKbv8FKAKhs7NwqnBitsT3h',
-  ]
+  const mintAddresses = await getMintAddresses(candyMachineId)
+  // const mintAddresses = [
+  //   '3m4EiiCUyzbfWWpePH9akNnGYnF7iiB8XDEuB5nbEdJq',
+  //   'wgDYFcwwDqbgmNcGP6zfYm2NCMLctguYdDDvzb7yDp4',
+  //   'BzedhujnKfgWJeXJaaSC6RknmQaLFxKwgn129Mrsrn4F',
+  //   '7hgsuvutKXddYpdY1ddkBGA3a9CThgdAYif2GRAVHQ9G',
+  //   '83faC493zrJRQfrtmFPanEEprRA5Fw7iPVKzp6eZBTdi',
+  //   '5kEpoBvuKDEN9sv8nCRgPvf7MNnBNbaRRbz84YbTFi3d',
+  //   'BZGf1GZ1wUN7EzsuCuRnJB2BrUkHPc1j6BF7QdxUFnS6',
+  //   '9KsTxibnkmSWfyDtQDDBShjSDSNGSbcKphC1soEcrqmW',
+  //   '4hErirWq3MJgGe1vspEeCdRCw2PmiTG7qY4iCXURB4TV',
+  //   'GK7HzF646zodKSXKmKHXDdCQN5wdEL5qzqG2niSaEgfM',
+  //   '64ViDu5PrCUpRwBSGG45oUijDzvqZ9Dymdf2v7HpRMto',
+  //   'TCwy3om6qD7zGddndawUAD4niL1DMFe91jWm3zkpFBe',
+  //   'DQtfuZkePqMjMvQ8EAzwx9AfVhTAyqBBjNxFzwYPKG82',
+  //   'BNBQkEi7iY6r4USsdJT1CbNEZEWmGp1eG5he7e9ndRJM',
+  //   'GKrouG6MpbTYqrpDodVyzbGJH6Z1AFoPdpJF1cXb2hob',
+  //   'C2jMVYXAUhXKhgU5ywmuxcsRDXprEhpS2NYF86VwUEuh',
+  //   '2ZDUpbKdX8T9r89TMkPyhVv1jsHpPn9eEexGnxrYrLzj',
+  //   '98xEdxGeQoBV2sgLsJpWWSv47UFuBkbp75mTrnLbjsmS',
+  //   '9224VMBqrT6PYjhpsgTMfBKbv8FKAKhs7NwqnBitsT3h',
+  // ]
 
   console.log(mintAddresses)
 
   const nfts = await Promise.all(
     mintAddresses.map(async (mintAddress, index) => {
-      await timeOut(50 * index)
+      await timeOut(200 * index)
       console.log(index, mintAddress)
       const nft = await metaplex
         .nfts()
