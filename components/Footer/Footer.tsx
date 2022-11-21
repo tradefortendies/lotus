@@ -11,11 +11,11 @@ const navLinks = [
   },
   {
     text: 'Lotus Gang',
-    href: '/collections/lotus-gang',
+    href: 'https://magiceden.io/marketplace/lotus_gang_nft',
   },
   {
     text: 'LILY',
-    href: '/collections/lily',
+    href: 'https://magiceden.io/marketplace/lily',
   },
   {
     text: 'Our Vision',

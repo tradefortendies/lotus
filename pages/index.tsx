@@ -300,18 +300,8 @@ const Home: NextPage = () => {
                         href="/vision"
                         underlineSpeed={150}
                         underlineReverse={true}
-                        className="py-2"
                       >
-                        Our vision
-                      </Button>
-                      <Button
-                        arrow={true}
-                        type="transparent"
-                        href="#eligibility"
-                        underlineSpeed={210}
-                        className="py-2"
-                      >
-                        How can I mint LILY?
+                        Our Vision
                       </Button>
                       <Button
                         arrow={true}
@@ -320,9 +310,18 @@ const Home: NextPage = () => {
                         target="_blank"
                         rel="noreferrer"
                         underlineSpeed={150}
-                        className="py-2"
                       >
-                        Join the gang
+                        Lotus Gang
+                      </Button>
+                      <Button
+                        arrow={true}
+                        type="transparent"
+                        href="https://magiceden.io/marketplace/lily"
+                        target="_blank"
+                        rel="noreferrer"
+                        underlineSpeed={150}
+                      >
+                        LILY
                       </Button>
                     </div>
                     <Parallax offset={100} clampInitial={-100}>
@@ -346,7 +345,7 @@ const Home: NextPage = () => {
                           width={150}
                           underlineSpeed={150}
                         >
-                          Buy a Lotus Gang
+                          Lotus Gang
                         </Button>
                         <Button
                           arrow={true}
@@ -357,7 +356,7 @@ const Home: NextPage = () => {
                           width={150}
                           underlineSpeed={150}
                         >
-                          Buy a LILY
+                          LILY
                         </Button>
                       </div>
                     </Parallax>
@@ -413,7 +412,9 @@ const Home: NextPage = () => {
                     ongoing projects and closed community.
                   </p>
                   <Button
-                    href="/collections/lotus-gang"
+                    href="https://magiceden.io/marketplace/lotus_gang_nft"
+                    target="_blank"
+                    rel="noreferrer"
                     className="mx-auto"
                     onMouseOver={(e) => {
                       e.target.style.backgroundColor = 'white'
@@ -427,7 +428,7 @@ const Home: NextPage = () => {
                       e.target.classList.add('!border-transparent')
                     }}
                   >
-                    Browse Collection
+                    View Project
                   </Button>
                 </div>
                 <div
@@ -462,7 +463,9 @@ const Home: NextPage = () => {
                     founder and artist behind The Lotus.
                   </p>
                   <Button
-                    href="/collections/lily"
+                    href="https://magiceden.io/marketplace/lily"
+                    target="_blank"
+                    rel="noreferrer"
                     className="mx-auto !border !border-transparent !bg-white"
                     onMouseOver={(e) => {
                       e.target.classList.remove('!bg-white')
@@ -477,7 +480,7 @@ const Home: NextPage = () => {
                       e.target.classList.remove('!border-lily-black')
                     }}
                   >
-                    Browse Collection
+                    View Project
                   </Button>
                 </div>
               </div>

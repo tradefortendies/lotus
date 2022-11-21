@@ -87,7 +87,7 @@ const VibeoMeter: NextPage = () => {
                       >
                         Calculate
                       </Button>
-                      {showWlBtn && (
+                      {/* {showWlBtn && (
                         <Button
                           type="pill-outline"
                           className="mt-8"
@@ -103,7 +103,7 @@ const VibeoMeter: NextPage = () => {
                         >
                           LILY List
                         </Button>
-                      )}
+                      )} */}
                     </div>
                   </div>
                   <h2 className="font-sans text-xl lg:text-[29px] leading-normal">
@@ -157,9 +157,9 @@ const VibeoMeter: NextPage = () => {
           </div>
         </div>
 
-        {wlModal && <Confetti />}
+        {/* {wlModal && <Confetti />} */}
 
-        <Transition appear show={wlModal} as={Fragment}>
+        {/* <Transition appear show={wlModal} as={Fragment}>
           <Dialog
             as="div"
             className="relative z-10"
@@ -203,8 +203,6 @@ const VibeoMeter: NextPage = () => {
                       </p>
 
                       <p className="my-6 text-xl font-bold uppercase">
-                        {/* NDN6CNE7 */}
-                        {/* K62HRJPZ */}
                         HWKFYUX2
                       </p>
                     </div>
@@ -226,7 +224,7 @@ const VibeoMeter: NextPage = () => {
               </div>
             </div>
           </Dialog>
-        </Transition>
+        </Transition> */}
       </>
     </>
   )
