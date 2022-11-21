@@ -57,7 +57,8 @@ const faqs = [
             href="https://twitter.com/notbunjil"
             target="_blank"
             rel="noreferrer"
-            className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
+            className="font-bold transition border-b-2 border-lily-black hover:border-transparent"
+          >
             Bunjil
           </a>{' '}
           who is the founder and artist behind <strong>The Lotus</strong>.
@@ -71,7 +72,8 @@ const faqs = [
             href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
             target="_blank"
             rel="noreferrer"
-            className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
+            className="font-bold transition border-b-2 border-lily-black hover:border-transparent"
+          >
             The Lotus Library
           </a>
           .
@@ -96,57 +98,9 @@ const faqs = [
           Over the year, Our community has grown into one of the most vibrant
           and active groups. <strong>LILY</strong> also acts as a reward for
           holders of <strong>Lotus Gang</strong> and{' '}
-          <strong>The Rap Pack</strong> who enjoy the only guaranteed
+          <strong>The Rap Pack</strong> who enjoyed the only guaranteed
           whitelisting for mint.
         </p>
-      </div>
-    ),
-  },
-  {
-    question: 'When is the LILY mint?',
-    answer: (
-      <div className="space-y-8">
-        <p>TBA</p>
-      </div>
-    ),
-  },
-  {
-    question: 'How large is the LILY collection?',
-    answer: (
-      <div className="space-y-8">
-        <p>10,000</p>
-      </div>
-    ),
-  },
-  {
-    question: 'How much is the mint?',
-    answer: (
-      <div className="space-y-8">
-        <p>TBA</p>
-      </div>
-    ),
-  },
-  {
-    question: 'How can I get whitelist?',
-    answer: (
-      <div className="space-y-8">
-        <p>The onlys way to be whitelisted are:</p>
-        <ul className="ml-4 space-y-4 list-disc lg:w-4/5">
-          <li>
-            Buy a <strong>Lotus</strong> - The original collection. All Lotus
-            Gang holders are eligible for whitelist for every{' '}
-            <strong>Lotus Gang</strong> they hold.
-          </li>
-          <li>
-            Buy a <strong>Rap Pack</strong> - Each piece in the RAP PACK enables
-            you to mint 8x LILIES.
-          </li>
-          <li>
-            Join our Community - Check our Twitter and Discord to keep up to
-            date with the latest methods of gaining access to the LILY
-            Whitelist. There are not that many.
-          </li>
-        </ul>
       </div>
     ),
   },
@@ -162,7 +116,8 @@ const faqs = [
             href="https://exchange.art/series/The%20Rap%20Pack/nfts"
             target="_blank"
             rel="noreferrer"
-            className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
+            className="font-bold transition border-b-2 border-lily-black hover:border-transparent"
+          >
             Exchange Art
           </a>
           .
@@ -195,7 +150,8 @@ const faqs = [
             href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
             target="_blank"
             rel="noreferrer"
-            className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
+            className="font-bold transition border-b-2 border-lily-black hover:border-transparent"
+          >
             The Lotus Library
           </a>
           .
@@ -238,7 +194,8 @@ const faqs = [
               href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
               target="_blank"
               rel="noreferrer"
-              className="font-bold transition border-b-2 border-lily-black hover:border-transparent">
+              className="font-bold transition border-b-2 border-lily-black hover:border-transparent"
+            >
               The Lotus Library
             </a>
             <ul className="mt-4 ml-4 space-y-4 list-disc lg:w-4/5">
@@ -320,7 +277,8 @@ const FAQ: NextPage = () => {
               <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
                 <div
                   id="masthead"
-                  className="flex items-center justify-between gap-4">
+                  className="flex items-center justify-between gap-4"
+                >
                   <h1 className="w-full mb-20 font-mono text-6xl opacity-0 lg:text-7xl">
                     Burning Questions
                   </h1>
@@ -330,7 +288,8 @@ const FAQ: NextPage = () => {
                     return (
                       <div
                         key={index}
-                        className="relative w-full mb-5 font-sans bg-white rounded-lg opacity-0 text-neutral-900 group">
+                        className="relative w-full mb-5 font-sans bg-white rounded-lg opacity-0 text-neutral-900 group"
+                      >
                         <Disclosure>
                           {({ open }) => (
                             <>

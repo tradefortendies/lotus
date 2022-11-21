@@ -15,7 +15,7 @@ const navLinks = [
   },
   {
     text: 'LILY',
-    href: '/#eligibility',
+    href: 'https://magiceden.io/marketplace/lily',
   },
   {
     text: 'Our Vision',
@@ -78,7 +78,8 @@ function Footer({ isLoading = false }: { isLoading?: boolean }) {
     <footer
       id="footer"
       className="w-full px-8 py-8 z-[9999] relative"
-      style={{ backgroundColor: theme.primaryColor }}>
+      style={{ backgroundColor: theme.primaryColor }}
+    >
       <nav className="hidden w-full mb-8 lg:block">
         <ul id="footer-list" className="flex justify-between w-full">
           {navLinks.map((navLink, index) => {
@@ -98,7 +99,8 @@ function Footer({ isLoading = false }: { isLoading?: boolean }) {
           viewBox="0 0 1619 220"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full">
+          className="w-full"
+        >
           <path
             d="M66.6 215H114.3V49.6998H180.9V4.9998H0V49.6998H66.6V215Z"
             fill="#222222"

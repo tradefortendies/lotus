@@ -300,18 +300,8 @@ const Home: NextPage = () => {
                         href="/vision"
                         underlineSpeed={150}
                         underlineReverse={true}
-                        className="py-2"
                       >
-                        Our vision
-                      </Button>
-                      <Button
-                        arrow={true}
-                        type="transparent"
-                        href="#eligibility"
-                        underlineSpeed={210}
-                        className="py-2"
-                      >
-                        How can I mint LILY?
+                        Our Vision
                       </Button>
                       <Button
                         arrow={true}
@@ -320,9 +310,18 @@ const Home: NextPage = () => {
                         target="_blank"
                         rel="noreferrer"
                         underlineSpeed={150}
-                        className="py-2"
                       >
-                        Join the gang
+                        Lotus Gang
+                      </Button>
+                      <Button
+                        arrow={true}
+                        type="transparent"
+                        href="https://magiceden.io/marketplace/lily"
+                        target="_blank"
+                        rel="noreferrer"
+                        underlineSpeed={150}
+                      >
+                        LILY
                       </Button>
                     </div>
                     <Parallax offset={100} clampInitial={-100}>
@@ -340,22 +339,24 @@ const Home: NextPage = () => {
                         <Button
                           arrow={true}
                           type="transparent"
-                          href="#eligibility"
-                          width={220}
-                          underlineSpeed={150}
-                        >
-                          How can I mint LILY?
-                        </Button>
-                        <Button
-                          arrow={true}
-                          type="transparent"
                           href="https://magiceden.io/marketplace/lotus_gang_nft"
                           target="_blank"
                           rel="noreferrer"
                           width={150}
                           underlineSpeed={150}
                         >
-                          Join the gang
+                          Lotus Gang
+                        </Button>
+                        <Button
+                          arrow={true}
+                          type="transparent"
+                          href="https://magiceden.io/marketplace/lily"
+                          target="_blank"
+                          rel="noreferrer"
+                          width={150}
+                          underlineSpeed={150}
+                        >
+                          LILY
                         </Button>
                       </div>
                     </Parallax>
@@ -373,7 +374,7 @@ const Home: NextPage = () => {
               </div>
               <div
                 id="collections"
-                className="flex flex-col lg:flex-row lg:min-h-screen mt-[5vh] gap-8 px-4 lg:px-8"
+                className="flex flex-col lg:flex-row lg:min-h-screen my-[5vh] gap-8 px-4 lg:px-8"
               >
                 <div className="flex flex-col justify-center p-8 space-y-8 text-center bg-white lg:opacity-0 lg:p-16 lg:min-h-screen lg:w-1/2 rounded-2xl">
                   <svg
@@ -462,7 +463,9 @@ const Home: NextPage = () => {
                     founder and artist behind The Lotus.
                   </p>
                   <Button
-                    href="#eligibility"
+                    href="https://magiceden.io/marketplace/lily"
+                    target="_blank"
+                    rel="noreferrer"
                     className="mx-auto !border !border-transparent !bg-white"
                     onMouseOver={(e) => {
                       e.target.classList.remove('!bg-white')
@@ -477,11 +480,10 @@ const Home: NextPage = () => {
                       e.target.classList.remove('!border-lily-black')
                     }}
                   >
-                    Check Eligibility
+                    View Project
                   </Button>
                 </div>
               </div>
-              <Eligibility />
               <div id="merch" className="px-4 py-16 bg-white lg:px-8">
                 <div className="flex flex-col items-center mx-auto text-center lg:text-left lg:flex-row max-w-7xl">
                   <div>

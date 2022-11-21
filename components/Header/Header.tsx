@@ -31,9 +31,6 @@ function Header({
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [reverseColors, setReverseColors] = useState(false)
-  const [mintLink] = useState(
-    router.pathname === '/' ? '/#eligibility' : '/eligibility'
-  )
   const theme = useContext(ThemeContext)
 
   const useScrollDirection = () => {
@@ -180,17 +177,6 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/quantum-calculator">
-                  <a className="block p-4 cursor-pointer">Quantum Calculator</a>
-                </Link>
-              </li>
-              <li
-                className={clsx(
-                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
-                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
-                )}
-              >
                 <Link href="/vibeometer">
                   <a className="block p-4 cursor-pointer">Vibeometer</a>
                 </Link>
@@ -213,9 +199,14 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/eligibility" passHref>
-                  <a className="block p-4 cursor-pointer">LILY</a>
-                </Link>
+                <a
+                  className="block p-4 cursor-pointer"
+                  href="https://magiceden.io/marketplace/lily"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LILY
+                </a>
               </li>
               <li
                 className={clsx(
@@ -225,10 +216,10 @@ function Header({
                 )}
               >
                 <a
+                  className="block p-4 cursor-pointer"
                   href="https://magiceden.io/marketplace/lotus_gang_nft"
                   target="_blank"
                   rel="noreferrer"
-                  className="block p-4 cursor-pointer"
                 >
                   Lotus Gang
                 </a>
@@ -325,7 +316,7 @@ function Header({
             </ul>
           </li>
         </ul>
-        <Link href={mintLink} passHref>
+        <Link href="/vision" passHref>
           <a
             className={clsx(
               'hidden xl:flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] ml-12  transition duration-1000 hover:rotate-[360deg]'
@@ -335,7 +326,7 @@ function Header({
                 button === 'white' ? '#ffffff' : theme.primaryColor,
             }}
           >
-            Mint Now
+            Vision
             <svg
               width="20"
               height="20"
@@ -415,9 +406,13 @@ function Header({
                               </a>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/eligibility" passHref>
-                                <a>LILY</a>
-                              </Link>
+                              <a
+                                href="https://magiceden.io/marketplace/lily"
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                LILY
+                              </a>
                             </li>
                             <li className="py-2 transition duration-300">
                               <a
@@ -495,9 +490,6 @@ function Header({
                               </a>
                             </li>
                           </ul>
-                          <Button href={mintLink} className="mt-8">
-                            Mint Now
-                          </Button>
                         </div>
                       </div>
                     </div>
