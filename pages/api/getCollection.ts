@@ -75,6 +75,22 @@ const timeOut = (ms: number) => {
   })
 }
 
+import LILYNftsJson from '../../data/lily.json'
+const checkCollection = async (req: NextApiRequest, res: NextApiResponse) => {
+  const nfts = LILYNftsJson.nfts
+
+  nfts.sort((a, b) => {
+    const aId = Number(a?.name?.split('#')[1])
+    const bId = Number(b?.name?.split('#')[1])
+    return aId > bId ? 1 : -1
+  })
+
+  res.json({
+    traits: LILYNftsJson.traits,
+    nfts,
+  })
+}
+
 const getCollection = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.candyMachineId) {
     return res.json({
