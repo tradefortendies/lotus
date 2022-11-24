@@ -64,7 +64,7 @@ function CollectionDetail({
                   })}
                 </svg>
               )}
-              <div className="flex">
+              <div className="flex p-8">
                 <img className="max-w-lg mr-8" src={nft.image} />
                 <div className="w-full py-12 bg-white">
                   <h1 className="text-5xl font-bold">{nft.name}</h1>
