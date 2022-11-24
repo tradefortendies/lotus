@@ -55,6 +55,7 @@ function CollectionDetail({
                   {bgColors.slice(0, 5).map((color, index) => {
                     return (
                       <rect
+                        key={index}
                         x={20 * index + '%'}
                         width="20%"
                         height="100%"
