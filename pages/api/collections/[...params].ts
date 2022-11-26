@@ -16,9 +16,6 @@ import LotusGangNftsJson from '../../../data/lotus-gang.json'
 import LILYNftsJson from '../../../data/lily.json'
 import { Trait, Nft } from '../../../types'
 
-LotusGangNftsJson.nfts = shuffle(LotusGangNftsJson.nfts)
-LILYNftsJson.nfts = shuffle(LILYNftsJson.nfts)
-
 const collections = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.params || !req.query.params.length) {
     return res.json({
@@ -35,6 +32,10 @@ const collections = async (req: NextApiRequest, res: NextApiResponse) => {
   const traits: string = req.query.traits ? String(req.query.traits) : ''
   const page: number = req.query.page ? Number(req.query.page) : 0
   const perPage: number = req.query.perPage ? Number(req.query.perPage) : 20
+
+  if (req.query.reset) {
+    nftJson[collection].nfts = shuffle(nftJson[collection].nfts)
+  }
 
   let filteredNfts: Nft[] = nftJson[collection].nfts
 

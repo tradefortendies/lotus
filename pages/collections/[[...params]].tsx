@@ -19,12 +19,14 @@ const buildNftApiUrl = ({
   collection,
   page,
   filters,
+  reset = false,
 }: {
   collection: string
   page: number
   filters: {
     [key: string]: string[]
   }
+  reset?: boolean
 }): string => {
   let apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/${collection}?`
 
@@ -43,6 +45,8 @@ const buildNftApiUrl = ({
 
     apiUrl = apiUrl.substring(0, apiUrl.length - 1) + '&'
   }
+
+  apiUrl += `reset=${reset}&`
 
   if (page) {
     apiUrl += `page=${page}`
@@ -145,6 +149,7 @@ const LotusGang: NextPage<{
         collection,
         page: 0,
         filters: {},
+        reset: true,
       })
     ).then((res) => res.json())
 
@@ -245,7 +250,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let nftReq: NftApiResponse | null = null
 
   nftsReq = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/${query.params[0]}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/collections/${query.params[0]}?reset=true`
   ).then((res) => res.json())
 
   if (query.params[1]) {
