@@ -1,11 +1,13 @@
 const { ColorExtractor } = require('react-color-extractor')
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { IoMdClose } from 'react-icons/io'
 import { formatAddress } from '../../lib/helpers'
 import { Nft } from '../../types'
+import { ThemeContext } from '../Theme'
 import Button from '../Button'
 
 function CollectionDetail({
@@ -20,6 +22,7 @@ function CollectionDetail({
   collection: string
 }) {
   const router = useRouter()
+  const theme = useContext(ThemeContext)
   const [bgColors, setBgColors] = useState<string[]>([])
   const [detailImage, setDetailImage] = useState<string>('')
   const [windowDimensions, setWindowDimensions] = useState<{
@@ -69,7 +72,16 @@ function CollectionDetail({
             </ColorExtractor>
           )}
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
-            <Dialog.Panel className="w-full bg-white rounded-lg shadow-2xl max-w-7xl">
+            <Dialog.Panel className="relative w-full bg-white rounded-lg shadow-2xl max-w-7xl">
+              <button
+                className="absolute flex items-center justify-center w-16 h-16 text-3xl font-bold transition rounded-full text-lily-black -top-6 -right-8 hover:scale-110"
+                style={{ background: theme.primaryColor }}
+                onClick={() => {
+                  onClose()
+                }}
+              >
+                <IoMdClose />
+              </button>
               {bgColors && (
                 <svg
                   fill="none"
