@@ -144,7 +144,7 @@ function CollectionListing({
                       <BeatLoader color="#aaa" size={10} />
                       <div className="absolute top-0 left-0">
                         <Image
-                          src={`/img/collections/${collection}/${nft.address}.png`}
+                          src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
                           width={260}
                           height={260}
                         />

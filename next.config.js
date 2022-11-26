@@ -8,6 +8,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.ipfs.nftstorage.link',
       },
+      {
+        protocol: 'https',
+        hostname: 'lotusgang-assets.sfo3.cdn.digitaloceanspaces.com',
+      },
     ],
   },
 }

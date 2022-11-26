@@ -46,7 +46,9 @@ function CollectionDetail({
             maxColors={5}
             getColors={(colors: string[]) => setBgColors(colors)}
           >
-            <img src={`/img/collections/${collection}/${nft.address}.png`} />
+            <img
+              src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
+            />
           </ColorExtractor>
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="w-full bg-white rounded shadow-2xl max-w-7xl">
@@ -77,7 +79,7 @@ function CollectionDetail({
                       <Image
                         width={512}
                         height={512}
-                        src={`/img/collections/${collection}/${nft.address}.png`}
+                        src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
                       />
                     </div>
                   </div>
