@@ -1,5 +1,5 @@
 import { Trait, Nft } from '../../types'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
@@ -8,6 +8,7 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
+import { ThemeContext } from '../Theme'
 import Button from '../Button'
 
 function CollectionListing({
@@ -33,6 +34,7 @@ function CollectionListing({
   filter: (trait: string, value: string, state: boolean) => void
   reset: () => void
 }) {
+  const theme = useContext(ThemeContext)
   const [filterTags, setFilterTags] = useState([])
   useEffect(() => {
     const newFilterTags: any = []
@@ -87,7 +89,12 @@ function CollectionListing({
                             return (
                               <li className="w-full" key={valueIndex}>
                                 <label
-                                  className="flex items-center w-full gap-2 py-1"
+                                  className={clsx(
+                                    'flex items-center w-full gap-2 py-1 text-gray-800 hover:font-bold hover:text-black',
+                                    filters[trait.trait_type]?.includes(
+                                      value
+                                    ) && '!text-black !font-bold'
+                                  )}
                                   htmlFor={`${trait.trait_type}-${value}`}
                                 >
                                   <input
@@ -134,7 +141,10 @@ function CollectionListing({
         <div className="grid w-full grid-cols-4 gap-4 mb-16">
           {nfts.map((nft, nftIndex) => {
             return (
-              <div className="p-4 bg-gray-100 rounded-md" key={nftIndex}>
+              <div
+                className="p-4 transition bg-gray-100 rounded-md hover:scale-105"
+                key={nftIndex}
+              >
                 <Link
                   href={`/collections/${collection}/${nft.address}`}
                   passHref
