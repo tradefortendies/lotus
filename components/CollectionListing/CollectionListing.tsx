@@ -9,6 +9,7 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
 import { FaFilter } from 'react-icons/fa'
+import { useInView } from 'react-intersection-observer'
 import Button from '../Button'
 
 function CollectionListing({
@@ -38,6 +39,8 @@ function CollectionListing({
   const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
   const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
 
+  const { ref, inView } = useInView()
+
   useEffect(() => {
     const newFilterTags: JSX.Element[] = []
     Object.keys(filters).map((trait) => {
@@ -62,8 +65,12 @@ function CollectionListing({
   }, [filters])
 
   useEffect(() => {
-    console.log(traitFilters)
-  }, [traitFilters])
+    if (!inView) {
+      return
+    }
+
+    loadMore()
+  }, [inView])
 
   return (
     <div className="grid-cols-6 lg:grid">
@@ -93,7 +100,7 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <ul className="mt-8 lg:mt-20">
+        <ul className="sticky mt-8 top-10 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
@@ -223,7 +230,9 @@ function CollectionListing({
             )
           })}
         </div>
-        <Button onClick={() => loadMore()}>Load More</Button>
+        <div ref={ref}>
+          <Button onClick={() => loadMore()}>Load More</Button>
+        </div>
       </div>
     </div>
   )
