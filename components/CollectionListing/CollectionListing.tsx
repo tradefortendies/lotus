@@ -5,6 +5,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { BsFillArrowUpCircleFill } from 'react-icons/bs'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
@@ -36,10 +37,12 @@ function CollectionListing({
   reset: () => void
 }) {
   const [showFilters, setShowFilters] = useState<boolean>(false)
+  const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
   const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
   const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
 
-  const { ref, inView } = useInView()
+  const [loadMoreRef, loadMoreInView] = useInView()
+  const [filtersRef, filtersInView] = useInView()
 
   useEffect(() => {
     const newFilterTags: JSX.Element[] = []
@@ -65,12 +68,16 @@ function CollectionListing({
   }, [filters])
 
   useEffect(() => {
-    if (!inView) {
+    if (!loadMoreInView) {
       return
     }
 
     loadMore()
-  }, [inView])
+  }, [loadMoreInView])
+
+  useEffect(() => {
+    setShowTopBtn(!filtersInView)
+  }, [filtersInView])
 
   return (
     <div className="grid-cols-6 lg:grid">
@@ -100,7 +107,7 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <ul className="sticky mt-8 top-10 lg:mt-20">
+        <ul ref={filtersRef} className="mt-8 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
@@ -230,9 +237,19 @@ function CollectionListing({
             )
           })}
         </div>
-        <div ref={ref}>
+        <div ref={loadMoreRef}>
           <Button onClick={() => loadMore()}>Load More</Button>
         </div>
+        <button
+          className={clsx(
+            'fixed items-center gap-2 bottom-5 left-5 group transition duration-500 opacity-0 hidden lg:flex',
+            showTopBtn && 'opacity-100'
+          )}
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          <BsFillArrowUpCircleFill className="transition duration-500 group-hover:rotate-[360deg]" />
+          back to top
+        </button>
       </div>
     </div>
   )
