@@ -1,5 +1,6 @@
 const { ColorExtractor } = require('react-color-extractor')
-import { useEffect, useState, Suspense } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
@@ -18,7 +19,9 @@ function CollectionDetail({
   nft: Nft
   collection: string
 }) {
+  const router = useRouter()
   const [bgColors, setBgColors] = useState<string[]>([])
+  const [detailImage, setDetailImage] = useState<string>('')
   const [windowDimensions, setWindowDimensions] = useState<{
     width: number
     height: number
@@ -27,12 +30,27 @@ function CollectionDetail({
     height: 0,
   })
 
+  const downloadImage = async (image: string) => {
+    const img = await fetch(image).then((res) => res.blob())
+    setDetailImage(URL.createObjectURL(img))
+  }
+
   useEffect(() => {
     setWindowDimensions({
       width: window.innerWidth,
       height: window.innerHeight,
     })
   }, [])
+
+  useEffect(() => {
+    setBgColors([])
+
+    if (!nft || !nft.image) {
+      return
+    }
+
+    downloadImage(nft.image)
+  }, [nft, router.asPath])
 
   return (
     <Dialog
@@ -42,14 +60,14 @@ function CollectionDetail({
     >
       {nft && (
         <>
-          <ColorExtractor
-            maxColors={5}
-            getColors={(colors: string[]) => setBgColors(colors)}
-          >
-            <img
-              src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
-            />
-          </ColorExtractor>
+          {detailImage && (
+            <ColorExtractor
+              maxColors={5}
+              getColors={(colors: string[]) => setBgColors(colors)}
+            >
+              <img src={detailImage} />
+            </ColorExtractor>
+          )}
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="w-full bg-white rounded-lg shadow-2xl max-w-7xl">
               {bgColors && (
