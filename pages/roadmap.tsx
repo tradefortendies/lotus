@@ -1,11 +1,31 @@
 import type { NextPage } from 'next'
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useThree } from '@react-three/fiber'
+// @ts-ignore
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import RoadmapModel from '../components/RoadmapModel'
+
+const CameraController = () => {
+  const { camera, gl } = useThree()
+  useEffect(() => {
+    const controls = new OrbitControls(camera, gl.domElement)
+
+    controls.autoRotate = true
+    controls.autoRotateSpeed = 10
+    controls.enableDamping = true
+    controls.dampingFactor = 0.01
+    controls.minDistance = 6
+    controls.maxDistance = 6
+    return () => {
+      controls.dispose()
+    }
+  }, [camera, gl])
+  return null
+}
 
 const Roadmap: NextPage = () => {
   useEffect(() => {
@@ -44,8 +64,9 @@ const Roadmap: NextPage = () => {
                     of making the most exciting project possible.
                   </h2>
                 </div>
-                <div>
+                <div className="w-full mb-16 h-[400px]" id="scene">
                   <Canvas style={{ height: 600 }}>
+                    <CameraController />
                     <ambientLight />
                     <RoadmapModel />
                   </Canvas>
