@@ -77,6 +77,7 @@ const LotusGang: NextPage<{
   address,
 }) => {
   const router = useRouter()
+  const [routerPath, setRouterPath] = useState<string>(router.asPath)
   const [detailOpen, setDetailOpen] = useState<boolean>(false)
   const [filters, setFilters] = useState<{
     [key: string]: string[]
@@ -174,7 +175,11 @@ const LotusGang: NextPage<{
   }, [address])
 
   useEffect(() => {
-    reset()
+    const routerPathSplit = router.asPath.split('/')
+    if (routerPathSplit[2] !== routerPath) {
+      reset()
+      setRouterPath(routerPathSplit[2])
+    }
   }, [router.asPath])
 
   // Collection filter view
