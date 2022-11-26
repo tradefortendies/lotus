@@ -8,6 +8,7 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
+import { FaFilter } from 'react-icons/fa'
 import Button from '../Button'
 
 function CollectionListing({
@@ -65,8 +66,25 @@ function CollectionListing({
 
   return (
     <div className="grid-cols-6 lg:grid">
-      <div className="sticky top-0 hidden lg:block">
-        <ul className="mt-16">
+      <div className="flex items-center justify-start w-full mb-4 lg:hidden">
+        <button className="flex items-center gap-2 mr-4">
+          <FaFilter /> Filter
+        </button>
+        <button
+          className="flex items-center gap-2 p-2 group"
+          onClick={() => reset()}
+        >
+          {filterTags.length ? (
+            <IoMdClose className="transition duration-1000 group-hover:rotate-[180deg]" />
+          ) : (
+            <GrPowerReset className="transition duration-1000 group-hover:rotate-[360deg]" />
+          )}
+
+          {filterTags.length ? 'Clear' : 'Shuffle'}
+        </button>
+      </div>
+      <div className="hidden">
+        <ul className="mt-8 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
@@ -145,9 +163,9 @@ function CollectionListing({
         </ul>
       </div>
       <div className="flex flex-col items-center col-span-5">
-        <div className="flex flex-wrap items-center justify-start w-full gap-4 py-4">
+        <div className="flex flex-wrap items-center justify-start w-full gap-4 lg:py-4">
           <button
-            className="flex items-center gap-2 p-2 group"
+            className="items-center hidden gap-2 p-2 lg:flex group"
             onClick={() => reset()}
           >
             {filterTags.length ? (
@@ -160,7 +178,12 @@ function CollectionListing({
           </button>
           {filterTags}
         </div>
-        <div className="grid w-full grid-cols-2 gap-4 mb-16 sm:grid-cols-3 md:grid-cols-4">
+        <div
+          className={clsx(
+            'grid w-full grid-cols-2 gap-4 mb-16 sm:grid-cols-3 md:grid-cols-4',
+            filterTags.length > 0 && 'mt-8 lg:mt-0'
+          )}
+        >
           {nfts.map((nft, nftIndex) => {
             return (
               <div
