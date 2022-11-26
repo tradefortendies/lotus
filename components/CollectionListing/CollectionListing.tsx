@@ -120,20 +120,16 @@ function CollectionListing({
         </ul>
       </div>
       <div className="flex flex-col items-center col-span-5">
-        <div className="flex items-center justify-center w-full py-4">
-          <button className="flex items-center gap-2" onClick={() => reset()}>
+        <div className="flex flex-wrap items-center justify-start w-full gap-4 py-4">
+          <button
+            className="flex items-center gap-2 p-2"
+            onClick={() => reset()}
+          >
             <GrPowerReset />
             Reset
           </button>
-          <p className="ml-auto text-sm italic text-left">
-            Showing {showing} of {total}
-          </p>
+          {filterTags}
         </div>
-        {filterTags.length > 0 && (
-          <div className="flex flex-wrap items-center justify-start w-full gap-4 py-4">
-            {filterTags}
-          </div>
-        )}
         <div className="grid w-full grid-cols-4 gap-4 mb-16">
           {nfts.map((nft, nftIndex) => {
             return (
