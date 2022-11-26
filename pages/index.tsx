@@ -496,20 +496,11 @@ const Home: NextPage = () => {
                       goodies.
                     </p>
                     <Button
-                      href="https://shop.thelotus.io"
-                      target="_blank"
-                      rel="noreferrer"
-                      onMouseOver={(e) => {
-                        e.target.style.backgroundColor = 'transparent'
-                        e.target.style.border = 'solid 1px #303030'
-                      }}
-                      onMouseOut={(e) => {
-                        e.target.style.backgroundColor = theme.primaryColor
-                        e.target.style.border = 'solid 1px transparent'
-                      }}
-                      className="opacity-0 merch"
+                      href="#"
+                      className="opacity-0 merch cursor-help !bg-transparent !border-lily-black"
+                      disabled={true}
                     >
-                      Shop Now
+                      Sold Out
                     </Button>
                   </div>
                   <div>
