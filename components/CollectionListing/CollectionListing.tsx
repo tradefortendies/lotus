@@ -147,11 +147,16 @@ function CollectionListing({
       <div className="flex flex-col items-center col-span-5">
         <div className="flex flex-wrap items-center justify-start w-full gap-4 py-4">
           <button
-            className="flex items-center gap-2 p-2"
+            className="flex items-center gap-2 p-2 group"
             onClick={() => reset()}
           >
-            <GrPowerReset />
-            Reset
+            {filterTags.length ? (
+              <IoMdClose className="transition duration-1000 group-hover:rotate-[180deg]" />
+            ) : (
+              <GrPowerReset className="transition duration-1000 group-hover:rotate-[360deg]" />
+            )}
+
+            {filterTags.length ? 'Clear' : 'Shuffle'}
           </button>
           {filterTags}
         </div>
