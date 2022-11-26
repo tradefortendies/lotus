@@ -1,5 +1,6 @@
 const { ColorExtractor } = require('react-color-extractor')
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
+import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import { formatAddress } from '../../lib/helpers'
 import { Nft } from '../../types'
@@ -66,8 +67,12 @@ function CollectionDetail({
                 </svg>
               )}
               <div className="flex p-8">
-                <img className="max-w-lg mr-8" src={nft.image} />
-                <div className="w-full py-12 bg-white">
+                <div className="w-full max-w-lg mr-8">
+                  <Suspense fallback={<p>Loading</p>}>
+                    <Image width={600} height={600} src={nft.image + 'asd'} />
+                  </Suspense>
+                </div>
+                <div className="w-full py-4 bg-white">
                   <h1 className="text-5xl font-bold">{nft.name}</h1>
                   <h2 className="my-3 text-lg font-light text-neutral-500">
                     {formatAddress(nft.address)}

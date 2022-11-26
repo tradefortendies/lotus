@@ -1,5 +1,6 @@
 import { Trait, Nft } from '../../types'
 import Link from 'next/link'
+import Image from 'next/image'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
@@ -114,7 +115,7 @@ function CollectionListing({
                   passHref
                 >
                   <a>
-                    <img src={nft.image} />
+                    <Image src={nft.image} width={260} height={260} />
                     <div className="mt-4">
                       <h3 className="font-bold">{nft.name}</h3>
                     </div>
