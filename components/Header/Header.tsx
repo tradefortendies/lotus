@@ -259,6 +259,17 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
+                <Link href="/roadmap" passHref>
+                  <a className="block p-4 cursor-pointer">Our Roadmap</a>
+                </Link>
+              </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
                 <Link href="/team" passHref>
                   <a className="block p-4 cursor-pointer">Our Team</a>
                 </Link>
@@ -416,6 +427,11 @@ function Header({
                             </li>
                             <li className="py-2 transition duration-300">
                               <Link href="/vision" passHref>
+                                <a>Our Vision</a>
+                              </Link>
+                            </li>
+                            <li className="py-2 transition duration-300">
+                              <Link href="/roadmap" passHref>
                                 <a>Our Vision</a>
                               </Link>
                             </li>
