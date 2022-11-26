@@ -1,5 +1,5 @@
 import { Trait, Nft } from '../../types'
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
@@ -8,7 +8,6 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
-import { ThemeContext } from '../Theme'
 import Button from '../Button'
 
 function CollectionListing({
@@ -34,10 +33,11 @@ function CollectionListing({
   filter: (trait: string, value: string, state: boolean) => void
   reset: () => void
 }) {
-  const theme = useContext(ThemeContext)
-  const [filterTags, setFilterTags] = useState([])
+  const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
+  const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
+
   useEffect(() => {
-    const newFilterTags: any = []
+    const newFilterTags: JSX.Element[] = []
     Object.keys(filters).map((trait) => {
       filters[trait].map((value) => {
         newFilterTags.push(
@@ -59,6 +59,10 @@ function CollectionListing({
     setFilterTags(newFilterTags)
   }, [filters])
 
+  useEffect(() => {
+    console.log(traitFilters)
+  }, [traitFilters])
+
   return (
     <div className="grid grid-cols-6">
       <div className="sticky top-0">
@@ -75,22 +79,35 @@ function CollectionListing({
                       </Disclosure.Button>
                       <Disclosure.Panel>
                         <input
-                          className="w-full px-2 py-1 my-2 font-mono font-normal border-2 border-neutral-200 text-neutral-600"
-                          type="text"
+                          className="w-full px-2 py-1 my-2 font-mono font-normal border-2 outline-none border-neutral-200 text-neutral-600"
+                          type="search"
                           placeholder="Search..."
+                          onChange={(e) => {
+                            const prevTraitFilters: { [key: string]: any } = [
+                              ...(traitFilters as any),
+                            ]
+                            prevTraitFilters[trait.trait_type] =
+                              e.currentTarget.value
+
+                            setTraitFilters(prevTraitFilters)
+                          }}
                         />
-                        <ul
-                          className={clsx(
-                            'mt-2 text-sm font-normal'
-                            // traitIndex > 0 && 'hidden'
-                          )}
-                        >
+                        <ul className={clsx('mt-2 text-sm font-normal')}>
                           {trait.values.map((value, valueIndex) => {
+                            const traitFilter = traitFilters[trait.trait_type]
+                            if (
+                              traitFilter &&
+                              !value
+                                .toLowerCase()
+                                .includes(traitFilter.toLowerCase())
+                            ) {
+                              return
+                            }
                             return (
                               <li className="w-full" key={valueIndex}>
                                 <label
                                   className={clsx(
-                                    'flex items-center w-full gap-2 py-1 text-gray-800 hover:font-bold hover:text-black',
+                                    'flex cursor-pointer items-center w-full gap-2 py-1 text-gray-800 hover:font-bold hover:text-black',
                                     filters[trait.trait_type]?.includes(
                                       value
                                     ) && '!text-black !font-bold'
