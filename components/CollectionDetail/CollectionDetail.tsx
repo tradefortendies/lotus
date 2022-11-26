@@ -2,6 +2,7 @@ const { ColorExtractor } = require('react-color-extractor')
 import { useEffect, useState, Suspense } from 'react'
 import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
+import BeatLoader from 'react-spinners/BeatLoader'
 import { formatAddress } from '../../lib/helpers'
 import { Nft } from '../../types'
 import Button from '../Button'
@@ -70,13 +71,16 @@ function CollectionDetail({
               )}
               <div className="flex p-8">
                 <div className="w-full max-w-lg mr-8">
-                  <Suspense fallback={<p>Loading</p>}>
-                    <Image
-                      width={600}
-                      height={600}
-                      src={`/img/collections/${collection}/${nft.address}.png`}
-                    />
-                  </Suspense>
+                  <div className="relative w-[512px] h-[512px] bg-slate-100 flex items-center justify-center">
+                    <BeatLoader color="#aaa" size={10} />
+                    <div className="absolute top-0 left-0">
+                      <Image
+                        width={512}
+                        height={512}
+                        src={`/img/collections/${collection}/${nft.address}.png`}
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div className="w-full py-4 bg-white">
                   <h1 className="text-5xl font-bold">{nft.name}</h1>
