@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
+import BeatLoader from 'react-spinners/BeatLoader'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
@@ -139,8 +140,8 @@ function CollectionListing({
                   passHref
                 >
                   <a>
-                    <div className="relative w-full h-[200px] bg-slate-400 flex items-center justify-center">
-                      <p>Loading...</p>
+                    <div className="relative w-full h-[200px] bg-slate-100 flex items-center justify-center">
+                      <BeatLoader color="#aaa" size={10} />
                       <div className="absolute top-0 left-0">
                         <Image
                           src={`/img/collections/${collection}/${nft.address}.png`}
