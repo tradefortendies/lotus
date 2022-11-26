@@ -10,10 +10,12 @@ function CollectionDetail({
   isOpen,
   onClose,
   nft,
+  collection,
 }: {
   isOpen: boolean
   onClose: () => void
   nft: Nft
+  collection: string
 }) {
   const [bgColors, setBgColors] = useState<string[]>([])
   const [windowDimensions, setWindowDimensions] = useState<{
@@ -43,7 +45,7 @@ function CollectionDetail({
             maxColors={5}
             getColors={(colors: string[]) => setBgColors(colors)}
           >
-            <img src={nft.image} />
+            <img src={`/img/collections/${collection}/${nft.address}.png`} />
           </ColorExtractor>
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="w-full bg-white rounded shadow-2xl max-w-7xl">
@@ -69,7 +71,11 @@ function CollectionDetail({
               <div className="flex p-8">
                 <div className="w-full max-w-lg mr-8">
                   <Suspense fallback={<p>Loading</p>}>
-                    <Image width={600} height={600} src={nft.image + 'asd'} />
+                    <Image
+                      width={600}
+                      height={600}
+                      src={`/img/collections/${collection}/${nft.address}.png`}
+                    />
                   </Suspense>
                 </div>
                 <div className="w-full py-4 bg-white">

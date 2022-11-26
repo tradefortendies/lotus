@@ -115,7 +115,16 @@ function CollectionListing({
                   passHref
                 >
                   <a>
-                    <Image src={nft.image} width={260} height={260} />
+                    <div className="relative w-full h-[200px] bg-slate-400 flex items-center justify-center">
+                      <p>Loading...</p>
+                      <div className="absolute top-0 left-0">
+                        <Image
+                          src={`/img/collections/${collection}/${nft.address}.png`}
+                          width={260}
+                          height={260}
+                        />
+                      </div>
+                    </div>
                     <div className="mt-4">
                       <h3 className="font-bold">{nft.name}</h3>
                     </div>

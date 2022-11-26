@@ -182,6 +182,7 @@ const LotusGang: NextPage<{
           onClose={() => {
             router.push(`/collections/${collection}`)
           }}
+          collection={collection}
           nft={nft[0]}
         />
         <Header
