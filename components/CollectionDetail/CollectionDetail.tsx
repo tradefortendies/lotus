@@ -51,12 +51,12 @@ function CollectionDetail({
             />
           </ColorExtractor>
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
-            <Dialog.Panel className="w-full bg-white rounded shadow-2xl max-w-7xl">
+            <Dialog.Panel className="w-full bg-white rounded-lg shadow-2xl max-w-7xl">
               {bgColors && (
                 <svg
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-6"
+                  className="w-full h-6 rounded-tl-lg rounded-tr-lg"
                 >
                   {bgColors.slice(0, 5).map((color, index) => {
                     return (
