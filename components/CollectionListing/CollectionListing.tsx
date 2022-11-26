@@ -34,6 +34,7 @@ function CollectionListing({
   filter: (trait: string, value: string, state: boolean) => void
   reset: () => void
 }) {
+  const [showFilters, setShowFilters] = useState<boolean>(false)
   const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
   const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
 
@@ -67,7 +68,10 @@ function CollectionListing({
   return (
     <div className="grid-cols-6 lg:grid">
       <div className="flex items-center justify-start w-full mb-4 lg:hidden">
-        <button className="flex items-center gap-2 mr-4">
+        <button
+          className="flex items-center gap-2 mr-4"
+          onClick={() => setShowFilters(!showFilters)}
+        >
           <FaFilter /> Filter
         </button>
         <button
@@ -83,7 +87,12 @@ function CollectionListing({
           {filterTags.length ? 'Clear' : 'Shuffle'}
         </button>
       </div>
-      <div className="hidden lg:block">
+      <div
+        className={clsx(
+          showFilters && 'block',
+          !showFilters && 'hidden lg:block'
+        )}
+      >
         <ul className="mt-8 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
