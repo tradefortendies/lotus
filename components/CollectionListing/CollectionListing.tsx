@@ -42,7 +42,7 @@ function CollectionListing({
       filters[trait].map((value) => {
         newFilterTags.push(
           <button
-            className="flex items-center gap-1 p-2 text-xs rounded-md bg-slate-100"
+            className="flex items-center gap-1 p-2 text-xs transition rounded-md bg-slate-100 hover:bg-slate-200"
             data-trait={trait}
             data-value={value}
             onClick={(e) => filter(trait, value, false)}
