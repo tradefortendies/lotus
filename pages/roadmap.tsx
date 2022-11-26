@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
+import { Canvas } from '@react-three/fiber'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import RoadmapModel from '../components/RoadmapModel'
 
 const Roadmap: NextPage = () => {
   useEffect(() => {
@@ -43,7 +45,10 @@ const Roadmap: NextPage = () => {
                   </h2>
                 </div>
                 <div>
-                  <h1>Stuff goes here...</h1>
+                  <Canvas style={{ height: 600 }}>
+                    <ambientLight />
+                    <RoadmapModel />
+                  </Canvas>
                 </div>
               </div>
             </div>
