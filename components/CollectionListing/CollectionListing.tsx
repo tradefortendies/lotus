@@ -83,7 +83,7 @@ function CollectionListing({
           {filterTags.length ? 'Clear' : 'Shuffle'}
         </button>
       </div>
-      <div className="hidden">
+      <div className="hidden lg:block">
         <ul className="mt-8 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
