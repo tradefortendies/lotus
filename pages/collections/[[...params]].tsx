@@ -295,8 +295,8 @@ const LotusGang: NextPage<{
                         </h1>
                         <p className="max-w-2xl text-lg">
                           LILY - an expansion of The Lotus brand - aims to
-                          become the landing page of the new web pushing the
-                          boundaries through innovative technology, art and
+                          become the landing page of the new web by pushing the
+                          boundaries through innovative technology, art and an
                           informed community.
                         </p>
                       </>
