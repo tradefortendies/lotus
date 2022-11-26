@@ -64,8 +64,8 @@ function CollectionListing({
   }, [traitFilters])
 
   return (
-    <div className="grid grid-cols-6">
-      <div className="sticky top-0">
+    <div className="grid-cols-6 lg:grid">
+      <div className="sticky top-0 hidden lg:block">
         <ul className="mt-16">
           {traits.map((trait, traitIndex) => {
             return (
@@ -160,7 +160,7 @@ function CollectionListing({
           </button>
           {filterTags}
         </div>
-        <div className="grid w-full grid-cols-4 gap-4 mb-16">
+        <div className="grid w-full grid-cols-2 gap-4 mb-16 sm:grid-cols-3 md:grid-cols-4">
           {nfts.map((nft, nftIndex) => {
             return (
               <div
@@ -174,11 +174,11 @@ function CollectionListing({
                   <a>
                     <div className="relative w-full h-[200px] bg-slate-100 flex items-center justify-center">
                       <BeatLoader color="#aaa" size={10} />
-                      <div className="absolute top-0 left-0">
+                      <div className="absolute top-0 left-0 w-full h-full">
                         <Image
                           src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
-                          width={260}
-                          height={260}
+                          layout="fill"
+                          className="object-cover"
                         />
                       </div>
                     </div>

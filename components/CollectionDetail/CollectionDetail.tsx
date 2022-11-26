@@ -72,7 +72,7 @@ function CollectionDetail({
             </ColorExtractor>
           )}
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
-            <Dialog.Panel className="relative w-full bg-white rounded-lg shadow-2xl max-w-7xl">
+            <Dialog.Panel className="relative w-full mx-8 bg-white rounded-lg shadow-2xl max-w-7xl">
               <button
                 className="absolute flex items-center justify-center w-16 h-16 text-3xl font-bold transition rounded-full text-lily-black -top-6 -right-8 hover:scale-110"
                 style={{ background: theme.primaryColor }}
@@ -101,22 +101,22 @@ function CollectionDetail({
                   })}
                 </svg>
               )}
-              <div className="flex p-8">
+              <div className="flex flex-col p-8 lg:flex-row">
                 <div className="w-full max-w-lg mr-8">
-                  <div className="relative w-[512px] h-[512px] bg-slate-100 flex items-center justify-center">
+                  <div className="relative h-[300px] lg:w-[512px] lg:h-[512px] bg-slate-100 flex items-center justify-center">
                     <BeatLoader color="#aaa" size={10} />
-                    <div className="absolute top-0 left-0">
+                    <div className="absolute top-0 left-0 w-full lg:h-[512px] h-[300px]">
                       <Image
-                        width={512}
-                        height={512}
+                        layout="fill"
+                        className="object-cover"
                         src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="w-full py-4 bg-white">
-                  <h1 className="text-5xl font-bold">{nft.name}</h1>
-                  <h2 className="my-3 text-lg font-light text-neutral-500">
+                  <h1 className="text-2xl font-bold lg:text-5xl">{nft.name}</h1>
+                  <h2 className="my-3 font-light lg:text-lg text-neutral-500">
                     {formatAddress(nft.address)}
                   </h2>
                   <ul className="flex items-center gap-3 mt-2">
@@ -250,7 +250,7 @@ function CollectionDetail({
                       </a>
                     </li>
                   </ul>
-                  <dl className="grid grid-cols-4 my-12 text-sm md:text-base">
+                  <dl className="hidden grid-cols-4 my-12 text-sm lg:grid md:text-base">
                     {nft.attributes.map((attr, index) => {
                       return (
                         <>
@@ -272,7 +272,7 @@ function CollectionDetail({
                     target="_blank"
                     rel="noreferrer"
                     size="sm"
-                    className="mt-4"
+                    className="mt-8 lg:mt-4"
                   >
                     View on MagicEden
                   </Button>
