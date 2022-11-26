@@ -36,3 +36,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 data/*.backup.json
+public/img/collections
