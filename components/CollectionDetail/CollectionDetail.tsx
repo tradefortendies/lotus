@@ -63,14 +63,12 @@ function CollectionDetail({
     >
       {nft && (
         <>
-          {detailImage && (
-            <ColorExtractor
-              maxColors={5}
-              getColors={(colors: string[]) => setBgColors(colors)}
-            >
-              <img src={detailImage} />
-            </ColorExtractor>
-          )}
+          <ColorExtractor
+            maxColors={5}
+            getColors={(colors: string[]) => setBgColors(colors)}
+          >
+            <img src={nft.image} />
+          </ColorExtractor>
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="relative w-full mx-8 bg-white rounded-lg shadow-2xl max-w-7xl">
               <button

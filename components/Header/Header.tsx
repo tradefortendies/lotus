@@ -103,6 +103,7 @@ function Header({
           fadeInAnimation && 'opacity-0',
           position !== 'slide' && position,
           position === 'slide' && 'slide',
+          position === 'fixed' && 'bg-white bg-opacity-75',
           `scroll-${scrollDirection}`
         )}
       >

@@ -107,7 +107,7 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <ul ref={filtersRef} className="mt-8 lg:mt-20">
+        <ul ref={filtersRef} className="sticky mt-8 top-52 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
@@ -237,7 +237,10 @@ function CollectionListing({
             )
           })}
         </div>
-        <div ref={loadMoreRef}>
+        <div
+          ref={loadMoreRef}
+          className="opacity-0 pointer-events-none -translate-y-60"
+        >
           <Button onClick={() => loadMore()}>Load More</Button>
         </div>
         <button

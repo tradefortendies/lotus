@@ -6,7 +6,6 @@ import LotusGangNftsJson from '../../data/lotus-gang.json'
 import lilyNftsJson from '../../data/lily.json'
 import Meta from '../../components/Meta'
 import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import CollectionDetail from '../../components/CollectionDetail'
 import CollectionListing from '../../components/CollectionListing'
 
@@ -196,7 +195,7 @@ const LotusGang: NextPage<{
           nft={nft[0]}
         />
         <Header
-          position="slide"
+          position="fixed"
           fadeInAnimation={false}
           colorChangeAnimation={false}
           iconHoverColorAnimations={false}
@@ -204,7 +203,7 @@ const LotusGang: NextPage<{
         <div className="w-screen min-h-screen text-neutral-900 bg-lily-blue">
           <div className="relative">
             <div className="relative w-full bg-white text-lily-black pb-28">
-              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
+              <div className="relative flex flex-col w-full px-4 py-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
                 <div
                   id="masthead"
                   className="flex items-center justify-between gap-4"
@@ -316,7 +315,6 @@ const LotusGang: NextPage<{
                 />
               </div>
             </div>
-            <Footer />
           </div>
         </div>
       </>
