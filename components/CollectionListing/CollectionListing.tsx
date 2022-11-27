@@ -5,9 +5,12 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { BsFillArrowUpCircleFill } from 'react-icons/bs'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
+import { FaFilter } from 'react-icons/fa'
+import { useInView } from 'react-intersection-observer'
 import Button from '../Button'
 
 function CollectionListing({
@@ -33,8 +36,13 @@ function CollectionListing({
   filter: (trait: string, value: string, state: boolean) => void
   reset: () => void
 }) {
+  const [showFilters, setShowFilters] = useState<boolean>(false)
+  const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
   const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
   const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
+
+  const [loadMoreRef, loadMoreInView] = useInView()
+  const [listingRef, listingInView] = useInView()
 
   useEffect(() => {
     const newFilterTags: JSX.Element[] = []
@@ -60,13 +68,46 @@ function CollectionListing({
   }, [filters])
 
   useEffect(() => {
-    console.log(traitFilters)
-  }, [traitFilters])
+    if (!loadMoreInView) {
+      return
+    }
+
+    loadMore()
+  }, [loadMoreInView])
+
+  useEffect(() => {
+    setShowTopBtn(!listingInView)
+  }, [listingInView])
 
   return (
-    <div className="grid grid-cols-6">
-      <div className="sticky top-0">
-        <ul className="mt-16">
+    <div className="grid-cols-6 lg:grid">
+      <div className="flex items-center justify-start w-full mb-4 lg:hidden">
+        <button
+          className="flex items-center gap-2 mr-4"
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          <FaFilter /> Filter
+        </button>
+        <button
+          className="flex items-center gap-2 p-2 group"
+          onClick={() => reset()}
+        >
+          {filterTags.length ? (
+            <IoMdClose className="transition duration-1000 group-hover:rotate-[180deg]" />
+          ) : (
+            <GrPowerReset className="transition duration-1000 group-hover:rotate-[360deg]" />
+          )}
+
+          {filterTags.length ? 'Clear' : 'Shuffle'}
+        </button>
+      </div>
+      <div
+        className={clsx(
+          showFilters && 'block',
+          !showFilters && 'hidden lg:block'
+        )}
+      >
+        <ul className="sticky mt-8 top-52 lg:mt-20 h-[90vh] overflow-auto mb-60">
           {traits.map((trait, traitIndex) => {
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
@@ -145,9 +186,9 @@ function CollectionListing({
         </ul>
       </div>
       <div className="flex flex-col items-center col-span-5">
-        <div className="flex flex-wrap items-center justify-start w-full gap-4 py-4">
+        <div className="flex flex-wrap items-center justify-start w-full gap-4 lg:py-4">
           <button
-            className="flex items-center gap-2 p-2 group"
+            className="items-center hidden gap-2 p-2 lg:flex group"
             onClick={() => reset()}
           >
             {filterTags.length ? (
@@ -160,12 +201,18 @@ function CollectionListing({
           </button>
           {filterTags}
         </div>
-        <div className="grid w-full grid-cols-4 gap-4 mb-16">
+        <div
+          className={clsx(
+            'grid w-full grid-cols-2 gap-4 mb-16 sm:grid-cols-3 md:grid-cols-4',
+            filterTags.length > 0 && 'mt-8 lg:mt-0'
+          )}
+        >
           {nfts.map((nft, nftIndex) => {
             return (
               <div
                 className="p-4 transition bg-gray-100 rounded-md hover:scale-105"
                 key={nftIndex}
+                ref={nftIndex === 0 ? listingRef : null}
               >
                 <Link
                   href={`/collections/${collection}/${nft.address}`}
@@ -174,11 +221,11 @@ function CollectionListing({
                   <a>
                     <div className="relative w-full h-[200px] bg-slate-100 flex items-center justify-center">
                       <BeatLoader color="#aaa" size={10} />
-                      <div className="absolute top-0 left-0">
+                      <div className="absolute top-0 left-0 w-full h-full">
                         <Image
                           src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
-                          width={260}
-                          height={260}
+                          layout="fill"
+                          className="object-cover"
                         />
                       </div>
                     </div>
@@ -191,7 +238,22 @@ function CollectionListing({
             )
           })}
         </div>
-        <Button onClick={() => loadMore()}>Load More</Button>
+        <div
+          ref={loadMoreRef}
+          className="opacity-0 pointer-events-none -translate-y-[50%]"
+        >
+          <Button onClick={() => loadMore()}>Load More</Button>
+        </div>
+        <button
+          className={clsx(
+            'fixed items-center gap-2 bottom-5 left-5 group hidden transition duration-300 opacity-0 lg:flex',
+            showTopBtn && 'opacity-100'
+          )}
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          <BsFillArrowUpCircleFill className="transition duration-500 group-hover:rotate-[360deg]" />
+          back to top
+        </button>
       </div>
     </div>
   )

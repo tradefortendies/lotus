@@ -31,7 +31,7 @@ const collections = async (req: NextApiRequest, res: NextApiResponse) => {
   const address: string = req.query.params[1] ? String(req.query.params[1]) : ''
   const traits: string = req.query.traits ? String(req.query.traits) : ''
   const page: number = req.query.page ? Number(req.query.page) : 0
-  const perPage: number = req.query.perPage ? Number(req.query.perPage) : 20
+  const perPage: number = req.query.perPage ? Number(req.query.perPage) : 40
 
   if (req.query.reset) {
     nftJson[collection].nfts = shuffle(nftJson[collection].nfts)

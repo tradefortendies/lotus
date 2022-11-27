@@ -6,7 +6,6 @@ import LotusGangNftsJson from '../../data/lotus-gang.json'
 import lilyNftsJson from '../../data/lily.json'
 import Meta from '../../components/Meta'
 import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import CollectionDetail from '../../components/CollectionDetail'
 import CollectionListing from '../../components/CollectionListing'
 
@@ -196,7 +195,7 @@ const LotusGang: NextPage<{
           nft={nft[0]}
         />
         <Header
-          position="slide"
+          position="fixed"
           fadeInAnimation={false}
           colorChangeAnimation={false}
           iconHoverColorAnimations={false}
@@ -204,21 +203,20 @@ const LotusGang: NextPage<{
         <div className="w-screen min-h-screen text-neutral-900 bg-lily-blue">
           <div className="relative">
             <div className="relative w-full bg-white text-lily-black pb-28">
-              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
+              <div className="relative flex flex-col w-full px-4 py-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
                 <div
                   id="masthead"
                   className="flex items-center justify-between gap-4"
                 >
-                  <div className="block mb-20">
+                  <div className="block mb-10 lg:mb-16">
                     {collection === 'lotus-gang' && (
                       <>
                         <h1 className="w-full mb-10 font-sans text-6xl font-bold lg:text-8xl">
                           <svg
-                            width="599"
-                            height="80"
                             viewBox="0 0 599 80"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            className="w-full max-w-[600px]"
                           >
                             <path
                               d="M46.5432 78.5334H0.765625V1.53908H18.4691V60.83H46.5432V78.5334Z"
@@ -258,7 +256,7 @@ const LotusGang: NextPage<{
                             />
                           </svg>
                         </h1>
-                        <p className="max-w-xl text-lg">
+                        <p className="max-w-xl lg:text-lg">
                           Lotus Gang is a collection of 4,000 randomly generated
                           Lads and Ladies on the Solana Blockchain.
                         </p>
@@ -269,11 +267,10 @@ const LotusGang: NextPage<{
                       <>
                         <h1 className="w-full mb-10 font-sans text-6xl font-bold lg:text-8xl">
                           <svg
-                            width="200"
-                            height="80"
                             viewBox="0 0 200 80"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            className="w-full max-w-[190px]"
                           >
                             <path
                               d="M0.333984 0H18.5054V70.7429L10.734 62.9714H53.4768V80H0.333984V0Z"
@@ -293,7 +290,7 @@ const LotusGang: NextPage<{
                             />
                           </svg>
                         </h1>
-                        <p className="max-w-2xl text-lg">
+                        <p className="max-w-2xl lg:text-lg">
                           LILY - an expansion of The Lotus brand - aims to
                           become the landing page of the new web by pushing the
                           boundaries through innovative technology, art and an
@@ -318,7 +315,6 @@ const LotusGang: NextPage<{
                 />
               </div>
             </div>
-            <Footer />
           </div>
         </div>
       </>
