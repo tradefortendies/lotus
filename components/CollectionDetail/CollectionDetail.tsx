@@ -102,7 +102,12 @@ function CollectionDetail({
                 <div className="w-full max-w-lg mr-8">
                   <div className="relative h-[300px] lg:w-[512px] lg:h-[512px] bg-slate-100 flex items-center justify-center">
                     <BeatLoader color="#aaa" size={10} />
-                    <div className="absolute top-0 left-0 w-full lg:h-[512px] h-[300px]">
+                    <div
+                      className="absolute top-0 left-0 w-full lg:h-[512px] h-[300px] cursor-zoom-in"
+                      onClick={() => {
+                        window.open(nft.image)
+                      }}
+                    >
                       <Image
                         layout="fill"
                         className="object-cover"
