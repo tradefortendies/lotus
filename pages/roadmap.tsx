@@ -1,33 +1,16 @@
 import type { NextPage } from 'next'
-import { useEffect } from 'react'
+import { useEffect, useRef, Suspense } from 'react'
 import { gsap } from 'gsap'
-import { Canvas, useThree } from '@react-three/fiber'
-// @ts-ignore
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Stage } from '@react-three/drei'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import RoadmapModel from '../components/RoadmapModel'
 
-const CameraController = () => {
-  const { camera, gl } = useThree()
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement)
-
-    controls.autoRotate = true
-    controls.autoRotateSpeed = 10
-    controls.enableDamping = true
-    controls.dampingFactor = 0.01
-    controls.minDistance = 6
-    controls.maxDistance = 6
-    return () => {
-      controls.dispose()
-    }
-  }, [camera, gl])
-  return null
-}
-
 const Roadmap: NextPage = () => {
+  const orbitControlsRef = useRef(null)
+
   useEffect(() => {
     setTimeout(() => {
       gsap.to('#masthead > h1, #masthead > h2', {
@@ -64,11 +47,25 @@ const Roadmap: NextPage = () => {
                     of making the most exciting project possible.
                   </h2>
                 </div>
-                <div className="w-full mb-16 h-[400px]" id="scene">
-                  <Canvas style={{ height: 600 }}>
-                    <CameraController />
-                    <ambientLight />
-                    <RoadmapModel />
+                <div className="w-full h-[800px] -translate-y-8" id="scene">
+                  <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+                    <Suspense fallback={null}>
+                      <Stage
+                        controls={orbitControlsRef}
+                        preset="rembrandt"
+                        intensity={1}
+                        environment="city"
+                        adjustCamera={1.3}
+                      >
+                        <RoadmapModel />
+                      </Stage>
+                    </Suspense>
+                    <OrbitControls
+                      ref={orbitControlsRef}
+                      autoRotate={true}
+                      enableZoom={false}
+                      enableDamping={true}
+                    />
                   </Canvas>
                 </div>
               </div>
