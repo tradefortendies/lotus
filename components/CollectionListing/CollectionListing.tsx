@@ -42,7 +42,7 @@ function CollectionListing({
   const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
 
   const [loadMoreRef, loadMoreInView] = useInView()
-  const [filtersRef, filtersInView] = useInView()
+  const [listingRef, listingInView] = useInView()
 
   useEffect(() => {
     const newFilterTags: JSX.Element[] = []
@@ -76,8 +76,8 @@ function CollectionListing({
   }, [loadMoreInView])
 
   useEffect(() => {
-    setShowTopBtn(!filtersInView)
-  }, [filtersInView])
+    setShowTopBtn(!listingInView)
+  }, [listingInView])
 
   return (
     <div className="grid-cols-6 lg:grid">
@@ -107,7 +107,7 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <ul ref={filtersRef} className="sticky mt-8 top-52 lg:mt-20">
+        <ul className="sticky mt-8 top-52 lg:mt-20">
           {traits.map((trait, traitIndex) => {
             return (
               <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
@@ -212,6 +212,7 @@ function CollectionListing({
               <div
                 className="p-4 transition bg-gray-100 rounded-md hover:scale-105"
                 key={nftIndex}
+                ref={nftIndex === 0 ? listingRef : null}
               >
                 <Link
                   href={`/collections/${collection}/${nft.address}`}
@@ -245,7 +246,7 @@ function CollectionListing({
         </div>
         <button
           className={clsx(
-            'fixed items-center gap-2 bottom-5 left-5 group transition duration-500 opacity-0 hidden lg:flex',
+            'fixed items-center gap-2 bottom-5 left-5 group hidden transition duration-300 opacity-0 lg:flex',
             showTopBtn && 'opacity-100'
           )}
           onClick={() => window.scrollTo(0, 0)}
