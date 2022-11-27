@@ -33,8 +33,12 @@ function CollectionDetail({
     height: 0,
   })
 
-  const downloadImage = async (image: string) => {
-    const img = await fetch(image).then((res) => res.blob())
+  const cdn = (col: string, add: string) => {
+    return `https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${col}/${add}.png`
+  }
+
+  const downloadImage = async (col: string, add: string) => {
+    const img = await fetch(cdn(col, add)).then((res) => res.blob())
     setDetailImage(URL.createObjectURL(img))
   }
 
@@ -52,7 +56,7 @@ function CollectionDetail({
       return
     }
 
-    downloadImage(nft.image)
+    // downloadImage(collection, nft.address)
   }, [nft, router.asPath])
 
   return (
@@ -67,7 +71,7 @@ function CollectionDetail({
             maxColors={5}
             getColors={(colors: string[]) => setBgColors(colors)}
           >
-            <img src={nft.image} />
+            <img src={cdn(collection, nft.address)} />
           </ColorExtractor>
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="relative w-full mx-8 bg-white rounded-lg shadow-2xl max-w-7xl">
@@ -111,7 +115,7 @@ function CollectionDetail({
                       <Image
                         layout="fill"
                         className="object-cover"
-                        src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
+                        src={cdn(collection, nft.address)}
                       />
                     </div>
                   </div>
