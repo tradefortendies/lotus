@@ -72,8 +72,7 @@ function CollectionDetail({
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="relative w-full mx-8 bg-white rounded-lg shadow-2xl max-w-7xl">
               <button
-                className="absolute flex items-center justify-center w-16 h-16 text-3xl font-bold transition rounded-full text-lily-black -top-6 -right-8 hover:scale-110"
-                style={{ background: theme.primaryColor }}
+                className="absolute flex items-center justify-center w-16 h-16 text-3xl font-bold transition rounded-full -top-6 -right-8 hover:scale-110 bg-[#222222] text-white outline-none"
                 onClick={() => {
                   onClose()
                 }}
@@ -270,7 +269,27 @@ function CollectionDetail({
                     target="_blank"
                     rel="noreferrer"
                     size="sm"
-                    className="mt-8 lg:mt-4"
+                    className="mt-8 lg:mt-4 !bg-[#222222] !border-[#222222] !text-white"
+                    onMouseOver={(e) => {
+                      e.currentTarget.classList.remove(
+                        '!bg-[#222222]',
+                        '!text-[#ffffff]'
+                      )
+                      e.currentTarget.classList.add(
+                        '!bg-[#ffffff]',
+                        '!text-[#222222]'
+                      )
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.classList.remove(
+                        '!bg-[#ffffff]',
+                        '!text-[#222222]'
+                      )
+                      e.currentTarget.classList.add(
+                        '!bg-[#222222]',
+                        '!text-[#ffffff]'
+                      )
+                    }}
                   >
                     View on MagicEden
                   </Button>
