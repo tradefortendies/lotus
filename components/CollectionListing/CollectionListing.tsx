@@ -240,7 +240,7 @@ function CollectionListing({
         </div>
         <div
           ref={loadMoreRef}
-          className="opacity-0 pointer-events-none -translate-y-120"
+          className="opacity-0 pointer-events-none -translate-y-[50%]"
         >
           <Button onClick={() => loadMore()}>Load More</Button>
         </div>
