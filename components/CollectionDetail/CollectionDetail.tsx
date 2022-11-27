@@ -56,7 +56,7 @@ function CollectionDetail({
       return
     }
 
-    // downloadImage(collection, nft.address)
+    downloadImage(collection, nft.address)
   }, [nft, router.asPath])
 
   return (
@@ -67,12 +67,14 @@ function CollectionDetail({
     >
       {nft && (
         <>
-          <ColorExtractor
-            maxColors={5}
-            getColors={(colors: string[]) => setBgColors(colors)}
-          >
-            <img src={cdn(collection, nft.address)} />
-          </ColorExtractor>
+          {detailImage && (
+            <ColorExtractor
+              maxColors={5}
+              getColors={(colors: string[]) => setBgColors(colors)}
+            >
+              <img src={detailImage} />
+            </ColorExtractor>
+          )}
           <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-80">
             <Dialog.Panel className="relative w-full mx-8 bg-white rounded-lg shadow-2xl max-w-7xl">
               <button
