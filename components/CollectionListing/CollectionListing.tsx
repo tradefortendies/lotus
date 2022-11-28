@@ -92,6 +92,10 @@ function CollectionListing({
     setShowTopBtn(!listingInView)
   }, [listingInView])
 
+  useEffect(() => {
+    setToggleActive(collection === 'lily')
+  }, [router.asPath])
+
   return (
     <div className="grid-cols-9 lg:grid" key={router.asPath}>
       <div className="flex items-center justify-start w-full mb-2 lg:mb-4 lg:hidden">
