@@ -114,8 +114,46 @@ function CollectionListing({
       >
         <div className="overflow-auto lg:sticky lg:mt-8 filter-listing lg:top-44 lg:mb-60">
           <div className="flex items-center justify-between pb-4 pr-6">
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" className="sr-only peer" />
+              <div className="w-[101px] h-[54px] rounded-full bg-lily-black"></div>
+              <svg
+                width="46"
+                height="46"
+                viewBox="0 0 46 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-[46px] h-[46px] peer-checked:translate-x-[46px] absolute top-[4px] left-[4px] transition-all"
+              >
+                <circle cx="23" cy="23" r="22.5" fill="white" />
+                <path
+                  d="M23.0565 23.0067L4.51562 16.9824C7.17725 8.79058 14.4432 3.51172 23.0565 3.51172V23.0067Z"
+                  fill="#FFD462"
+                />
+                <path
+                  d="M23.0567 23.0067L11.5979 38.7781C4.62941 33.7154 1.85421 25.1743 4.51584 16.9824L23.0567 23.0067V23.0067Z"
+                  fill="#FF9596"
+                />
+                <path
+                  d="M23.0564 23.0068L34.5152 38.7783C27.5467 43.841 18.5662 43.841 11.5977 38.7783L23.0564 23.0068Z"
+                  fill="#91B9FF"
+                />
+                <path
+                  d="M23.0566 23.0067L41.5975 16.9824C44.2591 25.1743 41.4839 33.7154 34.5154 38.7781L23.0566 23.0067Z"
+                  fill="#A6F7F8"
+                />
+                <path
+                  d="M23.0566 23.0067V3.51172C31.6699 3.51172 38.9359 8.79058 41.5975 16.9824L23.0566 23.0067V23.0067Z"
+                  fill="#A9F9CD"
+                />
+                <path
+                  d="M23.0564 29.9673C26.8802 29.9673 29.98 26.8675 29.98 23.0437C29.98 19.2199 26.8802 16.1201 23.0564 16.1201C19.2326 16.1201 16.1328 19.2199 16.1328 23.0437C16.1328 26.8675 19.2326 29.9673 23.0564 29.9673Z"
+                  fill="white"
+                />
+              </svg>
+            </label>
             <button
-              className="items-center hidden gap-2 p-2 ml-auto text-sm lg:flex group"
+              className="items-center hidden gap-2 p-2 ml-auto text-sm select-none lg:flex group"
               onClick={() => reset()}
             >
               Shuffle
