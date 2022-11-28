@@ -109,7 +109,10 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <div className="sticky top-52 mt-8 h-[90vh] overflow-auto mb-60">
+        <div
+          className="sticky mt-8 overflow-auto top-44 mb-60"
+          style={{ height: 'calc(100vh - 170px)' }}
+        >
           <div className="flex items-center justify-between pb-4 pr-6">
             <button
               className="items-center hidden gap-2 p-2 ml-auto text-sm lg:flex group"
@@ -132,9 +135,9 @@ function CollectionListing({
                         </Disclosure.Button>
                         <Disclosure.Panel>
                           <div className="relative mb-4">
-                            <BiSearch className="absolute left-[12px] top-[11px]" />
+                            <BiSearch className="absolute left-[12px] top-[12px] text-sm" />
                             <input
-                              className="w-full pt-[9px] pb-2 pl-[34px] pr-4 text-sm font-normal bg-gray-100 rounded-full outline-none text-neutral-600"
+                              className="w-full pt-[9px] pb-2 pl-[32px] pr-4 text-sm font-normal bg-gray-100 rounded-full outline-none text-neutral-600"
                               type="search"
                               placeholder="Search..."
                               onChange={(e) => {
