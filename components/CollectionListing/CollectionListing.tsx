@@ -10,6 +10,7 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
 import { FaFilter } from 'react-icons/fa'
+import { BiSearch } from 'react-icons/bi'
 import { useInView } from 'react-intersection-observer'
 import { cdnAsset } from '../../lib/helpers'
 import Button from '../Button'
@@ -130,21 +131,23 @@ function CollectionListing({
                           {open ? <AiOutlineMinus /> : <AiOutlinePlus />}
                         </Disclosure.Button>
                         <Disclosure.Panel>
-                          <input
-                            className="w-full px-2 py-1 my-2 font-mono font-normal border-2 outline-none border-neutral-200 text-neutral-600"
-                            type="search"
-                            placeholder="Search..."
-                            onChange={(e) => {
-                              const prevTraitFilters: { [key: string]: any } = [
-                                ...(traitFilters as any),
-                              ]
-                              prevTraitFilters[trait.trait_type] =
-                                e.currentTarget.value
+                          <div className="relative mb-4">
+                            <BiSearch className="absolute left-[12px] top-[11px]" />
+                            <input
+                              className="w-full pt-[9px] pb-2 pl-[34px] pr-4 text-sm font-normal bg-gray-100 rounded-full outline-none text-neutral-600"
+                              type="search"
+                              placeholder="Search..."
+                              onChange={(e) => {
+                                const prevTraitFilters: { [key: string]: any } =
+                                  [...(traitFilters as any)]
+                                prevTraitFilters[trait.trait_type] =
+                                  e.currentTarget.value
 
-                              setTraitFilters(prevTraitFilters)
-                            }}
-                          />
-                          <ul className={clsx('mt-2 text-sm font-normal')}>
+                                setTraitFilters(prevTraitFilters)
+                              }}
+                            />
+                          </div>
+                          <ul className={clsx('mt-2 mb-4 text-sm font-normal')}>
                             {trait.values.map((value, valueIndex) => {
                               const traitFilter = traitFilters[trait.trait_type]
                               if (
@@ -158,12 +161,7 @@ function CollectionListing({
                               return (
                                 <li className="w-full" key={valueIndex}>
                                   <label
-                                    className={clsx(
-                                      'flex cursor-pointer items-center w-full gap-2 py-1 text-gray-800 hover:font-bold hover:text-black',
-                                      filters[trait.trait_type]?.includes(
-                                        value
-                                      ) && '!text-black !font-bold'
-                                    )}
+                                    className="flex items-center w-full gap-2 py-1 font-sans cursor-pointer"
                                     htmlFor={`${trait.trait_type}-${value}`}
                                   >
                                     <input
@@ -219,7 +217,7 @@ function CollectionListing({
           {nfts.map((nft, nftIndex) => {
             return (
               <div
-                className="p-4 transition bg-gray-100 rounded-md hover:scale-105"
+                className="p-4 transition bg-gray-100 rounded-lg hover:scale-105"
                 key={nftIndex}
                 ref={nftIndex === 0 ? listingRef : null}
               >
@@ -234,7 +232,7 @@ function CollectionListing({
                         <Image
                           src={cdnAsset(collection, nft.address, 'thumb')}
                           layout="fill"
-                          className="object-cover"
+                          className="object-cover rounded-lg"
                         />
                       </div>
                     </div>
