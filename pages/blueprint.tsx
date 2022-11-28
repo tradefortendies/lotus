@@ -6,9 +6,9 @@ import { OrbitControls, Stage } from '@react-three/drei'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import RoadmapModel from '../components/RoadmapModel'
+import BlueprintModel from '../components/BlueprintModel'
 
-const Roadmap: NextPage = () => {
+const Blueprint: NextPage = () => {
   const orbitControlsRef = useRef(null)
 
   useEffect(() => {
@@ -40,7 +40,10 @@ const Roadmap: NextPage = () => {
                     The Blueprint
                   </h1>
                 </div>
-                <div className="w-full h-[800px] -translate-y-16" id="scene">
+                <div
+                  className="w-full h-[400px] lg:h-[800px] lg:-translate-y-16"
+                  id="scene"
+                >
                   <Canvas shadows dpr={[1, 2]} camera={{ fov: 40 }}>
                     <Suspense fallback={null}>
                       <Stage
@@ -50,7 +53,7 @@ const Roadmap: NextPage = () => {
                         environment="city"
                         adjustCamera={1.5}
                       >
-                        <RoadmapModel />
+                        <BlueprintModel />
                       </Stage>
                     </Suspense>
                     <OrbitControls
@@ -71,4 +74,4 @@ const Roadmap: NextPage = () => {
   )
 }
 
-export default Roadmap
+export default Blueprint
