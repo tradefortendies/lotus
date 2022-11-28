@@ -116,6 +116,7 @@ function CollectionDetail({
                         layout="fill"
                         className="object-cover"
                         src={cdnAsset(collection, nft.address, 'large')}
+                        quality={100}
                       />
                     </div>
                   </div>

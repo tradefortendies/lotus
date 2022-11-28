@@ -348,6 +348,7 @@ function CollectionListing({
                           src={cdnAsset(collection, nft.address, 'thumb')}
                           layout="fill"
                           className="object-cover rounded-lg"
+                          quality={90}
                         />
                       </div>
                     </div>
@@ -363,7 +364,7 @@ function CollectionListing({
         </div>
         <div
           ref={loadMoreRef}
-          className="opacity-0 pointer-events-none -translate-y-[50%]"
+          className="opacity-0 pointer-events-none relative -translate-y-[200vh]"
         >
           <Button onClick={() => loadMore()}>Load More</Button>
         </div>
