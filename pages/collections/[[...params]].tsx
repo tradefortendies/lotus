@@ -175,7 +175,7 @@ const LotusGang: NextPage<{
 
   useEffect(() => {
     const routerPathSplit = router.asPath.split('/')
-    if (routerPathSplit[2] !== routerPath) {
+    if (routerPathSplit[2] !== routerPath && routerPathSplit.length < 4) {
       reset()
       setRouterPath(routerPathSplit[2])
     }

@@ -94,6 +94,7 @@ function CollectionListing({
 
   useEffect(() => {
     setToggleActive(collection === 'lily')
+    console.log(filters)
   }, [router.asPath])
 
   return (
@@ -263,6 +264,7 @@ function CollectionListing({
                               ) {
                                 return
                               }
+                              console.log(filters[trait.trait_type])
                               return (
                                 <li className="w-full" key={valueIndex}>
                                   <label
@@ -272,6 +274,12 @@ function CollectionListing({
                                     <Checkbox
                                       icon={
                                         <FiCheck color="#1F1F1F" size={15} />
+                                      }
+                                      checked={
+                                        filters[trait.trait_type] &&
+                                        filters[trait.trait_type].includes(
+                                          value
+                                        )
                                       }
                                       name="my-input"
                                       onChange={(val: boolean, e: any) => {
@@ -286,7 +294,13 @@ function CollectionListing({
                                       style={{
                                         cursor: 'pointer',
                                         backgroundColor: theme.primaryColor,
-                                        opacity: 0.5,
+                                        opacity:
+                                          filters[trait.trait_type] &&
+                                          filters[trait.trait_type].includes(
+                                            value
+                                          )
+                                            ? 1
+                                            : 0.5,
                                       }}
                                       labelStyle={{
                                         marginLeft: 8,
