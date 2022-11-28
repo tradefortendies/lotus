@@ -19,3 +19,11 @@ export type NftApiResponse = {
   perPage: number
   nfts: Nft[]
 }
+
+export type Member = {
+  name: string
+  position: string
+  avatar: string
+  bio: string
+  twitter: string
+}

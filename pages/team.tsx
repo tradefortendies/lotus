@@ -1,55 +1,12 @@
 import type { NextPage } from 'next'
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
+import { Member } from '../types'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import TeamMember from '../components/TeamMember'
-
-const teamMembers = [
-  {
-    name: 'Bunjil',
-    position: 'Founder',
-    avatar: '/img/team/bunjil.jpg',
-    bio: 'Founder. Bunjil is an artist. He left the banking and finance industry to research Web3 and create The Lotus. He wants to share his passion for illustration, entertainment and optimalism.',
-    twitter: 'notbunjil',
-  },
-  {
-    name: 'CY',
-    position: 'Head of Community',
-    avatar: '/img/team/cy.jpg',
-    bio: "CY is an award-winning photographer and filmmaker who spent the last 10 years working for NBCUniversal's USA Network & Blumhouse Productions.  After scaling and selling an online fitness brand during the pandemic, CY transitioned to web3 full time.  He aims to bring his experience in chaos management to effeciently create and scale teams to tackle complex issues.",
-    twitter: 'not_CY_',
-  },
-  {
-    name: 'Kylie',
-    position: 'Head of Moderation',
-    avatar: '/img/team/kylie.jpg',
-    bio: 'Kylie is Community and Moderation Manager for several established NFT projects on Solana. With over 5 years of experience leading software development teams, Kylie seeks to bring her Web2 knowledge and expertise to Web3, and ultimately disrupt conventional processes through unconventional means.',
-    twitter: '0xkyliegender',
-  },
-  {
-    name: 'Chambaz',
-    position: 'Head of Technology',
-    avatar: '/img/team/chambaz.jpg',
-    bio: 'Chambaz is a Senior Software Engineer at Metaplex. With 15 years experience in full stack web2 development, Chambaz went full time crypto and NFTs in 2022. He has been building web3 apps and experiences across multiple chains since 2020 and now focuses predominantly on the Solana ecosystem.',
-    twitter: 'chambaz',
-  },
-  {
-    name: 'Kenny',
-    position: 'Head of Research',
-    avatar: '/img/team/kenny.jpg',
-    bio: 'Kennyatta is a career photographer and strategist. Over the years, his experience in brand development, market strategy and field market research has lead him be called upon as a frequent writer for publications such as Adweek. Kennyatta seeks to bring the collection of his experiences to Web3 in the hopes of creating a thriving ecosystem for the advancement of knowledge, understanding, and the arts.',
-    twitter: 'ItsKennyatta',
-  },
-  {
-    name: 'Luk3ark',
-    position: 'Senior Engineer',
-    avatar: '/img/team/luk3ark.jpg',
-    bio: 'Luk3ark is a DevOps engineer with experience in the financial industry. He has been building Web3 smart contracts and programs since 2020. He loves meeting new people, listening to drum and bass and teaching others.',
-    twitter: 'luk3ark',
-  },
-]
+import teamMembers from '../data/team.json'
 
 const Team: NextPage = () => {
   useEffect(() => {
@@ -101,7 +58,7 @@ const Team: NextPage = () => {
                     id="team-members"
                     className="grid grid-cols-2 my-16 lg:grid-cols-3 lg:my-36 gap-x-6 lg:gap-x-10 gap-y-16"
                   >
-                    {teamMembers.map((member, index) => (
+                    {teamMembers.team.map((member: Member, index) => (
                       <TeamMember key={index} {...member} />
                     ))}
                   </div>
