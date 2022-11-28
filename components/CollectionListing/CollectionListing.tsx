@@ -108,98 +108,106 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <ul className="sticky mt-8 top-52 lg:mt-20 h-[90vh] overflow-auto mb-60">
-          {traits.map((trait, traitIndex) => {
-            return (
-              <li className="pr-8 my-8 font-bold first:mt-0" key={traitIndex}>
-                <Disclosure>
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex items-center justify-between w-full">
-                        {trait.trait_type}
-                        {open ? <AiOutlineMinus /> : <AiOutlinePlus />}
-                      </Disclosure.Button>
-                      <Disclosure.Panel>
-                        <input
-                          className="w-full px-2 py-1 my-2 font-mono font-normal border-2 outline-none border-neutral-200 text-neutral-600"
-                          type="search"
-                          placeholder="Search..."
-                          onChange={(e) => {
-                            const prevTraitFilters: { [key: string]: any } = [
-                              ...(traitFilters as any),
-                            ]
-                            prevTraitFilters[trait.trait_type] =
-                              e.currentTarget.value
+        <div className="sticky top-52 mt-8 h-[90vh] overflow-auto mb-60">
+          <div className="flex items-center justify-between pb-4 pr-6">
+            <button
+              className="items-center hidden gap-2 p-2 ml-auto text-sm lg:flex group"
+              onClick={() => reset()}
+            >
+              Shuffle
+              <GrPowerReset className="transition duration-1000 group-hover:rotate-[360deg] text-base" />
+            </button>
+          </div>
+          <ul className="">
+            {traits.map((trait, traitIndex) => {
+              return (
+                <li className="pr-8 font-bold first:mt-0" key={traitIndex}>
+                  <Disclosure>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className="flex items-center justify-between w-full py-5 font-light uppercase border-t border-lily-black">
+                          {trait.trait_type}
+                          {open ? <AiOutlineMinus /> : <AiOutlinePlus />}
+                        </Disclosure.Button>
+                        <Disclosure.Panel>
+                          <input
+                            className="w-full px-2 py-1 my-2 font-mono font-normal border-2 outline-none border-neutral-200 text-neutral-600"
+                            type="search"
+                            placeholder="Search..."
+                            onChange={(e) => {
+                              const prevTraitFilters: { [key: string]: any } = [
+                                ...(traitFilters as any),
+                              ]
+                              prevTraitFilters[trait.trait_type] =
+                                e.currentTarget.value
 
-                            setTraitFilters(prevTraitFilters)
-                          }}
-                        />
-                        <ul className={clsx('mt-2 text-sm font-normal')}>
-                          {trait.values.map((value, valueIndex) => {
-                            const traitFilter = traitFilters[trait.trait_type]
-                            if (
-                              traitFilter &&
-                              !value
-                                .toLowerCase()
-                                .includes(traitFilter.toLowerCase())
-                            ) {
-                              return
-                            }
-                            return (
-                              <li className="w-full" key={valueIndex}>
-                                <label
-                                  className={clsx(
-                                    'flex cursor-pointer items-center w-full gap-2 py-1 text-gray-800 hover:font-bold hover:text-black',
-                                    filters[trait.trait_type]?.includes(
-                                      value
-                                    ) && '!text-black !font-bold'
-                                  )}
-                                  htmlFor={`${trait.trait_type}-${value}`}
-                                >
-                                  <input
-                                    type="checkbox"
-                                    id={`${trait.trait_type}-${value}`}
-                                    data-filter
-                                    checked={filters[
-                                      trait.trait_type
-                                    ]?.includes(value)}
-                                    onChange={(e) =>
-                                      filter(
-                                        trait.trait_type,
-                                        value,
-                                        e.target.checked
-                                      )
-                                    }
-                                  />
-                                  {value}
-                                </label>
-                              </li>
-                            )
-                          })}
-                        </ul>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-              </li>
-            )
-          })}
-        </ul>
+                              setTraitFilters(prevTraitFilters)
+                            }}
+                          />
+                          <ul className={clsx('mt-2 text-sm font-normal')}>
+                            {trait.values.map((value, valueIndex) => {
+                              const traitFilter = traitFilters[trait.trait_type]
+                              if (
+                                traitFilter &&
+                                !value
+                                  .toLowerCase()
+                                  .includes(traitFilter.toLowerCase())
+                              ) {
+                                return
+                              }
+                              return (
+                                <li className="w-full" key={valueIndex}>
+                                  <label
+                                    className={clsx(
+                                      'flex cursor-pointer items-center w-full gap-2 py-1 text-gray-800 hover:font-bold hover:text-black',
+                                      filters[trait.trait_type]?.includes(
+                                        value
+                                      ) && '!text-black !font-bold'
+                                    )}
+                                    htmlFor={`${trait.trait_type}-${value}`}
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      id={`${trait.trait_type}-${value}`}
+                                      data-filter
+                                      checked={filters[
+                                        trait.trait_type
+                                      ]?.includes(value)}
+                                      onChange={(e) =>
+                                        filter(
+                                          trait.trait_type,
+                                          value,
+                                          e.target.checked
+                                        )
+                                      }
+                                    />
+                                    {value}
+                                  </label>
+                                </li>
+                              )
+                            })}
+                          </ul>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
       <div className="flex flex-col items-center col-span-5">
         <div className="flex flex-wrap items-center justify-start w-full gap-4 lg:py-4">
-          <button
-            className="items-center hidden gap-2 p-2 lg:flex group"
-            onClick={() => reset()}
-          >
-            {filterTags.length ? (
+          {filterTags.length > 0 && (
+            <button
+              className="items-center hidden gap-2 p-2 lg:flex group"
+              onClick={() => reset()}
+            >
               <IoMdClose className="transition duration-1000 group-hover:rotate-[180deg]" />
-            ) : (
-              <GrPowerReset className="transition duration-1000 group-hover:rotate-[360deg]" />
-            )}
-
-            {filterTags.length ? 'Clear' : 'Shuffle'}
-          </button>
+              clear
+            </button>
+          )}
           {filterTags}
         </div>
         <div
