@@ -5,6 +5,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { FiCheck } from 'react-icons/fi'
 import { BsFillArrowUpCircleFill } from 'react-icons/bs'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { GrPowerReset } from 'react-icons/gr'
@@ -14,6 +15,8 @@ import { BiSearch } from 'react-icons/bi'
 import { useInView } from 'react-intersection-observer'
 import { cdnAsset, splitNftName } from '../../lib/helpers'
 import Button from '../Button'
+
+const Checkbox = require('react-custom-checkbox')
 
 function CollectionListing({
   collection,
@@ -122,10 +125,13 @@ function CollectionListing({
               <GrPowerReset className="transition duration-1000 group-hover:rotate-[360deg] text-base" />
             </button>
           </div>
-          <ul className="">
+          <ul className="w-full">
             {traits.map((trait, traitIndex) => {
               return (
-                <li className="pr-8 font-bold first:mt-0" key={traitIndex}>
+                <li
+                  className="w-full pr-8 font-bold first:mt-0"
+                  key={traitIndex}
+                >
                   <Disclosure>
                     {({ open }) => (
                       <>
@@ -164,25 +170,34 @@ function CollectionListing({
                               return (
                                 <li className="w-full" key={valueIndex}>
                                   <label
-                                    className="flex items-center w-full gap-2 py-1 font-sans cursor-pointer"
+                                    className="flex items-center w-full gap-2 py-[6px] font-sans"
                                     htmlFor={`${trait.trait_type}-${value}`}
                                   >
-                                    <input
-                                      type="checkbox"
-                                      id={`${trait.trait_type}-${value}`}
-                                      data-filter
-                                      checked={filters[
-                                        trait.trait_type
-                                      ]?.includes(value)}
-                                      onChange={(e) =>
-                                        filter(
-                                          trait.trait_type,
-                                          value,
-                                          e.target.checked
-                                        )
+                                    <Checkbox
+                                      icon={
+                                        <FiCheck color="#1F1F1F" size={15} />
                                       }
+                                      name="my-input"
+                                      onChange={(val: boolean, e: any) => {
+                                        filter(trait.trait_type, value, val)
+                                        e.currentTarget.querySelector(
+                                          'span > div'
+                                        ).style.opacity = val ? 1 : 0.5
+                                      }}
+                                      borderRadius={24}
+                                      borderColor="#91AEFA"
+                                      size={24}
+                                      style={{
+                                        cursor: 'pointer',
+                                        backgroundColor: '#91AEFA',
+                                        opacity: 0.5,
+                                      }}
+                                      labelStyle={{
+                                        marginLeft: 8,
+                                        cursor: 'pointer',
+                                      }}
+                                      label={value}
                                     />
-                                    {value}
                                   </label>
                                 </li>
                               )
