@@ -2,6 +2,7 @@ import { Trait, Nft } from '../../types'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
@@ -41,6 +42,8 @@ function CollectionListing({
   filter: (trait: string, value: string, state: boolean) => void
   reset: () => void
 }) {
+  const router = useRouter()
+
   const [showFilters, setShowFilters] = useState<boolean>(false)
   const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
   const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
@@ -85,7 +88,7 @@ function CollectionListing({
   }, [listingInView])
 
   return (
-    <div className="grid-cols-6 lg:grid">
+    <div className="grid-cols-6 lg:grid" key={router.asPath}>
       <div className="flex items-center justify-start w-full mb-2 lg:mb-4 lg:hidden">
         <button
           className="flex items-center gap-2 mr-4"
@@ -115,7 +118,18 @@ function CollectionListing({
         <div className="overflow-auto lg:sticky lg:mt-8 filter-listing lg:top-44 lg:mb-60">
           <div className="flex items-center justify-between pb-4 pr-6">
             <label className="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" className="sr-only peer" />
+              <input
+                type="checkbox"
+                checked={collection === 'lily'}
+                className="sr-only peer"
+                onChange={(e) => {
+                  router.push(
+                    `/collections/${
+                      e.currentTarget.checked ? 'lily' : 'lotus-gang'
+                    }`
+                  )
+                }}
+              />
               <div className="w-[101px] h-[54px] rounded-full bg-lily-black"></div>
               <svg
                 width="46"
@@ -205,7 +219,7 @@ function CollectionListing({
                               return (
                                 <li className="w-full" key={valueIndex}>
                                   <label
-                                    className="flex items-center w-full gap-2 py-[6px] font-sans"
+                                    className="checkbox-label flex items-center w-full gap-2 py-[6px] font-sans"
                                     htmlFor={`${trait.trait_type}-${value}`}
                                   >
                                     <Checkbox
