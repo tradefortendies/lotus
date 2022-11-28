@@ -203,7 +203,7 @@ const LotusGang: NextPage<{
         <div className="w-screen min-h-screen text-neutral-900 bg-lily-blue">
           <div className="relative">
             <div className="relative w-full bg-white text-lily-black pb-28">
-              <div className="relative flex flex-col w-full px-4 py-32 mx-auto lg:px-8 lg:pt-48 max-w-[1600px]">
+              <div className="relative flex flex-col w-full px-4 py-32 mx-auto lg:px-8 lg:pt-48 max-w-[1480px]">
                 <div
                   id="masthead"
                   className="flex items-center justify-between gap-4"
