@@ -119,7 +119,7 @@ function Header({
         )}
       >
         <Link href="/" passHref>
-          <a>
+          <a className="flex items-center">
             <svg
               viewBox="0 0 730 183"
               fill="none"
@@ -128,7 +128,7 @@ function Header({
               onMouseOver={spinLogo}
               onMouseOut={spinLogo}
               className={clsx(
-                'w-32 transition-transform duration-1000 -translate-y-1',
+                'w-32 transition-transform duration-1000',
                 linkColor !== 'white' && 'fill-black',
                 linkColor === 'white' && 'fill-white'
               )}
