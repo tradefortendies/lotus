@@ -341,7 +341,7 @@ function CollectionListing({
                   passHref
                 >
                   <a>
-                    <div className="relative w-full h-[240px] bg-slate-50 flex items-center justify-center">
+                    <div className="relative w-full h-[160px] md:h-[200px] lg:h-[240px] bg-slate-50 flex items-center justify-center">
                       <BeatLoader color="#aaa" size={10} />
                       <div className="absolute top-0 left-0 w-full h-full">
                         <Image
