@@ -11,6 +11,7 @@ import { GrPowerReset } from 'react-icons/gr'
 import { IoMdClose } from 'react-icons/io'
 import { FaFilter } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
+import { cdnAsset } from '../../lib/helpers'
 import Button from '../Button'
 
 function CollectionListing({
@@ -223,7 +224,7 @@ function CollectionListing({
                       <BeatLoader color="#aaa" size={10} />
                       <div className="absolute top-0 left-0 w-full h-full">
                         <Image
-                          src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${collection}/${nft.address}.png`}
+                          src={cdnAsset(collection, nft.address, 'thumb')}
                           layout="fill"
                           className="object-cover"
                         />

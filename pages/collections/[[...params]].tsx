@@ -256,10 +256,6 @@ const LotusGang: NextPage<{
                             />
                           </svg>
                         </h1>
-                        <p className="max-w-xl lg:text-lg">
-                          Lotus Gang is a collection of 4,000 randomly generated
-                          Lads and Ladies on the Solana Blockchain.
-                        </p>
                       </>
                     )}
 
@@ -290,12 +286,6 @@ const LotusGang: NextPage<{
                             />
                           </svg>
                         </h1>
-                        <p className="max-w-2xl lg:text-lg">
-                          LILY - an expansion of The Lotus brand - aims to
-                          become the landing page of the new web by pushing the
-                          boundaries through innovative technology, art and an
-                          informed community.
-                        </p>
                       </>
                     )}
                   </div>

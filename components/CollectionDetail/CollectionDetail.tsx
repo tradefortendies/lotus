@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { IoMdClose } from 'react-icons/io'
-import { formatAddress } from '../../lib/helpers'
+import { formatAddress, cdnAsset } from '../../lib/helpers'
 import { Nft } from '../../types'
 import { ThemeContext } from '../Theme'
 import Button from '../Button'
@@ -33,12 +33,10 @@ function CollectionDetail({
     height: 0,
   })
 
-  const cdn = (col: string, add: string) => {
-    return `https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${col}/${add}.png`
-  }
-
   const downloadImage = async (col: string, add: string) => {
-    const img = await fetch(cdn(col, add)).then((res) => res.blob())
+    const img = await fetch(cdnAsset(col, add, 'thumb')).then((res) =>
+      res.blob()
+    )
     setDetailImage(URL.createObjectURL(img))
   }
 
@@ -117,7 +115,7 @@ function CollectionDetail({
                       <Image
                         layout="fill"
                         className="object-cover"
-                        src={cdn(collection, nft.address)}
+                        src={cdnAsset(collection, nft.address, 'large')}
                       />
                     </div>
                   </div>

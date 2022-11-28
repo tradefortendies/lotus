@@ -27,3 +27,7 @@ export const titleCase = (str: string): string => {
 
   return formattedTitle
 }
+
+export const cdnAsset = (col: string, add: string, size: 'large' | 'thumb') => {
+  return `https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${col}/${size}/${add}.jpg`
+}
