@@ -258,7 +258,7 @@ function Header({
                 )}
               >
                 <Link href="/vision" passHref>
-                  <a className="block p-4 cursor-pointer">Our Vision</a>
+                  <a className="block p-4 cursor-pointer">Vision</a>
                 </Link>
               </li>
               <li
@@ -268,8 +268,8 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/roadmap" passHref>
-                  <a className="block p-4 cursor-pointer">Our Roadmap</a>
+                <Link href="/blueprint" passHref>
+                  <a className="block p-4 cursor-pointer">Blueprint</a>
                 </Link>
               </li>
               <li
@@ -436,12 +436,12 @@ function Header({
                             </li>
                             <li className="py-2 transition duration-300">
                               <Link href="/vision" passHref>
-                                <a>Our Vision</a>
+                                <a>Vision</a>
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
-                              <Link href="/roadmap" passHref>
-                                <a>Our Vision</a>
+                              <Link href="/blueprint" passHref>
+                                <a>Blueprint</a>
                               </Link>
                             </li>
                             <li className="py-2 transition duration-300">
