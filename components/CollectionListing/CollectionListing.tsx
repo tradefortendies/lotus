@@ -362,7 +362,7 @@ function CollectionListing({
                           src={cdnAsset(collection, nft.address, 'thumb')}
                           layout="fill"
                           className="object-cover rounded-lg"
-                          quality={90}
+                          quality={100}
                         />
                       </div>
                     </div>
