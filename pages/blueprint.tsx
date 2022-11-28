@@ -62,6 +62,14 @@ const Blueprint: NextPage = () => {
                       enableZoom={false}
                       enableDamping={true}
                     />
+                    {/* <TrackballControls
+                      enabled={true}
+                      ref={orbitControlsRef}
+                      rotateSpeed={5}
+                      noZoom={true}
+                      staticMoving={false}
+                      dynamicDampingFactor={0.3}
+                    /> */}
                   </Canvas>
                 </div>
               </div>
