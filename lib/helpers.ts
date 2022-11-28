@@ -31,3 +31,11 @@ export const titleCase = (str: string): string => {
 export const cdnAsset = (col: string, add: string, size: 'large' | 'thumb') => {
   return `https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections/${col}/${size}/${add}.jpg`
 }
+
+export const splitNftName = (name: string): string[] => {
+  const nameParts: string[] = name.split(' ')
+  return [
+    nameParts.slice(0, nameParts.length - 1).join(' '),
+    nameParts[nameParts.length - 1],
+  ]
+}

@@ -12,7 +12,7 @@ import { IoMdClose } from 'react-icons/io'
 import { FaFilter } from 'react-icons/fa'
 import { BiSearch } from 'react-icons/bi'
 import { useInView } from 'react-intersection-observer'
-import { cdnAsset } from '../../lib/helpers'
+import { cdnAsset, splitNftName } from '../../lib/helpers'
 import Button from '../Button'
 
 function CollectionListing({
@@ -215,9 +215,10 @@ function CollectionListing({
           )}
         >
           {nfts.map((nft, nftIndex) => {
+            const nftName = splitNftName(nft.name)
             return (
               <div
-                className="p-4 transition bg-gray-100 rounded-lg hover:scale-105"
+                className="p-4 transition rounded-lg bg-gray-50 hover:scale-105"
                 key={nftIndex}
                 ref={nftIndex === 0 ? listingRef : null}
               >
@@ -226,7 +227,7 @@ function CollectionListing({
                   passHref
                 >
                   <a>
-                    <div className="relative w-full h-[200px] bg-slate-100 flex items-center justify-center">
+                    <div className="relative w-full h-[200px] bg-slate-50 flex items-center justify-center">
                       <BeatLoader color="#aaa" size={10} />
                       <div className="absolute top-0 left-0 w-full h-full">
                         <Image
@@ -236,8 +237,9 @@ function CollectionListing({
                         />
                       </div>
                     </div>
-                    <div className="mt-4">
-                      <h3 className="font-bold">{nft.name}</h3>
+                    <div className="flex items-center justify-between mt-4 font-sans">
+                      <h3 className="text-xl">{nftName[0]}</h3>
+                      <h4 className="font-semibold">{nftName[1]}</h4>
                     </div>
                   </a>
                 </Link>
