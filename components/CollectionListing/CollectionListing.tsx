@@ -46,6 +46,9 @@ function CollectionListing({
 
   const [showFilters, setShowFilters] = useState<boolean>(false)
   const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
+  const [toggleActive, setToggleActive] = useState<boolean>(
+    collection === 'lily'
+  )
   const [filterTags, setFilterTags] = useState<JSX.Element[]>([])
   const [traitFilters, setTraitFilters] = useState<{ [key: string]: any }>([])
 
@@ -120,9 +123,10 @@ function CollectionListing({
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"
-                checked={collection === 'lily'}
+                checked={toggleActive}
                 className="sr-only peer"
                 onChange={(e) => {
+                  setToggleActive(!toggleActive)
                   router.push(
                     `/collections/${
                       e.currentTarget.checked ? 'lily' : 'lotus-gang'
