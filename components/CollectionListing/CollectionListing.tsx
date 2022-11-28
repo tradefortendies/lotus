@@ -1,5 +1,5 @@
 import { Trait, Nft } from '../../types'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -15,6 +15,7 @@ import { FaFilter } from 'react-icons/fa'
 import { BiSearch } from 'react-icons/bi'
 import { useInView } from 'react-intersection-observer'
 import { cdnAsset, splitNftName } from '../../lib/helpers'
+import { ThemeContext } from '../Theme'
 import Button from '../Button'
 
 const Checkbox = require('react-custom-checkbox')
@@ -43,6 +44,7 @@ function CollectionListing({
   reset: () => void
 }) {
   const router = useRouter()
+  const theme = useContext(ThemeContext)
 
   const [showFilters, setShowFilters] = useState<boolean>(false)
   const [showTopBtn, setShowTopBtn] = useState<boolean>(false)
@@ -275,11 +277,11 @@ function CollectionListing({
                                         ).style.opacity = val ? 1 : 0.5
                                       }}
                                       borderRadius={24}
-                                      borderColor="#91AEFA"
+                                      borderColor={theme.primaryColor}
                                       size={24}
                                       style={{
                                         cursor: 'pointer',
-                                        backgroundColor: '#91AEFA',
+                                        backgroundColor: theme.primaryColor,
                                         opacity: 0.5,
                                       }}
                                       labelStyle={{
