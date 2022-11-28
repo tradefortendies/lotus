@@ -195,9 +195,9 @@ function CollectionListing({
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-center col-span-5">
-        <div className="flex flex-wrap items-center justify-start w-full gap-4 lg:py-4">
-          {filterTags.length > 0 && (
+      <div className="flex flex-col items-center col-span-5 mt-[29px]">
+        {filterTags.length > 0 && (
+          <div className="flex flex-wrap items-center justify-start w-full gap-4 pb-3">
             <button
               className="items-center hidden gap-2 p-2 lg:flex group"
               onClick={() => reset()}
@@ -205,9 +205,9 @@ function CollectionListing({
               <IoMdClose className="transition duration-1000 group-hover:rotate-[180deg]" />
               clear
             </button>
-          )}
-          {filterTags}
-        </div>
+            {filterTags}
+          </div>
+        )}
         <div
           className={clsx(
             'grid w-full grid-cols-2 gap-4 mb-16 sm:grid-cols-3 md:grid-cols-4',
