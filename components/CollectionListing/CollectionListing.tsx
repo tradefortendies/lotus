@@ -359,7 +359,7 @@ function CollectionListing({
                       <BeatLoader color="#aaa" size={10} />
                       <div className="absolute top-0 left-0 w-full h-full">
                         <Image
-                          src={cdnAsset(collection, nft.address, 'thumb')}
+                          src={cdnAsset(collection, nft.address, 'large')}
                           layout="fill"
                           className="object-cover rounded-lg"
                           quality={100}
