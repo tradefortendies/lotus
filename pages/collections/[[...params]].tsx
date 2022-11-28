@@ -216,7 +216,7 @@ const LotusGang: NextPage<{
                             viewBox="0 0 599 80"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-full max-w-[700px]"
+                            className="w-[90%] lg:w-full lg:max-w-[700px]"
                           >
                             <path
                               d="M46.5432 78.5334H0.765625V1.53908H18.4691V60.83H46.5432V78.5334Z"
@@ -266,7 +266,7 @@ const LotusGang: NextPage<{
                             viewBox="0 0 200 80"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-full max-w-[240px]"
+                            className="w-full max-w-[136px] lg:max-w-[240px]"
                           >
                             <path
                               d="M0.333984 0H18.5054V70.7429L10.734 62.9714H53.4768V80H0.333984V0Z"

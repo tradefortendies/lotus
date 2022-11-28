@@ -86,7 +86,7 @@ function CollectionListing({
 
   return (
     <div className="grid-cols-6 lg:grid">
-      <div className="flex items-center justify-start w-full mb-4 lg:hidden">
+      <div className="flex items-center justify-start w-full mb-2 lg:mb-4 lg:hidden">
         <button
           className="flex items-center gap-2 mr-4"
           onClick={() => setShowFilters(!showFilters)}
@@ -112,10 +112,7 @@ function CollectionListing({
           !showFilters && 'hidden lg:block'
         )}
       >
-        <div
-          className="sticky mt-8 overflow-auto top-44 mb-60"
-          style={{ height: 'calc(100vh - 170px)' }}
-        >
+        <div className="overflow-auto lg:sticky lg:mt-8 filter-listing lg:top-44 lg:mb-60">
           <div className="flex items-center justify-between pb-4 pr-6">
             <button
               className="items-center hidden gap-2 p-2 ml-auto text-sm lg:flex group"
@@ -213,7 +210,7 @@ function CollectionListing({
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-center col-span-5 mt-[29px]">
+      <div className="flex flex-col items-center col-span-5 lg:mt-[29px]">
         {filterTags.length > 0 && (
           <div className="flex flex-wrap items-center justify-start w-full gap-4 pb-3">
             <button
@@ -229,7 +226,7 @@ function CollectionListing({
         <div
           className={clsx(
             'grid w-full grid-cols-2 gap-4 mb-16 sm:grid-cols-3 md:grid-cols-4',
-            filterTags.length > 0 && 'mt-8 lg:mt-0'
+            filterTags.length > 0 && 'mt-2 lg:mt-0'
           )}
         >
           {nfts.map((nft, nftIndex) => {
