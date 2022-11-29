@@ -57,6 +57,8 @@ function CollectionListing({
   const [loadMoreRef, loadMoreInView] = useInView()
   const [listingRef, listingInView] = useInView()
 
+  const addressReg: string[] = []
+
   useEffect(() => {
     const newFilterTags: JSX.Element[] = []
     Object.keys(filters).map((trait) => {
@@ -343,7 +345,13 @@ function CollectionListing({
           )}
         >
           {nfts.map((nft, nftIndex) => {
+            if (addressReg.includes(nft.address)) {
+              return
+            }
+
+            addressReg.push(nft.address)
             const nftName = splitNftName(nft.name)
+
             return (
               <div
                 className="p-4 transition rounded-lg bg-gray-50 hover:scale-105"
