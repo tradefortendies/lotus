@@ -13,9 +13,8 @@ const BlueprintModel = (props: any) => {
   const { actions } = useAnimations(animations, group)
 
   useEffect(() => {
-    console.log(actions['Spinning-Disk'])
-    actions['Spinning-Disk'].setLoop(true, 20)
-    actions['Spinning-Disk'].play()
+    actions['Spinning-Disk-Stop'].setLoop(true, 20)
+    actions['Spinning-Disk-Stop'].play()
   })
   return (
     <group ref={group} {...props} dispose={null}>
@@ -60,6 +59,13 @@ const BlueprintModel = (props: any) => {
           material={materials['Basic CD Case']}
         />
         <mesh
+          name="GLB-Clip"
+          castShadow
+          receiveShadow
+          geometry={nodes['GLB-Clip'].geometry}
+          material={materials['Rainbow Clip.001']}
+        />
+        <mesh
           name="GLB-CD-Sticker"
           castShadow
           receiveShadow
@@ -78,13 +84,6 @@ const BlueprintModel = (props: any) => {
           position={[0, 0, 0.04]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={4.22}
-        />
-        <mesh
-          name="GLB-Clip"
-          castShadow
-          receiveShadow
-          geometry={nodes['GLB-Clip'].geometry}
-          material={materials['Rainbow Clip.001']}
         />
         <mesh
           name="GLB-Backpaper"
