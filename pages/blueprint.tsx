@@ -21,7 +21,7 @@ const Blueprint: NextPage = () => {
   }, [])
   return (
     <>
-      <Meta title="Roadmap" />
+      <Meta title="The Blueprint" />
       <>
         <Header
           position="slide"
