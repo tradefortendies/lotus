@@ -165,7 +165,7 @@ const Home: NextPage = () => {
         desc="The landing page of Web3."
       />
 
-      {isLoading && <LoadingCursor />}
+      {/* {isLoading && <LoadingCursor />} */}
       <>
         <div
           ref={bgRef}

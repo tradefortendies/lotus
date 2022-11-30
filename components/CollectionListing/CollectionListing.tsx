@@ -266,7 +266,6 @@ function CollectionListing({
                               ) {
                                 return
                               }
-                              console.log(filters[trait.trait_type])
                               return (
                                 <li className="w-full" key={valueIndex}>
                                   <label
