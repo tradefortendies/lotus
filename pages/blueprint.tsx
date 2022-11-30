@@ -42,14 +42,14 @@ const Blueprint: NextPage = () => {
         <div className="w-screen h-screen overflow-hidden text-neutral-900 bg-lily-blue">
           <div className="relative">
             <div className="relative w-full h-screen bg-white text-lily-black pb-28">
-              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
-                <div id="masthead" className="text-center">
+              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 xl:pt-48 max-w-7xl">
+                <div id="masthead">
                   <h1 className="w-full font-mono text-6xl opacity-0 lg:text-7xl">
                     The Blueprint
                   </h1>
                 </div>
                 <div
-                  className="w-full h-[400px] lg:h-[800px] lg:-translate-y-16"
+                  className="w-full h-[400px] md:h-[800px] lg:-translate-y-16"
                   id="scene"
                 >
                   <div id="canvas" className="w-full h-full opacity-0">
@@ -71,14 +71,6 @@ const Blueprint: NextPage = () => {
                         enableZoom={false}
                         enableDamping={true}
                       />
-                      {/* <TrackballControls
-                      enabled={true}
-                      ref={orbitControlsRef}
-                      rotateSpeed={5}
-                      noZoom={true}
-                      staticMoving={false}
-                      dynamicDampingFactor={0.3}
-                    /> */}
                     </Canvas>
                   </div>
                 </div>
