@@ -261,7 +261,7 @@ function Header({
                   <a className="block p-4 cursor-pointer">Vision</a>
                 </Link>
               </li>
-              <li
+              {/* <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
                   linkColor !== 'white' && 'bg-white hover:bg-slate-50',
@@ -271,7 +271,7 @@ function Header({
                 <Link href="/blueprint" passHref>
                   <a className="block p-4 cursor-pointer">Blueprint</a>
                 </Link>
-              </li>
+              </li> */}
               <li
                 className={clsx(
                   'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
@@ -439,11 +439,11 @@ function Header({
                                 <a>Vision</a>
                               </Link>
                             </li>
-                            <li className="py-2 transition duration-300">
+                            {/* <li className="py-2 transition duration-300">
                               <Link href="/blueprint" passHref>
                                 <a>Blueprint</a>
                               </Link>
-                            </li>
+                            </li> */}
                             <li className="py-2 transition duration-300">
                               <Link href="/team" passHref>
                                 <a>Our Team</a>
