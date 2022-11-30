@@ -60,7 +60,7 @@ function LoadingCursor() {
       <div
         ref={loadingRefContainer}
         id="loading-cursor"
-        className={clsx('opacity-0', show && 'opacity-100')}
+        className={clsx('hidden xl:block opacity-0', show && 'opacity-100')}
       >
         {mouseCoords[0] > 0 && mouseCoords[1] > 0 && (
           <div
