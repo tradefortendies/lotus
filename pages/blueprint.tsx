@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { useEffect, useRef, Suspense } from 'react'
+import { useEffect, useRef, useState, Suspense } from 'react'
 import { gsap } from 'gsap'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
@@ -9,6 +9,7 @@ import BlueprintModel from '../components/BlueprintModel'
 
 const Blueprint: NextPage = () => {
   const orbitControlsRef = useRef(null)
+  const [autoRotate, setAutoRotate] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -17,6 +18,14 @@ const Blueprint: NextPage = () => {
         duration: 0.75,
         stagger: 0.25,
       })
+
+      gsap.to('#canvas', {
+        opacity: 1,
+        duration: 0.75,
+        delay: 1,
+      })
+
+      setTimeout(() => setAutoRotate(true), 1000)
     }, 1000)
   }, [])
   return (
@@ -43,25 +52,26 @@ const Blueprint: NextPage = () => {
                   className="w-full h-[400px] lg:h-[800px] lg:-translate-y-16"
                   id="scene"
                 >
-                  <Canvas shadows dpr={[1, 2]} camera={{ fov: 40 }}>
-                    <Suspense fallback={null}>
-                      <Stage
-                        controls={orbitControlsRef}
-                        preset="rembrandt"
-                        intensity={1}
-                        environment="city"
-                        adjustCamera={1.5}
-                      >
-                        <BlueprintModel />
-                      </Stage>
-                    </Suspense>
-                    <OrbitControls
-                      ref={orbitControlsRef}
-                      autoRotate={true}
-                      enableZoom={false}
-                      enableDamping={true}
-                    />
-                    {/* <TrackballControls
+                  <div id="canvas" className="w-full h-full opacity-0">
+                    <Canvas shadows dpr={[1, 2]} camera={{ fov: 40 }}>
+                      <Suspense fallback={null}>
+                        <Stage
+                          controls={orbitControlsRef}
+                          preset="rembrandt"
+                          intensity={1}
+                          environment="city"
+                          adjustCamera={1.2}
+                        >
+                          <BlueprintModel />
+                        </Stage>
+                      </Suspense>
+                      <OrbitControls
+                        ref={orbitControlsRef}
+                        autoRotate={autoRotate}
+                        enableZoom={false}
+                        enableDamping={true}
+                      />
+                      {/* <TrackballControls
                       enabled={true}
                       ref={orbitControlsRef}
                       rotateSpeed={5}
@@ -69,7 +79,8 @@ const Blueprint: NextPage = () => {
                       staticMoving={false}
                       dynamicDampingFactor={0.3}
                     /> */}
-                  </Canvas>
+                    </Canvas>
+                  </div>
                 </div>
               </div>
             </div>
