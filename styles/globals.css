@@ -91,3 +91,9 @@ body.scrollbar::-webkit-scrollbar-thumb {
 #gauge .text-group text {
   transform: scale(0.7);
 }
+
+@media (min-width: 1024px) {
+  .filter-listing {
+    height: calc(100vh - 260px);
+  }
+}

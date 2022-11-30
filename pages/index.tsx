@@ -27,11 +27,18 @@ const Home: NextPage = () => {
       return
     }
 
+    const loadingCursor: HTMLDivElement = document.querySelector(
+      '#loading-cursor'
+    ) as HTMLDivElement
+
     gsap.registerPlugin(ScrollTrigger)
     document.documentElement.scrollTo(0, 0)
     disableBodyScroll(bgRef.current)
 
     setIsLoading(true)
+    if (loadingCursor) {
+      loadingCursor.style.opacity = '1'
+    }
 
     setWindowDimensions({
       width: window.innerWidth,
@@ -99,6 +106,10 @@ const Home: NextPage = () => {
         setIsLoading(false)
         enableBodyScroll(bgRef.current)
 
+        if (loadingCursor) {
+          loadingCursor.style.opacity = null as any
+        }
+
         if (window.innerWidth < 500) {
           return
         }
@@ -164,8 +175,6 @@ const Home: NextPage = () => {
         }
         desc="The landing page of Web3."
       />
-
-      {isLoading && <LoadingCursor />}
       <>
         <div
           ref={bgRef}
