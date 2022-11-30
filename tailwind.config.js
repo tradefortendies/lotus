@@ -24,6 +24,7 @@ module.exports = {
       screens: {
         smLaptop: { raw: '(max-height: 900px) and (min-width: 768px)' },
         xsLaptop: { raw: '(max-height: 800px) and (min-width: 768px)' },
+        smPhone: { raw: '(max-height: 720px)' },
       },
     },
   },

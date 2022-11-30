@@ -279,9 +279,9 @@ const Home: NextPage = () => {
                 id="content"
                 className="relative w-full lg:min-h-[900px] h-[95vh] bg-white text-neutral-900 rounded-b-3xl"
               >
-                <div className="relative flex flex-col w-full h-full px-8 mx-auto text-center pt-28 md:pt-16 md:justify-center xl:text-left max-w-7xl">
+                <div className="relative flex flex-col w-full h-full px-8 mx-auto text-center pt-28 smPhone:pt-24 md:pt-16 md:justify-center xl:text-left max-w-7xl">
                   <Parallax offset={50} clampInitial={-50}>
-                    <h1 className="max-w-[400px] md:max-w-none md:w-[60%] smLaptop:w-[50%] mx-auto md:mx-0 translate-y-8 opacity-0">
+                    <h1 className="max-w-[400px] md:max-w-none md:w-[60%] smLaptop:w-[50%] smPhone:w-[75%] mx-auto md:mx-0 translate-y-8 opacity-0">
                       <span className="sr-only">Lotus</span>
                       <svg
                         viewBox="0 0 730 183"
@@ -298,17 +298,18 @@ const Home: NextPage = () => {
                   </Parallax>
                   <div className="relative z-20 mt-6 text-xl font-medium leading-relaxed text-center xl:mt-12 md:mt-16 md:text-left md:w-[70%] lg:w-[60%]">
                     <Parallax offset={80} clampInitial={-80}>
-                      <h2 className="font-sans text-4xl lg:text-[50px] md:text-[40px] xl:text-[80px] smLaptop:text-[65px] leading-none translate-y-8 opacity-0">
+                      <h2 className="font-sans text-4xl lg:text-[50px] md:text-[40px] xl:text-[80px] smLaptop:text-[65px] smPhone:text-[28px] leading-none translate-y-8 opacity-0">
                         A community of optimalists.
                       </h2>
                     </Parallax>
-                    <div className="flex flex-col items-center mt-6 text-center opacity-0 masthead-btns xl:mt-8 md:hidden">
+                    <div className="flex flex-col items-center mt-6 text-center opacity-0 smPhone:mt-4 masthead-btns xl:mt-8 md:hidden">
                       <Button
                         arrow={true}
                         type="transparent"
                         href="/vision"
                         underlineSpeed={150}
                         underlineReverse={true}
+                        className="smPhone:py-2"
                       >
                         Our Vision
                       </Button>
@@ -319,6 +320,7 @@ const Home: NextPage = () => {
                         target="_blank"
                         rel="noreferrer"
                         underlineSpeed={150}
+                        className="smPhone:py-2"
                       >
                         Lotus Gang
                       </Button>
@@ -329,6 +331,7 @@ const Home: NextPage = () => {
                         target="_blank"
                         rel="noreferrer"
                         underlineSpeed={150}
+                        className="smPhone:py-2"
                       >
                         LILY
                       </Button>
