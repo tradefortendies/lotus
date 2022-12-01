@@ -49,7 +49,7 @@ const Blueprint: NextPage = () => {
                   </h1>
                 </div>
                 <div
-                  className="w-full h-[400px] md:h-[800px] lg:-translate-y-16"
+                  className="w-full h-screen lg:h-[80vh] -translate-y-44 lg:-translate-y-16"
                   id="scene"
                 >
                   <div id="canvas" className="w-full h-full opacity-0">
