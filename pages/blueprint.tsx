@@ -69,6 +69,7 @@ const Blueprint: NextPage = () => {
                         ref={orbitControlsRef}
                         autoRotate={autoRotate}
                         enableZoom={false}
+                        enablePan={false}
                         enableDamping={true}
                       />
                     </Canvas>
