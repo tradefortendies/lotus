@@ -1,5 +1,3 @@
-const plugin = require('tailwindcss/plugin')
-
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -30,9 +28,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    plugin(function ({ addVariant }) {
-      addVariant('ios', '@supports (-webkit-touch-callout: none)')
-    }),
-  ],
+  plugins: [],
 }

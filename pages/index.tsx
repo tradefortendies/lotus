@@ -176,7 +176,7 @@ const Home: NextPage = () => {
       <>
         <div
           ref={bgRef}
-          className="fixed ios:-top-[40px] lg:top-0 z-50 w-screen h-screen bg-neutral-800"
+          className="fixed -top-[40px] md:top-0 z-50 w-screen h-screen bg-neutral-800"
         >
           <svg
             viewBox={`0 0 ${windowDimensions.width} ${windowDimensions.height}`}
