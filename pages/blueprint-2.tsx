@@ -10,15 +10,18 @@ import BlueprintModel from '../components/BlueprintModel'
 const Blueprint2: NextPage = () => {
   const orbitControlsRef = useRef(null)
   const [autoRotate, setAutoRotate] = useState(false)
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  })
 
   useEffect(() => {
-    setTimeout(() => {
-      gsap.to('#masthead > h1, #masthead > h2', {
-        opacity: 1,
-        duration: 0.75,
-        stagger: 0.25,
-      })
+    setWindowDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
 
+    setTimeout(() => {
       gsap.to('#canvas', {
         opacity: 1,
         duration: 0.75,
@@ -54,7 +57,7 @@ const Blueprint2: NextPage = () => {
                         preset="rembrandt"
                         intensity={1}
                         environment="city"
-                        adjustCamera={1.2}
+                        adjustCamera={windowDimensions.width > 768 ? 1.2 : 1}
                       >
                         <BlueprintModel />
                       </Stage>
@@ -63,6 +66,8 @@ const Blueprint2: NextPage = () => {
                       ref={orbitControlsRef}
                       autoRotate={autoRotate}
                       enableZoom={true}
+                      enablePan={false}
+                      enableRotate={true}
                       enableDamping={true}
                     />
                   </Canvas>
