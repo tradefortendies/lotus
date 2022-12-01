@@ -509,7 +509,7 @@ const Home: NextPage = () => {
                     </p>
                     <Button
                       href="#"
-                      className="opacity-0 merch cursor-help !bg-transparent !border-lily-black"
+                      className="lg:opacity-0 merch cursor-help !bg-transparent !border-lily-black"
                       disabled={true}
                     >
                       Sold Out
