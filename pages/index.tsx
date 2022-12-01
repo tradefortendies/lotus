@@ -7,9 +7,7 @@ import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import Footer from '../components/Footer'
-import Eligibility from '../components/Eligibility'
 import ScrollArrow from '../components/ScrollArrow'
-import LoadingCursor from '../components/LoadingCursor'
 import Parallax from '../components/Parallax'
 import { ThemeContext } from '../components/Theme'
 
@@ -178,7 +176,7 @@ const Home: NextPage = () => {
       <>
         <div
           ref={bgRef}
-          className="fixed top-0 z-50 w-screen h-screen bg-neutral-800"
+          className="fixed -top-[40px] md:top-0 z-50 w-screen h-screen bg-neutral-800"
         >
           <svg
             viewBox={`0 0 ${windowDimensions.width} ${windowDimensions.height}`}
@@ -509,7 +507,7 @@ const Home: NextPage = () => {
                     </p>
                     <Button
                       href="#"
-                      className="opacity-0 merch cursor-help !bg-transparent !border-lily-black"
+                      className="lg:opacity-0 merch cursor-help !bg-transparent !border-lily-black"
                       disabled={true}
                     >
                       Sold Out
