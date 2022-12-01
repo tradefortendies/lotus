@@ -3,7 +3,7 @@ import Script from 'next/script'
 
 export default function Document() {
   return (
-    <Html className="scroll-smooth">
+    <Html>
       <Head>
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_URL} />
@@ -44,7 +44,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="scroll-smooth">
+      <body>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5YG9GDX7QZ"
           strategy="afterInteractive"
