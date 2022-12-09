@@ -20,6 +20,7 @@ const legendaryNames = [
 
 const Legendaries: NextPage = () => {
   const [currentName, setCurrentName] = useState(legendaryNames[0])
+  const [intervalStarted, setIntervalStarted] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -46,8 +47,10 @@ const Legendaries: NextPage = () => {
         } else {
           setCurrentName(legendaryNames[currIndex + 1])
         }
+
+        setIntervalStarted(true)
       },
-      legendaryNames.indexOf(currentName) === 0 ? 4000 : 2000
+      intervalStarted ? 2000 : 4000
     )
 
     return () => clearInterval(interval)
