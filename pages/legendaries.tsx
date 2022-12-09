@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
-import Image from 'next/image'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -40,7 +39,7 @@ const FAQ: NextPage = () => {
                   id="masthead"
                   className="flex items-center justify-between gap-4"
                 >
-                  <h1 className="w-full mb-20 font-mono text-4xl opacity-0 sm:text-6xl lg:text-7xl">
+                  <h1 className="w-full font-mono text-4xl opacity-0 mb-28 sm:text-6xl lg:text-7xl">
                     Legendaries
                   </h1>
                 </div>
@@ -48,10 +47,8 @@ const FAQ: NextPage = () => {
                   id="legendaries"
                   className="flex flex-col items-center justify-center w-full opacity-0"
                 >
-                  <h2 className="mb-4 font-sans text-4xl">The Bride</h2>
-                  <div className="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]">
-                    <Image layout="fill" src="/img/legendary-grid.jpg" />
-                  </div>
+                  <h2 className="mb-6 font-sans text-4xl">The Bride</h2>
+                  <img src="/img/legendary-grid.jpg" />
                 </div>
               </div>
             </div>
