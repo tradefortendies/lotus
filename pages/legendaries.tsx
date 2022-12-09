@@ -1,11 +1,26 @@
 import type { NextPage } from 'next'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-const FAQ: NextPage = () => {
+const legendaryNames = [
+  'The Bride',
+  'The Phoenix',
+  'The Destroyer',
+  'The Summoner',
+  'The Timeless',
+  'The Master',
+  'The Warrior',
+  'The Petal',
+  'The Hollowed',
+  'The Scientist',
+]
+
+const Legendaries: NextPage = () => {
+  const [currentName, setCurrentName] = useState(legendaryNames[0])
+
   useEffect(() => {
     setTimeout(() => {
       gsap.to('#masthead > h1', {
@@ -20,6 +35,23 @@ const FAQ: NextPage = () => {
       })
     }, 1000)
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => {
+        const currIndex = legendaryNames.indexOf(currentName)
+
+        if (currIndex === legendaryNames.length - 1) {
+          setCurrentName(legendaryNames[0])
+        } else {
+          setCurrentName(legendaryNames[currIndex + 1])
+        }
+      },
+      legendaryNames.indexOf(currentName) === 0 ? 4000 : 2000
+    )
+
+    return () => clearInterval(interval)
+  })
 
   return (
     <>
@@ -48,7 +80,7 @@ const FAQ: NextPage = () => {
                   id="legendaries"
                   className="flex flex-col items-center justify-center w-full opacity-0"
                 >
-                  <h2 className="mb-6 font-sans text-4xl">The Bride</h2>
+                  <h2 className="mb-6 font-sans text-4xl">{currentName}</h2>
                   <img src="/img/legendary-grid.jpg" />
                 </div>
               </div>
@@ -61,4 +93,4 @@ const FAQ: NextPage = () => {
   )
 }
 
-export default FAQ
+export default Legendaries
