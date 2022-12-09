@@ -84,7 +84,7 @@ const Legendaries: NextPage = () => {
                   className="flex flex-col items-center justify-center w-full opacity-0"
                 >
                   <h2 className="mb-6 font-sans text-4xl">{currentName}</h2>
-                  <img src="/img/legendary-grid.jpg" />
+                  <img src="/img/legendary-grid.gif" />
                 </div>
               </div>
             </div>
