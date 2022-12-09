@@ -23,7 +23,7 @@ const FAQ: NextPage = () => {
 
   return (
     <>
-      <Meta title="Frequently Asked Questions" />
+      <Meta title="Legendaries" />
       <>
         <Header
           position="slide"
