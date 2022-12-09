@@ -16,6 +16,7 @@ const FAQ: NextPage = () => {
       gsap.to('#legendaries', {
         opacity: 1,
         duration: 0.75,
+        delay: 0.5,
       })
     }, 1000)
   }, [])
