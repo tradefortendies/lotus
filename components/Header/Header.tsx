@@ -146,6 +146,18 @@ function Header({
               linkColor === 'white' && 'hover:border-white'
             )}
           >
+            <Link href="/legendaries">
+              <a>Legendaries</a>
+            </Link>
+          </li>
+          <li
+            className={clsx(
+              'border-b-2 mr-12 transition-[border] duration-300 border-transparent',
+              reverseColors && 'hover:border-white',
+              linkColor !== 'white' && !reverseColors && 'hover:border-black',
+              linkColor === 'white' && 'hover:border-white'
+            )}
+          >
             <a
               href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
               target="_blank"
@@ -406,6 +418,11 @@ function Header({
                       <div className="relative flex-1 px-4 mt-6 sm:px-6">
                         <div className="absolute inset-0 flex flex-col items-center px-4 text-center sm:px-6">
                           <ul className="font-mono uppercase">
+                            <li className="py-2 transition duration-300">
+                              <Link href="/legendaries" passHref>
+                                <a>Legendaries</a>
+                              </Link>
+                            </li>
                             <li className="py-2 transition duration-300">
                               <a
                                 href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
