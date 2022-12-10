@@ -50,8 +50,8 @@ const Legendaries: NextPage = () => {
                   className="flex flex-col items-center justify-center w-full"
                 >
                   <div className="grid grid-cols-2 gap-6 lg:gap-y-12 lg:gap-x-12 xl:gap-x-[52px] md:grid-cols-3 lg:grid-cols-5">
-                    {legendaries.map((leg) => (
-                      <div className="text-center opacity-0">
+                    {legendaries.map((leg, index) => (
+                      <div className="text-center opacity-0" key={index}>
                         <h2 className="mb-2 font-sans text-lg md:text-xl">
                           {leg}
                         </h2>
