@@ -75,7 +75,7 @@ const Legendaries: NextPage = () => {
                   id="masthead"
                   className="flex items-center justify-between gap-4"
                 >
-                  <h1 className="w-full font-mono text-4xl opacity-0 mb-28 sm:text-6xl lg:text-7xl">
+                  <h1 className="w-full mb-16 font-mono text-4xl opacity-0 sm:text-6xl lg:text-7xl">
                     Legendaries
                   </h1>
                 </div>
@@ -84,7 +84,7 @@ const Legendaries: NextPage = () => {
                   className="flex flex-col items-center justify-center w-full opacity-0"
                 >
                   <h2 className="mb-6 font-sans text-4xl">{currentName}</h2>
-                  <img src="/img/legendary-grid.gif" />
+                  <img className="h-[50vh]" src="/img/legendary-grid.gif" />
                 </div>
               </div>
             </div>
