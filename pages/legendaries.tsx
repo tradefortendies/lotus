@@ -5,7 +5,7 @@ import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-const legendaryNames = [
+const legendaries = [
   'The Bride',
   'The Phoenix',
   'The Destroyer',
@@ -19,42 +19,16 @@ const legendaryNames = [
 ]
 
 const Legendaries: NextPage = () => {
-  const [currentName, setCurrentName] = useState(legendaryNames[0])
-  const [intervalStarted, setIntervalStarted] = useState(false)
-
   useEffect(() => {
     setTimeout(() => {
-      gsap.to('#masthead > h1', {
-        opacity: 1,
-        duration: 0.75,
-      })
-
-      gsap.to('#legendaries', {
+      gsap.to('#legendaries > div > div', {
         opacity: 1,
         duration: 0.75,
         delay: 0.5,
+        stagger: 0.25,
       })
     }, 1000)
   }, [])
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => {
-        const currIndex = legendaryNames.indexOf(currentName)
-
-        if (currIndex === legendaryNames.length - 1) {
-          setCurrentName(legendaryNames[0])
-        } else {
-          setCurrentName(legendaryNames[currIndex + 1])
-        }
-
-        setIntervalStarted(true)
-      },
-      intervalStarted ? 2000 : 4000
-    )
-
-    return () => clearInterval(interval)
-  })
 
   return (
     <>
@@ -72,19 +46,19 @@ const Legendaries: NextPage = () => {
             <div className="relative w-full text-white bg-neutral-900 pb-28">
               <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
                 <div
-                  id="masthead"
-                  className="flex items-center justify-between gap-4"
-                >
-                  <h1 className="w-full mb-16 font-mono text-4xl opacity-0 sm:text-6xl lg:text-7xl">
-                    Legendaries
-                  </h1>
-                </div>
-                <div
                   id="legendaries"
-                  className="flex flex-col items-center justify-center w-full opacity-0"
+                  className="flex flex-col items-center justify-center w-full"
                 >
-                  <h2 className="mb-6 font-sans text-4xl">{currentName}</h2>
-                  <img className="h-[50vh]" src="/img/legendary-grid.gif" />
+                  <div className="grid grid-cols-2 gap-6 lg:gap-y-12 lg:gap-x-12 xl:gap-x-[52px] md:grid-cols-3 lg:grid-cols-5">
+                    {legendaries.map((leg) => (
+                      <div className="text-center opacity-0">
+                        <h2 className="mb-2 font-sans text-lg md:text-xl">
+                          {leg}
+                        </h2>
+                        <img src="/img/legendary-grid.gif" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
