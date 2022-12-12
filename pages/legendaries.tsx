@@ -6,16 +6,56 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const legendaries = [
-  'The Bride',
-  'The Phoenix',
-  'The Destroyer',
-  'The Summoner',
-  'The Timeless',
-  'The Master',
-  'The Warrior',
-  'The Petal',
-  'The Hollowed',
-  'The Scientist',
+  {
+    name: 'The Bride',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Phoenix',
+    image: '/img/legendaries/The-Phoenix.png',
+    url: 'https://vxvoblf6pigo2iyizr3sjbkpa7nl5ecbmcst2677ondydacf6u2a.arweave.net/rergrL56DO0jCMx3JIVPB9q-kEFgpT17_3NHgYBF9TQ?ext=png',
+  },
+  {
+    name: 'The Destroyer',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Summoner',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Timeless',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Master',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Warrior',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Petal',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Hollowed',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
+  {
+    name: 'The Scientist',
+    image: '/img/legendary-grid.gif',
+    url: '',
+  },
 ]
 
 const Legendaries: NextPage = () => {
@@ -53,9 +93,14 @@ const Legendaries: NextPage = () => {
                     {legendaries.map((leg, index) => (
                       <div className="text-center opacity-0" key={index}>
                         <h2 className="mb-2 font-sans text-lg md:text-xl">
-                          {leg}
+                          {leg.name}
                         </h2>
-                        <img src="/img/legendary-grid.gif" />
+                        {!leg.url && <img src={leg.image} />}
+                        {leg.url && (
+                          <a href={leg.url} target="_blank" rel="noreferrer">
+                            <img src={leg.image} />
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>
