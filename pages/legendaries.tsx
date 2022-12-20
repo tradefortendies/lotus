@@ -48,8 +48,8 @@ const legendaries = [
   },
   {
     name: 'The Hollowed',
-    image: '/img/legendary-grid.gif',
-    url: '',
+    image: '/img/legendaries/The-Hollowed.png',
+    url: 'https://nsix5547u7wgwohbmjz5r7abqpu3uu466t4gug6keph2bkn6x2za.arweave.net/bJF-95-n7Gs44WJz2PwBg-m6U570-GobyiPPoKm-vrI?ext=png',
   },
   {
     name: 'The Scientist',
