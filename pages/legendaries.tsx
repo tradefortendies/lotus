@@ -53,7 +53,7 @@ const legendaries = [
   },
   {
     name: 'The Scientist',
-    image: '/img/legendary-grid.gif',
+    image: '/img/legendaries/The-Scientist.png',
     url: '',
   },
 ]
