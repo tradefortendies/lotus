@@ -140,15 +140,41 @@ function Header({
         <ul className="hidden ml-auto font-mono uppercase xl:flex">
           <li
             className={clsx(
-              'border-b-2 mr-12 transition-[border] duration-300 border-transparent',
-              reverseColors && 'hover:border-white',
+              'relative mr-12 cursor-pointer group border-b-2 transition-[border] duration-300 border-transparent',
               linkColor !== 'white' && !reverseColors && 'hover:border-black',
               linkColor === 'white' && 'hover:border-white'
             )}
           >
-            <Link href="/legendaries">
-              <a>Legendaries</a>
-            </Link>
+            Legendaries
+            <ul className="absolute top-0 pt-10 text-center -translate-x-1/2 left-1/2 w-[200px] pointer-events-none group-hover:pointer-events-auto">
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <Link href="/legendaries">
+                  <a className="block p-4 cursor-pointer">View All</a>
+                </Link>
+              </li>
+              <li
+                className={clsx(
+                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
+                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
+                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
+                )}
+              >
+                <a
+                  href="https://legendary.thelotus.io"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-4 cursor-pointer"
+                >
+                  🌱 Planting
+                </a>
+              </li>
+            </ul>
           </li>
           <li
             className={clsx(
