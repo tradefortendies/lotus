@@ -155,7 +155,7 @@ function Header({
                 )}
               >
                 <Link href="/legendaries">
-                  <a className="block p-4 cursor-pointer">View All</a>
+                  <a className="block p-4 cursor-pointer">Gallery</a>
                 </Link>
               </li>
               <li
