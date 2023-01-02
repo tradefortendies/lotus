@@ -23,7 +23,7 @@ const legendaries = [
   },
   {
     name: 'The Summoner',
-    image: '/img/legendary-grid.gif',
+    image: '/img/legendaries/The-Summoner.png',
     url: '',
   },
   {
