@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { gsap } from 'gsap'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Button from '../components/Button'
 
 const legendaries = [
   {
@@ -23,7 +24,7 @@ const legendaries = [
   },
   {
     name: 'The Summoner',
-    image: '/img/legendary-grid.gif',
+    image: '/img/legendaries/The-Summoner.png',
     url: '',
   },
   {
@@ -61,6 +62,12 @@ const legendaries = [
 const Legendaries: NextPage = () => {
   useEffect(() => {
     setTimeout(() => {
+      gsap.to('#masthead h1, #masthead h2, #masthead a', {
+        opacity: 1,
+        duration: 0.75,
+        stagger: 0.25,
+      })
+
       gsap.to('#legendaries > div > div', {
         opacity: 1,
         duration: 0.75,
@@ -84,10 +91,35 @@ const Legendaries: NextPage = () => {
         <div className="w-screen min-h-screen text-neutral-900 bg-lily-blue">
           <div className="relative">
             <div className="relative w-full text-white bg-neutral-900 pb-28">
-              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-56 max-w-7xl">
+              <div className="relative flex flex-col w-full px-4 pt-32 mx-auto lg:px-8 lg:pt-48 max-w-7xl">
+                <div
+                  id="masthead"
+                  className="flex flex-col justify-between gap-4 lg:items-start lg:flex-row"
+                >
+                  <div className="w-full">
+                    <h1 className="font-mono text-6xl opacity-0 lg:text-7xl">
+                      Legendaries
+                    </h1>
+                    <Button
+                      href="https://legendary.thelotus.io"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-8 opacity-0"
+                    >
+                      Go to Planting
+                    </Button>
+                  </div>
+                  <div className="mt-8 ml-auto lg:mt-0">
+                    <h2 className="font-sans text-xl leading-normal opacity-0 lg:text-xl">
+                      Plant a Lotus and LILY to gain Legendary Points (LP). The
+                      higher your LP, the higher the chance of winning a
+                      Legendary LILY.
+                    </h2>
+                  </div>
+                </div>
                 <div
                   id="legendaries"
-                  className="flex flex-col items-center justify-center w-full"
+                  className="flex flex-col items-center justify-center w-full my-16"
                 >
                   <div className="grid grid-cols-2 gap-6 lg:gap-y-12 lg:gap-x-12 xl:gap-x-[52px] md:grid-cols-3 lg:grid-cols-5">
                     {legendaries.map((leg, index) => (
