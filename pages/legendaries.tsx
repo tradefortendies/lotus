@@ -44,7 +44,7 @@ const legendaries = [
   },
   {
     name: 'The Petal',
-    image: '/img/legendary-grid.gif',
+    image: '/img/legendaries/The-Petal.png',
     url: '',
   },
   {
@@ -55,7 +55,7 @@ const legendaries = [
   {
     name: 'The Scientist',
     image: '/img/legendaries/The-Scientist.png',
-    url: '',
+    url: 'https://arweave.net/S1eU3N-n__hjaMxGUamBmgvlnVEt_ZsJwi9Y_tRMXZQ?ext=png',
   },
 ]
 
@@ -106,7 +106,7 @@ const Legendaries: NextPage = () => {
                       rel="noreferrer"
                       className="mt-8 opacity-0"
                     >
-                      Go to Planting
+                      Plant
                     </Button>
                   </div>
                   <div className="mt-8 ml-auto lg:mt-0">
