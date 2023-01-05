@@ -25,7 +25,7 @@ const legendaries = [
   {
     name: 'The Summoner',
     image: '/img/legendaries/The-Summoner.png',
-    url: '',
+    url: 'https://arweave.net/Qz488E_Zon7qS7YsHTN8QSi186e-1Y8IE8DtGezJKMk?ext=png',
   },
   {
     name: 'The Timeless',
@@ -45,7 +45,7 @@ const legendaries = [
   {
     name: 'The Petal',
     image: '/img/legendaries/The-Petal.png',
-    url: '',
+    url: 'https://2rfglijyhtjrvi7no5ex4tbsd4xfmefbwpmjymfgz6tupqra6f5a.arweave.net/1EploTg80xqj7XdJfkwyHy5WEKGz2Jwwps-nR8Ig8Xo?ext=png',
   },
   {
     name: 'The Hollowed',
