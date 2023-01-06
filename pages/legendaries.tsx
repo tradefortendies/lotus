@@ -97,23 +97,33 @@ const Legendaries: NextPage = () => {
                   className="flex flex-col justify-between gap-4 lg:items-start lg:flex-row"
                 >
                   <div className="w-full">
-                    <h1 className="font-mono text-6xl opacity-0 lg:text-7xl">
+                    <h1 className="font-mono text-5xl opacity-0 md:text-6xl lg:text-7xl">
                       Legendaries
                     </h1>
-                    <Button
-                      href="https://legendary.thelotus.io"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-8 opacity-0"
-                    >
-                      Plant
-                    </Button>
+                    <div className="flex flex-col gap-4 mt-8 md:flex-row">
+                      <Button
+                        href="https://www.thelotus.io/img/planting.png"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mr-auto opacity-0 md:mr-0"
+                      >
+                        How it Works
+                      </Button>
+                      <Button
+                        href="https://legendary.thelotus.io"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mr-auto opacity-0 md:mr-0"
+                      >
+                        Plant Collectibles
+                      </Button>
+                    </div>
                   </div>
                   <div className="mt-8 ml-auto lg:mt-0">
                     <h2 className="font-sans text-xl leading-normal opacity-0 lg:text-xl">
                       Plant a Lotus and LILY to gain Legendary Points (LP). The
                       higher your LP, the higher the chance of winning a
-                      Legendary LILY.
+                      Legendary LILY. .
                     </h2>
                   </div>
                 </div>
