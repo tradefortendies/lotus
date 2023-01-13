@@ -19,8 +19,8 @@ const legendaries = [
   },
   {
     name: 'The Destroyer',
-    image: '/img/legendary-grid.gif',
-    url: '',
+    image: '/img/legendaries/The-Destroyer.png',
+    url: 'https://5i6k4p5hx2dhkcvvdu5hub3a3ltahzaq7k3e2q2zjabel55pv7dq.arweave.net/6jyuP6e-hnUKtR06egdg2uYD5BD6tk1DWUgCRfevr8c?ext=png',
   },
   {
     name: 'The Summoner',
@@ -29,8 +29,8 @@ const legendaries = [
   },
   {
     name: 'The Timeless',
-    image: '/img/legendary-grid.gif',
-    url: '',
+    image: '/img/legendaries/The-Timeless.png',
+    url: 'https://z6qzomgadhmhkzkozkrifaphiulwxhyxbphi35jowzvythf322tq.arweave.net/z6GXMMAZ2HVlTsqigoHnRRdrnxcLzo31LrZriZy71qc?ext=png',
   },
   {
     name: 'The Master',
@@ -123,7 +123,7 @@ const Legendaries: NextPage = () => {
                     <h2 className="font-sans text-xl leading-normal opacity-0 lg:text-xl">
                       Plant a Lotus and LILY to gain Legendary Points (LP). The
                       higher your LP, the higher the chance of winning a
-                      Legendary LILY. .
+                      Legendary LILY.
                     </h2>
                   </div>
                 </div>
