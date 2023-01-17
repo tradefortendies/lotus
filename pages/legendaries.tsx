@@ -39,8 +39,8 @@ const legendaries = [
   },
   {
     name: 'The Warrior',
-    image: '/img/legendary-grid.gif',
-    url: '',
+    image: '/img/legendaries/The-Warrior.png',
+    url: 'https://5ofxvnvnovm7pbhxndv3bne3hbxuhsso7h5qpi5ikjjiru5d65uq.arweave.net/64t6tq11WfeE92jrsLSbOG9Dyk75-wejqFJSiNOj92k?ext=png',
   },
   {
     name: 'The Petal',
