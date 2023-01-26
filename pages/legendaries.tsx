@@ -9,8 +9,8 @@ import Button from '../components/Button'
 const legendaries = [
   {
     name: 'The Bride',
-    image: '/img/legendary-grid.gif',
-    url: '',
+    image: '/img/legendaries/The-Bride.png',
+    url: 'https://vowrugb3zxhjykoskkuzoo76rnslcilslsoh4wf7eoril4u2du6q.arweave.net/q60aGDvNzpwp0lKplzv-i2SxIXJcnH5YvyOihfKaHT0?ext=png',
   },
   {
     name: 'The Phoenix',
@@ -34,8 +34,8 @@ const legendaries = [
   },
   {
     name: 'The Master',
-    image: '/img/legendary-grid.gif',
-    url: '',
+    image: '/img/legendaries/The-Master.png',
+    url: 'https://arweave.net/fkgV_YwQ5DeTEktk-C2bDOVLk6v9IOFylQHx17rPCnM?ext=png',
   },
   {
     name: 'The Warrior',
