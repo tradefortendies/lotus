@@ -25,8 +25,8 @@ const Panel = ({
       >
         {floating && (
           <Parallax offset={100}>
-            <div className="flex items-center justify-center bg-white text-black h-[90vh] w-[90vw] rounded-lg">
-              <div className="mx-auto max-w-7xl">{children}</div>
+            <div className="flex bg-white text-black h-[90vh] w-[95vw] rounded-3xl">
+              {children}
             </div>
           </Parallax>
         )}
@@ -34,13 +34,13 @@ const Panel = ({
         {!floating && (
           <div
             className={clsx(
-              'flex items-center justify-center bg-white text-black w-screen',
+              'flex bg-white text-black w-screen',
               !last && !first && 'h-screen rounded-3xl',
               last && 'h-screen rounded-t-3xl',
               first && 'h-[95vh] rounded-b-3xl'
             )}
           >
-            <div className="mx-auto max-w-7xl">{children}</div>
+            {children}
           </div>
         )}
       </div>

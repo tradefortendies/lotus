@@ -6,6 +6,7 @@ import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Panel from '../components/Panel'
+import Button from '../components/Button'
 
 const Home: NextPage = () => {
   const bgRef = useRef<HTMLDivElement>(null)
@@ -98,24 +99,119 @@ const Home: NextPage = () => {
         />
         <div
           id="main"
-          className="relative z-20 w-screen min-h-screen transition-opacity duration-500 text-neutral-900"
+          className="relative z-20 w-screen min-h-screen font-sans tracking-tighter transition-opacity duration-500 text-neutral-900"
         >
-          {/* <Panel>
-            <div className="w-3/5 space-y-4">
-              <h2 className="text-3xl">
-                To create the best community in the new web
-              </h2>
-              <h3 className="text-3xl">
-                We are working on the <strong>LILY Pad</strong>, the{' '}
-                <strong>Lotus Library</strong> and{' '}
-                <strong>The Blueprint</strong>.
-              </h3>
-            </div>
-          </Panel> */}
           <Panel floating={false} first={true}>
-            Panel 1
+            <div className="w-[80vw] h-full flex items-center mx-auto">
+              <div className="w-1/2 space-y-4">
+                <h2 className="text-3xl">
+                  To become the best bunch in the open web:
+                </h2>
+                <h3 className="text-3xl">
+                  We are working on the <strong>LILY Pad</strong>, the{' '}
+                  <strong>Lotus Library</strong> and{' '}
+                  <strong>The Blueprint</strong>.
+                </h3>
+              </div>
+            </div>
           </Panel>
-          <Panel floating={true}>Panel 2</Panel>
+          <Panel floating={true}>
+            <div className="w-full p-4 mx-auto max-w-7xl">
+              <h2 className="mt-16 text-3xl text-center">
+                <strong>The Lotus</strong> is made up of 2 collections.
+              </h2>
+              <div className="flex items-center justify-between h-full -translate-y-16">
+                <div className="w-[40%] space-y-8">
+                  <h3 className="text-5xl font-bold">LILY</h3>
+                  <div className="grid grid-cols-2 gap-2 font-mono">
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Floor</dt>
+                        <dd>6.2</dd>
+                      </dl>
+                    </div>
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Supply</dt>
+                        <dd>10,000</dd>
+                      </dl>
+                    </div>
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Vol</dt>
+                        <dd>6.2</dd>
+                      </dl>
+                    </div>
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Listed</dt>
+                        <dd>6.2</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-6">
+                    <img
+                      className="rounded-lg"
+                      src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13EK4usnnHAYzE8SZocvZVjFXTx6g3752RTpL3fegLQa.webp"
+                    />
+                    <img
+                      className="rounded-lg"
+                      src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13suaa4tdQHNWC4fBPeot1xvZ92ph97WaSSXFDAkv1qf.webp"
+                    />
+                    <img
+                      className="rounded-lg"
+                      src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
+                    />
+                  </div>
+                  <Button href="/collections/lily">Explore</Button>
+                </div>
+                <div className="w-[40%] space-y-8">
+                  <h3 className="text-5xl font-bold">Lotus Gang</h3>
+                  <div className="grid grid-cols-2 gap-2 font-mono">
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Floor</dt>
+                        <dd>6.2</dd>
+                      </dl>
+                    </div>
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Supply</dt>
+                        <dd>4,000</dd>
+                      </dl>
+                    </div>
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Vol</dt>
+                        <dd>6.2</dd>
+                      </dl>
+                    </div>
+                    <div className="p-2 text-white rounded-md bg-lily-red">
+                      <dl className="flex justify-between w-full">
+                        <dt className="font-bold uppercase">Listed</dt>
+                        <dd>6.2</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-6">
+                    <img
+                      className="rounded-lg"
+                      src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp"
+                    />
+                    <img
+                      className="rounded-lg"
+                      src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12f3x8N9f7zxnrabfXHUGt4XRYUvhNpRBR5jY9VKQ4NH.webp"
+                    />
+                    <img
+                      className="rounded-lg"
+                      src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12UGYyfPcrQPsJPSsfPnGtdkevsBa4NaHh3VPnp86M7h.webp"
+                    />
+                  </div>
+                  <Button href="/collections/lotus-gang">Explore</Button>
+                </div>
+              </div>
+            </div>
+          </Panel>
           <Panel floating={false}>Panel 3</Panel>
           <Panel floating={true}>Panel 4</Panel>
           <Panel floating={false} last={true}>
