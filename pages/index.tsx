@@ -1,15 +1,14 @@
 import type { NextPage } from 'next'
-import { useEffect, useRef, useState, useContext } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { ThemeContext } from '../components/Theme'
+import Panel from '../components/Panel'
 
 const Home: NextPage = () => {
   const bgRef = useRef<HTMLDivElement>(null)
-  const theme = useContext(ThemeContext)
   const [isLoading, setIsLoading] = useState(false)
   const [windowDimensions, setWindowDimensions] = useState({
     width: 0,
@@ -178,35 +177,22 @@ const Home: NextPage = () => {
           id="main"
           className="w-screen min-h-screen text-neutral-900 translate-y-[100vh] relative z-20"
         >
-          <div className="relative bg-lily-black">
-            <div className="relative z-10">
-              <div
-                id="content"
-                className="flex flex-col relative w-full items-center justify-center lg:min-h-[900px] h-[100vh] bg-white text-neutral-900"
-              >
-                <div className="w-full mx-auto font-sans max-w-7xl">
-                  <div className="w-3/5 space-y-4">
-                    <h2 className="text-3xl">
-                      To create the best community in the new web
-                    </h2>
-                    <h3 className="text-3xl">
-                      We are working on the <strong>LILY Pad</strong>, the{' '}
-                      <strong>Lotus Library</strong> and{' '}
-                      <strong>The Blueprint</strong>.
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-0 left-0 flex w-full">
-                  <div className="w-1/5 h-3 bg-lily-green"></div>
-                  <div className="w-1/5 h-3 bg-lily-yellow"></div>
-                  <div className="w-1/5 h-3 bg-lily-red"></div>
-                  <div className="w-1/5 h-3 bg-lily-blue-dark"></div>
-                  <div className="w-1/5 h-3 bg-lily-blue"></div>
-                </div>
-              </div>
+          <Panel>
+            <div className="w-3/5 space-y-4">
+              <h2 className="text-3xl">
+                To create the best community in the new web
+              </h2>
+              <h3 className="text-3xl">
+                We are working on the <strong>LILY Pad</strong>, the{' '}
+                <strong>Lotus Library</strong> and{' '}
+                <strong>The Blueprint</strong>.
+              </h3>
             </div>
-          </div>
+          </Panel>
+          <Panel>Panel 2</Panel>
+          <Panel>Panel 3</Panel>
+          <Panel>Panel 4</Panel>
+          <Panel>Panel 5</Panel>
           <Footer isLoading={isLoading} />
         </div>
       </>
