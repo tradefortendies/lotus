@@ -177,7 +177,7 @@ const Home: NextPage = () => {
           id="main"
           className="w-screen min-h-screen text-neutral-900 translate-y-[100vh] relative z-20"
         >
-          <Panel>
+          {/* <Panel>
             <div className="w-3/5 space-y-4">
               <h2 className="text-3xl">
                 To create the best community in the new web
@@ -188,11 +188,14 @@ const Home: NextPage = () => {
                 <strong>The Blueprint</strong>.
               </h3>
             </div>
+          </Panel> */}
+          <Panel floating={false}>Panel 1</Panel>
+          <Panel floating={true}>Panel 2</Panel>
+          <Panel floating={false}>Panel 3</Panel>
+          <Panel floating={true}>Panel 4</Panel>
+          <Panel floating={false} last={true}>
+            Panel 5
           </Panel>
-          <Panel>Panel 2</Panel>
-          <Panel>Panel 3</Panel>
-          <Panel>Panel 4</Panel>
-          <Panel>Panel 5</Panel>
           <Footer isLoading={isLoading} />
         </div>
       </>

@@ -108,13 +108,13 @@ function Header({
       <header
         id="header"
         className={clsx(
-          `top-0 z-[9999] flex items-center w-full px-4 lg:px-8 py-4`,
+          `top-0 z-[9999] bg-white flex items-center w-full px-4 lg:px-8 py-4`,
           linkColor === 'black' && 'text-neutral-900',
           linkColor === 'white' && 'text-white',
           fadeInAnimation && 'opacity-0',
           position !== 'slide' && position,
           position === 'slide' && 'slide',
-          position === 'fixed' && 'bg-white bg-opacity-75',
+          position === 'fixed' && 'bg-opacity-75',
           `scroll-${scrollDirection}`
         )}
       >
