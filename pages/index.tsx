@@ -1,15 +1,19 @@
 import type { NextPage } from 'next'
-import { useEffect, useRef, useState, useContext } from 'react'
+import { useEffect, useRef, useState, useContext, Suspense } from 'react'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Stage } from '@react-three/drei'
 import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Panel from '../components/Panel'
 import Button from '../components/Button'
+import BlueprintModel from '../components/BlueprintModel'
 
 const Home: NextPage = () => {
   const theme = useContext(ThemeContext)
+  const orbitControlsRef = useRef(null)
   const bgRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [windowDimensions, setWindowDimensions] = useState({
@@ -122,38 +126,38 @@ const Home: NextPage = () => {
                   <h3 className="text-5xl font-bold">LILY</h3>
                   <div className="grid grid-cols-2 gap-2 font-mono">
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Floor</dt>
+                        <dt className="font-medium uppercase">Floor</dt>
                         <dd>6.2</dd>
                       </dl>
                     </div>
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Supply</dt>
+                        <dt className="font-medium uppercase">Supply</dt>
                         <dd>10,000</dd>
                       </dl>
                     </div>
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Vol</dt>
+                        <dt className="font-medium uppercase">Vol</dt>
                         <dd>6.2</dd>
                       </dl>
                     </div>
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Listed</dt>
+                        <dt className="font-medium uppercase">Listed</dt>
                         <dd>6.2</dd>
                       </dl>
                     </div>
@@ -185,38 +189,38 @@ const Home: NextPage = () => {
                   <h3 className="text-5xl font-bold">Lotus Gang</h3>
                   <div className="grid grid-cols-2 gap-2 font-mono">
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Floor</dt>
+                        <dt className="font-medium uppercase">Floor</dt>
                         <dd>6.2</dd>
                       </dl>
                     </div>
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Supply</dt>
+                        <dt className="font-medium uppercase">Supply</dt>
                         <dd>4,000</dd>
                       </dl>
                     </div>
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Vol</dt>
+                        <dt className="font-medium uppercase">Vol</dt>
                         <dd>6.2</dd>
                       </dl>
                     </div>
                     <div
-                      className="p-2 text-white rounded-md"
+                      className="p-2 rounded-md"
                       style={{ backgroundColor: theme.primaryColor }}
                     >
                       <dl className="flex justify-between w-full">
-                        <dt className="font-bold uppercase">Listed</dt>
+                        <dt className="font-medium uppercase">Listed</dt>
                         <dd>6.2</dd>
                       </dl>
                     </div>
@@ -251,6 +255,33 @@ const Home: NextPage = () => {
               <h2 className="mt-16 text-3xl text-center">
                 <strong>The Blueprint</strong> is our version of a road map..
               </h2>
+              <div className="flex items-center justify-between h-full gap-16 -translate-y-16">
+                <div className="w-full h-full">
+                  <Canvas shadows dpr={[1, 2]} camera={{ fov: 35 }}>
+                    <Suspense fallback={null}>
+                      <Stage
+                        controls={orbitControlsRef}
+                        preset="rembrandt"
+                        intensity={1}
+                        environment="city"
+                        adjustCamera={windowDimensions.width > 768 ? 1.1 : 1}
+                      >
+                        <BlueprintModel />
+                      </Stage>
+                    </Suspense>
+                    <OrbitControls
+                      ref={orbitControlsRef}
+                      makeDefault
+                      autoRotate={true}
+                      enableZoom={false}
+                      enablePan={false}
+                      enableRotate={true}
+                      enableDamping={true}
+                    />
+                  </Canvas>
+                </div>
+                <div className="w-full">Playlist goes here</div>
+              </div>
             </div>
           </Panel>
           <Panel floating={true}>Panel 4</Panel>
