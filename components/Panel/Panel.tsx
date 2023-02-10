@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
+import Parallax from '../Parallax'
 
 type PanelPropsType = {
   children: ReactNode
@@ -16,16 +17,25 @@ const Panel = ({ children, floating, last = false }: PanelPropsType) => {
           floating && 'justify-center'
         )}
       >
-        <div
-          className={clsx(
-            'flex items-center justify-center bg-white text-black',
-            floating && 'h-[90vh] w-[90vw] rounded-lg',
-            !floating && 'h-screen w-screen',
-            !floating && !last && 'h-[95vh] rounded-b-3xl'
-          )}
-        >
-          <div className="mx-auto max-w-7xl">{children}</div>
-        </div>
+        {floating && (
+          <Parallax offset={100}>
+            <div className="flex items-center justify-center bg-white text-black h-[90vh] w-[90vw] rounded-lg">
+              <div className="mx-auto max-w-7xl">{children}</div>
+            </div>
+          </Parallax>
+        )}
+
+        {!floating && (
+          <div
+            className={clsx(
+              'flex items-center justify-center bg-white text-black w-screen',
+              !last && 'h-[95vh] rounded-b-3xl',
+              last && 'h-screen'
+            )}
+          >
+            <div className="mx-auto max-w-7xl">{children}</div>
+          </div>
+        )}
       </div>
 
       <div

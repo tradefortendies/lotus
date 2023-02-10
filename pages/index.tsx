@@ -38,23 +38,25 @@ const Home: NextPage = () => {
     })
 
     setTimeout(() => {
-      requestAnimationFrame(() => {
-        if (!bgRef.current) {
-          return
-        }
+      if (!bgRef.current) {
+        return
+      }
 
-        bgRef.current.style.zIndex = '1'
-        document.documentElement.scrollTo(0, 0)
+      console.log('hello?')
 
-        const introTl = gsap.timeline({ repeat: 0 })
-        introTl.to('#main', { y: 0, duration: 0.75, ease: 'power2.out' })
-      })
+      document.documentElement.scrollTo(0, 0)
+
+      const intro2 = document.querySelector('#main') as HTMLElement
+      if (intro2) {
+        intro2.classList.remove('translate-y-[100vh]')
+      }
 
       setTimeout(() => {
         if (!bgRef.current) {
           return
         }
 
+        bgRef.current.classList.add('-translate-y-[100vh]')
         setIsLoading(false)
         enableBodyScroll(bgRef.current)
 
@@ -68,7 +70,7 @@ const Home: NextPage = () => {
 
         document.documentElement.style.scrollBehavior = 'smooth'
       }, 1500)
-    }, 2000)
+    }, 1000)
   }, [])
 
   return (
@@ -82,7 +84,7 @@ const Home: NextPage = () => {
       <>
         <div
           ref={bgRef}
-          className="fixed -top-[40px] md:top-0 z-50 w-screen h-screen bg-neutral-800"
+          className="fixed -top-[40px] transition-transform duration-1000 md:top-0 z-[9999] w-screen h-screen bg-neutral-800"
         >
           <svg
             viewBox={`0 0 ${windowDimensions.width} ${windowDimensions.height}`}
@@ -168,6 +170,10 @@ const Home: NextPage = () => {
             </g>
           </svg>
         </div>
+        {/* <div
+          id="intro2"
+          className="absolute z-[9999] top-0 translate-y-[100vh] left-0 w-screen h-screen transition duration-500 bg-blue-400 rounded-b-3xl"
+        ></div> */}
         <Header
           position="slide"
           fadeInAnimation={true}
@@ -175,7 +181,7 @@ const Home: NextPage = () => {
         />
         <div
           id="main"
-          className="w-screen min-h-screen text-neutral-900 translate-y-[100vh] relative z-20"
+          className="relative z-20 w-screen min-h-screen transition-opacity duration-500 text-neutral-900"
         >
           {/* <Panel>
             <div className="w-3/5 space-y-4">
