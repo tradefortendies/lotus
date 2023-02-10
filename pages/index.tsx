@@ -46,17 +46,12 @@ const Home: NextPage = () => {
 
       document.documentElement.scrollTo(0, 0)
 
-      const intro2 = document.querySelector('#main') as HTMLElement
-      if (intro2) {
-        intro2.classList.remove('translate-y-[100vh]')
-      }
-
       setTimeout(() => {
         if (!bgRef.current) {
           return
         }
 
-        bgRef.current.classList.add('-translate-y-[100vh]')
+        bgRef.current.classList.add('opacity-0')
         setIsLoading(false)
         enableBodyScroll(bgRef.current)
 
@@ -84,91 +79,13 @@ const Home: NextPage = () => {
       <>
         <div
           ref={bgRef}
-          className="fixed -top-[40px] transition-transform duration-1000 md:top-0 z-[9999] w-screen h-screen bg-neutral-800"
+          className="fixed flex flex-col-reverse 0 transition-opacity duration-1000 z-[9999] w-screen h-screen bg-neutral-800"
         >
-          <svg
-            viewBox={`0 0 ${windowDimensions.width} ${windowDimensions.height}`}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="object-cover w-full h-full"
-          >
-            <g>
-              <rect
-                width={windowDimensions.width}
-                height={
-                  windowDimensions.height - (windowDimensions.height / 100) * 10
-                }
-                fill="white"
-              />
-              <rect width="16.666666667%" height="90%" fill="#F9F7EF" />
-              <rect y="90%" width="16.666666667%" height="10%" fill="#422F2E" />
-              <rect
-                x="16.666666667%"
-                width="16.666666667%"
-                height="90%"
-                fill="#7FFFB9"
-              />
-              <rect
-                x="16.666666667%"
-                y="90%"
-                width="16.666666667%"
-                height="10%"
-                fill="#91B9FF"
-              />
-              <rect
-                x="33.333333334%"
-                width="16.666666667%"
-                height="90%"
-                fill="#FFD462"
-              />
-              <rect
-                x="33.333333334%"
-                y="90%"
-                width="16.666666667%"
-                height="10%"
-                fill="#422F2E"
-              />
-              <rect
-                x="50.000000001%"
-                width="16.666666667%"
-                height="90%"
-                fill="#FF9596"
-              />
-              <rect
-                x="50.000000001%"
-                y="90%"
-                width="16.666666667%"
-                height="10%"
-                fill="#00CCCC"
-              />
-              <rect
-                x="66.666666668%"
-                width="16.666666667%"
-                height="90%"
-                fill="#91B9FF"
-              />
-              <rect
-                x="66.666666668%"
-                y="90%"
-                width="16.666666667%"
-                height="10%"
-                fill="#422F2E"
-              />
-              <rect
-                x="83.333333335%"
-                width="16.666666667%"
-                height="90%"
-                fill="#61FEFF"
-              />
-              <rect
-                x="83.333333335%"
-                y="90%"
-                width="16.666666667%"
-                height="10%"
-                fill="#F9F7EF"
-              />
-            </g>
-          </svg>
+          <div className="w-screen h-1/5 bg-lily-green"></div>
+          <div className="w-screen h-1/5 bg-lily-yellow"></div>
+          <div className="w-screen h-1/5 bg-lily-red"></div>
+          <div className="w-screen h-1/5 bg-lily-blue-dark"></div>
+          <div className="w-screen h-1/5 bg-lily-blue"></div>
         </div>
         {/* <div
           id="intro2"
@@ -195,7 +112,9 @@ const Home: NextPage = () => {
               </h3>
             </div>
           </Panel> */}
-          <Panel floating={false}>Panel 1</Panel>
+          <Panel floating={false} first={true}>
+            Panel 1
+          </Panel>
           <Panel floating={true}>Panel 2</Panel>
           <Panel floating={false}>Panel 3</Panel>
           <Panel floating={true}>Panel 4</Panel>

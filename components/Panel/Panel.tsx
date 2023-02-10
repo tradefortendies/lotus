@@ -5,10 +5,16 @@ import Parallax from '../Parallax'
 type PanelPropsType = {
   children: ReactNode
   floating: boolean
+  first?: boolean
   last?: boolean
 }
 
-const Panel = ({ children, floating, last = false }: PanelPropsType) => {
+const Panel = ({
+  children,
+  floating,
+  first = false,
+  last = false,
+}: PanelPropsType) => {
   return (
     <div className="relative">
       <div
@@ -29,8 +35,9 @@ const Panel = ({ children, floating, last = false }: PanelPropsType) => {
           <div
             className={clsx(
               'flex items-center justify-center bg-white text-black w-screen',
-              !last && 'h-[95vh] rounded-b-3xl',
-              last && 'h-screen'
+              !last && !first && 'h-screen rounded-3xl',
+              last && 'h-screen rounded-t-3xl',
+              first && 'h-[95vh] rounded-b-3xl'
             )}
           >
             <div className="mx-auto max-w-7xl">{children}</div>
