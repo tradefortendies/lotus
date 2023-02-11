@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, useContext, Suspense } from 'react'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
+import { formatAddress } from '../lib/helpers'
 import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
@@ -10,6 +11,9 @@ import Footer from '../components/Footer'
 import Panel from '../components/Panel'
 import Button from '../components/Button'
 import BlueprintModel from '../components/BlueprintModel'
+import legendariesData from '../data/legendaries.json'
+
+const legendaries = legendariesData.legendaries
 
 const Home: NextPage = () => {
   const theme = useContext(ThemeContext)
@@ -297,108 +301,31 @@ const Home: NextPage = () => {
               <h2 className="mt-16 text-3xl font-bold text-center">
                 The Legendaries
               </h2>
-              <div className="flex items-center justify-between h-full -translate-y-16">
-                <div className="grid grid-cols-5 gap-16">
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
+              <div className="flex items-center justify-between h-full mt-16 -translate-y-16 lg:mt-0">
+                <div className="grid grid-cols-2 gap-8 xl:gap-16 md:grid-cols-3 lg:grid-cols-5">
+                  {legendaries.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center gap-1"
                     >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <h3 className="text-lg font-bold">The Bride</h3>
-                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
-                    <p
-                      className="font-bold"
-                      style={{ color: theme.primaryColor }}
-                    >
-                      @username
-                    </p>
-                  </div>
+                      <h3 className="text-lg font-bold">{item.name}</h3>
+                      <a href={item.url} target="_blank" rel="noreferrer">
+                        <img src={item.image} />
+                      </a>
+                      <p className="mt-2 text-sm">
+                        {formatAddress(item.owner.wallet)}
+                      </p>
+                      <a
+                        href={item.owner.twitterUrl}
+                        style={{ color: theme.primaryColor }}
+                        className="font-bold"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.owner.twitterHandle}
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
