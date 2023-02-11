@@ -19,13 +19,13 @@ const Panel = ({
     <div className="relative">
       <div
         className={clsx(
-          'flex flex-col relative w-full z-20 items-center h-[100vh]',
+          'flex flex-col relative w-full z-20 items-center min-h-[100vh]',
           floating && 'justify-center'
         )}
       >
         {floating && (
           <Parallax offset={100}>
-            <div className="flex bg-white text-black h-[90vh] w-[95vw] rounded-3xl">
+            <div className="flex bg-white text-black min-h-[90vh] w-[95vw] rounded-3xl">
               {children}
             </div>
           </Parallax>
@@ -36,8 +36,8 @@ const Panel = ({
             className={clsx(
               'flex bg-white text-black w-screen',
               !last && !first && 'h-screen rounded-3xl',
-              last && 'h-screen rounded-t-3xl',
-              first && 'h-[95vh] rounded-b-3xl'
+              last && 'min-h-screen rounded-t-3xl',
+              first && 'min-h-[95vh] rounded-b-3xl'
             )}
           >
             {children}
@@ -47,7 +47,7 @@ const Panel = ({
 
       <div
         className={clsx(
-          'absolute inset-0 flex w-screen h-screen',
+          'absolute inset-0 flex w-screen h-full',
           floating && 'flex-col',
           !floating && 'flex-col-reverse'
         )}
