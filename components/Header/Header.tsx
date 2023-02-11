@@ -15,6 +15,7 @@ type Props = {
   linkColor?: 'black' | 'white'
   button?: 'colored' | 'white'
   fadeInAnimation?: boolean
+  slideDownAnimation?: boolean
   colorChangeAnimation?: boolean
   iconHoverColorAnimations?: boolean
   position?: 'fixed' | 'absolute' | 'slide'
@@ -24,7 +25,8 @@ function Header({
   active,
   button = 'colored',
   linkColor = 'black',
-  fadeInAnimation = true,
+  fadeInAnimation = false,
+  slideDownAnimation = false,
   colorChangeAnimation = true,
   position = 'absolute',
 }: Props) {
@@ -88,16 +90,23 @@ function Header({
 
     setTimeout(
       () => {
-        if (!fadeInAnimation) {
-          return
-        }
-        requestAnimationFrame(() => {
-          gsap.to('#header', {
-            opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
+        if (fadeInAnimation) {
+          requestAnimationFrame(() => {
+            gsap.to('#header', {
+              opacity: 1,
+              duration: 1,
+              ease: 'power2.out',
+            })
           })
-        })
+        } else if (slideDownAnimation) {
+          requestAnimationFrame(() => {
+            gsap.to('#header', {
+              y: 0,
+              duration: 1,
+              ease: 'power2.out',
+            })
+          })
+        }
       },
       router.pathname === '/' ? 3000 : 500
     )
@@ -112,6 +121,7 @@ function Header({
           linkColor === 'black' && 'text-neutral-900',
           linkColor === 'white' && 'text-white',
           fadeInAnimation && 'opacity-0',
+          slideDownAnimation && '-translate-y-[180px]',
           position !== 'slide' && position,
           position === 'slide' && 'slide',
           position === 'fixed' && 'bg-opacity-75',
