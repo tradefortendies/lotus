@@ -5,6 +5,7 @@ import Parallax from '../Parallax'
 type PanelPropsType = {
   children: ReactNode
   floating: boolean
+  mode?: 'light' | 'dark'
   first?: boolean
   last?: boolean
 }
@@ -12,6 +13,7 @@ type PanelPropsType = {
 const Panel = ({
   children,
   floating,
+  mode = 'light',
   first = false,
   last = false,
 }: PanelPropsType) => {
@@ -25,7 +27,13 @@ const Panel = ({
       >
         {floating && (
           <Parallax offset={100}>
-            <div className="flex bg-white text-black min-h-[90vh] w-[95vw] rounded-3xl">
+            <div
+              className={clsx(
+                'flex min-h-[90vh] w-[95vw] rounded-3xl',
+                mode === 'light' && 'bg-white text-black',
+                mode === 'dark' && 'bg-lily-black text-white'
+              )}
+            >
               {children}
             </div>
           </Parallax>
@@ -34,8 +42,11 @@ const Panel = ({
         {!floating && (
           <div
             className={clsx(
-              'flex bg-white text-black w-screen',
-              !last && !first && 'h-screen rounded-3xl',
+              'flex w-screen',
+              mode === 'light' && 'bg-white text-black',
+              mode === 'dark' &&
+                'bg-lily-black text-white h-screen rounded-t-3xl translate-y-4',
+              !last && !first && mode !== 'dark' && 'h-screen rounded-3xl',
               last && 'min-h-screen rounded-t-3xl',
               first && 'min-h-[95vh] rounded-b-3xl'
             )}
