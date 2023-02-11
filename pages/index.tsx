@@ -95,7 +95,7 @@ const Home: NextPage = () => {
         </div>
         <Header
           position="slide"
-          fadeInAnimation={true}
+          slideDownAnimation={true}
           colorChangeAnimation={true}
         />
         <div
@@ -103,8 +103,8 @@ const Home: NextPage = () => {
           className="relative z-20 w-screen min-h-screen font-sans tracking-tighter transition-opacity duration-500 text-neutral-900"
         >
           <Panel floating={false} first={true}>
-            <div className="w-[80vw] h-full flex items-center mx-auto">
-              <div className="w-1/2 space-y-4">
+            <div className="px-8 md:px-0 md:w-[80vw] h-[98vh] flex items-center mx-auto">
+              <div className="space-y-4 md:w-1/2">
                 <h2 className="text-3xl">
                   To become the best bunch in the open web:
                 </h2>
@@ -121,9 +121,11 @@ const Home: NextPage = () => {
               <h2 className="mt-16 text-3xl text-center">
                 <strong>The Lotus</strong> is made up of 2 collections.
               </h2>
-              <div className="flex items-center justify-between h-full -translate-y-16">
-                <div className="w-[40%] space-y-8">
-                  <h3 className="text-5xl font-bold">LILY</h3>
+              <div className="flex flex-col items-center justify-center gap-8 md:h-full md:-translate-y-16 lg:gap-32 md:flex-row">
+                <div className="mt-16 md:mt-0 w-full md:w-[40%] space-y-8">
+                  <h3 className="text-5xl font-bold text-center md:text-left">
+                    LILY
+                  </h3>
                   <div className="grid grid-cols-2 gap-2 font-mono">
                     <div
                       className="p-2 rounded-md"
@@ -177,16 +179,20 @@ const Home: NextPage = () => {
                       src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12UGYyfPcrQPsJPSsfPnGtdkevsBa4NaHh3VPnp86M7h.webp"
                     />
                   </div>
-                  <Button
-                    href="/collections/lily"
-                    type="pill-outline"
-                    className="!border-black !text-black"
-                  >
-                    Explore
-                  </Button>
+                  <div className="flex justify-center md:justify-start">
+                    <Button
+                      href="/collections/lily"
+                      type="pill-outline"
+                      className="!border-black !text-black"
+                    >
+                      Explore
+                    </Button>
+                  </div>
                 </div>
-                <div className="w-[40%] space-y-8">
-                  <h3 className="text-5xl font-bold">Lotus Gang</h3>
+                <div className="mt-16 md:mt-0 w-full md:w-[40%] space-y-8 pb-16 md:pb-0">
+                  <h3 className="text-5xl font-bold text-center md:text-left">
+                    Lotus Gang
+                  </h3>
                   <div className="grid grid-cols-2 gap-2 font-mono">
                     <div
                       className="p-2 rounded-md"
@@ -239,13 +245,15 @@ const Home: NextPage = () => {
                       src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
                     />
                   </div>
-                  <Button
-                    href="/collections/lotus-gang"
-                    type="pill-outline"
-                    className="!border-black !text-black"
-                  >
-                    Explore
-                  </Button>
+                  <div className="flex justify-center md:justify-start">
+                    <Button
+                      href="/collections/lotus-gang"
+                      type="pill-outline"
+                      className="!border-black !text-black !mx-auto"
+                    >
+                      Explore
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -284,7 +292,117 @@ const Home: NextPage = () => {
               </div>
             </div>
           </Panel>
-          <Panel floating={true}>Panel 4</Panel>
+          <Panel floating={true}>
+            <div className="w-full p-4 mx-auto max-w-7xl">
+              <h2 className="mt-16 text-3xl font-bold text-center">
+                The Legendaries
+              </h2>
+              <div className="flex items-center justify-between h-full -translate-y-16">
+                <div className="grid grid-cols-5 gap-16">
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <h3 className="text-lg font-bold">The Bride</h3>
+                    <img src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp" />
+                    <p
+                      className="font-bold"
+                      style={{ color: theme.primaryColor }}
+                    >
+                      @username
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Panel>
           <Panel floating={false} last={true}>
             Panel 5
           </Panel>
