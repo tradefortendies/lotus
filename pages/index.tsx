@@ -265,7 +265,7 @@ const Home: NextPage = () => {
           <Panel floating={false}>
             <div className="w-full p-4 mx-auto max-w-7xl">
               <h2 className="mt-16 text-3xl text-center">
-                <strong>The Blueprint</strong> is our version of a road map..
+                <strong>The Blueprint</strong> is our version of a road map.
               </h2>
               <div className="flex items-center justify-between h-full gap-16 -translate-y-16">
                 <div className="w-full h-full">
@@ -298,7 +298,7 @@ const Home: NextPage = () => {
           </Panel>
           <Panel floating={true}>
             <div className="w-full p-4 mx-auto max-w-7xl">
-              <h2 className="mt-16 text-3xl font-bold text-center">
+              <h2 className="mt-16 text-5xl font-bold text-center">
                 The Legendaries
               </h2>
               <div className="flex items-center justify-between h-full mt-16 -translate-y-16 lg:mt-0">
@@ -330,8 +330,15 @@ const Home: NextPage = () => {
               </div>
             </div>
           </Panel>
+          <Panel floating={false} mode={'dark'}>
+            <div className="w-full p-4 mx-auto max-w-7xl">
+              <h2 className="mt-16 text-5xl font-bold text-left">
+                Lotus Library
+              </h2>
+            </div>
+          </Panel>
           <Panel floating={false} last={true}>
-            Panel 5
+            Panel 6
           </Panel>
           <Footer isLoading={isLoading} />
         </div>
