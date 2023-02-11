@@ -41,14 +41,11 @@ const Parallax = ({
   useEffect(() => {
     const element = ref.current
 
-    if (!element || window.innerWidth < 500) {
+    if (!element) {
       return
     }
 
     const onResize = () => {
-      if (window.innerWidth < 500) {
-        return
-      }
       setElementTop(
         element.getBoundingClientRect().top + window.scrollY ||
           window.pageYOffset
@@ -63,7 +60,7 @@ const Parallax = ({
   }, [])
 
   // Don't parallax if the user has "reduced motion" enabled
-  if (prefersReducedMotion || clientWidth < 768) {
+  if (prefersReducedMotion) {
     return <div ref={ref}>{children}</div>
   }
 
