@@ -331,10 +331,44 @@ const Home: NextPage = () => {
             </div>
           </Panel>
           <Panel floating={false} mode={'dark'}>
-            <div className="w-full p-4 mx-auto max-w-7xl">
-              <h2 className="mt-16 text-5xl font-bold text-left">
-                Lotus Library
-              </h2>
+            <div className="flex w-full gap-4 px-4 pt-16 pb-32 mx-auto max-w-7xl">
+              <div className="flex flex-col justify-start w-full h-full ">
+                <h2 className="mt-16 text-5xl font-bold text-left">
+                  Lotus Library
+                </h2>
+                <p className="mt-12 text-2xl">
+                  The best crypto information and tools are hard to find. We are
+                  working with the community to index it in one place.
+                </p>
+                <dl className="flex mt-16 text-3xl">
+                  <dd className="mr-1" style={{ color: theme.primaryColor }}>
+                    56
+                  </dd>
+                  <dt>Articles</dt>
+                  <dd
+                    className="ml-8 mr-1"
+                    style={{ color: theme.primaryColor }}
+                  >
+                    14
+                  </dd>
+                  <dt>Writers</dt>
+                  <dd
+                    className="ml-8 mr-1"
+                    style={{ color: theme.primaryColor }}
+                  >
+                    8
+                  </dd>
+                  <dt>Partnerships</dt>
+                </dl>
+                <Button
+                  href="#"
+                  type="pill-outline"
+                  className="mt-auto mr-auto"
+                >
+                  Explore
+                </Button>
+              </div>
+              <div className="w-full"></div>
             </div>
           </Panel>
           <Panel floating={false} last={true}>
