@@ -8,6 +8,7 @@ type PanelPropsType = {
   mode?: 'light' | 'dark'
   first?: boolean
   last?: boolean
+  fixedHeight?: boolean
 }
 
 const Panel = ({
@@ -16,6 +17,7 @@ const Panel = ({
   mode = 'light',
   first = false,
   last = false,
+  fixedHeight = false,
 }: PanelPropsType) => {
   return (
     <div className="relative">
@@ -45,8 +47,10 @@ const Panel = ({
               'flex w-screen',
               mode === 'light' && 'bg-white text-black',
               mode === 'dark' &&
-                'bg-lily-black text-white h-screen rounded-t-3xl translate-y-4',
-              !last && !first && mode !== 'dark' && 'h-screen rounded-3xl',
+                'bg-lily-black text-white rounded-t-3xl translate-y-4',
+              !last && !first && mode !== 'dark' && 'rounded-3xl',
+              !last && !first && !fixedHeight && 'min-h-screen',
+              !last && !first && fixedHeight && 'h-screen',
               last && 'min-h-screen rounded-t-3xl',
               first && 'min-h-[95vh] rounded-b-3xl'
             )}
