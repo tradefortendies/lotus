@@ -11,7 +11,7 @@ type PanelPropsType = {
   fixedHeight?: boolean
 }
 
-const Panel = ({
+export const Panel = ({
   children,
   floating,
   mode = 'light',
@@ -76,5 +76,3 @@ const Panel = ({
     </div>
   )
 }
-
-export default Panel

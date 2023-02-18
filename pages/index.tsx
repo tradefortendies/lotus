@@ -1,15 +1,19 @@
 import type { NextPage } from 'next'
+import type { CollectionStatType } from '../components/Home/CollectionStats'
 import { useEffect, useRef, useState, useContext, Suspense } from 'react'
+import { LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
 import { Fade } from 'react-awesome-reveal'
+import millify from 'millify'
 import { formatAddress } from '../lib/helpers'
 import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Panel from '../components/Panel'
+import { Panel } from '../components/Home/Panel'
+import { CollectionStats } from '../components/Home/CollectionStats'
 import Button from '../components/Button'
 import BlueprintModel from '../components/BlueprintModel'
 import legendariesData from '../data/legendaries.json'
@@ -21,10 +25,35 @@ const Home: NextPage = () => {
   const orbitControlsRef = useRef(null)
   const bgRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [collectionData, setCollectionData] = useState<{
+    lily: CollectionStatType
+    lotus: CollectionStatType
+  }>()
   const [windowDimensions, setWindowDimensions] = useState({
     width: 0,
     height: 0,
   })
+
+  const fetchCollectionData = async () => {
+    const lilyDataReq = await fetch(
+      'https://api-mainnet.magiceden.dev/v2/collections/lily/stats'
+    ).then((res) => res.json())
+
+    const lotusDataReq = await fetch(
+      'https://api-mainnet.magiceden.dev/v2/collections/lotus_gang_nft/stats'
+    ).then((res) => res.json())
+
+    setCollectionData({
+      lily: {
+        ...lilyDataReq,
+        supply: 10000,
+      },
+      lotus: {
+        ...lotusDataReq,
+        supply: 4000,
+      },
+    })
+  }
 
   useEffect(() => {
     if (!bgRef.current) {
@@ -53,9 +82,7 @@ const Home: NextPage = () => {
         return
       }
 
-      console.log('hello?')
-
-      // document.documentElement.scrollTo(0, 0)
+      document.documentElement.scrollTo(0, 0)
 
       setTimeout(() => {
         if (!bgRef.current) {
@@ -76,6 +103,8 @@ const Home: NextPage = () => {
 
         document.documentElement.style.scrollBehavior = 'smooth'
       }, 1500)
+
+      fetchCollectionData()
     }, 1000)
   }, [])
 
@@ -138,50 +167,10 @@ const Home: NextPage = () => {
                     </h3>
                   </Fade>
                   <div className="grid grid-cols-2 gap-2 font-mono">
-                    <Fade
-                      cascade={true}
-                      duration={500}
+                    <CollectionStats
+                      collectionData={collectionData?.lily}
                       delay={800}
-                      damping={0.25}
-                      fraction={0}
-                    >
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Floor</dt>
-                          <dd>6.2</dd>
-                        </dl>
-                      </div>
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Supply</dt>
-                          <dd>10,000</dd>
-                        </dl>
-                      </div>
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Vol</dt>
-                          <dd>6.2</dd>
-                        </dl>
-                      </div>
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Listed</dt>
-                          <dd>6.2</dd>
-                        </dl>
-                      </div>
-                    </Fade>
+                    />
                   </div>
 
                   <div className="grid grid-cols-3 gap-6">
@@ -225,50 +214,10 @@ const Home: NextPage = () => {
                     </h3>
                   </Fade>
                   <div className="grid grid-cols-2 gap-2 font-mono">
-                    <Fade
-                      cascade={true}
-                      duration={500}
+                    <CollectionStats
+                      collectionData={collectionData?.lotus}
                       delay={1000}
-                      damping={0.25}
-                      fraction={0}
-                    >
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Floor</dt>
-                          <dd>6.2</dd>
-                        </dl>
-                      </div>
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Supply</dt>
-                          <dd>4,000</dd>
-                        </dl>
-                      </div>
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Vol</dt>
-                          <dd>6.2</dd>
-                        </dl>
-                      </div>
-                      <div
-                        className="p-2 rounded-md"
-                        style={{ backgroundColor: theme.primaryColor }}
-                      >
-                        <dl className="flex justify-between w-full">
-                          <dt className="font-medium uppercase">Listed</dt>
-                          <dd>6.2</dd>
-                        </dl>
-                      </div>
-                    </Fade>
+                    />
                   </div>
                   <div className="grid grid-cols-3 gap-6">
                     <Fade
