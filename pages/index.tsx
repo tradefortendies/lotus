@@ -1,59 +1,28 @@
 import type { NextPage } from 'next'
-import type { CollectionStatType } from '../components/Home/CollectionStats'
-import { useEffect, useRef, useState, useContext, Suspense } from 'react'
-import { LAMPORTS_PER_SOL } from '@solana/web3.js'
+import { useEffect, useRef, useState, useContext } from 'react'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Stage } from '@react-three/drei'
 import { Fade } from 'react-awesome-reveal'
-import millify from 'millify'
 import { formatAddress } from '../lib/helpers'
+import { useWindowSize } from '../hooks/useWindowSize'
 import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Panel } from '../components/Home/Panel'
-import { CollectionStats } from '../components/Home/CollectionStats'
+import { Hero } from '../components/Home/Hero'
+import { Collections } from '../components/Home/Collections'
+import { Blueprint } from '../components/Home/Blueprint'
+import { Legendaries } from '../components/Home/Legendaries'
 import Button from '../components/Button'
-import BlueprintModel from '../components/BlueprintModel'
 import legendariesData from '../data/legendaries.json'
 
 const legendaries = legendariesData.legendaries
 
 const Home: NextPage = () => {
   const theme = useContext(ThemeContext)
-  const orbitControlsRef = useRef(null)
   const bgRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const [collectionData, setCollectionData] = useState<{
-    lily: CollectionStatType
-    lotus: CollectionStatType
-  }>()
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: 0,
-    height: 0,
-  })
-
-  const fetchCollectionData = async () => {
-    const lilyDataReq = await fetch(
-      'https://api-mainnet.magiceden.dev/v2/collections/lily/stats'
-    ).then((res) => res.json())
-
-    const lotusDataReq = await fetch(
-      'https://api-mainnet.magiceden.dev/v2/collections/lotus_gang_nft/stats'
-    ).then((res) => res.json())
-
-    setCollectionData({
-      lily: {
-        ...lilyDataReq,
-        supply: 10000,
-      },
-      lotus: {
-        ...lotusDataReq,
-        supply: 4000,
-      },
-    })
-  }
+  const windowDimensions = useWindowSize()
 
   useEffect(() => {
     if (!bgRef.current) {
@@ -71,11 +40,6 @@ const Home: NextPage = () => {
     if (loadingCursor) {
       loadingCursor.style.opacity = '1'
     }
-
-    setWindowDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    })
 
     setTimeout(() => {
       if (!bgRef.current) {
@@ -97,14 +61,12 @@ const Home: NextPage = () => {
           loadingCursor.style.opacity = null as any
         }
 
-        if (window.innerWidth < 500) {
+        if (windowDimensions.width < 500) {
           return
         }
 
         document.documentElement.style.scrollBehavior = 'smooth'
       }, 1500)
-
-      fetchCollectionData()
     }, 1000)
   }, [])
 
@@ -136,206 +98,10 @@ const Home: NextPage = () => {
           id="main"
           className="relative z-20 w-screen min-h-screen font-sans tracking-tighter transition-opacity duration-500 text-neutral-900"
         >
-          <Panel floating={false} first={true}>
-            <div className="px-8 md:px-0 md:w-[80vw] h-[98vh] flex items-center mx-auto">
-              <div className="space-y-4 md:w-1/2">
-                <Fade duration={500} delay={200} fraction={0}>
-                  <h2 className="text-3xl">
-                    To become the best bunch in the open web:
-                  </h2>
-                  <h3 className="text-3xl">
-                    We are working on the <strong>LILY Pad</strong>, the{' '}
-                    <strong>Lotus Library</strong> and{' '}
-                    <strong>The Blueprint</strong>.
-                  </h3>
-                </Fade>
-              </div>
-            </div>
-          </Panel>
-          <Panel floating={true}>
-            <div className="flex flex-col justify-center w-full px-8 py-4 mx-auto max-w-screen-lily-container">
-              <Fade duration={500} delay={200} fraction={0}>
-                <h2 className="mb-[10vh] text-4xl text-center">
-                  <strong>The Lotus</strong> is made up of 2 collections.
-                </h2>
-              </Fade>
-              <div className="flex flex-col items-center justify-center gap-8 lg:gap-32 md:flex-row">
-                <div className="mt-16 md:mt-0 w-full md:w-[40%] space-y-8">
-                  <Fade duration={500} delay={400} fraction={0}>
-                    <h3 className="text-5xl font-bold text-center md:text-left">
-                      LILY
-                    </h3>
-                  </Fade>
-                  <div className="grid grid-cols-2 gap-2 font-mono">
-                    <CollectionStats
-                      collectionData={collectionData?.lily}
-                      delay={800}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-6">
-                    <Fade
-                      cascade={true}
-                      duration={500}
-                      delay={1200}
-                      damping={0.35}
-                      fraction={0}
-                    >
-                      <img
-                        className="rounded-lg"
-                        src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp"
-                      />
-                      <img
-                        className="rounded-lg"
-                        src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12f3x8N9f7zxnrabfXHUGt4XRYUvhNpRBR5jY9VKQ4NH.webp"
-                      />
-                      <img
-                        className="rounded-lg"
-                        src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12UGYyfPcrQPsJPSsfPnGtdkevsBa4NaHh3VPnp86M7h.webp"
-                      />
-                    </Fade>
-                  </div>
-                  <div className="flex justify-center md:justify-start">
-                    <Fade duration={500} delay={1600} fraction={0}>
-                      <Button
-                        href="/collections/lily"
-                        type="pill-outline"
-                        className="!border-black !text-black"
-                      >
-                        Explore
-                      </Button>
-                    </Fade>
-                  </div>
-                </div>
-                <div className="mt-16 md:mt-0 w-full md:w-[40%] space-y-8 pb-16 md:pb-0">
-                  <Fade duration={500} delay={600} fraction={0}>
-                    <h3 className="text-5xl font-bold text-center md:text-left">
-                      Lotus Gang
-                    </h3>
-                  </Fade>
-                  <div className="grid grid-cols-2 gap-2 font-mono">
-                    <CollectionStats
-                      collectionData={collectionData?.lotus}
-                      delay={1000}
-                    />
-                  </div>
-                  <div className="grid grid-cols-3 gap-6">
-                    <Fade
-                      cascade={true}
-                      duration={500}
-                      delay={1400}
-                      damping={0.35}
-                      fraction={0}
-                    >
-                      <img
-                        className="rounded-lg"
-                        src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13EK4usnnHAYzE8SZocvZVjFXTx6g3752RTpL3fegLQa.webp"
-                      />
-                      <img
-                        className="rounded-lg"
-                        src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13suaa4tdQHNWC4fBPeot1xvZ92ph97WaSSXFDAkv1qf.webp"
-                      />
-                      <img
-                        className="rounded-lg"
-                        src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
-                      />
-                    </Fade>
-                  </div>
-                  <div className="flex justify-center md:justify-start">
-                    <Fade duration={500} delay={1800} fraction={0}>
-                      <Button
-                        href="/collections/lotus-gang"
-                        type="pill-outline"
-                        className="!border-black !text-black"
-                      >
-                        Explore
-                      </Button>
-                    </Fade>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Panel>
-          <Panel floating={false} fixedHeight={true}>
-            <div className="flex flex-col justify-center w-full p-4 mx-auto max-w-screen-lily-container">
-              <Fade duration={500} delay={200} fraction={0}>
-                <h2 className="mb-[10vh] text-4xl text-center">
-                  <strong>The Blueprint</strong> is our version of a road map.
-                </h2>
-              </Fade>
-              <div className="flex items-center justify-between gap-16 h-1/2">
-                <div className="w-full h-full">
-                  <Canvas shadows dpr={[1, 2]} camera={{ fov: 35 }}>
-                    <Suspense fallback={null}>
-                      <Stage
-                        controls={orbitControlsRef}
-                        preset="rembrandt"
-                        intensity={1}
-                        environment="city"
-                        adjustCamera={windowDimensions.width > 768 ? 1.1 : 1}
-                      >
-                        <BlueprintModel />
-                      </Stage>
-                    </Suspense>
-                    <OrbitControls
-                      ref={orbitControlsRef}
-                      makeDefault
-                      autoRotate={true}
-                      enableZoom={false}
-                      enablePan={false}
-                      enableRotate={true}
-                      enableDamping={true}
-                    />
-                  </Canvas>
-                </div>
-                <div className="w-full">Playlist goes here</div>
-              </div>
-            </div>
-          </Panel>
-          <Panel floating={true}>
-            <div className="w-full h-full px-8 py-4 mx-auto max-w-screen-lily-container">
-              <Fade duration={500} delay={200} fraction={0}>
-                <h2 className="mt-16 text-5xl font-bold text-center">
-                  The Legendaries
-                </h2>
-              </Fade>
-              <div className="flex items-center justify-between h-full my-16">
-                <div className="grid grid-cols-2 gap-8 xl:gap-16 md:grid-cols-3 lg:grid-cols-5">
-                  <Fade
-                    cascade={true}
-                    duration={500}
-                    delay={400}
-                    damping={0.35}
-                    fraction={0}
-                  >
-                    {legendaries.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-col items-center gap-1"
-                      >
-                        <h3 className="text-lg font-bold">{item.name}</h3>
-                        <a href={item.url} target="_blank" rel="noreferrer">
-                          <img src={item.image} />
-                        </a>
-                        <p className="mt-2 text-sm">
-                          {formatAddress(item.owner.wallet)}
-                        </p>
-                        <a
-                          href={item.owner.twitterUrl}
-                          style={{ color: theme.primaryColor }}
-                          className="font-bold"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {item.owner.twitterHandle}
-                        </a>
-                      </div>
-                    ))}
-                  </Fade>
-                </div>
-              </div>
-            </div>
-          </Panel>
+          <Hero />
+          <Collections />
+          <Blueprint />
+          <Legendaries />
           <Panel floating={false} mode={'dark'}>
             <div className="flex flex-col w-full gap-4 px-8 pt-16 pb-32 mx-auto md:flex-row max-w-screen-lily-container">
               <div className="flex flex-col items-center justify-center w-full h-full md:items-start">
