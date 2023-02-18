@@ -41,12 +41,14 @@ export const CollectionStats = ({
         className="p-2 rounded-md"
         style={{ backgroundColor: theme.primaryColor }}
       >
-        <dl className="flex justify-between w-full">
+        <dl className="flex items-center justify-between w-full">
           <dt className="font-medium uppercase">Floor</dt>
           <dd>
             {collectionData?.floorPrice &&
               collectionData?.floorPrice / LAMPORTS_PER_SOL}
-            {!collectionData?.floorPrice && 'loading...'}
+            {!collectionData?.floorPrice && (
+              <img src="/img/loading-dots.svg" width={30} />
+            )}
           </dd>
         </dl>
       </div>
@@ -54,11 +56,14 @@ export const CollectionStats = ({
         className="p-2 rounded-md"
         style={{ backgroundColor: theme.primaryColor }}
       >
-        <dl className="flex justify-between w-full">
+        <dl className="flex items-center justify-between w-full">
           <dt className="font-medium uppercase">Supply</dt>
           <dd>
             {collectionData?.supply &&
               new Intl.NumberFormat('en-US').format(collectionData?.supply)}
+            {!collectionData?.supply && (
+              <img src="/img/loading-dots.svg" width={30} />
+            )}
           </dd>
         </dl>
       </div>
@@ -66,12 +71,14 @@ export const CollectionStats = ({
         className="p-2 rounded-md"
         style={{ backgroundColor: theme.primaryColor }}
       >
-        <dl className="flex justify-between w-full">
+        <dl className="flex items-center justify-between w-full">
           <dt className="font-medium uppercase">Vol</dt>
           <dd>
             {collectionData?.volumeAll &&
               millify(collectionData?.volumeAll / LAMPORTS_PER_SOL)}
-            {!collectionData?.volumeAll && 'loading...'}
+            {!collectionData?.volumeAll && (
+              <img src="/img/loading-dots.svg" width={30} />
+            )}
           </dd>
         </dl>
       </div>
@@ -79,11 +86,13 @@ export const CollectionStats = ({
         className="p-2 rounded-md"
         style={{ backgroundColor: theme.primaryColor }}
       >
-        <dl className="flex justify-between w-full">
+        <dl className="flex items-center justify-between w-full">
           <dt className="font-medium uppercase">Listed</dt>
           <dd>
             {collectionData?.listedCount && collectionData?.listedCount}
-            {!collectionData?.listedCount && 'loading...'}
+            {!collectionData?.listedCount && (
+              <img src="/img/loading-dots.svg" width={30} />
+            )}
           </dd>
         </dl>
       </div>
