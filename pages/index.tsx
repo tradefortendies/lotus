@@ -110,7 +110,7 @@ const Home: NextPage = () => {
           <Panel floating={false} first={true}>
             <div className="px-8 md:px-0 md:w-[80vw] h-[98vh] flex items-center mx-auto">
               <div className="space-y-4 md:w-1/2">
-                <Fade>
+                <Fade duration={500} delay={200} fraction={0}>
                   <h2 className="text-3xl">
                     To become the best bunch in the open web:
                   </h2>
@@ -138,49 +138,58 @@ const Home: NextPage = () => {
                     </h3>
                   </Fade>
                   <div className="grid grid-cols-2 gap-2 font-mono">
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
+                    <Fade
+                      cascade={true}
+                      duration={500}
+                      delay={800}
+                      damping={0.25}
+                      fraction={0}
                     >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Floor</dt>
-                        <dd>6.2</dd>
-                      </dl>
-                    </div>
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Supply</dt>
-                        <dd>10,000</dd>
-                      </dl>
-                    </div>
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Vol</dt>
-                        <dd>6.2</dd>
-                      </dl>
-                    </div>
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Listed</dt>
-                        <dd>6.2</dd>
-                      </dl>
-                    </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Floor</dt>
+                          <dd>6.2</dd>
+                        </dl>
+                      </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Supply</dt>
+                          <dd>10,000</dd>
+                        </dl>
+                      </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Vol</dt>
+                          <dd>6.2</dd>
+                        </dl>
+                      </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Listed</dt>
+                          <dd>6.2</dd>
+                        </dl>
+                      </div>
+                    </Fade>
                   </div>
 
                   <div className="grid grid-cols-3 gap-6">
                     <Fade
                       cascade={true}
                       duration={500}
-                      delay={800}
+                      delay={1200}
+                      damping={0.35}
                       fraction={0}
                     >
                       <img
@@ -198,16 +207,14 @@ const Home: NextPage = () => {
                     </Fade>
                   </div>
                   <div className="flex justify-center md:justify-start">
-                    <Fade duration={500} fraction={0.5}>
-                      <div>
-                        <Button
-                          href="/collections/lily"
-                          type="pill-outline"
-                          className="!border-black !text-black"
-                        >
-                          Explore
-                        </Button>
-                      </div>
+                    <Fade duration={500} delay={1600} fraction={0}>
+                      <Button
+                        href="/collections/lily"
+                        type="pill-outline"
+                        className="!border-black !text-black"
+                      >
+                        Explore
+                      </Button>
                     </Fade>
                   </div>
                 </div>
@@ -218,48 +225,57 @@ const Home: NextPage = () => {
                     </h3>
                   </Fade>
                   <div className="grid grid-cols-2 gap-2 font-mono">
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
+                    <Fade
+                      cascade={true}
+                      duration={500}
+                      delay={1000}
+                      damping={0.25}
+                      fraction={0}
                     >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Floor</dt>
-                        <dd>6.2</dd>
-                      </dl>
-                    </div>
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Supply</dt>
-                        <dd>4,000</dd>
-                      </dl>
-                    </div>
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Vol</dt>
-                        <dd>6.2</dd>
-                      </dl>
-                    </div>
-                    <div
-                      className="p-2 rounded-md"
-                      style={{ backgroundColor: theme.primaryColor }}
-                    >
-                      <dl className="flex justify-between w-full">
-                        <dt className="font-medium uppercase">Listed</dt>
-                        <dd>6.2</dd>
-                      </dl>
-                    </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Floor</dt>
+                          <dd>6.2</dd>
+                        </dl>
+                      </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Supply</dt>
+                          <dd>4,000</dd>
+                        </dl>
+                      </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Vol</dt>
+                          <dd>6.2</dd>
+                        </dl>
+                      </div>
+                      <div
+                        className="p-2 rounded-md"
+                        style={{ backgroundColor: theme.primaryColor }}
+                      >
+                        <dl className="flex justify-between w-full">
+                          <dt className="font-medium uppercase">Listed</dt>
+                          <dd>6.2</dd>
+                        </dl>
+                      </div>
+                    </Fade>
                   </div>
                   <div className="grid grid-cols-3 gap-6">
                     <Fade
                       cascade={true}
                       duration={500}
-                      delay={1600}
+                      delay={1400}
+                      damping={0.35}
                       fraction={0}
                     >
                       <img
@@ -277,7 +293,7 @@ const Home: NextPage = () => {
                     </Fade>
                   </div>
                   <div className="flex justify-center md:justify-start">
-                    <Fade duration={500}>
+                    <Fade duration={500} delay={1800} fraction={0}>
                       <Button
                         href="/collections/lotus-gang"
                         type="pill-outline"
@@ -336,7 +352,13 @@ const Home: NextPage = () => {
               </Fade>
               <div className="flex items-center justify-between h-full my-16">
                 <div className="grid grid-cols-2 gap-8 xl:gap-16 md:grid-cols-3 lg:grid-cols-5">
-                  <Fade cascade={true} duration={500} delay={400} fraction={0}>
+                  <Fade
+                    cascade={true}
+                    duration={500}
+                    delay={400}
+                    damping={0.35}
+                    fraction={0}
+                  >
                     {legendaries.map((item, index) => (
                       <div
                         key={index}
@@ -368,13 +390,29 @@ const Home: NextPage = () => {
           <Panel floating={false} mode={'dark'}>
             <div className="flex flex-col w-full gap-4 px-8 pt-16 pb-32 mx-auto md:flex-row max-w-screen-lily-container">
               <div className="flex flex-col items-center justify-center w-full h-full md:items-start">
-                <h2 className="text-6xl font-bold text-left">Lotus Library</h2>
-                <p className="mt-12 text-3xl text-center md:text-left">
-                  The best crypto information and tools are hard to find. We are
-                  working with the community to index it in one place.
-                </p>
+                <Fade
+                  cascade={true}
+                  duration={500}
+                  delay={200}
+                  damping={0.35}
+                  fraction={0}
+                >
+                  <h2 className="text-6xl font-bold text-left">
+                    Lotus Library
+                  </h2>
+                  <p className="mt-12 text-3xl text-center md:text-left">
+                    The best crypto information and tools are hard to find. We
+                    are working with the community to index it in one place.
+                  </p>
+                </Fade>
                 <dl className="flex flex-wrap mt-10 text-3xl md:mt-24">
-                  <Fade cascade={true} duration={500} delay={0.2} fraction={0}>
+                  <Fade
+                    cascade={true}
+                    duration={500}
+                    delay={400}
+                    damping={0.35}
+                    fraction={0}
+                  >
                     <dd className="mr-1" style={{ color: theme.primaryColor }}>
                       56
                     </dd>
@@ -395,17 +433,25 @@ const Home: NextPage = () => {
                     <dt>Partnerships</dt>
                   </Fade>
                 </dl>
-                <Button
-                  href="#"
-                  type="pill-outline"
-                  className="mx-auto my-10 md:mb-0 md:mt-8 md:ml-0"
-                >
-                  Explore
-                </Button>
+                <Fade duration={500} delay={1400} fraction={0}>
+                  <Button
+                    href="#"
+                    type="pill-outline"
+                    className="mx-auto my-10 md:mb-0 md:mt-8 md:ml-0"
+                  >
+                    Explore
+                  </Button>
+                </Fade>
               </div>
               <div className="flex items-center w-full">
                 <section className="flex flex-col gap-8 max-w-[380px] mx-auto md:mr-0 md:ml-auto">
-                  <Fade cascade={true} duration={500} delay={0.2} fraction={0}>
+                  <Fade
+                    cascade={true}
+                    duration={500}
+                    delay={0.2}
+                    damping={0.35}
+                    fraction={0}
+                  >
                     <article>
                       <a href="">
                         <img
@@ -480,7 +526,13 @@ const Home: NextPage = () => {
                 />
               </Fade>
               <div className="space-y-4 text-center md:text-left">
-                <Fade cascade={true} duration={500} delay={400} fraction={0}>
+                <Fade
+                  cascade={true}
+                  duration={500}
+                  delay={400}
+                  damping={0.35}
+                  fraction={0}
+                >
                   <h2 className="text-6xl font-bold">The LILYPad</h2>
                   <p className="text-2xl">
                     A new peer-to-peer onboarding solution.
@@ -490,8 +542,126 @@ const Home: NextPage = () => {
               </div>
             </div>
           </Panel>
-          <Panel floating={true}>panel</Panel>
-          <Panel floating={false}>panel</Panel>
+          <Panel floating={true}>
+            <div className="flex flex-col items-center w-full gap-8 px-8 py-16 mx-auto md:flex-row max-w-screen-lily-container">
+              <div className="w-1/2">
+                <Fade
+                  cascade={true}
+                  duration={500}
+                  delay={200}
+                  damping={0.35}
+                  fraction={0}
+                >
+                  <h2 className="text-6xl font-bold text-left">Community</h2>
+                  <p className="pr-16 mt-12 text-3xl text-center md:text-left">
+                    We have holders in 65 countries and we are growing every
+                    day.
+                  </p>
+                </Fade>
+
+                <Fade cascade={true} duration={500} delay={400} fraction={0}>
+                  <h3 className="mt-16 mb-4 text-3xl font-bold">
+                    Recent Sales
+                  </h3>
+                </Fade>
+                <section className="flex flex-col gap-2">
+                  <Fade
+                    cascade={true}
+                    duration={500}
+                    delay={600}
+                    damping={0.35}
+                    fraction={0}
+                  >
+                    <article>
+                      <a
+                        className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                        href="#"
+                      >
+                        <img
+                          className="w-20 rounded-xl"
+                          src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
+                        />
+                        <div className="ml-4">
+                          <h3 className="text-xl font-bold">Lotus Lady #644</h3>
+                          <p>8.39 SOL</p>
+                        </div>
+                        <img className="ml-auto" src="/img/arrow-icon.svg" />
+                      </a>
+                    </article>
+                    <article>
+                      <a
+                        className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                        href="#"
+                      >
+                        <img
+                          className="w-20 rounded-xl"
+                          src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
+                        />
+                        <div className="ml-4">
+                          <h3 className="text-xl font-bold">Lotus Lady #644</h3>
+                          <p>8.39 SOL</p>
+                        </div>
+                        <img className="ml-auto" src="/img/arrow-icon.svg" />
+                      </a>
+                    </article>
+                    <article>
+                      <a
+                        className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                        href="#"
+                      >
+                        <img
+                          className="w-20 rounded-xl"
+                          src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
+                        />
+                        <div className="ml-4">
+                          <h3 className="text-xl font-bold">Lotus Lady #644</h3>
+                          <p>8.39 SOL</p>
+                        </div>
+                        <img className="ml-auto" src="/img/arrow-icon.svg" />
+                      </a>
+                    </article>
+                  </Fade>
+                </section>
+              </div>
+              <div className="w-1/2">
+                <Fade duration={500} delay={1200} fraction={0}>
+                  <div
+                    className="gap-4 px-4 py-8 mx-auto text-center max-w-[512px] rounded-xl"
+                    style={{ background: theme.primaryColor }}
+                  >
+                    <h3 className="text-2xl font-bold">Spotlight</h3>
+                    <p className="text-lg">Coming soon...</p>
+                  </div>
+                </Fade>
+              </div>
+            </div>
+          </Panel>
+          <Panel floating={false}>
+            <div className="flex items-center justify-center w-full gap-4">
+              <div className="relative w-1/2">
+                <div className="absolute left-0 flex flex-col w-3/5 -translate-y-1/2 top-1/2">
+                  <button className="w-full px-16 py-2 text-2xl font-semibold text-left rounded-r-xl bg-lily-blue">
+                    Silk Road
+                  </button>
+                  <button className="w-full px-16 py-2 text-2xl font-semibold text-left rounded-r-xl bg-lily-yellow">
+                    Metaverse Models
+                  </button>
+                  <button className="w-full px-16 py-2 text-2xl font-semibold text-left rounded-r-xl bg-lily-red">
+                    Floor Calculator
+                  </button>
+                  <button className="w-full px-16 py-2 text-2xl font-semibold text-left rounded-r-xl bg-lily-blue-dark">
+                    Planting
+                  </button>
+                </div>
+              </div>
+              <div className="w-1/2">
+                <h2 className="font-bold text-7xl">
+                  Experiments
+                  <br className="hidden lg:block" /> and Fun
+                </h2>
+              </div>
+            </div>
+          </Panel>
           <div className="-translate-y-16">
             <div className="text-white bg-lily-black">
               <div className="flex flex-col justify-center w-full gap-4 px-4 pb-32 mx-auto pt-36 max-w-screen-lily-container">
@@ -501,7 +671,13 @@ const Home: NextPage = () => {
                   </h2>
                 </Fade>
                 <div className="flex items-center justify-center gap-8 mt-8">
-                  <Fade cascade={true} duration={500} delay={400} fraction={0}>
+                  <Fade
+                    cascade={true}
+                    duration={500}
+                    delay={400}
+                    damping={0.35}
+                    fraction={0}
+                  >
                     <Button type="pill-outline">Buy LILY</Button>
                     <Button type="pill-outline">Buy Lotus Gang</Button>
                     <Button type="pill-outline">Learn Something</Button>
