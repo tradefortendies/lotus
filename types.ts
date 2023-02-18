@@ -27,3 +27,15 @@ export type Member = {
   bio: string
   twitter: string
 }
+
+export interface LegendaryType {
+  name: string
+  image: string
+  address: string
+  url: string
+}
+
+export interface LegendaryWithOwnerType extends LegendaryType {
+  owner?: string
+  domainName?: string
+}

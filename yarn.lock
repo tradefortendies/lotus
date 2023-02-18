@@ -85,6 +85,29 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@bonfida/name-offers@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@bonfida/name-offers/-/name-offers-0.0.4.tgz#13a8baa8103c1e9637eb5ae675991ddb9cdcd060"
+  integrity sha512-bkrvN6OLsjaMFg51BsaZTimhmbjsc8lk31kMo3u7HYq6uCbpXEa1M2mquBj6TZ74CLA4+5bsgPaQP5WynAFdTw==
+  dependencies:
+    "@bonfida/utils" "^0.0.5"
+    bn.js "^5.2.0"
+    borsh "^0.6.0"
+    bs58 "4.0.1"
+
+"@bonfida/spl-name-service@^0.1.64":
+  version "0.1.64"
+  resolved "https://registry.yarnpkg.com/@bonfida/spl-name-service/-/spl-name-service-0.1.64.tgz#38e6773c847b4b0b5cebcb78589adabd7b8a198b"
+  integrity sha512-OiC8RTwINtHRDnBC70mOqdFp/0ybMNaT76hOR/lyBUS4EcKy2gG3qNuCwCjGi+AFtC1KZ+5cQoEuZZ1WjGK9nQ==
+  dependencies:
+    "@bonfida/name-offers" "^0.0.4"
+    "@ethersproject/sha2" "^5.5.0"
+
+"@bonfida/utils@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@bonfida/utils/-/utils-0.0.5.tgz#e6086db62e1e3822257819ec2c20e933db59f419"
+  integrity sha512-T4l72mwrG+tISIuRe+1qyxxKszB8DC8EH5bCKVIKEqBzazSMX087c17pA7RtsTBxcErpJ1GICCM2iVf0z4hSSw==
+
 "@bundlr-network/client@^0.8.8":
   version "0.8.9"
   resolved "https://registry.yarnpkg.com/@bundlr-network/client/-/client-0.8.9.tgz#58e969a5d80f8d25d212d46bb7a060730a3c1736"
@@ -486,7 +509,7 @@
     "@ethersproject/bytes" "^5.7.0"
     "@ethersproject/logger" "^5.7.0"
 
-"@ethersproject/sha2@5.7.0", "@ethersproject/sha2@^5.7.0":
+"@ethersproject/sha2@5.7.0", "@ethersproject/sha2@^5.5.0", "@ethersproject/sha2@^5.7.0":
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/sha2/-/sha2-5.7.0.tgz#9a5f7a7824ef784f7f7680984e593a800480c9fb"
   integrity sha512-gKlH42riwb3KYp0reLsFTokByAKoJdgFCwI+CCiX/k+Jm2mbNs6oOaCjYQSlI1+XBVejwH2KrmCbMAT/GnRDQw==
@@ -2004,7 +2027,7 @@ browserslist@^4.20.3:
     node-releases "^2.0.6"
     update-browserslist-db "^1.0.9"
 
-bs58@^4.0.0, bs58@^4.0.1:
+bs58@4.0.1, bs58@^4.0.0, bs58@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/bs58/-/bs58-4.0.1.tgz"
   integrity sha512-Ok3Wdf5vOIlBrgCvTq96gBkJw+JUEzdBgyaza5HLtPm7yTHkjRy8+JzNyHF7BHa0bNWOQIp3m5YF0nnFcOIKLw==
