@@ -1,10 +1,102 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal'
+import { Connection, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
+import { programs } from '@metaplex/js'
 import { ThemeContext } from '../Theme'
 import { Panel } from './Panel'
 
+const connection = new Connection(String(process.env.NEXT_PUBLIC_RPC_ENDPOINT))
+const lilyPubKey = new PublicKey('3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED')
+const {
+  metadata: { Metadata },
+} = programs
+
 export const Community = () => {
   const theme = useContext(ThemeContext)
+
+  const timer = (ms: number) => new Promise((res) => setTimeout(res, ms))
+
+  const getMetadata = async (tokenPubKey: string) => {
+    try {
+      const addr = await Metadata.getPDA(tokenPubKey)
+      const resp = await Metadata.load(connection, addr)
+      const dataReq = await fetch(resp.data.data.uri).then((res) => res.json())
+
+      return dataReq
+    } catch (error) {
+      console.log('error fetching metadata: ', error)
+    }
+  }
+
+  const fetchRecentSales = async () => {
+    let index = 0
+    const signatures = await connection.getSignaturesForAddress(lilyPubKey, {})
+    const recentSales: {
+      date: string
+      price: number
+      signature: string
+      name: string
+      image: string
+    }[] = []
+
+    if (!signatures.length) {
+      return
+    }
+
+    while (recentSales.length < 5) {
+      await timer(200 * index)
+      const { signature } = signatures[index]
+      const txn = await connection.getTransaction(signature, {
+        maxSupportedTransactionVersion: 0,
+      })
+      if (
+        !txn ||
+        !txn.meta ||
+        !txn.meta.postTokenBalances?.length ||
+        !txn.blockTime
+      ) {
+        return false
+      }
+
+      const dateString = new Date(txn?.blockTime * 1000).toLocaleString()
+      const price =
+        Math.abs(txn?.meta?.preBalances[0] - txn.meta.postBalances[0]) /
+        LAMPORTS_PER_SOL
+      const accounts = txn.transaction.message.staticAccountKeys
+      if (!accounts) {
+        return
+      }
+      const account = accounts[accounts.length - 1]
+      const marketplaceAccount = account?.toString() || ''
+
+      if (
+        marketplaceAccount === '1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix'
+      ) {
+        const metadata = await getMetadata(txn.meta.postTokenBalances[0].mint)
+        if (!metadata) {
+          console.log("couldn't get metadata")
+          return
+        }
+
+        recentSales.push({
+          date: dateString,
+          price,
+          signature,
+          name: metadata.name,
+          image: metadata.image,
+        })
+      }
+
+      index++
+    }
+
+    console.log(recentSales)
+  }
+
+  useEffect(() => {
+    fetchRecentSales()
+  }, [])
+
   return (
     <Panel floating={true}>
       <div className="flex flex-col items-center w-full gap-8 px-8 py-16 mx-auto md:flex-row max-w-screen-lily-container">
