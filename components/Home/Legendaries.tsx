@@ -1,7 +1,6 @@
 import type { LegendaryType, LegendaryWithOwnerType } from '../../types'
 import { useContext, useState, useEffect } from 'react'
 import { Connection, PublicKey, ParsedAccountData } from '@solana/web3.js'
-import { performReverseLookup } from '@bonfida/spl-name-service'
 import { Fade } from 'react-awesome-reveal'
 import { formatAddress } from '../../lib/helpers'
 import { Panel } from './Panel'
@@ -29,21 +28,6 @@ export const Legendaries = () => {
           largestAccounts.value[0].address
         )
         const data = largestAccountInfo?.value?.data as ParsedAccountData
-
-        try {
-          const domainName = await performReverseLookup(
-            connection,
-            new PublicKey('D1bj9NDgFVRxUiKkNyxW9BtYJ1kesQknnqm6xAnk1h8q')
-          )
-
-          console.log(domainName)
-
-          if (domainName) {
-            updatedItem.domainName = domainName
-          }
-        } catch (e) {
-          console.log(e)
-        }
 
         return {
           ...updatedItem,
