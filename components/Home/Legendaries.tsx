@@ -65,7 +65,10 @@ export const Legendaries = () => {
                 <div key={index} className="flex flex-col items-center gap-1">
                   <h3 className="text-lg font-bold">{item.name}</h3>
                   <a href={item.url} target="_blank" rel="noreferrer">
-                    <img src={item.image} />
+                    <img
+                      className="transition-transform rounded-lg hover:scale-105"
+                      src={item.image}
+                    />
                   </a>
                   <div className="mt-2">
                     {item.owner && (
