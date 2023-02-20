@@ -21,12 +21,12 @@ export const Collections = () => {
   }>()
 
   const fetchCollectionData = async () => {
-    const lilyDataReq = await fetch(
-      'https://api-mainnet.magiceden.dev/v2/collections/lily/stats'
-    ).then((res) => res.json())
+    const lilyDataReq = await fetch('/api/collectionStats?symbol=lily').then(
+      (res) => res.json()
+    )
 
     const lotusDataReq = await fetch(
-      'https://api-mainnet.magiceden.dev/v2/collections/lotus_gang_nft/stats'
+      '/api/collectionStats?symbol=lotus_gang_nft'
     ).then((res) => res.json())
 
     setCollectionData({
