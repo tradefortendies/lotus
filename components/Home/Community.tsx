@@ -1,4 +1,5 @@
-import { useContext, useEffect } from 'react'
+import type { Sale } from '../../types'
+import { useContext, useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
 import { Connection, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { programs } from '@metaplex/js'
@@ -7,12 +8,16 @@ import { Panel } from './Panel'
 
 const connection = new Connection(String(process.env.NEXT_PUBLIC_RPC_ENDPOINT))
 const lilyPubKey = new PublicKey('3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED')
+const lotusPubKey = new PublicKey(
+  '3n1mz8MyqpQwgX9E8CNPPZtAdJa3aLpuCSMbPumM9wzZ'
+)
 const {
   metadata: { Metadata },
 } = programs
 
 export const Community = () => {
   const theme = useContext(ThemeContext)
+  const [recentSales, setRecentSales] = useState<Sale[]>([])
 
   const timer = (ms: number) => new Promise((res) => setTimeout(res, ms))
 
@@ -30,21 +35,32 @@ export const Community = () => {
 
   const fetchRecentSales = async () => {
     let index = 0
-    const signatures = await connection.getSignaturesForAddress(lilyPubKey, {})
-    const recentSales: {
-      date: string
-      price: number
-      signature: string
-      name: string
-      image: string
-    }[] = []
+    const lilySigs = await connection.getConfirmedSignaturesForAddress2(
+      lilyPubKey,
+      {},
+      'confirmed'
+    )
+    const lotusSigs = await connection.getConfirmedSignaturesForAddress2(
+      lotusPubKey,
+      {},
+      'confirmed'
+    )
+    const signatures = [...lilySigs, ...lotusSigs]
+
+    signatures.sort((a, b) =>
+      Number(a.blockTime) < Number(b.blockTime) ? 1 : -1
+    )
+
+    console.log(signatures)
+    const sales: Sale[] = []
 
     if (!signatures.length) {
       return
     }
 
-    while (recentSales.length < 5) {
-      await timer(200 * index)
+    while (sales.length < 5) {
+      console.log('fetching', index)
+      await timer(50)
       const { signature } = signatures[index]
       const txn = await connection.getTransaction(signature, {
         maxSupportedTransactionVersion: 0,
@@ -55,42 +71,57 @@ export const Community = () => {
         !txn.meta.postTokenBalances?.length ||
         !txn.blockTime
       ) {
-        return false
+        console.log('disallowed')
+        index++
+        continue
       }
+      console.log(txn)
 
       const dateString = new Date(txn?.blockTime * 1000).toLocaleString()
       const price =
         Math.abs(txn?.meta?.preBalances[0] - txn.meta.postBalances[0]) /
         LAMPORTS_PER_SOL
       const accounts = txn.transaction.message.staticAccountKeys
-      if (!accounts) {
-        return
+      if (!accounts || price < 1) {
+        index++
+        continue
       }
       const account = accounts[accounts.length - 1]
       const marketplaceAccount = account?.toString() || ''
 
+      console.log(marketplaceAccount)
+
       if (
-        marketplaceAccount === '1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix'
+        marketplaceAccount === '1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix' ||
+        marketplaceAccount === 'MEisE1HzehtrDpAAT8PnLHjpSSkRYakotTuJRPjTpo8'
       ) {
         const metadata = await getMetadata(txn.meta.postTokenBalances[0].mint)
         if (!metadata) {
           console.log("couldn't get metadata")
-          return
+          index++
+          continue
         }
 
-        recentSales.push({
+        console.log(metadata)
+
+        sales.push({
           date: dateString,
           price,
           signature,
+          collection:
+            metadata.collection.name === 'Lotus Gang' ? 'lotus-gang' : 'lily',
           name: metadata.name,
           image: metadata.image,
+          address: txn.meta.postTokenBalances[0].mint,
         })
       }
 
       index++
     }
 
-    console.log(recentSales)
+    console.log(sales)
+
+    setRecentSales(sales)
   }
 
   useEffect(() => {
@@ -114,67 +145,43 @@ export const Community = () => {
             </p>
           </Fade>
 
-          <Fade cascade={true} duration={500} delay={400} fraction={0}>
-            <h3 className="mt-16 mb-4 text-3xl font-bold">Recent Sales</h3>
-          </Fade>
-          <section className="flex flex-col gap-2">
-            <Fade
-              cascade={true}
-              duration={500}
-              delay={600}
-              damping={0.35}
-              fraction={0}
-            >
-              <article>
-                <a
-                  className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
-                  href="#"
+          {recentSales.length > 0 && (
+            <>
+              <Fade cascade={true} duration={500} delay={400} fraction={0}>
+                <h3 className="mt-16 mb-4 text-3xl font-bold">Recent Sales</h3>
+              </Fade>
+              <section className="flex flex-col gap-2">
+                <Fade
+                  cascade={true}
+                  duration={500}
+                  delay={600}
+                  damping={0.35}
+                  fraction={0}
                 >
-                  <img
-                    className="w-20 rounded-xl"
-                    src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
-                  />
-                  <div className="ml-4">
-                    <h3 className="text-xl font-bold">Lotus Lady #644</h3>
-                    <p>8.39 SOL</p>
-                  </div>
-                  <img className="ml-auto" src="/img/arrow-icon.svg" />
-                </a>
-              </article>
-              <article>
-                <a
-                  className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
-                  href="#"
-                >
-                  <img
-                    className="w-20 rounded-xl"
-                    src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
-                  />
-                  <div className="ml-4">
-                    <h3 className="text-xl font-bold">Lotus Lady #644</h3>
-                    <p>8.39 SOL</p>
-                  </div>
-                  <img className="ml-auto" src="/img/arrow-icon.svg" />
-                </a>
-              </article>
-              <article>
-                <a
-                  className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
-                  href="#"
-                >
-                  <img
-                    className="w-20 rounded-xl"
-                    src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
-                  />
-                  <div className="ml-4">
-                    <h3 className="text-xl font-bold">Lotus Lady #644</h3>
-                    <p>8.39 SOL</p>
-                  </div>
-                  <img className="ml-auto" src="/img/arrow-icon.svg" />
-                </a>
-              </article>
-            </Fade>
-          </section>
+                  {recentSales.slice(0, 3).map((item, index) => (
+                    <article key={index}>
+                      <a
+                        className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                        href={`https://solscan.io/tx/${item.signature}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <img
+                          className="w-20 rounded-xl"
+                          src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2F${item.collection}%2Fwebp%2F${item.address}.webp`}
+                        />
+                        <div className="ml-4">
+                          <h3 className="text-xl font-bold">{item.name}</h3>
+                          <p>{item.price.toFixed(2)} SOL</p>
+                        </div>
+                        <img className="ml-auto" src="/img/arrow-icon.svg" />
+                      </a>
+                    </article>
+                  ))}
+                </Fade>
+              </section>
+            </>
+          )}
         </div>
         <div className="w-1/2">
           <Fade duration={500} delay={1200} fraction={0}>
