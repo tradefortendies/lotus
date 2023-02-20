@@ -92,7 +92,11 @@ export const Library = () => {
                     </a>
                   </h2>
                   <time>Oct 22nd, 2022</time>
-                  <a rel="author" href="https://twitter.com/rykz_jpeg">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://twitter.com/rykz_jpeg"
+                  >
                     @rykz
                   </a>
                 </div>
@@ -123,7 +127,7 @@ export const Library = () => {
                   </h2>
                   <time>Oct 21st, 2022</time>
                   <a
-                    rel="author"
+                    rel="noreferrer"
                     href="https://twitter.com/notbunjil"
                     target="_blank"
                   >
@@ -156,7 +160,11 @@ export const Library = () => {
                       Programming 101: Chapter 1
                     </a>
                   </h2>
-                  <a rel="author" href="https://twitter.com/DarthDegen">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://twitter.com/DarthDegen"
+                  >
                     @darth
                   </a>
                 </div>
