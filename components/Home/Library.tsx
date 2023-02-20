@@ -48,7 +48,9 @@ export const Library = () => {
           </dl>
           <Fade duration={500} delay={1400} fraction={0}>
             <Button
-              href="#"
+              href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+              target="_blank"
+              rel="noreferrer"
               type="pill-outline"
               className="mx-auto my-10 md:mb-0 md:mt-8 md:ml-0"
             >
@@ -66,7 +68,11 @@ export const Library = () => {
               fraction={0}
             >
               <article>
-                <a href="">
+                <a
+                  href="https://lotusgang.notion.site/Privacy-Security-6500cf1614f449b9ac0690b2f06c36c4?p=e867989afbd94208b8f2890d9f57bda5&pm=c"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src="https://via.placeholder.com/380x135"
                     className="object-cover w-full rounded-t-xl"
@@ -77,16 +83,26 @@ export const Library = () => {
                   style={{ backgroundColor: theme.primaryColor }}
                 >
                   <h2 className="font-bold">
-                    <a href="">Web3 for Content Creators</a>
+                    <a
+                      href="https://lotusgang.notion.site/Privacy-Security-6500cf1614f449b9ac0690b2f06c36c4?p=e867989afbd94208b8f2890d9f57bda5&pm=c"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Discord User Security Tips
+                    </a>
                   </h2>
-                  <time>12/01/2022</time>
-                  <a rel="author" href="https://twitter.com/notbunjil">
-                    @kennyatta
+                  <time>Oct 22nd, 2022</time>
+                  <a rel="author" href="https://twitter.com/rykz_jpeg">
+                    @rykz
                   </a>
                 </div>
               </article>
               <article>
-                <a href="">
+                <a
+                  href="https://lotusgang.notion.site/Stablecoin-Basics-d16f609a7d6d4020bb22e1527213142b"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src="https://via.placeholder.com/380x135"
                     className="object-cover w-full rounded-t-xl"
@@ -97,16 +113,31 @@ export const Library = () => {
                   style={{ backgroundColor: theme.primaryColor }}
                 >
                   <h2 className="font-bold">
-                    <a href="">Web3 for Content Creators</a>
+                    <a
+                      href="https://lotusgang.notion.site/Stablecoin-Basics-d16f609a7d6d4020bb22e1527213142b"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Stablecoin Basics
+                    </a>
                   </h2>
-                  <time>12/01/2022</time>
-                  <a rel="author" href="https://twitter.com/notbunjil">
-                    @kennyatta
+                  <time>Oct 21st, 2022</time>
+                  <a
+                    rel="author"
+                    href="https://twitter.com/notbunjil"
+                    target="_blank"
+                  >
+                    @notbunjil
                   </a>
                 </div>
               </article>
+
               <article>
-                <a href="">
+                <a
+                  href="https://lotusgang.notion.site/Coding-1bf473d70d11482ea182d1cac8b02afd?p=f018090640dd4f009252b986be46177a&pm=c"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src="https://via.placeholder.com/380x135"
                     className="object-cover w-full rounded-t-xl"
@@ -117,11 +148,16 @@ export const Library = () => {
                   style={{ backgroundColor: theme.primaryColor }}
                 >
                   <h2 className="font-bold">
-                    <a href="">Web3 for Content Creators</a>
+                    <a
+                      href="https://lotusgang.notion.site/Coding-1bf473d70d11482ea182d1cac8b02afd?p=f018090640dd4f009252b986be46177a&pm=c"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Programming 101: Chapter 1
+                    </a>
                   </h2>
-                  <time>12/01/2022</time>
-                  <a rel="author" href="https://twitter.com/notbunjil">
-                    @kennyatta
+                  <a rel="author" href="https://twitter.com/DarthDegen">
+                    @darth
                   </a>
                 </div>
               </article>
