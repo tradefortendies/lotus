@@ -103,7 +103,7 @@ function Header({
             gsap.to('#header', {
               y: 0,
               duration: 1,
-              ease: 'power2.out',
+              ease: 'linear',
             })
           })
         }
