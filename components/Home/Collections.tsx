@@ -1,8 +1,18 @@
+import type { Trait, Nft } from '../../types'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Fade } from 'react-awesome-reveal'
+import { sampleSize } from 'lodash'
 import { Panel } from './Panel'
 import { CollectionStatType, CollectionStats } from './CollectionStats'
 import Button from '../Button'
+import LotusGangNftsJson from '../../data/lotus-gang.json'
+import lilyNftsJson from '../../data/lily.json'
+
+const nftsJson = {
+  'lotus-gang': LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] },
+  lily: lilyNftsJson as { traits: Trait[]; nfts: Nft[] },
+}
 
 export const Collections = () => {
   const [collectionData, setCollectionData] = useState<{
@@ -67,18 +77,20 @@ export const Collections = () => {
                 damping={0.35}
                 fraction={0}
               >
-                <img
-                  className="rounded-lg"
-                  src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F126FuD1jgFTb8GCvJgMQsUDn2Uh7Bd7eDtPxsBXLsMeo.webp"
-                />
-                <img
-                  className="rounded-lg"
-                  src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12f3x8N9f7zxnrabfXHUGt4XRYUvhNpRBR5jY9VKQ4NH.webp"
-                />
-                <img
-                  className="rounded-lg"
-                  src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F12UGYyfPcrQPsJPSsfPnGtdkevsBa4NaHh3VPnp86M7h.webp"
-                />
+                {sampleSize(nftsJson.lily.nfts, 3).map((item, index) => (
+                  <Link
+                    key={index}
+                    href={`/collections/lily/${item.address}`}
+                    passHref
+                  >
+                    <a>
+                      <img
+                        className="transition-transform rounded-lg hover:scale-110"
+                        src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F${item.address}.webp`}
+                      />
+                    </a>
+                  </Link>
+                ))}
               </Fade>
             </div>
             <div className="flex justify-center md:justify-start">
@@ -86,7 +98,7 @@ export const Collections = () => {
                 <Button
                   href="/collections/lily"
                   type="pill-outline"
-                  className="!border-black !text-black"
+                  className="!border-black !text-black hover:!bg-lily-black hover:!text-white"
                 >
                   Explore
                 </Button>
@@ -113,18 +125,22 @@ export const Collections = () => {
                 damping={0.35}
                 fraction={0}
               >
-                <img
-                  className="rounded-lg"
-                  src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13EK4usnnHAYzE8SZocvZVjFXTx6g3752RTpL3fegLQa.webp"
-                />
-                <img
-                  className="rounded-lg"
-                  src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13suaa4tdQHNWC4fBPeot1xvZ92ph97WaSSXFDAkv1qf.webp"
-                />
-                <img
-                  className="rounded-lg"
-                  src="https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F13QK2paaxsZJCmWGX7wctZ81dsquywTkD62b3T8FpPtP.webp"
-                />
+                {sampleSize(nftsJson['lotus-gang'].nfts, 3).map(
+                  (item, index) => (
+                    <Link
+                      key={index}
+                      href={`/collections/lotus-gang/${item.address}`}
+                      passHref
+                    >
+                      <a>
+                        <img
+                          className="transition-transform rounded-lg hover:scale-110"
+                          src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F${item.address}.webp`}
+                        />
+                      </a>
+                    </Link>
+                  )
+                )}
               </Fade>
             </div>
             <div className="flex justify-center md:justify-start">
@@ -132,7 +148,7 @@ export const Collections = () => {
                 <Button
                   href="/collections/lotus-gang"
                   type="pill-outline"
-                  className="!border-black !text-black"
+                  className="!border-black !text-black hover:!bg-lily-black hover:!text-white"
                 >
                   Explore
                 </Button>
