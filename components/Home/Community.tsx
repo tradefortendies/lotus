@@ -51,7 +51,6 @@ export const Community = () => {
       Number(a.blockTime) < Number(b.blockTime) ? 1 : -1
     )
 
-    console.log(signatures)
     const sales: Sale[] = []
 
     if (!signatures.length) {
@@ -75,7 +74,6 @@ export const Community = () => {
         index++
         continue
       }
-      console.log(txn)
 
       const dateString = new Date(txn?.blockTime * 1000).toLocaleString()
       const price =
@@ -89,8 +87,6 @@ export const Community = () => {
       const account = accounts[accounts.length - 1]
       const marketplaceAccount = account?.toString() || ''
 
-      console.log(marketplaceAccount)
-
       if (
         marketplaceAccount === '1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix' ||
         marketplaceAccount === 'MEisE1HzehtrDpAAT8PnLHjpSSkRYakotTuJRPjTpo8'
@@ -101,8 +97,6 @@ export const Community = () => {
           index++
           continue
         }
-
-        console.log(metadata)
 
         sales.push({
           date: dateString,
@@ -119,8 +113,6 @@ export const Community = () => {
       index++
     }
 
-    console.log(sales)
-
     setRecentSales(sales)
   }
 
@@ -131,7 +123,7 @@ export const Community = () => {
   return (
     <Panel floating={true}>
       <div className="flex flex-col items-center w-full gap-8 px-8 py-16 mx-auto md:flex-row max-w-screen-lily-container">
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <Fade
             cascade={true}
             duration={500}
@@ -139,8 +131,10 @@ export const Community = () => {
             damping={0.35}
             fraction={0}
           >
-            <h2 className="text-6xl font-bold text-left">Community</h2>
-            <p className="pr-16 mt-12 text-3xl text-center md:text-left">
+            <h2 className="text-5xl font-bold text-left lg:text-6xl">
+              Community
+            </h2>
+            <p className="mt-12 text-2xl text-center lg:pr-16 lg:text-3xl md:text-left">
               We have holders in 65 countries and we are growing every day.
             </p>
           </Fade>
@@ -183,7 +177,7 @@ export const Community = () => {
             </>
           )}
         </div>
-        <div className="w-1/2">
+        <div className="w-full mt-8 lg:mt-0 lg:w-1/2">
           <Fade duration={500} delay={1200} fraction={0}>
             <div
               className="gap-4 px-4 py-8 mx-auto text-center max-w-[512px] rounded-xl"

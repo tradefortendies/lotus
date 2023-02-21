@@ -4,11 +4,11 @@ import { Panel } from './Panel'
 export const LilyPad = () => {
   return (
     <Panel floating={false}>
-      <div className="flex flex-col items-center justify-center w-full gap-24 px-4 pt-16 pb-32 mx-auto md:flex-row max-w-screen-lily-container">
+      <div className="flex flex-col items-center w-full gap-24 px-4 pt-16 mx-auto lg:justify-center lg:pb-32 lg:pt-16 md:flex-row max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
           <img
             src="/img/rubix.svg"
-            className="w-[360px] animate-spin-extra-slow"
+            className="w-1/2 mx-auto lg:mx-0 lg:w-[360px] animate-spin-extra-slow"
           />
         </Fade>
         <div className="space-y-4 text-center md:text-left">

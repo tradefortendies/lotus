@@ -18,13 +18,15 @@ export const Library = () => {
             damping={0.35}
             fraction={0}
           >
-            <h2 className="text-6xl font-bold text-left">Lotus Library</h2>
-            <p className="mt-12 text-3xl text-center md:text-left">
+            <h2 className="text-5xl font-bold text-left lg:text-6xl">
+              Lotus Library
+            </h2>
+            <p className="mt-12 text-2xl text-center lg:text-3xl md:text-left">
               The best crypto information and tools are hard to find. We are
               working with the community to index it in one place.
             </p>
           </Fade>
-          <dl className="flex flex-wrap mt-10 text-3xl md:mt-24">
+          <dl className="flex flex-wrap mt-10 text-3xl gap-y-2 md:mt-24">
             <Fade
               cascade={true}
               duration={500}

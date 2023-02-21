@@ -49,9 +49,9 @@ export const Collections = () => {
 
   return (
     <Panel floating={true}>
-      <div className="flex flex-col justify-center w-full px-8 py-4 mx-auto max-w-screen-lily-container">
+      <div className="flex flex-col justify-center w-full px-8 py-8 mx-auto lg:py-4 max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
-          <h2 className="mb-[10vh] text-4xl text-center">
+          <h2 className="lg:mb-[10vh] text-3xl lg:text-4xl text-center">
             <strong>The Lotus</strong> is made up of 2 collections.
           </h2>
         </Fade>

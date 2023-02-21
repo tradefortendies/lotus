@@ -24,13 +24,13 @@ export const Blueprint = () => {
 
   return (
     <Panel floating={false}>
-      <div className="flex flex-col justify-center w-full p-4 mx-auto max-w-screen-lily-container">
+      <div className="flex flex-col justify-center w-full px-8 py-8 mx-auto lg:py-4 max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
-          <h2 className="mb-12 text-4xl text-center">
+          <h2 className="mb-12 text-3xl text-center lg:text-4xl">
             <strong>The Blueprint</strong> is our version of a road map.
           </h2>
         </Fade>
-        <div className="flex items-center justify-between gap-16">
+        <div className="flex flex-col items-center justify-between gap-16 lg:flex-row">
           <div className="w-full h-full">
             {isLoaded && (
               <Canvas
@@ -38,7 +38,12 @@ export const Blueprint = () => {
                 dpr={[1, 2]}
                 camera={{ fov: 35 }}
                 resize={{ scroll: false }}
-                style={{ height: windowDimensions.height * 0.75 }}
+                style={{
+                  height:
+                    windowDimensions.width > 768
+                      ? windowDimensions.height * 0.75
+                      : windowDimensions.height * 0.45,
+                }}
               >
                 <Suspense fallback={null}>
                   <Stage
@@ -46,7 +51,7 @@ export const Blueprint = () => {
                     preset="rembrandt"
                     intensity={1}
                     environment="city"
-                    adjustCamera={windowDimensions.width > 768 ? 1.36 : 1}
+                    adjustCamera={windowDimensions.width > 768 ? 1.36 : 1.2}
                   >
                     <BlueprintModel />
                   </Stage>
@@ -63,7 +68,7 @@ export const Blueprint = () => {
               </Canvas>
             )}
           </div>
-          <div className="lg:w-[60%]">
+          <div className="w-full lg:w-[60%]">
             <div className="px-4 py-8 text-white bg-lily-black rounded-2xl">
               <h3 className="mx-4 text-4xl font-bold">The Blueprint</h3>
 

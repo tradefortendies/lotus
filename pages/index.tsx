@@ -7,7 +7,6 @@ import { ThemeContext } from '../components/Theme'
 import Meta from '../components/Meta'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { Panel } from '../components/Home/Panel'
 import { Hero } from '../components/Home/Hero'
 import { Collections } from '../components/Home/Collections'
 import { Blueprint } from '../components/Home/Blueprint'
@@ -114,11 +113,11 @@ const Home: NextPage = () => {
             <div className="text-white bg-lily-black">
               <div className="flex flex-col justify-center w-full gap-4 px-4 pb-32 mx-auto pt-36 max-w-screen-lily-container">
                 <Fade duration={500} delay={400} fraction={0}>
-                  <h2 className="text-6xl font-bold text-center">
+                  <h2 className="text-4xl font-bold text-center lg:text-6xl">
                     How can I get involved?
                   </h2>
                 </Fade>
-                <div className="flex items-center justify-center gap-8 mt-8">
+                <div className="flex flex-col items-center justify-center gap-4 mt-8 lg:gap-8 lg:flex-row">
                   <Fade
                     cascade={true}
                     duration={500}
