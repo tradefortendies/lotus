@@ -1,4 +1,4 @@
-import { Suspense, useRef, useContext } from 'react'
+import { Suspense, useRef, useContext, useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
 import { Fade } from 'react-awesome-reveal'
@@ -14,6 +14,13 @@ export const Blueprint = () => {
   const theme = useContext(ThemeContext)
   const orbitControlsRef = useRef(null)
   const windowDimensions = useWindowSize()
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true)
+    }, 1000)
+  }, [])
 
   return (
     <Panel floating={false}>
@@ -25,28 +32,35 @@ export const Blueprint = () => {
         </Fade>
         <div className="flex items-center justify-between gap-16">
           <div className="w-full h-full">
-            <Canvas shadows dpr={[1, 2]} camera={{ fov: 35 }}>
-              <Suspense fallback={null}>
-                <Stage
-                  controls={orbitControlsRef}
-                  preset="rembrandt"
-                  intensity={1}
-                  environment="city"
-                  adjustCamera={windowDimensions.width > 768 ? 1.1 : 1}
-                >
-                  <BlueprintModel />
-                </Stage>
-              </Suspense>
-              <OrbitControls
-                ref={orbitControlsRef}
-                makeDefault
-                autoRotate={true}
-                enableZoom={false}
-                enablePan={false}
-                enableRotate={true}
-                enableDamping={true}
-              />
-            </Canvas>
+            {isLoaded && (
+              <Canvas
+                shadows
+                dpr={[1, 2]}
+                camera={{ fov: 35 }}
+                resize={{ scroll: false }}
+              >
+                <Suspense fallback={null}>
+                  <Stage
+                    controls={orbitControlsRef}
+                    preset="rembrandt"
+                    intensity={1}
+                    environment="city"
+                    adjustCamera={windowDimensions.width > 768 ? 1.1 : 1}
+                  >
+                    <BlueprintModel />
+                  </Stage>
+                </Suspense>
+                <OrbitControls
+                  ref={orbitControlsRef}
+                  makeDefault
+                  autoRotate={true}
+                  enableZoom={false}
+                  enablePan={false}
+                  enableRotate={true}
+                  enableDamping={true}
+                />
+              </Canvas>
+            )}
           </div>
           <div className="lg:w-[60%]">
             <div className="px-4 py-8 text-white bg-lily-black rounded-2xl">
