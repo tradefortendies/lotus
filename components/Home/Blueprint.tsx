@@ -26,7 +26,7 @@ export const Blueprint = () => {
     <Panel floating={false}>
       <div className="flex flex-col justify-center w-full p-4 mx-auto max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
-          <h2 className="mb-24 text-4xl text-center">
+          <h2 className="mb-12 text-4xl text-center">
             <strong>The Blueprint</strong> is our version of a road map.
           </h2>
         </Fade>
@@ -38,6 +38,7 @@ export const Blueprint = () => {
                 dpr={[1, 2]}
                 camera={{ fov: 35 }}
                 resize={{ scroll: false }}
+                style={{ height: windowDimensions.height * 0.75 }}
               >
                 <Suspense fallback={null}>
                   <Stage
@@ -45,7 +46,7 @@ export const Blueprint = () => {
                     preset="rembrandt"
                     intensity={1}
                     environment="city"
-                    adjustCamera={windowDimensions.width > 768 ? 1.1 : 1}
+                    adjustCamera={windowDimensions.width > 768 ? 1.36 : 1}
                   >
                     <BlueprintModel />
                   </Stage>
