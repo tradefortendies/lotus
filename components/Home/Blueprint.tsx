@@ -89,7 +89,7 @@ export const Blueprint = () => {
                   key={index}
                 >
                   <div className="w-8">
-                    {!item.active && index}
+                    {!item.active && index + 1}
                     {item.active && (
                       <Audio
                         height="20"
