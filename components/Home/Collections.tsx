@@ -49,16 +49,16 @@ export const Collections = () => {
 
   return (
     <Panel floating={true}>
-      <div className="flex flex-col justify-center w-full px-8 py-8 mx-auto lg:py-4 max-w-screen-lily-container">
+      <div className="flex flex-col justify-center w-full px-8 py-16 mx-auto lg:py-4 max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
-          <h2 className="lg:mb-[10vh] text-3xl lg:text-4xl text-center">
+          <h2 className="lg:mb-[10vh] text-3xl md:text-4xl text-center">
             <strong>The Lotus</strong> is made up of 2 collections.
           </h2>
         </Fade>
-        <div className="flex flex-col items-center justify-center gap-8 lg:gap-32 md:flex-row">
-          <div className="mt-16 md:mt-0 w-full md:w-[40%] space-y-8">
+        <div className="flex flex-col items-center justify-center gap-8 lg:gap-32 lg:flex-row">
+          <div className="mt-16 lg:mt-0 w-full lg:w-[40%] space-y-8">
             <Fade duration={500} delay={400} fraction={0}>
-              <h3 className="text-5xl font-bold text-center md:text-left">
+              <h3 className="text-5xl font-bold text-center lg:text-left">
                 LILY
               </h3>
             </Fade>
@@ -93,7 +93,7 @@ export const Collections = () => {
                 ))}
               </Fade>
             </div>
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <Fade duration={500} delay={1600} fraction={0}>
                 <Button
                   href="/collections/lily"
@@ -105,9 +105,9 @@ export const Collections = () => {
               </Fade>
             </div>
           </div>
-          <div className="mt-16 md:mt-0 w-full md:w-[40%] space-y-8 pb-16 md:pb-0">
+          <div className="mt-16 lg:mt-0 w-full lg:w-[40%] space-y-8 pb-16 md:pb-0">
             <Fade duration={500} delay={600} fraction={0}>
-              <h3 className="text-5xl font-bold text-center md:text-left">
+              <h3 className="text-5xl font-bold text-center lg:text-left">
                 Lotus Gang
               </h3>
             </Fade>
@@ -143,7 +143,7 @@ export const Collections = () => {
                 )}
               </Fade>
             </div>
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <Fade duration={500} delay={1800} fraction={0}>
                 <Button
                   href="/collections/lotus-gang"

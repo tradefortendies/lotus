@@ -122,7 +122,7 @@ export const Community = () => {
 
   return (
     <Panel floating={true}>
-      <div className="flex flex-col items-center w-full gap-8 px-8 py-16 mx-auto md:flex-row max-w-screen-lily-container">
+      <div className="flex flex-col items-center w-full gap-8 px-8 py-16 mx-auto lg:flex-row max-w-screen-lily-container">
         <div className="lg:w-1/2">
           <Fade
             cascade={true}
@@ -131,10 +131,10 @@ export const Community = () => {
             damping={0.35}
             fraction={0}
           >
-            <h2 className="text-5xl font-bold text-left lg:text-6xl">
+            <h2 className="text-5xl font-bold text-center lg:text-left lg:text-6xl">
               Community
             </h2>
-            <p className="mt-12 text-2xl text-center lg:pr-16 lg:text-3xl md:text-left">
+            <p className="mt-12 text-2xl text-center lg:pr-16 lg:text-3xl lg:text-left">
               We have holders in 65 countries and we are growing every day.
             </p>
           </Fade>
@@ -142,20 +142,23 @@ export const Community = () => {
           {recentSales.length > 0 && (
             <>
               <Fade cascade={true} duration={500} delay={400} fraction={0}>
-                <h3 className="mt-16 mb-4 text-3xl font-bold">Recent Sales</h3>
+                <h3 className="mt-16 mb-4 text-3xl font-bold text-center lg:text-left">
+                  Recent Sales
+                </h3>
               </Fade>
-              <section className="flex flex-col gap-2">
+              <section className="flex flex-col items-center gap-2">
                 <Fade
                   cascade={true}
                   duration={500}
                   delay={600}
                   damping={0.35}
                   fraction={0}
+                  className="w-full"
                 >
                   {recentSales.slice(0, 3).map((item, index) => (
                     <article key={index}>
                       <a
-                        className="max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                        className="w-full mx-auto lg:mx-0 max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
                         href={`https://solscan.io/tx/${item.signature}`}
                         target="_blank"
                         rel="noreferrer"

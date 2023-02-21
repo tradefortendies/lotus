@@ -24,7 +24,7 @@ export const Blueprint = () => {
 
   return (
     <Panel floating={false}>
-      <div className="flex flex-col justify-center w-full px-8 py-8 mx-auto lg:py-4 max-w-screen-lily-container">
+      <div className="flex flex-col justify-center w-full px-8 py-16 mx-auto xl:py-4 max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
           <h2 className="mb-12 text-3xl text-center lg:text-4xl">
             <strong>The Blueprint</strong> is our version of a road map.

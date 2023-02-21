@@ -4,13 +4,13 @@ import { Panel } from './Panel'
 export const Hero = () => {
   return (
     <Panel floating={false} first={true}>
-      <div className="px-8 md:px-0 md:w-[80vw] h-[98vh] flex lg:items-center mx-auto relative z-20 pt-32 lg:pt-0">
-        <div className="space-y-4 md:w-1/2">
+      <div className="px-8 h-[98vh] flex lg:items-center mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-0">
+        <div className="space-y-4 lg:w-1/2">
           <Fade duration={500} delay={200} fraction={0}>
-            <h2 className="text-[26px] lg:text-3xl">
+            <h2 className="text-[26px] md:text-3xl">
               To become the best bunch in the open web:
             </h2>
-            <h3 className="text-[26px] lg:text-3xl">
+            <h3 className="text-[26px] md:text-3xl">
               We are working on the <strong>LILY Pad</strong>, the{' '}
               <strong>Lotus Library</strong> and <strong>The Blueprint</strong>.
             </h3>
@@ -18,7 +18,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="w-screen h-[98vh] absolute top-0 left-0 bg-gradient-to-b to-transparent from-white z-10"></div>
+      <div className="lg:hidden w-screen h-[98vh] absolute top-0 left-0 bg-gradient-to-b to-transparent from-white z-10"></div>
 
       <video
         autoPlay

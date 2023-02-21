@@ -9,8 +9,8 @@ export const Library = () => {
 
   return (
     <Panel floating={false} mode={'dark'}>
-      <div className="flex flex-col w-full gap-4 px-8 pt-16 pb-32 mx-auto md:flex-row max-w-screen-lily-container">
-        <div className="flex flex-col items-center justify-center w-full h-full md:items-start">
+      <div className="flex flex-col w-full gap-4 px-8 pt-16 pb-32 mx-auto lg:flex-row max-w-screen-lily-container">
+        <div className="flex flex-col items-center justify-center w-full h-full lg:items-start">
           <Fade
             cascade={true}
             duration={500}
@@ -21,12 +21,12 @@ export const Library = () => {
             <h2 className="text-5xl font-bold text-left lg:text-6xl">
               Lotus Library
             </h2>
-            <p className="mt-12 text-2xl text-center lg:text-3xl md:text-left">
+            <p className="mt-12 text-2xl text-center lg:text-3xl lg:text-left">
               The best crypto information and tools are hard to find. We are
               working with the community to index it in one place.
             </p>
           </Fade>
-          <dl className="flex flex-wrap mt-10 text-3xl gap-y-2 md:mt-24">
+          <dl className="flex flex-wrap mt-10 text-3xl gap-y-2 lg:mt-24">
             <Fade
               cascade={true}
               duration={500}
@@ -54,14 +54,14 @@ export const Library = () => {
               target="_blank"
               rel="noreferrer"
               type="pill-outline"
-              className="mx-auto my-10 md:mb-0 md:mt-8 md:ml-0"
+              className="mx-auto my-10 lg:mb-0 lg:mt-8 lg:ml-0"
             >
               Explore
             </Button>
           </Fade>
         </div>
         <div className="flex items-center w-full">
-          <section className="flex flex-col gap-8 max-w-[380px] mx-auto md:mr-0 md:ml-auto">
+          <section className="flex flex-col gap-8 max-w-[380px] mx-auto lg:mr-0 lg:ml-auto">
             <Fade
               cascade={true}
               duration={500}
