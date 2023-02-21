@@ -143,7 +143,7 @@ export const Library = () => {
                   rel="noreferrer"
                 >
                   <img
-                    src="https://via.placeholder.com/380x135"
+                    src="/img/library/programming-101.png"
                     className="object-cover w-full rounded-t-xl"
                   />
                 </a>
