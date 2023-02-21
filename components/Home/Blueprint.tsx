@@ -65,9 +65,9 @@ export const Blueprint = () => {
           </div>
           <div className="lg:w-[60%]">
             <div className="px-4 py-8 text-white bg-lily-black rounded-2xl">
-              <h3 className="text-4xl font-bold">The Blueprint</h3>
+              <h3 className="mx-4 text-4xl font-bold">The Blueprint</h3>
 
-              <div className="flex flex-row gap-4 px-4 mt-8 mb-2 text-sm font-semibold border-b text-zinc-500 border-zinc-500">
+              <div className="flex flex-row gap-4 px-1 mx-3 mt-8 text-sm font-semibold border-b text-zinc-500 border-zinc-500">
                 <div className="w-8">#</div>
                 <div className="w-full uppercase">Title</div>
               </div>
@@ -96,7 +96,6 @@ export const Blueprint = () => {
                   </div>
                   <div className="w-full">
                     <h4
-                      className="font-semibold"
                       style={{
                         color: item.active ? theme.primaryColor : '#fff',
                       }}
@@ -105,7 +104,7 @@ export const Blueprint = () => {
                     </h4>
                     <p
                       className={clsx(
-                        !item.active && 'text-slate-500',
+                        !item.active && 'text-zinc-500',
                         item.active && 'text-white'
                       )}
                     >
