@@ -22,6 +22,7 @@ export const Hero = () => {
 
       <video
         autoPlay
+        playsInline
         loop
         muted
         className="absolute bottom-[20px] right-0 object-cover w-auto h-[80vh] z-0"
