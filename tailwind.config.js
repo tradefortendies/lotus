@@ -28,6 +28,9 @@ module.exports = {
         smPhone: { raw: '(max-height: 720px)' },
         'lily-container': '1340px',
       },
+      transitionProperty: {
+        widthHeight: 'width, height',
+      },
     },
   },
   plugins: [],
