@@ -71,12 +71,12 @@ export const Library = () => {
             >
               <article>
                 <a
-                  href="https://lotusgang.notion.site/Privacy-Security-6500cf1614f449b9ac0690b2f06c36c4?p=e867989afbd94208b8f2890d9f57bda5&pm=c"
+                  href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2?p=9df2799859764c238b4ebac97dae76ac&pm=c"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img
-                    src="https://via.placeholder.com/380x135"
+                    src="/img/library/defi-protocols.webp"
                     className="object-cover w-full rounded-t-xl"
                   />
                 </a>
@@ -86,31 +86,31 @@ export const Library = () => {
                 >
                   <h2 className="font-bold">
                     <a
-                      href="https://lotusgang.notion.site/Privacy-Security-6500cf1614f449b9ac0690b2f06c36c4?p=e867989afbd94208b8f2890d9f57bda5&pm=c"
+                      href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2?p=9df2799859764c238b4ebac97dae76ac&pm=c"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Discord User Security Tips
+                      The Evolution of DeFi Protocols
                     </a>
                   </h2>
-                  <time>Oct 22nd, 2022</time>
+                  <time>Feb, 17th, 2023</time>
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://twitter.com/rykz_jpeg"
+                    href="https://solanafm.substack.com/"
                   >
-                    @rykz
+                    SolanaFM
                   </a>
                 </div>
               </article>
               <article>
                 <a
-                  href="https://lotusgang.notion.site/Stablecoin-Basics-d16f609a7d6d4020bb22e1527213142b"
+                  href="https://lotusgang.notion.site/4a64361702ba4d2f961248fc3bd93bde?v=2de427c220cf453bb4b9fa1c038fdd8b&p=55343ec2ad284bea94f393b204c4a3aa&pm=c"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img
-                    src="https://via.placeholder.com/380x135"
+                    src="/img/library/order-blocks.webp"
                     className="object-cover w-full rounded-t-xl"
                   />
                 </a>
@@ -120,32 +120,24 @@ export const Library = () => {
                 >
                   <h2 className="font-bold">
                     <a
-                      href="https://lotusgang.notion.site/Stablecoin-Basics-d16f609a7d6d4020bb22e1527213142b"
+                      href="https://lotusgang.notion.site/4a64361702ba4d2f961248fc3bd93bde?v=2de427c220cf453bb4b9fa1c038fdd8b&p=55343ec2ad284bea94f393b204c4a3aa&pm=c"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Stablecoin Basics
+                      Trading Using Order Blocks
                     </a>
                   </h2>
-                  <time>Oct 21st, 2022</time>
-                  <a
-                    rel="noreferrer"
-                    href="https://twitter.com/notbunjil"
-                    target="_blank"
-                  >
-                    @notbunjil
+                  <time>Feb 16th, 2023</time>
+                  <a target="_blank" rel="noreferrer" href="#">
+                    Meep
                   </a>
                 </div>
               </article>
 
               <article>
-                <a
-                  href="https://lotusgang.notion.site/Coding-1bf473d70d11482ea182d1cac8b02afd?p=f018090640dd4f009252b986be46177a&pm=c"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="#" target="_blank" rel="noreferrer">
                   <img
-                    src="/img/library/programming-101.png"
+                    src="/img/library/web2-brands.webp"
                     className="object-cover w-full rounded-t-xl"
                   />
                 </a>
@@ -154,20 +146,12 @@ export const Library = () => {
                   style={{ backgroundColor: theme.primaryColor }}
                 >
                   <h2 className="font-bold">
-                    <a
-                      href="https://lotusgang.notion.site/Coding-1bf473d70d11482ea182d1cac8b02afd?p=f018090640dd4f009252b986be46177a&pm=c"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Programming 101: Chapter 1
+                    <a href="#" target="_blank" rel="noreferrer">
+                      The Value of Onboarding Web2 Brands
                     </a>
                   </h2>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://twitter.com/DarthDegen"
-                  >
-                    @darth
+                  <a target="_blank" rel="noreferrer" href="#">
+                    xxx
                   </a>
                 </div>
               </article>
