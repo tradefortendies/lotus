@@ -34,6 +34,7 @@ function Header({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [reverseColors, setReverseColors] = useState(false)
   const [logoSpinning, setLogoSpinning] = useState(false)
+  const [joinHover, setJoinHover] = useState(false)
   const theme = useContext(ThemeContext)
 
   const spinLogo = () => {
@@ -117,7 +118,7 @@ function Header({
       <header
         id="header"
         className={clsx(
-          `top-0 z-[9999] bg-white flex items-center w-full px-4 lg:px-16 py-4`,
+          `top-0 z-[9999] bg-white flex items-center w-full px-4 xl:px-16 py-4`,
           linkColor === 'black' && 'text-neutral-900',
           linkColor === 'white' && 'text-white',
           fadeInAnimation && 'opacity-0',
@@ -374,37 +375,145 @@ function Header({
             </ul>
           </li>
         </ul>
-        <a
-          className={clsx(
-            'hidden xl:flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] ml-12  transition duration-1000 hover:rotate-[360deg]'
-          )}
-          style={{
-            backgroundColor:
-              button === 'white' ? '#ffffff' : theme.primaryColor,
-          }}
+        <div
+          className="p-2"
+          onMouseOver={() => setJoinHover(true)}
+          onMouseOut={() => setJoinHover(false)}
         >
-          Join
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <a
+            className={clsx(
+              'hidden xl:flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] ml-12  transition duration-1000',
+              joinHover && 'rotate-[360deg]'
+            )}
+            style={{
+              backgroundColor:
+                button === 'white' ? '#ffffff' : theme.primaryColor,
+            }}
           >
-            <path
-              d="M5.46702 14.583L14.3059 5.74412"
-              stroke="#222222"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M14.3059 14.0762V5.74284H5.97257"
-              stroke="#222222"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
+            Join
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.46702 14.583L14.3059 5.74412"
+                stroke="#222222"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14.3059 14.0762V5.74284H5.97257"
+                stroke="#222222"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+          <div className="fixed flex flex-col gap-3 right-4 top-44">
+            <a
+              href="https://magiceden.io/marketplace/lotus_gang_nft"
+              target="_blank"
+              rel="noreferrer"
+              className={clsx(
+                'flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-300',
+                !joinHover && 'translate-x-80',
+                joinHover && 'translate-x-0'
+              )}
+              style={{ backgroundColor: theme.primaryColor }}
+            >
+              Buy Lotus Gang{' '}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.46702 14.583L14.3059 5.74412"
+                  stroke="#222222"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M14.3059 14.0762V5.74284H5.97257"
+                  stroke="#222222"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://magiceden.io/marketplace/lily"
+              target="_blank"
+              rel="noreferrer"
+              className={clsx(
+                'flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-500',
+                !joinHover && 'translate-x-80',
+                joinHover && 'translate-x-0'
+              )}
+              style={{ backgroundColor: theme.primaryColor }}
+            >
+              Buy LILY{' '}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.46702 14.583L14.3059 5.74412"
+                  stroke="#222222"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M14.3059 14.0762V5.74284H5.97257"
+                  stroke="#222222"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+              target="_blank"
+              rel="noreferrer"
+              className={clsx(
+                'flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-700',
+                !joinHover && 'translate-x-80',
+                joinHover && 'translate-x-0'
+              )}
+              style={{ backgroundColor: theme.primaryColor }}
+            >
+              Learn Something{' '}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.46702 14.583L14.3059 5.74412"
+                  stroke="#222222"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M14.3059 14.0762V5.74284H5.97257"
+                  stroke="#222222"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
         <HiMenuAlt1
           onClick={() => setMobileMenuOpen(true)}
           className={clsx(
@@ -412,86 +521,6 @@ function Header({
             mobileMenuOpen && 'hidden'
           )}
         />
-        <div className="fixed flex flex-col gap-3 right-4 top-44">
-          <button
-            className="flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg"
-            style={{ backgroundColor: theme.primaryColor }}
-          >
-            Buy Lotus Gang{' '}
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.46702 14.583L14.3059 5.74412"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14.3059 14.0762V5.74284H5.97257"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            className="flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg"
-            style={{ backgroundColor: theme.primaryColor }}
-          >
-            Buy LILY{' '}
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.46702 14.583L14.3059 5.74412"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14.3059 14.0762V5.74284H5.97257"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            className="flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg"
-            style={{ backgroundColor: theme.primaryColor }}
-          >
-            Learn Something{' '}
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.46702 14.583L14.3059 5.74412"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14.3059 14.0762V5.74284H5.97257"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
       </header>
       <Transition.Root show={mobileMenuOpen} as={Fragment}>
         <Dialog
