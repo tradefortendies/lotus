@@ -117,7 +117,7 @@ function Header({
       <header
         id="header"
         className={clsx(
-          `top-0 z-[9999] bg-white flex items-center w-full px-4 lg:px-8 py-4`,
+          `top-0 z-[9999] bg-white flex items-center w-full px-4 lg:px-16 py-4`,
           linkColor === 'black' && 'text-neutral-900',
           linkColor === 'white' && 'text-white',
           fadeInAnimation && 'opacity-0',
@@ -374,17 +374,50 @@ function Header({
             </ul>
           </li>
         </ul>
-        <Link href="/vision" passHref>
-          <a
-            className={clsx(
-              'hidden xl:flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] ml-12  transition duration-1000 hover:rotate-[360deg]'
-            )}
-            style={{
-              backgroundColor:
-                button === 'white' ? '#ffffff' : theme.primaryColor,
-            }}
+        <a
+          className={clsx(
+            'hidden xl:flex items-center justify-center gap-1 rounded-full uppercase text-neutral-900 w-[130px] h-[130px] ml-12  transition duration-1000 hover:rotate-[360deg]'
+          )}
+          style={{
+            backgroundColor:
+              button === 'white' ? '#ffffff' : theme.primaryColor,
+          }}
+        >
+          Join
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Vision
+            <path
+              d="M5.46702 14.583L14.3059 5.74412"
+              stroke="#222222"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M14.3059 14.0762V5.74284H5.97257"
+              stroke="#222222"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
+        <HiMenuAlt1
+          onClick={() => setMobileMenuOpen(true)}
+          className={clsx(
+            'ml-auto text-4xl cursor-pointer xl:hidden',
+            mobileMenuOpen && 'hidden'
+          )}
+        />
+        <div className="fixed flex flex-col gap-3 right-4 top-44">
+          <button
+            className="flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg"
+            style={{ backgroundColor: theme.primaryColor }}
+          >
+            Buy Lotus Gang{' '}
             <svg
               width="20"
               height="20"
@@ -405,15 +438,60 @@ function Header({
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
-        </Link>
-        <HiMenuAlt1
-          onClick={() => setMobileMenuOpen(true)}
-          className={clsx(
-            'ml-auto text-4xl cursor-pointer xl:hidden',
-            mobileMenuOpen && 'hidden'
-          )}
-        />
+          </button>
+          <button
+            className="flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg"
+            style={{ backgroundColor: theme.primaryColor }}
+          >
+            Buy LILY{' '}
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.46702 14.583L14.3059 5.74412"
+                stroke="#222222"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14.3059 14.0762V5.74284H5.97257"
+                stroke="#222222"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            className="flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg"
+            style={{ backgroundColor: theme.primaryColor }}
+          >
+            Learn Something{' '}
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.46702 14.583L14.3059 5.74412"
+                stroke="#222222"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14.3059 14.0762V5.74284H5.97257"
+                stroke="#222222"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
       </header>
       <Transition.Root show={mobileMenuOpen} as={Fragment}>
         <Dialog
