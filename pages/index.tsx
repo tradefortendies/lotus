@@ -93,7 +93,7 @@ const Home: NextPage = () => {
         </div>
         <Header
           position="slide"
-          slideDownAnimation={true}
+          fadeInAnimation={true}
           colorChangeAnimation={true}
         />
         <div
