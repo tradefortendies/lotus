@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         return
       }
 
-      document.documentElement.scrollTo(0, 0)
+      // document.documentElement.scrollTo(0, 0)
 
       setTimeout(() => {
         if (!bgRef.current) {
