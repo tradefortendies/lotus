@@ -38,6 +38,7 @@
     "react-loader-spinner": "^5.3.4",
     "react-spinners": "^0.13.6",
     "react-spring": "^9.5.5",
+    "swiper": "^9.0.5",
     "three": "^0.146.0"
   },
   "devDependencies": {

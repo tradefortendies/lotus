@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Fade } from 'react-awesome-reveal'
 import { sampleSize } from 'lodash'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Panel } from './Panel'
 import { CollectionStatType, CollectionStats } from './CollectionStats'
 import Button from '../Button'
 import LotusGangNftsJson from '../../data/lotus-gang.json'
 import lilyNftsJson from '../../data/lily.json'
+
+import 'swiper/css'
 
 const nftsJson = {
   'lotus-gang': LotusGangNftsJson as { traits: Trait[]; nfts: Nft[] },
@@ -69,28 +72,26 @@ export const Collections = () => {
               />
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
-              <Fade
-                cascade={true}
-                duration={500}
-                delay={1200}
-                damping={0.35}
-                fraction={0}
-              >
-                {sampleSize(nftsJson.lily.nfts, 3).map((item, index) => (
-                  <Link
-                    key={index}
-                    href={`/collections/lily/${item.address}`}
-                    passHref
-                  >
-                    <a>
-                      <img
-                        className="transition-transform rounded-lg hover:scale-110"
-                        src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F${item.address}.webp`}
-                      />
-                    </a>
-                  </Link>
-                ))}
+            <div>
+              <Fade duration={800} delay={1400} fraction={0}>
+                <Swiper spaceBetween={20} slidesPerView={3} loop={true}>
+                  {sampleSize(nftsJson.lily.nfts, 20).map((item, index) => (
+                    <SwiperSlide>
+                      <Link
+                        key={index}
+                        href={`/collections/lily/${item.address}`}
+                        passHref
+                      >
+                        <a>
+                          <img
+                            className="rounded-lg"
+                            src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F${item.address}.webp`}
+                          />
+                        </a>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </Fade>
             </div>
             <div className="flex justify-center lg:justify-start">
@@ -117,30 +118,28 @@ export const Collections = () => {
                 delay={1000}
               />
             </div>
-            <div className="grid grid-cols-3 gap-6">
-              <Fade
-                cascade={true}
-                duration={500}
-                delay={1400}
-                damping={0.35}
-                fraction={0}
-              >
-                {sampleSize(nftsJson['lotus-gang'].nfts, 3).map(
-                  (item, index) => (
-                    <Link
-                      key={index}
-                      href={`/collections/lotus-gang/${item.address}`}
-                      passHref
-                    >
-                      <a>
-                        <img
-                          className="transition-transform rounded-lg hover:scale-110"
-                          src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F${item.address}.webp`}
-                        />
-                      </a>
-                    </Link>
-                  )
-                )}
+            <div>
+              <Fade duration={800} delay={1600} fraction={0}>
+                <Swiper spaceBetween={20} slidesPerView={3} loop={true}>
+                  {sampleSize(nftsJson['lotus-gang'].nfts, 20).map(
+                    (item, index) => (
+                      <SwiperSlide>
+                        <Link
+                          key={index}
+                          href={`/collections/lily/${item.address}`}
+                          passHref
+                        >
+                          <a>
+                            <img
+                              className="rounded-lg"
+                              src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F${item.address}.webp`}
+                            />
+                          </a>
+                        </Link>
+                      </SwiperSlide>
+                    )
+                  )}
+                </Swiper>
               </Fade>
             </div>
             <div className="flex justify-center lg:justify-start">
