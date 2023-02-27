@@ -133,20 +133,27 @@ export const Community = () => {
 
     const timerIteration = () => {
       const sale = salesList[counter] as HTMLDivElement
+      const inner = sale.querySelector('a')
 
-      if (!sale) {
+      if (!sale || !inner) {
         return
       }
 
       salesList.forEach((sale) => {
         const sl = sale as HTMLDivElement
-        if (sl.style.opacity === '1') {
-          sl.style.opacity = '0.25'
+        const inner = sale.querySelector('a')
+
+        if (!inner) {
+          return
+        }
+
+        if (inner.style.opacity === '1') {
+          inner.style.opacity = '0.25'
         }
       })
 
       sale.style.display = 'block'
-      setTimeout(() => (sale.style.opacity = '1'), 200)
+      setTimeout(() => (inner.style.opacity = '1'), 200)
 
       if (counter === 0) {
         clearInterval(salesInterval)
@@ -200,12 +207,9 @@ export const Community = () => {
               </Fade>
               <section className="flex flex-col items-center gap-2" id="sales">
                 {recentSales.map((item, index) => (
-                  <article
-                    key={index}
-                    className="hidden w-full transition-opacity duration-500 opacity-0 hover:!opacity-100"
-                  >
+                  <article key={index} className="hidden w-full">
                     <a
-                      className="w-full mx-auto lg:mx-0 max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                      className="w-full mx-auto lg:mx-0 max-w-[450px] transition-opacity duration-500 flex items-center opacity-0 hover:!opacity-100 justify-start p-4 text-white rounded-xl bg-lily-black"
                       href={`https://solscan.io/tx/${item.signature}`}
                       target="_blank"
                       rel="noreferrer"
