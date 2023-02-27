@@ -17,9 +17,11 @@ const {
 
 export const Community = () => {
   const theme = useContext(ThemeContext)
+  const [recentSalesAnimating, setRecentSalesAnimating] = useState(false)
   const [recentSales, setRecentSales] = useState<Sale[]>([])
 
   const timer = (ms: number) => new Promise((res) => setTimeout(res, ms))
+  let salesInterval = setInterval(() => {}, 0)
 
   const getMetadata = async (tokenPubKey: string) => {
     try {
@@ -116,6 +118,50 @@ export const Community = () => {
     setRecentSales(sales)
   }
 
+  const animateSales = (inView: boolean) => {
+    if (recentSalesAnimating) {
+      return
+    }
+
+    setRecentSalesAnimating(true)
+
+    const salesList = document.querySelectorAll('#sales > article')
+
+    if (!salesList.length) {
+      return
+    }
+
+    const timerIteration = () => {
+      const sale = salesList[counter] as HTMLDivElement
+
+      if (!sale) {
+        return
+      }
+
+      salesList.forEach((sale) => {
+        const sl = sale as HTMLDivElement
+        if (sl.style.opacity === '1') {
+          sl.style.opacity = '0.25'
+        }
+      })
+
+      sale.style.display = 'block'
+      setTimeout(() => (sale.style.opacity = '1'), 200)
+
+      if (counter === 0) {
+        clearInterval(salesInterval)
+        return
+      }
+
+      counter--
+    }
+
+    let counter = salesList.length - 1
+
+    salesInterval = setInterval(timerIteration, 5000)
+    timerIteration()
+  }
+
   useEffect(() => {
     fetchRecentSales()
   }, [])
@@ -141,41 +187,41 @@ export const Community = () => {
 
           {recentSales.length > 0 && (
             <>
-              <Fade cascade={true} duration={500} delay={400} fraction={0}>
+              <Fade
+                cascade={true}
+                duration={500}
+                delay={400}
+                fraction={0}
+                onVisibilityChange={(inView) => animateSales(inView)}
+              >
                 <h3 className="mt-16 mb-4 text-3xl font-bold text-center lg:text-left">
                   Recent Sales
                 </h3>
               </Fade>
-              <section className="flex flex-col items-center gap-2">
-                <Fade
-                  cascade={true}
-                  duration={500}
-                  delay={600}
-                  damping={0.35}
-                  fraction={0}
-                  className="w-full"
-                >
-                  {recentSales.slice(0, 3).map((item, index) => (
-                    <article key={index}>
-                      <a
-                        className="w-full mx-auto lg:mx-0 max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
-                        href={`https://solscan.io/tx/${item.signature}`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          className="w-20 rounded-xl"
-                          src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2F${item.collection}%2Fwebp%2F${item.address}.webp`}
-                        />
-                        <div className="ml-4">
-                          <h3 className="text-xl font-bold">{item.name}</h3>
-                          <p>{item.price.toFixed(2)} SOL</p>
-                        </div>
-                        <img className="ml-auto" src="/img/arrow-icon.svg" />
-                      </a>
-                    </article>
-                  ))}
-                </Fade>
+              <section className="flex flex-col items-center gap-2" id="sales">
+                {recentSales.map((item, index) => (
+                  <article
+                    key={index}
+                    className="hidden w-full transition-opacity duration-500 opacity-0 hover:!opacity-100"
+                  >
+                    <a
+                      className="w-full mx-auto lg:mx-0 max-w-[450px] flex items-center justify-start p-4 text-white rounded-xl bg-lily-black"
+                      href={`https://solscan.io/tx/${item.signature}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        className="w-20 rounded-xl"
+                        src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2F${item.collection}%2Fwebp%2F${item.address}.webp`}
+                      />
+                      <div className="ml-4">
+                        <h3 className="text-xl font-bold">{item.name}</h3>
+                        <p>{item.price.toFixed(2)} SOL</p>
+                      </div>
+                      <img className="ml-auto" src="/img/arrow-icon.svg" />
+                    </a>
+                  </article>
+                ))}
               </section>
             </>
           )}
