@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { Fade } from 'react-awesome-reveal'
 import { sampleSize } from 'lodash'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper'
 import CollectionDetail from '../CollectionDetail'
 import { Panel } from './Panel'
 import { CollectionStatType, CollectionStats } from './CollectionStats'
@@ -81,7 +82,10 @@ export const Collections = () => {
   return (
     <>
       <Panel floating={true}>
-        <div className="flex flex-col justify-center w-full px-8 py-16 mx-auto lg:py-4 max-w-screen-lily-container">
+        <div
+          id="collections"
+          className="flex flex-col justify-center w-full px-8 py-16 mx-auto lg:py-4 max-w-screen-lily-container"
+        >
           <Fade duration={500} delay={200} fraction={0}>
             <h2 className="lg:mb-[10vh] text-3xl md:text-4xl text-center">
               <strong>The Lotus</strong> is made up of 2 collections.
@@ -103,7 +107,16 @@ export const Collections = () => {
 
               <div>
                 <Fade duration={800} delay={1400} fraction={0}>
-                  <Swiper spaceBetween={20} slidesPerView={3} loop={true}>
+                  <Swiper
+                    spaceBetween={20}
+                    slidesPerView={3}
+                    loop={true}
+                    modules={[Autoplay]}
+                    autoplay={{
+                      delay: 2000,
+                      disableOnInteraction: true,
+                    }}
+                  >
                     {samplesNfts.lily.map((item, index) => (
                       <SwiperSlide key={index}>
                         <img
@@ -148,7 +161,16 @@ export const Collections = () => {
               </div>
               <div>
                 <Fade duration={800} delay={1600} fraction={0}>
-                  <Swiper spaceBetween={20} slidesPerView={3} loop={true}>
+                  <Swiper
+                    spaceBetween={20}
+                    slidesPerView={3}
+                    loop={true}
+                    modules={[Autoplay]}
+                    autoplay={{
+                      delay: 2000,
+                      disableOnInteraction: true,
+                    }}
+                  >
                     {samplesNfts.lotus.map((item, index) => (
                       <SwiperSlide key={index}>
                         <img
@@ -188,6 +210,14 @@ export const Collections = () => {
           onClose={() => {
             router.push(`/`, undefined, { scroll: false })
             setNft(null)
+            setTimeout(() => {
+              window.scrollTo({
+                top: document
+                  .querySelector('#collections')
+                  ?.getBoundingClientRect().top,
+                left: 0,
+              })
+            }, 0)
           }}
           nft={nft}
           collection={String(router.query.collection) || ''}
