@@ -114,7 +114,7 @@ export const Collections = () => {
                     modules={[Autoplay]}
                     autoplay={{
                       delay: 2000,
-                      disableOnInteraction: true,
+                      disableOnInteraction: false,
                     }}
                   >
                     {samplesNfts.lily.map((item, index) => (
@@ -168,7 +168,7 @@ export const Collections = () => {
                     modules={[Autoplay]}
                     autoplay={{
                       delay: 2000,
-                      disableOnInteraction: true,
+                      disableOnInteraction: false,
                     }}
                   >
                     {samplesNfts.lotus.map((item, index) => (
@@ -217,7 +217,7 @@ export const Collections = () => {
                   ?.getBoundingClientRect().top,
                 left: 0,
               })
-            }, 0)
+            }, 100)
           }}
           nft={nft}
           collection={String(router.query.collection) || ''}
