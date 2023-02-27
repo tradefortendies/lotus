@@ -36,14 +36,14 @@ export const Experiments = () => {
               <button
                 key={item.id}
                 className={clsx(
-                  'px-4 lg:px-16 py-2 text-2xl font-semibold flex flex-col justify-start text-left rounded-r-xl transition-widthHeight',
+                  'px-4 lg:px-16 py-3 text-2xl font-semibold flex flex-col justify-start text-left rounded-r-xl transition-widthHeight',
                   item.color === 'blue' && 'bg-lily-blue',
                   item.color === 'yellow' && 'bg-lily-yellow',
                   item.color === 'blue-dark' && 'bg-lily-blue-dark',
                   item.color === 'red' && 'bg-lily-red',
                   item.id !== activeExperiment &&
-                    'w-[90%] lg:w-1/2 h-12 duration-100',
-                  item.id === activeExperiment && 'w-[90%] h-full duration-500'
+                    'w-[90%] lg:w-1/2 h-14 duration-0',
+                  item.id === activeExperiment && 'w-[90%] h-full duration-1000'
                 )}
                 onClick={() => setActiveExperiment(item.id)}
               >
