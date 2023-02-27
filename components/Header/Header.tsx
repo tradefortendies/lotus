@@ -35,6 +35,7 @@ function Header({
   const [reverseColors, setReverseColors] = useState(false)
   const [logoSpinning, setLogoSpinning] = useState(false)
   const [joinHover, setJoinHover] = useState(false)
+  const [joinHoverBtn, setJoinHoverBtn] = useState(false)
   const theme = useContext(ThemeContext)
 
   const spinLogo = () => {
@@ -377,8 +378,15 @@ function Header({
         </ul>
         <div
           className="p-2"
-          onMouseOver={() => setJoinHover(true)}
-          onMouseOut={() => setJoinHover(false)}
+          onMouseOver={() => {
+            if (joinHoverBtn) {
+              setJoinHover(true)
+            }
+          }}
+          onMouseOut={() => {
+            setJoinHover(false)
+            setJoinHoverBtn(false)
+          }}
         >
           <a
             className={clsx(
@@ -388,6 +396,10 @@ function Header({
             style={{
               backgroundColor:
                 button === 'white' ? '#ffffff' : theme.primaryColor,
+            }}
+            onMouseOver={() => {
+              setJoinHover(true)
+              setJoinHoverBtn(true)
             }}
           >
             Join
