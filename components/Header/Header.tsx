@@ -8,7 +8,6 @@ import { HiMenuAlt1 } from 'react-icons/hi'
 import { MdClose } from 'react-icons/md'
 import { FaTwitter, FaDiscord } from 'react-icons/fa'
 import { ThemeContext } from '../Theme'
-import Button from '../Button'
 
 type Props = {
   active?: string
@@ -37,6 +36,8 @@ function Header({
   const [joinHover, setJoinHover] = useState(false)
   const [joinHoverBtn, setJoinHoverBtn] = useState(false)
   const theme = useContext(ThemeContext)
+
+  let timerDelay = setTimeout(() => {}, 0)
 
   const spinLogo = () => {
     if (logoSpinning) {
@@ -383,9 +384,15 @@ function Header({
               setJoinHover(true)
             }
           }}
+          onMouseMove={() => {
+            clearTimeout(timerDelay)
+          }}
           onMouseOut={() => {
-            setJoinHover(false)
-            setJoinHoverBtn(false)
+            clearTimeout(timerDelay)
+            timerDelay = setTimeout(() => {
+              setJoinHover(false)
+              setJoinHoverBtn(false)
+            }, 500)
           }}
         >
           <a
