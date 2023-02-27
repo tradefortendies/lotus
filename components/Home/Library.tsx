@@ -1,11 +1,13 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Fade } from 'react-awesome-reveal'
+import CountUp from 'react-countup'
 import { ThemeContext } from '../Theme'
 import { Panel } from './Panel'
 import Button from '../Button'
 
 export const Library = () => {
   const theme = useContext(ThemeContext)
+  const [animateNumbers, setAnimateNumbers] = useState(false)
 
   return (
     <Panel floating={false} mode={'dark'}>
@@ -33,17 +35,24 @@ export const Library = () => {
               delay={400}
               damping={0.35}
               fraction={0}
+              onVisibilityChange={(inView) => setAnimateNumbers(inView)}
             >
-              <dd className="mr-1" style={{ color: theme.primaryColor }}>
-                56
+              <dd className="w-10 mr-1" style={{ color: theme.primaryColor }}>
+                <CountUp end={animateNumbers ? 56 : 0} />
               </dd>
               <dt>Articles</dt>
-              <dd className="ml-8 mr-1" style={{ color: theme.primaryColor }}>
-                14
+              <dd
+                className="w-8 ml-8 mr-1"
+                style={{ color: theme.primaryColor }}
+              >
+                <CountUp end={animateNumbers ? 14 : 0} />
               </dd>
               <dt>Writers</dt>
-              <dd className="ml-8 mr-1" style={{ color: theme.primaryColor }}>
-                8
+              <dd
+                className="w-5 ml-8 mr-1"
+                style={{ color: theme.primaryColor }}
+              >
+                <CountUp end={animateNumbers ? 8 : 0} />
               </dd>
               <dt>Partnerships</dt>
             </Fade>
