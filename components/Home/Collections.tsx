@@ -184,15 +184,17 @@ export const Collections = () => {
           </div>
         </div>
       </Panel>
-      <CollectionDetail
-        isOpen={Boolean(nft)}
-        onClose={() => {
-          router.push(`/`, undefined, { scroll: false })
-          setNft(null)
-        }}
-        nft={nft}
-        collection={String(router.query.collection) || ''}
-      />
+      {nft && (
+        <CollectionDetail
+          isOpen={true}
+          onClose={() => {
+            router.push(`/`, undefined, { scroll: false })
+            setNft(null)
+          }}
+          nft={nft}
+          collection={String(router.query.collection) || ''}
+        />
+      )}
     </>
   )
 }
