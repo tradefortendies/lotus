@@ -229,7 +229,7 @@ export const Community = () => {
         <div className="w-full mt-8 lg:mt-0 lg:w-1/2">
           <Fade duration={500} delay={1200} fraction={0}>
             <div
-              className="gap-4 px-4 py-8 mx-auto text-center max-w-[512px] rounded-xl"
+              className="gap-4 px-4 py-12 mx-auto text-center max-w-[512px] rounded-xl"
               style={{ background: theme.primaryColor }}
             >
               <h3 className="text-2xl font-bold">Spotlight</h3>
