@@ -1,8 +1,6 @@
-import type { GetServerSideProps } from 'next'
 import type { Trait, Nft, NftApiResponse } from '../../types'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import { Fade } from 'react-awesome-reveal'
 import { sampleSize } from 'lodash'
 import { Swiper, SwiperSlide } from 'swiper/react'
