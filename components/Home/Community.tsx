@@ -61,7 +61,7 @@ export const Community = () => {
 
     while (sales.length < 3) {
       console.log('fetching', index)
-      await timer(50)
+      await timer(100)
       const { signature } = signatures[index]
       const txn = await connection.getTransaction(signature, {
         maxSupportedTransactionVersion: 0,
@@ -139,7 +139,7 @@ export const Community = () => {
         return
       }
 
-      salesList.forEach((sale) => {
+      salesList.forEach((sale, index) => {
         const sl = sale as HTMLDivElement
         const inner = sale.querySelector('a')
 
@@ -148,7 +148,7 @@ export const Community = () => {
         }
 
         if (inner.style.opacity === '1') {
-          inner.style.opacity = '0.25'
+          inner.style.opacity = String(0.25 / index)
         }
       })
 
