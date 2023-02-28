@@ -6,8 +6,9 @@
     },
     {
       "title": "My Way",
-      "artist": "The Lotus, Raindrop Studios",
-      "active": true
+      "artist": "The Lotus, [Redacted]",
+      "active": true,
+      "url": "/myway"
     },
     {
       "title": "Blooming",

@@ -1,4 +1,5 @@
 import { Suspense, useRef, useContext, useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
 import { Fade } from 'react-awesome-reveal'
@@ -78,45 +79,48 @@ export const Blueprint = () => {
               </div>
 
               {blueprintData.tracks.map((item, index) => (
-                <div
-                  className={clsx(
-                    'flex flex-row items-center gap-4 p-2 px-4 text-sm rounded-xl',
-                    item.active && 'bg-zinc-600'
-                  )}
-                  style={{
-                    color: item.active ? theme.primaryColor : '#fff',
-                  }}
-                  key={index}
-                >
-                  <div className="w-8">
-                    {!item.active && index + 1}
-                    {item.active && (
-                      <Audio
-                        height="20"
-                        width="20"
-                        color={theme.primaryColor}
-                        ariaLabel="three-dots-loading"
-                      />
+                <Link href={item.url || ''}>
+                  <div
+                    className={clsx(
+                      'flex flex-row items-center gap-4 p-2 px-4 text-sm rounded-xl',
+                      item.active && 'bg-zinc-600',
+                      item.url && 'cursor-pointer'
                     )}
-                  </div>
-                  <div className="w-full">
-                    <h4
-                      style={{
-                        color: item.active ? theme.primaryColor : '#fff',
-                      }}
-                    >
-                      {item.title}
-                    </h4>
-                    <p
-                      className={clsx(
-                        !item.active && 'text-zinc-500',
-                        item.active && 'text-white'
+                    style={{
+                      color: item.active ? theme.primaryColor : '#fff',
+                    }}
+                    key={index}
+                  >
+                    <div className="w-8">
+                      {!item.active && index + 1}
+                      {item.active && (
+                        <Audio
+                          height="20"
+                          width="20"
+                          color={theme.primaryColor}
+                          ariaLabel="three-dots-loading"
+                        />
                       )}
-                    >
-                      {item.artist}
-                    </p>
+                    </div>
+                    <div className="w-full">
+                      <h4
+                        style={{
+                          color: item.active ? theme.primaryColor : '#fff',
+                        }}
+                      >
+                        {item.title}
+                      </h4>
+                      <p
+                        className={clsx(
+                          !item.active && 'text-zinc-500',
+                          item.active && 'text-white'
+                        )}
+                      >
+                        {item.artist}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
