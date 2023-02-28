@@ -19,7 +19,7 @@ export const LilyPad = () => {
             damping={0.35}
             fraction={0}
           >
-            <h2 className="text-6xl font-bold">The LILYPad</h2>
+            <h2 className="text-6xl font-medium">The LILYPad</h2>
             <p className="text-2xl">A new peer-to-peer onboarding solution.</p>
             <p className="text-lg italic">Now in development.</p>
           </Fade>

@@ -184,7 +184,7 @@ export const Community = () => {
             damping={0.35}
             fraction={0}
           >
-            <h2 className="text-5xl font-bold text-center lg:text-left lg:text-6xl">
+            <h2 className="text-5xl font-medium text-center lg:text-left lg:text-6xl">
               Community
             </h2>
             <p className="mt-12 text-2xl text-center lg:pr-16 lg:text-3xl lg:text-left">
