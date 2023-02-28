@@ -79,7 +79,7 @@ export const Blueprint = () => {
               </div>
 
               {blueprintData.tracks.map((item, index) => (
-                <Link href={item.url || ''}>
+                <Link href={item.url || ''} key={index}>
                   <div
                     className={clsx(
                       'flex flex-row items-center gap-4 p-2 px-4 text-sm rounded-xl',
