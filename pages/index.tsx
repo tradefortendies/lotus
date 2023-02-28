@@ -23,6 +23,7 @@ const legendaries = legendariesData.legendaries
 const Home: NextPage = () => {
   const theme = useContext(ThemeContext)
   const bgRef = useRef<HTMLDivElement>(null)
+  const mainRef = useRef<HTMLDivElement>(null)
   const [isLoading, setIsLoading] = useState(false)
   const windowDimensions = useWindowSize()
 
@@ -51,11 +52,11 @@ const Home: NextPage = () => {
       document.documentElement.scrollTo(0, 0)
 
       setTimeout(() => {
-        if (!bgRef.current) {
+        if (!bgRef.current || !mainRef.current) {
           return
         }
 
-        bgRef.current.classList.add('opacity-0')
+        mainRef.current.classList.remove('translate-y-[100vh]')
         setIsLoading(false)
         enableBodyScroll(bgRef.current)
 
@@ -83,7 +84,7 @@ const Home: NextPage = () => {
       <>
         <div
           ref={bgRef}
-          className="fixed flex flex-col-reverse 0 transition-opacity duration-1000 z-[9999] pointer-events-none w-screen h-screen bg-neutral-800"
+          className="fixed -top-[40px] md:top-0 z-40 w-screen h-screen bg-neutral-800"
         >
           <div className="w-screen h-1/5 bg-lily-green"></div>
           <div className="w-screen h-1/5 bg-lily-yellow"></div>
@@ -98,7 +99,8 @@ const Home: NextPage = () => {
         />
         <div
           id="main"
-          className="relative z-20 w-screen min-h-screen font-sans tracking-tighter transition-opacity duration-500 text-neutral-900"
+          ref={mainRef}
+          className="relative duration-700 transition-transform translate-y-[100vh] z-50 w-screen min-h-screen font-sans tracking-tighter text-neutral-900"
         >
           <Hero />
           <Collections />
@@ -109,7 +111,8 @@ const Home: NextPage = () => {
           <Community />
           <Experiments />
 
-          <div className="-translate-y-16">
+          <div className="relative">
+            <div className="absolute w-full h-10 bg-white rounded-b-3xl -top-5" />
             <div className="text-white bg-lily-black">
               <div className="flex flex-col justify-center w-full gap-4 px-4 pb-32 mx-auto pt-36 max-w-screen-lily-container">
                 <Fade duration={500} delay={400} fraction={0}>

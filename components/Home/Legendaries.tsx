@@ -48,7 +48,7 @@ export const Legendaries = () => {
     <Panel floating={true}>
       <div className="w-full h-full px-8 py-4 mx-auto max-w-screen-lily-container">
         <Fade duration={500} delay={200} fraction={0}>
-          <h2 className="mt-8 text-4xl font-bold text-center lg:mt-16 lg:text-5xl">
+          <h2 className="mt-8 text-4xl font-medium lg:mt-16 lg:text-5xl">
             The Legendaries
           </h2>
         </Fade>

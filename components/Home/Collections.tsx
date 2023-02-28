@@ -126,7 +126,7 @@ export const Collections = () => {
                             router.push(
                               `/?collection=lily&address=${item.address}`,
                               undefined,
-                              { scroll: false }
+                              { scroll: false, shallow: true }
                             )
                           }}
                         />
@@ -180,7 +180,7 @@ export const Collections = () => {
                             router.push(
                               `/?collection=lotus-gang&address=${item.address}`,
                               undefined,
-                              { scroll: false }
+                              { scroll: false, shallow: true }
                             )
                           }}
                         />

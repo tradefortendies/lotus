@@ -28,10 +28,10 @@ export const Panel = ({
         )}
       >
         {floating && (
-          <Parallax offset={100}>
+          <Parallax offset={100} clampInitial={-100}>
             <div
               className={clsx(
-                'flex min-h-[90vh] w-[95vw] rounded-3xl',
+                'flex min-h-[90vh] w-[95vw] max-w-[1728px] rounded-3xl',
                 mode === 'light' && 'bg-white text-black',
                 mode === 'dark' && 'bg-lily-black text-white'
               )}

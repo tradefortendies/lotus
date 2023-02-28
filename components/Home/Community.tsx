@@ -59,7 +59,7 @@ export const Community = () => {
       return
     }
 
-    while (sales.length < 5) {
+    while (sales.length < 3) {
       console.log('fetching', index)
       await timer(50)
       const { signature } = signatures[index]
