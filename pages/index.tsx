@@ -128,9 +128,27 @@ const Home: NextPage = () => {
                     damping={0.35}
                     fraction={0}
                   >
-                    <Button type="pill-outline">Buy LILY</Button>
-                    <Button type="pill-outline">Buy Lotus Gang</Button>
-                    <Button type="pill-outline">Learn Something</Button>
+                    <Button
+                      href="https://magiceden.io/marketplace/lily"
+                      target="_blank"
+                      type="pill-outline"
+                    >
+                      Buy LILY
+                    </Button>
+                    <Button
+                      href="https://magiceden.io/marketplace/lotus_gang_nft"
+                      target="_blank"
+                      type="pill-outline"
+                    >
+                      Buy Lotus Gang
+                    </Button>
+                    <Button
+                      href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
+                      target="_blank"
+                      type="pill-outline"
+                    >
+                      Learn Something
+                    </Button>
                   </Fade>
                 </div>
               </div>

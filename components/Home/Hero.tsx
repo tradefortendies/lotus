@@ -3,6 +3,19 @@ import { Panel } from './Panel'
 import Button from '../Button'
 
 export const Hero = () => {
+  const scrollToSection = (selector: string) => {
+    const target = document.querySelector(selector)
+
+    if (!target) {
+      return
+    }
+
+    window.scrollTo({
+      top: target.getBoundingClientRect().top - 40,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <Panel floating={false} first={true}>
       <div className="px-8 w-full h-[98vh] flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
@@ -24,39 +37,42 @@ export const Hero = () => {
           <ul className="mt-8 space-y-2 w-full lg:w-[60%] font-mono xl:text-4xl lg:mt-16 xl:w-2/5">
             <li className="w-full">
               <Button
-                href="#test"
+                href="#"
                 arrow={true}
                 width={155}
                 underlineSpeed={150}
                 size="xl"
                 type="transparent"
                 className="flex items-center justify-between !w-full"
+                onClick={() => scrollToSection('#lilypad')}
               >
                 The LILYPad
               </Button>
             </li>
             <li className="w-full">
               <Button
-                href="#test"
+                href="#"
                 arrow={true}
                 width={180}
                 underlineSpeed={150}
                 size="xl"
                 type="transparent"
                 className="flex items-center justify-between w-full gap-4 uppercase"
+                onClick={() => scrollToSection('#library')}
               >
                 Lotus LIbrary
               </Button>
             </li>
             <li className="w-full">
               <Button
-                href="#test"
+                href="#"
                 arrow={true}
                 width={180}
                 underlineSpeed={150}
                 type="transparent"
                 size="xl"
                 className="flex items-center justify-between w-full uppercase"
+                onClick={() => scrollToSection('#blueprint')}
               >
                 The Blueprint
               </Button>

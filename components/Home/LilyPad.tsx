@@ -4,7 +4,10 @@ import { Panel } from './Panel'
 export const LilyPad = () => {
   return (
     <Panel floating={false}>
-      <div className="flex flex-col items-center justify-center w-full gap-24 px-4 pt-16 mx-auto lg:pb-32 lg:pt-16 lg:flex-row max-w-screen-lily-container">
+      <div
+        id="lilypad"
+        className="flex flex-col items-center justify-center w-full gap-24 px-4 pt-16 mx-auto lg:pb-32 lg:pt-16 lg:flex-row max-w-screen-lily-container"
+      >
         <Fade duration={500} delay={200} fraction={0}>
           <img
             src="/img/rubix.svg"

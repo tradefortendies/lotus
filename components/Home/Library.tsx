@@ -11,7 +11,10 @@ export const Library = () => {
 
   return (
     <Panel floating={false} mode={'dark'}>
-      <div className="flex flex-col w-full gap-4 px-8 pt-16 pb-32 mx-auto lg:flex-row max-w-screen-lily-container">
+      <div
+        id="library"
+        className="flex flex-col w-full gap-4 px-8 pt-16 pb-32 mx-auto lg:flex-row max-w-screen-lily-container"
+      >
         <div className="flex flex-col items-center w-full h-full pt-16 lg:items-start">
           <Fade
             cascade={true}
