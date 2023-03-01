@@ -21,7 +21,7 @@ export const Hero = () => {
               <div className="px-4 w-full py-[4px] bg-[#61FEFF]"></div>
             </Marquee>
           </h1>
-          <ul className="mt-8 space-y-2 w-full lg:w-[60%] font-mono xl:text-4xl lxlg:mt-16 xl:space-y-4 xl:w-2/5">
+          <ul className="mt-8 space-y-2 w-full lg:w-[60%] font-mono xl:text-4xl lg:mt-16 xl:w-2/5">
             <li className="w-full">
               <Button
                 href="#test"
