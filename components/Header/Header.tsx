@@ -308,17 +308,6 @@ function Header({
                   linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
                 )}
               >
-                <Link href="/vision" passHref>
-                  <a className="block p-4 cursor-pointer">Vision</a>
-                </Link>
-              </li>
-              <li
-                className={clsx(
-                  'bg-opacity-90 block transition-opacity duration-300 border-b-2 border-transparent opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto',
-                  linkColor !== 'white' && 'bg-white hover:bg-slate-50',
-                  linkColor === 'white' && 'bg-lily-black hover:bg-zinc-800'
-                )}
-              >
                 <Link href="/blueprint" passHref>
                   <a className="block p-4 cursor-pointer">Blueprint</a>
                 </Link>
@@ -437,7 +426,7 @@ function Header({
               target="_blank"
               rel="noreferrer"
               className={clsx(
-                'flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-300',
+                'flex items-center text-lily-black justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-300',
                 !joinHover && 'translate-x-80',
                 joinHover && 'translate-x-0'
               )}
@@ -470,7 +459,7 @@ function Header({
               target="_blank"
               rel="noreferrer"
               className={clsx(
-                'flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-500',
+                'flex items-center text-lily-black justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-500',
                 !joinHover && 'translate-x-80',
                 joinHover && 'translate-x-0'
               )}
@@ -503,7 +492,7 @@ function Header({
               target="_blank"
               rel="noreferrer"
               className={clsx(
-                'flex items-center justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-700',
+                'flex items-center text-lily-black justify-center gap-3 px-6 py-2 text-center rounded-lg transition delay-700',
                 !joinHover && 'translate-x-80',
                 joinHover && 'translate-x-0'
               )}
@@ -612,11 +601,6 @@ function Header({
                               >
                                 Shop
                               </a>
-                            </li>
-                            <li className="py-2 transition duration-300">
-                              <Link href="/vision" passHref>
-                                <a>Vision</a>
-                              </Link>
                             </li>
                             <li className="py-2 transition duration-300">
                               <Link href="/blueprint" passHref>
