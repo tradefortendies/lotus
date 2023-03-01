@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className="px-8 w-full h-[98vh] flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
         <div className="lg:w-1/2 text-lily-black">
           <h1 className="font-bold leading-[1.15] text-7xl lg:text-8xl xl:text-9xl">
-            Let's get this shit.
+            Let&apos;s get this shit.
             <Marquee
               gradient={false}
               speed={170}
