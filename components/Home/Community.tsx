@@ -119,7 +119,7 @@ export const Community = () => {
   }
 
   const animateSales = (inView: boolean) => {
-    if (recentSalesAnimating) {
+    if (recentSalesAnimating || !inView) {
       return
     }
 
