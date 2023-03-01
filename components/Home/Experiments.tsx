@@ -59,7 +59,7 @@ export const Experiments = () => {
                     item.id !== activeExperiment &&
                       'opacity-0 duration-[0] delay-0',
                     item.id === activeExperiment &&
-                      'opacity-100 duration-500 delay-200'
+                      'opacity-100 duration-500 delay-500'
                   )}
                 >
                   <p>
