@@ -6,7 +6,7 @@ const experiments = [
   {
     id: 1,
     title: 'Silk Road',
-    color: 'blue',
+    color: 'green',
   },
   {
     id: 2,
@@ -31,21 +31,25 @@ export const Experiments = () => {
     <Panel floating={false} fixedHeight={false}>
       <div className="flex flex-col-reverse items-center justify-center w-full gap-4 lg:flex-row">
         <div className="relative w-full h-full lg:w-1/2">
-          <div className="absolute h-1/2 left-0 flex flex-col justify-center w-full -translate-y-[70%] lg:-translate-y-1/2 top-1/2">
+          <div className="absolute h-[80%] lg:h-[60%] left-0 flex flex-col justify-center w-full -translate-y-[50%] lg:-translate-y-1/2 top-1/2">
             {experiments.map((item) => (
               <button
                 key={item.id}
                 className={clsx(
                   'px-4 lg:px-16 py-3 text-2xl font-semibold flex flex-col justify-start text-left rounded-r-xl transition-widthHeight',
-                  item.color === 'blue' && 'bg-lily-blue',
+                  item.color === 'green' && 'bg-lily-green',
                   item.color === 'yellow' && 'bg-lily-yellow',
                   item.color === 'blue-dark' && 'bg-lily-blue-dark',
                   item.color === 'red' && 'bg-lily-red',
                   item.id !== activeExperiment &&
-                    'w-[90%] lg:w-1/2 h-14 duration-0',
+                    'w-[90%] lg:w-[75%] h-16 overflow-hidden duration-0',
                   item.id === activeExperiment && 'w-[90%] h-full duration-1000'
                 )}
-                onClick={() => setActiveExperiment(item.id)}
+                onClick={() =>
+                  setActiveExperiment(
+                    activeExperiment === item.id ? 0 : item.id
+                  )
+                }
               >
                 {item.title}
 
