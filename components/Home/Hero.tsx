@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <Panel floating={false} first={true}>
       <div className="px-8 w-full h-[98vh] flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
-        <div className="lg:w-1/2 text-lily-black">
+        <div className="w-full lg:w-1/2 text-lily-black">
           <h1 className="font-bold leading-[1.15] text-7xl lg:text-8xl xl:text-9xl">
             Let&apos;s get this shit.
             <Marquee
@@ -72,7 +72,7 @@ export const Hero = () => {
         playsInline
         loop
         muted
-        className="absolute bottom-[2vh] right-0 lg:-right-16 2xl:right-[5vw] object-cover w-auto h-[50vh] lg:h-[90vh] z-0"
+        className="absolute bottom-[2vh] right-0 lg:-right-16 2xl:right-[5vw] object-cover w-auto h-[50vh] md:h-[70vh] lg:h-[90vh] z-0"
       >
         <source src="/video/lotus-splash.webm" type="video/webm" />
         Your browser does not support the video tag.

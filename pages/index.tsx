@@ -100,7 +100,7 @@ const Home: NextPage = () => {
         <div
           id="main"
           ref={mainRef}
-          className="relative duration-700 transition-transform translate-y-[100vh] z-50 w-screen min-h-screen font-sans tracking-tighter text-neutral-900"
+          className="relative duration-700 transition-transform translate-y-[100vh] z-50 w-screen min-h-screen font-sans tracking-tighter text-neutral-900 overflow-hidden"
         >
           <Hero />
           <Collections />

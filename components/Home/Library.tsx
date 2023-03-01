@@ -28,7 +28,7 @@ export const Library = () => {
               working with the community to index it in one place.
             </p>
           </Fade>
-          <dl className="flex flex-wrap mt-10 text-3xl gap-y-2 lg:mt-32">
+          <div className="mt-10 text-3xl gap-y-2 lg:mt-32">
             <Fade
               cascade={true}
               duration={500}
@@ -37,26 +37,34 @@ export const Library = () => {
               fraction={0}
               onVisibilityChange={(inView) => setAnimateNumbers(inView)}
             >
-              <dd className="w-10 mr-1" style={{ color: theme.primaryColor }}>
-                <CountUp end={animateNumbers ? 56 : 0} />
-              </dd>
-              <dt>Articles</dt>
-              <dd
-                className="w-8 ml-8 mr-1"
-                style={{ color: theme.primaryColor }}
-              >
-                <CountUp end={animateNumbers ? 14 : 0} />
-              </dd>
-              <dt>Writers</dt>
-              <dd
-                className="w-5 ml-8 mr-1"
-                style={{ color: theme.primaryColor }}
-              >
-                <CountUp end={animateNumbers ? 8 : 0} />
-              </dd>
-              <dt>Partnerships</dt>
+              <div className="flex flex-col flex-wrap items-center gap-4 lg:flex-row">
+                <div className="flex items-center gap-2">
+                  <span className="w-10" style={{ color: theme.primaryColor }}>
+                    <CountUp end={animateNumbers ? 56 : 0} />
+                  </span>
+                  <span>Articles</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-8 ml-4"
+                    style={{ color: theme.primaryColor }}
+                  >
+                    <CountUp end={animateNumbers ? 14 : 0} />
+                  </span>
+                  <span>Writers</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-5 ml-4"
+                    style={{ color: theme.primaryColor }}
+                  >
+                    <CountUp end={animateNumbers ? 8 : 0} />
+                  </span>
+                  <span>Partnerships</span>
+                </div>
+              </div>
             </Fade>
-          </dl>
+          </div>
           <Fade duration={500} delay={1400} fraction={0}>
             <Button
               href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
