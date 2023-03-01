@@ -15,7 +15,7 @@ module.exports = {
         'lily-green': '#7FFFB9',
         'lily-yellow': '#FFD462',
         'lily-tan': '#E9E1D1',
-        'lily-black': '#303030',
+        'lily-black': '#222222',
         'lily-red': '#FF9596',
       },
       animation: {
