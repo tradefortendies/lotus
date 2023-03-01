@@ -2,6 +2,7 @@ import type { Trait, Nft, NftApiResponse } from '../../types'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Fade } from 'react-awesome-reveal'
+import Marquee from 'react-fast-marquee'
 import { sampleSize } from 'lodash'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper'
@@ -9,6 +10,7 @@ import CollectionDetail from '../CollectionDetail'
 import { Panel } from './Panel'
 import { CollectionStatType, CollectionStats } from './CollectionStats'
 import Button from '../Button'
+import { useWindowSize } from '../../hooks/useWindowSize'
 import LotusGangNftsJson from '../../data/lotus-gang.json'
 import lilyNftsJson from '../../data/lily.json'
 
@@ -20,6 +22,7 @@ const nftsJson = {
 }
 
 export const Collections = () => {
+  const windowDimensions = useWindowSize()
   const router = useRouter()
   const [nft, setNft] = useState<Nft | null>()
   const [collectionData, setCollectionData] = useState<{
@@ -109,18 +112,19 @@ export const Collections = () => {
                 <Fade duration={800} delay={1400} fraction={0}>
                   <Swiper
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={windowDimensions.width < 640 ? 2 : 3}
                     loop={true}
                     modules={[Autoplay]}
                     autoplay={{
-                      delay: 2000,
+                      delay: 1000,
                       disableOnInteraction: false,
                     }}
+                    className="cursor-grab active:cursor-grabbing"
                   >
                     {samplesNfts.lily.map((item, index) => (
                       <SwiperSlide key={index}>
                         <img
-                          className="rounded-lg cursor-pointer"
+                          className="rounded-lg"
                           src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flily%2Fwebp%2F${item.address}.webp`}
                           onClick={() => {
                             router.push(
@@ -133,6 +137,17 @@ export const Collections = () => {
                       </SwiperSlide>
                     ))}
                   </Swiper>
+                  <Marquee
+                    gradient={false}
+                    speed={170}
+                    className="!hidden absolute left-0 -bottom-3 w-full lg:flex"
+                  >
+                    <div className="px-4 w-full py-[4px] bg-[#7FFFB9]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#FFD462]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#FF9596]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#91B9FF]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#61FEFF]"></div>
+                  </Marquee>
                 </Fade>
               </div>
               <div className="flex justify-center lg:justify-start">
@@ -163,18 +178,18 @@ export const Collections = () => {
                 <Fade duration={800} delay={1600} fraction={0}>
                   <Swiper
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={windowDimensions.width < 640 ? 2 : 3}
                     loop={true}
                     modules={[Autoplay]}
                     autoplay={{
-                      delay: 2000,
+                      delay: 1000,
                       disableOnInteraction: false,
                     }}
                   >
                     {samplesNfts.lotus.map((item, index) => (
                       <SwiperSlide key={index}>
                         <img
-                          className="rounded-lg cursor-pointer"
+                          className="rounded-lg"
                           src={`https://lotusgang-assets.sfo3.cdn.digitaloceanspaces.com/collections%2Flotus-gang%2Fwebp%2F${item.address}.webp`}
                           onClick={() => {
                             router.push(
@@ -187,6 +202,17 @@ export const Collections = () => {
                       </SwiperSlide>
                     ))}
                   </Swiper>
+                  <Marquee
+                    gradient={false}
+                    speed={170}
+                    className="!hidden absolute left-0 -bottom-3 w-full lg:flex"
+                  >
+                    <div className="px-4 w-full py-[4px] bg-[#7FFFB9]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#FFD462]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#FF9596]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#91B9FF]"></div>
+                    <div className="px-4 w-full py-[4px] bg-[#61FEFF]"></div>
+                  </Marquee>
                 </Fade>
               </div>
               <div className="flex justify-center lg:justify-start">
