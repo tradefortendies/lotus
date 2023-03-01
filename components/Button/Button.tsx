@@ -11,7 +11,7 @@ type Props = {
   target?: string
   rel?: string
   disabled?: boolean
-  onClick?: () => void
+  onClick?: (e: any) => void
   onMouseOver?: (e: any) => void
   onMouseOut?: (e: any) => void
   type?: 'pill' | 'pill-outline' | 'transparent'

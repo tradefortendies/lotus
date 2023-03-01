@@ -10,6 +10,8 @@ export const Hero = () => {
       return
     }
 
+    window.scrollTo(0, 0)
+
     window.scrollTo({
       top: target.getBoundingClientRect().top - 40,
       behavior: 'smooth',
@@ -44,7 +46,10 @@ export const Hero = () => {
                 size="xl"
                 type="transparent"
                 className="flex items-center justify-between !w-full"
-                onClick={() => scrollToSection('#lilypad')}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection('#lilypad')
+                }}
               >
                 The LILYPad
               </Button>
@@ -58,7 +63,10 @@ export const Hero = () => {
                 size="xl"
                 type="transparent"
                 className="flex items-center justify-between w-full gap-4 uppercase"
-                onClick={() => scrollToSection('#library')}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection('#library')
+                }}
               >
                 Lotus LIbrary
               </Button>
@@ -72,7 +80,10 @@ export const Hero = () => {
                 type="transparent"
                 size="xl"
                 className="flex items-center justify-between w-full uppercase"
-                onClick={() => scrollToSection('#blueprint')}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection('#blueprint')
+                }}
               >
                 The Blueprint
               </Button>

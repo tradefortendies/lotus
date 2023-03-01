@@ -117,9 +117,9 @@ export const Library = () => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://solanafm.substack.com/"
+                    href="https://twitter.com/solanafm"
                   >
-                    SolanaFM
+                    @Solana.FM
                   </a>
                 </div>
               </article>
@@ -148,14 +148,22 @@ export const Library = () => {
                     </a>
                   </h2>
                   <time>Feb 16th, 2023</time>
-                  <a target="_blank" rel="noreferrer" href="#">
-                    Meep
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://twitter.com/Meep_2004"
+                  >
+                    @Meep
                   </a>
                 </div>
               </article>
 
               <article>
-                <a href="#" target="_blank" rel="noreferrer">
+                <a
+                  href="https://lotusgang.notion.site/The-value-in-onboarding-Web2-Brands-66c01e0b0fda4d74ab8d245a17047170"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src="/img/library/web2-brands.webp"
                     className="object-cover w-full rounded-t-xl"
@@ -166,12 +174,21 @@ export const Library = () => {
                   style={{ backgroundColor: theme.primaryColor }}
                 >
                   <h2 className="font-bold">
-                    <a href="#" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://lotusgang.notion.site/The-value-in-onboarding-Web2-Brands-66c01e0b0fda4d74ab8d245a17047170"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       The Value of Onboarding Web2 Brands
                     </a>
                   </h2>
-                  <a target="_blank" rel="noreferrer" href="#">
-                    xxx
+                  <time>Nov 5th, 2022</time>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://twitter.com/MaxBrsNFT"
+                  >
+                    @maxbrs.sol
                   </a>
                 </div>
               </article>
