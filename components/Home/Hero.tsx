@@ -1,95 +1,61 @@
-import { Fade } from 'react-awesome-reveal'
+import Marquee from 'react-fast-marquee'
 import { Panel } from './Panel'
+import Button from '../Button'
 
 export const Hero = () => {
   return (
     <Panel floating={false} first={true}>
-      <div className="px-8 h-[98vh] flex lg:items-center mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-0">
+      <div className="px-8 h-[98vh] flex lg:items-center mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
         <div className="lg:w-1/2 text-lily-black">
           <h1 className="font-bold leading-[1.15] text-9xl">
             Let's get this shit.
+            <Marquee gradient={false} speed={170} className="flex w-full">
+              <div className="px-4 w-full py-[4px] bg-[#7FFFB9]"></div>
+              <div className="px-4 w-full py-[4px] bg-[#FFD462]"></div>
+              <div className="px-4 w-full py-[4px] bg-[#FF9596]"></div>
+              <div className="px-4 w-full py-[4px] bg-[#91B9FF]"></div>
+              <div className="px-4 w-full py-[4px] bg-[#61FEFF]"></div>
+            </Marquee>
           </h1>
-          <ul className="w-2/3 mt-12 space-y-6 font-mono text-4xl">
+          <ul className="w-2/5 mt-16 space-y-4 font-mono text-4xl">
             <li className="w-full">
-              <button className="flex items-center justify-between w-full gap-4 uppercase">
-                The LILYPad{' '}
-                <svg
-                  width="39"
-                  height="39"
-                  viewBox="0 0 39 39"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.6605 10.563L27.8964 27.7988"
-                    stroke="#222222"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M27.8964 11.55L27.8964 27.8L11.6464 27.8"
-                    stroke="#222222"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              <Button
+                href="#test"
+                arrow={true}
+                width={155}
+                underlineSpeed={150}
+                size="xl"
+                type="transparent"
+                className="flex items-center justify-between !w-full"
+              >
+                The LILYPad
+              </Button>
             </li>
             <li className="w-full">
-              <button className="flex items-center justify-between w-full gap-4 uppercase">
-                Lotus LIbrary{' '}
-                <svg
-                  width="39"
-                  height="39"
-                  viewBox="0 0 39 39"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.6605 10.563L27.8964 27.7988"
-                    stroke="#222222"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M27.8964 11.55L27.8964 27.8L11.6464 27.8"
-                    stroke="#222222"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              <Button
+                href="#test"
+                arrow={true}
+                width={180}
+                underlineSpeed={150}
+                size="xl"
+                type="transparent"
+                className="flex items-center justify-between w-full gap-4 uppercase"
+              >
+                Lotus LIbrary
+              </Button>
             </li>
             <li className="w-full">
-              <button className="flex items-center justify-between w-full uppercase">
-                The Blueprint{' '}
-                <svg
-                  width="39"
-                  height="39"
-                  viewBox="0 0 39 39"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.6605 10.563L27.8964 27.7988"
-                    stroke="#222222"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M27.8964 11.55L27.8964 27.8L11.6464 27.8"
-                    stroke="#222222"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              <Button
+                href="#test"
+                arrow={true}
+                width={180}
+                underlineSpeed={150}
+                type="transparent"
+                size="xl"
+                className="flex items-center justify-between w-full uppercase"
+              >
+                The Blueprint
+              </Button>
             </li>
           </ul>
         </div>

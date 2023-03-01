@@ -16,7 +16,7 @@ type Props = {
   onMouseOut?: (e: any) => void
   type?: 'pill' | 'pill-outline' | 'transparent'
   arrow?: boolean
-  size?: 'lg' | 'sm'
+  size?: 'lg' | 'sm' | 'xl'
   underlineSpeed?: number
   underlineReverse?: boolean
   width?: number
@@ -76,6 +76,12 @@ function Button({
 
   if (type === 'transparent') {
     btnClassNames += `font-mono text-base uppercase text-neutral-900 py-3 `
+
+    if (size === 'lg') {
+      btnClassNames += '!text-xl'
+    } else if (size === 'xl') {
+      btnClassNames += '!text-2xl'
+    }
   } else {
     if (type === 'pill-outline') {
       btnClassNames +=
@@ -101,9 +107,57 @@ function Button({
 
   const dashedHoverState = (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between w-full">
         {children}
-        {arrow && arrowIcon}
+        {arrow && size !== 'xl' && (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.56033 6.5L17.167 17.1067"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M17.167 7.10742L17.167 17.1074H7.16699"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        )}
+        {arrow && size === 'xl' && (
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="-translate-y-[1px]"
+          >
+            <path
+              d="M6.56033 6.5L17.167 17.1067"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M17.167 7.10742L17.167 17.1074H7.16699"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        )}
       </div>
       <div className="hidden md:block">
         <Marquee
@@ -117,16 +171,11 @@ function Button({
               : Number(isHovering),
           }}
         >
-          <div className="px-4 py-[2px] bg-[#7FFFB9]"></div>
-          <div className="px-4 py-[2px] bg-[#FFD462]"></div>
-          <div className="px-4 py-[2px] bg-[#FF9596]"></div>
-          <div className="px-4 py-[2px] bg-[#91B9FF]"></div>
-          <div className="px-4 py-[2px] bg-[#61FEFF]"></div>
-          <div className="px-4 py-[2px] bg-[#7FFFB9]"></div>
-          <div className="px-4 py-[2px] bg-[#FFD462]"></div>
-          <div className="px-4 py-[2px] bg-[#FF9596]"></div>
-          <div className="px-4 py-[2px] bg-[#91B9FF]"></div>
-          <div className="px-4 py-[2px] bg-[#61FEFF]"></div>
+          <div className="px-4 py-[2px] w-full bg-[#7FFFB9]"></div>
+          <div className="px-4 py-[2px] w-full bg-[#FFD462]"></div>
+          <div className="px-4 py-[2px] w-full bg-[#FF9596]"></div>
+          <div className="px-4 py-[2px] w-full bg-[#91B9FF]"></div>
+          <div className="px-4 py-[2px] w-full bg-[#61FEFF]"></div>
         </Marquee>
       </div>
     </>
