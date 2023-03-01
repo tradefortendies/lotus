@@ -5,14 +5,14 @@ import Button from '../Button'
 export const Hero = () => {
   return (
     <Panel floating={false} first={true}>
-      <div className="px-8 h-[98vh] flex lg:items-center mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
+      <div className="px-8 w-full h-[98vh] flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
         <div className="lg:w-1/2 text-lily-black">
-          <h1 className="font-bold leading-[1.15] text-7xl xl:text-9xl">
+          <h1 className="font-bold leading-[1.15] text-7xl lg:text-8xl xl:text-9xl">
             Let's get this shit.
             <Marquee
               gradient={false}
               speed={170}
-              className="!hidden w-full lg:flex"
+              className="!hidden !w-[80%] xl:!w-full lg:flex"
             >
               <div className="px-4 w-full py-[4px] bg-[#7FFFB9]"></div>
               <div className="px-4 w-full py-[4px] bg-[#FFD462]"></div>
@@ -21,7 +21,7 @@ export const Hero = () => {
               <div className="px-4 w-full py-[4px] bg-[#61FEFF]"></div>
             </Marquee>
           </h1>
-          <ul className="mt-8 space-y-2 font-mono lg:text-4xl lg:mt-16 lg:space-y-4 lg:w-2/5">
+          <ul className="mt-8 space-y-2 w-full lg:w-[60%] font-mono xl:text-4xl lxlg:mt-16 xl:space-y-4 xl:w-2/5">
             <li className="w-full">
               <Button
                 href="#test"
@@ -72,7 +72,7 @@ export const Hero = () => {
         playsInline
         loop
         muted
-        className="absolute bottom-[2vh] right-[5vw] object-cover w-auto h-[50vh] xl:h-[90vh] z-0"
+        className="absolute bottom-[2vh] right-0 lg:-right-16 2xl:right-[5vw] object-cover w-auto h-[50vh] lg:h-[90vh] z-0"
       >
         <source src="/video/lotus-splash.webm" type="video/webm" />
         Your browser does not support the video tag.
