@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { LAMPORTS_PER_SOL } from '@solana/web3.js'
 import millify from 'millify'
 import { Fade } from 'react-awesome-reveal'
+import { preciseRound } from '../../lib/helpers'
 import { ThemeContext } from '../Theme'
 
 export type CollectionStatType = {
@@ -45,7 +46,7 @@ export const CollectionStats = ({
           <dt className="font-medium uppercase">Floor</dt>
           <dd>
             {collectionData?.floorPrice &&
-              collectionData?.floorPrice / LAMPORTS_PER_SOL}
+              preciseRound(collectionData?.floorPrice / LAMPORTS_PER_SOL)}
             {!collectionData?.floorPrice && (
               <img src="/img/loading-dots.svg" width={30} />
             )}
