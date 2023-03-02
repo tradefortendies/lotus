@@ -89,7 +89,7 @@ export const Experiments = () => {
                   <div className="flex gap-12">
                     <p>{item.body}</p>
                     <img
-                      className="rounded-lg"
+                      className="hidden rounded-lg xl:block"
                       src="/img/experiments/silkroad.jpg"
                     />
                   </div>
