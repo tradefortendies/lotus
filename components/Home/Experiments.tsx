@@ -14,14 +14,14 @@ const experiments = [
     id: 2,
     title: 'Metaverse Models',
     color: 'yellow',
-    body: 'What if you could compare floor prices of NFT collections by market cap? Well, you can.',
+    body: 'Development of 3D/2D Models for Metaverse integration.',
     video: '/img/experiments/metaversepromo.mp4',
   },
   {
     id: 3,
     title: 'Floor Calculator',
     color: 'red',
-    body: 'Development of 3D/2D Models for Metaverse integration.',
+    body: 'What if you could compare floor prices of NFT collections by market cap? Well, you can.',
     img: '/img/experiments/calculator.png',
     button: {
       url: 'https://floor.lotusgang.com/',
