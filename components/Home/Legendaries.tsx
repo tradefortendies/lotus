@@ -72,7 +72,10 @@ export const Legendaries = () => {
                   </a>
                   <div className="mt-2">
                     {item.owner && (
-                      <p className="text-sm font-semibold">
+                      <p
+                        className="text-sm font-semibold"
+                        style={{ color: theme.primaryColor }}
+                      >
                         <a
                           href={`https://solscan.io/account/${item.owner}`}
                           target="_blank"
