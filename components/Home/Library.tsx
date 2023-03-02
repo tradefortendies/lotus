@@ -74,7 +74,15 @@ export const Library = () => {
               target="_blank"
               rel="noreferrer"
               type="pill-outline"
-              className="mx-auto my-10 lg:mb-0 lg:mt-16 lg:ml-0"
+              className="mx-auto my-10 transition-colors lg:mb-0 lg:mt-16 lg:ml-0"
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = theme.primaryColor
+                e.currentTarget.style.color = '#222222'
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'
+                e.currentTarget.style.color = theme.primaryColor
+              }}
             >
               Explore
             </Button>
@@ -89,7 +97,7 @@ export const Library = () => {
               damping={0.35}
               fraction={0}
             >
-              <article>
+              <article className="transition-transform hover:scale-105">
                 <a
                   href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2?p=9df2799859764c238b4ebac97dae76ac&pm=c"
                   target="_blank"
@@ -123,7 +131,7 @@ export const Library = () => {
                   </a>
                 </div>
               </article>
-              <article>
+              <article className="transition-transform hover:scale-105">
                 <a
                   href="https://lotusgang.notion.site/4a64361702ba4d2f961248fc3bd93bde?v=2de427c220cf453bb4b9fa1c038fdd8b&p=55343ec2ad284bea94f393b204c4a3aa&pm=c"
                   target="_blank"
@@ -157,8 +165,7 @@ export const Library = () => {
                   </a>
                 </div>
               </article>
-
-              <article>
+              <article className="transition-transform hover:scale-105">
                 <a
                   href="https://lotusgang.notion.site/The-value-in-onboarding-Web2-Brands-66c01e0b0fda4d74ab8d245a17047170"
                   target="_blank"

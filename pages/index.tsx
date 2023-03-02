@@ -132,6 +132,15 @@ const Home: NextPage = () => {
                       href="https://magiceden.io/marketplace/lily"
                       target="_blank"
                       type="pill-outline"
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          theme.primaryColor
+                        e.currentTarget.style.color = '#222222'
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent'
+                        e.currentTarget.style.color = theme.primaryColor
+                      }}
                     >
                       Buy LILY
                     </Button>
@@ -139,6 +148,15 @@ const Home: NextPage = () => {
                       href="https://magiceden.io/marketplace/lotus_gang_nft"
                       target="_blank"
                       type="pill-outline"
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          theme.primaryColor
+                        e.currentTarget.style.color = '#222222'
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent'
+                        e.currentTarget.style.color = theme.primaryColor
+                      }}
                     >
                       Buy Lotus Gang
                     </Button>
@@ -146,6 +164,15 @@ const Home: NextPage = () => {
                       href="https://lotusgang.notion.site/Lotus-Library-e7df20a3dc4f45869e8adb24aa75fda2"
                       target="_blank"
                       type="pill-outline"
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          theme.primaryColor
+                        e.currentTarget.style.color = '#222222'
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent'
+                        e.currentTarget.style.color = theme.primaryColor
+                      }}
                     >
                       Learn Something
                     </Button>
