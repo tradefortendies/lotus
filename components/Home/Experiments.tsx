@@ -8,18 +8,21 @@ const experiments = [
     title: 'Silk Road',
     color: 'green',
     body: 'A single-player browser trading game which teaches basic trading ideas using items from the Lotus universe.',
+    video: '/img/experiments/silkroad.mp4',
   },
   {
     id: 2,
     title: 'Metaverse Models',
     color: 'yellow',
     body: 'What if you could compare floor prices of NFT collections by market cap? Well, you can.',
+    video: '/img/experiments/metaversepromo.mp4',
   },
   {
     id: 3,
     title: 'Floor Calculator',
     color: 'red',
     body: 'Development of 3D/2D Models for Metaverse integration.',
+    img: '/img/experiments/calculator.png',
     button: {
       url: 'https://floor.lotusgang.com/',
       text: 'Calculate',
@@ -30,6 +33,7 @@ const experiments = [
     title: 'Planting',
     color: 'blue-dark',
     body: 'A fresh new way to distribute Legendary LILIES to our holders after mint.',
+    img: '/img/experiments/planting.gif',
     button: {
       url: 'https://legendary.thelotus.io',
       text: 'Planting',
@@ -60,7 +64,7 @@ export const Experiments = () => {
                     activeExperiment === 0 &&
                     'w-[90%] lg:w-[75%] h-14 overflow-hidden duration-0',
                   item.id === activeExperiment &&
-                    'w-[90%] h-full duration-1000 pt-8'
+                    'w-[90%] h-full duration-1000 pt-8 pb-12'
                 )}
                 onClick={() =>
                   setActiveExperiment(
@@ -71,7 +75,8 @@ export const Experiments = () => {
                 <h3
                   className={clsx(
                     item.id !== activeExperiment && 'text-2xl',
-                    item.id === activeExperiment && 'text-4xl'
+                    item.id === activeExperiment &&
+                      'text-4xl transition delay-200'
                   )}
                 >
                   {item.title}
@@ -87,21 +92,36 @@ export const Experiments = () => {
                   )}
                 >
                   <div className="flex gap-12">
-                    <p>{item.body}</p>
-                    <img
-                      className="hidden rounded-lg xl:block"
-                      src="/img/experiments/silkroad.jpg"
-                    />
+                    <div className="w-full">
+                      <p className="w-full">{item.body}</p>
+                      {item.button && (
+                        <a
+                          className="inline-block mt-8 text-xl font-bold"
+                          href={item.button.url}
+                        >
+                          {item.button.text}
+                        </a>
+                      )}
+                    </div>
+                    {item.img && (
+                      <img
+                        className="hidden lg:block w-[40%] rounded-lg"
+                        src={item.img}
+                      />
+                    )}
+                    {item.video && (
+                      <video
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        className="hidden lg:block w-[40%] rounded-lg"
+                      >
+                        <source src={item.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
                   </div>
-
-                  {item.button && (
-                    <a
-                      className="inline-block mt-8 text-xl font-bold"
-                      href={item.button.url}
-                    >
-                      {item.button.text}
-                    </a>
-                  )}
                 </div>
               </button>
             ))}
