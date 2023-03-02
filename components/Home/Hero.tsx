@@ -1,8 +1,9 @@
 import { useRef, useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
+import { Fade } from 'react-awesome-reveal'
 import { Panel } from './Panel'
 import Button from '../Button'
-import { Fade } from 'react-awesome-reveal'
+import ScrollArrow from '../ScrollArrow'
 
 export const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -112,6 +113,10 @@ export const Hero = () => {
               </li>
             </Fade>
           </ul>
+          <ScrollArrow
+            position="absolute"
+            className="smLaptop:bottom-auto smLaptop:top-[90vh]"
+          />
         </div>
       </div>
 
