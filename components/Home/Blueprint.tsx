@@ -82,12 +82,19 @@ export const Blueprint = () => {
               </div>
 
               {blueprintData.tracks.map((item, index) => (
-                <Link href={item.url || ''} key={index}>
+                <a
+                  href={item.url || ''}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={index}
+                >
                   <div
                     className={clsx(
-                      'flex flex-row items-center gap-4 p-2 px-4 text-sm rounded-xl',
+                      'flex flex-row transition duration-500 items-center gap-4 p-[6px] my-2 px-4 text-sm rounded-xl',
+                      'hover:bg-zinc-700',
                       item.active && 'bg-zinc-600',
-                      item.url && 'cursor-pointer'
+                      item.url && 'cursor-pointer',
+                      !item.url && 'cursor-help'
                     )}
                     style={{
                       color: item.active ? theme.primaryColor : '#fff',
@@ -123,7 +130,7 @@ export const Blueprint = () => {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
