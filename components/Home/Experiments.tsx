@@ -84,9 +84,9 @@ export const Experiments = () => {
         </div>
         <div className="w-full px-4 pt-16 lg:p-0 lg:w-1/2">
           <h2 className="text-6xl font-medium xl:text-7xl">
-            E<strong className="font-bold">xp</strong>eriments
-            <br className="hidden lg:block" /> and F
-            <strong className="font-bold">u</strong>n
+            E<strong className="font-bold">xp</strong>eriment
+            <br className="hidden lg:block" /> with{' '}
+            <strong className="font-bold">u</strong>s
           </h2>
         </div>
       </div>

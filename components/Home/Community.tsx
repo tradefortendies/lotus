@@ -188,7 +188,7 @@ export const Community = () => {
               Community
             </h2>
             <p className="mt-12 text-2xl text-center lg:pr-16 lg:text-3xl lg:text-left">
-              We have holders in 65 countries and we are growing every day.
+              We have holders all over the world and we are growing every day.
             </p>
           </Fade>
 

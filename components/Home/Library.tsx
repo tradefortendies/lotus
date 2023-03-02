@@ -27,8 +27,8 @@ export const Library = () => {
               Lotus Library
             </h2>
             <p className="mt-20 text-2xl text-center lg:text-3xl lg:text-left">
-              The best crypto information and tools are hard to find. We are
-              working with the community to index it in one place.
+              The best crypto information, research, and tools being indexed
+              into one decentralized experience.
             </p>
           </Fade>
           <div className="mt-10 text-3xl gap-y-2 lg:mt-32">
@@ -43,7 +43,7 @@ export const Library = () => {
               <div className="flex flex-col flex-wrap items-center gap-4 lg:flex-row">
                 <div className="flex items-center gap-2">
                   <span className="w-10" style={{ color: theme.primaryColor }}>
-                    <CountUp end={animateNumbers ? 56 : 0} />
+                    <CountUp end={animateNumbers ? 42 : 0} />
                   </span>
                   <span>Articles</span>
                 </div>
@@ -52,7 +52,7 @@ export const Library = () => {
                     className="w-8 ml-4"
                     style={{ color: theme.primaryColor }}
                   >
-                    <CountUp end={animateNumbers ? 14 : 0} />
+                    <CountUp end={animateNumbers ? 19 : 0} />
                   </span>
                   <span>Writers</span>
                 </div>
@@ -61,7 +61,7 @@ export const Library = () => {
                     className="w-5 ml-4"
                     style={{ color: theme.primaryColor }}
                   >
-                    <CountUp end={animateNumbers ? 8 : 0} />
+                    <CountUp end={animateNumbers ? 9 : 0} />
                   </span>
                   <span>Partnerships</span>
                 </div>
