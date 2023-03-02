@@ -7,21 +7,33 @@ const experiments = [
     id: 1,
     title: 'Silk Road',
     color: 'green',
+    body: 'A single-player browser trading game which teaches basic trading ideas using items from the Lotus universe.',
   },
   {
     id: 2,
     title: 'Metaverse Models',
     color: 'yellow',
+    body: 'What if you could compare floor prices of NFT collections by market cap? Well, you can.',
   },
   {
     id: 3,
     title: 'Floor Calculator',
     color: 'red',
+    body: 'Development of 3D/2D Models for Metaverse integration.',
+    button: {
+      url: 'https://floor.lotusgang.com/',
+      text: 'Calculate',
+    },
   },
   {
     id: 4,
     title: 'Planting',
     color: 'blue-dark',
+    body: 'A fresh new way to distribute Legendary LILIES to our holders after mint.',
+    button: {
+      url: 'https://legendary.thelotus.io',
+      text: 'Planting',
+    },
   },
 ]
 
@@ -36,7 +48,7 @@ export const Experiments = () => {
               <button
                 key={item.id}
                 className={clsx(
-                  'px-4 lg:px-16 py-3 text-2xl font-semibold flex flex-col justify-start text-left rounded-r-xl transition-widthHeight',
+                  'px-4 lg:px-16 py-3 font-medium flex flex-col justify-start text-left rounded-r-xl transition-widthHeight',
                   item.color === 'green' && 'bg-lily-green',
                   item.color === 'yellow' && 'bg-lily-yellow',
                   item.color === 'blue-dark' && 'bg-lily-blue-dark',
@@ -47,7 +59,8 @@ export const Experiments = () => {
                   item.id !== activeExperiment &&
                     activeExperiment === 0 &&
                     'w-[90%] lg:w-[75%] h-14 overflow-hidden duration-0',
-                  item.id === activeExperiment && 'w-[90%] h-full duration-1000'
+                  item.id === activeExperiment &&
+                    'w-[90%] h-full duration-1000 pt-8'
                 )}
                 onClick={() =>
                   setActiveExperiment(
@@ -55,28 +68,40 @@ export const Experiments = () => {
                   )
                 }
               >
-                {item.title}
+                <h3
+                  className={clsx(
+                    item.id !== activeExperiment && 'text-2xl',
+                    item.id === activeExperiment && 'text-4xl'
+                  )}
+                >
+                  {item.title}
+                </h3>
 
                 <div
                   className={clsx(
-                    'mt-8 mb-4 lg:mb-0 text-base font-light transition-opacity',
+                    'mt-8 mb-4 lg:mb-0 text-xl font-light transition-opacity',
                     item.id !== activeExperiment &&
                       'opacity-0 duration-[0] delay-0',
                     item.id === activeExperiment &&
                       'opacity-100 duration-500 delay-500'
                   )}
                 >
-                  <p>
-                    Enim est eu laborum ea reprehenderit velit tempor labore
-                    consectetur nisi dolore. Ex mollit id qui sunt voluptate
-                    esse velit cillum aute aliquip laboris deserunt. Eiusmod
-                    velit incididunt fugiat voluptate. Adipisicing anim non
-                    dolore cupidatat incididunt ipsum in velit Lorem ea sint
-                    nisi sit velit. Non do sunt cupidatat commodo consectetur id
-                    ut exercitation. Nostrud fugiat culpa nisi ut quis ullamco
-                    nisi cillum. Adipisicing tempor enim tempor adipisicing elit
-                    ex quis.
-                  </p>
+                  <div className="flex gap-12">
+                    <p>{item.body}</p>
+                    <img
+                      className="rounded-lg"
+                      src="/img/experiments/silkroad.jpg"
+                    />
+                  </div>
+
+                  {item.button && (
+                    <a
+                      className="inline-block mt-8 text-xl font-bold"
+                      href={item.button.url}
+                    >
+                      {item.button.text}
+                    </a>
+                  )}
                 </div>
               </button>
             ))}
