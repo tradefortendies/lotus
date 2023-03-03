@@ -9,6 +9,10 @@ const experiments = [
     color: 'green',
     body: 'A single-player browser trading game which teaches basic trading ideas using items from the Lotus universe.',
     video: '/img/experiments/silkroad.mp4',
+    button: {
+      url: 'https://silkroad.thelotus.io/',
+      text: 'Play Now',
+    },
   },
   {
     id: 2,
@@ -96,7 +100,7 @@ export const Experiments = () => {
                       <p className="w-full">{item.body}</p>
                       {item.button && (
                         <a
-                          className="inline-block mt-8 text-xl font-bold"
+                          className="inline-block mt-8 text-xl font-bold transition-colors border-b-2 border-transparent cursor-pointer hover:border-lily-black"
                           href={item.button.url}
                         >
                           {item.button.text}
