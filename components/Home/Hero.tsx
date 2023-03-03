@@ -34,10 +34,10 @@ export const Hero = () => {
 
   return (
     <Panel floating={false} first={true}>
-      <div className="px-8 w-full h-[98vh] flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
-        <div className="w-full lg:w-1/2 text-lily-black">
+      <div className="px-8 w-full h-[95vh] overflow-hidden flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
+        <div className="w-full lg:w-[45%] text-lily-black mr-[10vw]">
           <Fade duration={500} delay={500} fraction={0}>
-            <h1 className="font-bold leading-[1.15] text-7xl lg:text-8xl xl:text-9xl">
+            <h1 className="font-bold leading-[1.15] text-7xl lg:text-8xl xl:text-9xl relative">
               Let&apos;s get this shit.
               <Marquee
                 gradient={false}
@@ -52,7 +52,7 @@ export const Hero = () => {
               </Marquee>
             </h1>
           </Fade>
-          <ul className="mt-8 space-y-2 w-full lg:w-[60%] font-mono xl:text-4xl lg:mt-16 xl:w-2/5">
+          <ul className="w-full mt-8 space-y-2 font-mono md:w-2/5 lg:w-1/2 xl:text-4xl lg:mt-16 xl:w-2/5">
             <Fade
               cascade={true}
               duration={500}
@@ -66,9 +66,9 @@ export const Hero = () => {
                   arrow={true}
                   width={155}
                   underlineSpeed={150}
-                  size="xl"
+                  size="lg"
                   type="transparent"
-                  className="flex items-center justify-between !w-full"
+                  className="flex items-center justify-center w-full gap-4"
                   onClick={(e) => {
                     e.preventDefault()
                     scrollToSection('#lilypad')
@@ -83,7 +83,7 @@ export const Hero = () => {
                   arrow={true}
                   width={180}
                   underlineSpeed={150}
-                  size="xl"
+                  size="lg"
                   type="transparent"
                   className="flex items-center justify-between w-full gap-4 uppercase"
                   onClick={(e) => {
@@ -101,7 +101,7 @@ export const Hero = () => {
                   width={180}
                   underlineSpeed={150}
                   type="transparent"
-                  size="xl"
+                  size="lg"
                   className="flex items-center justify-between w-full uppercase"
                   onClick={(e) => {
                     e.preventDefault()

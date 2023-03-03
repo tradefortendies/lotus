@@ -44,7 +44,7 @@ export const Panel = ({
         {!floating && (
           <div
             className={clsx(
-              'flex w-screen',
+              'flex w-screen relative',
               mode === 'light' && 'bg-white text-black',
               mode === 'dark' &&
                 'bg-lily-black text-white rounded-t-3xl translate-y-4',
@@ -52,7 +52,7 @@ export const Panel = ({
               !last && !first && !fixedHeight && 'min-h-screen',
               !last && !first && fixedHeight && 'h-screen',
               last && 'min-h-screen rounded-t-3xl',
-              first && 'min-h-[95vh] rounded-b-3xl'
+              first && 'min-h-[90vh] rounded-b-3xl'
             )}
           >
             {children}
