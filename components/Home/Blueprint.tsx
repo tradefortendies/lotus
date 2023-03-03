@@ -37,39 +37,44 @@ export const Blueprint = () => {
         <div className="flex flex-col items-center justify-between gap-16 lg:flex-row">
           <div className="w-full h-full">
             {isLoaded && (
-              <Canvas
-                shadows
-                dpr={[1, 2]}
-                camera={{ fov: 35 }}
-                resize={{ scroll: false }}
-                style={{
-                  height:
-                    windowDimensions.width > 768
-                      ? windowDimensions.height * 0.75
-                      : windowDimensions.height * 0.45,
-                }}
-              >
-                <Suspense fallback={null}>
-                  <Stage
-                    controls={orbitControlsRef}
-                    preset="rembrandt"
-                    intensity={1}
-                    environment="city"
-                    adjustCamera={windowDimensions.width > 768 ? 1.36 : 1.2}
-                  >
-                    <BlueprintModel />
-                  </Stage>
-                </Suspense>
-                <OrbitControls
-                  ref={orbitControlsRef}
-                  makeDefault
-                  autoRotate={true}
-                  enableZoom={false}
-                  enablePan={false}
-                  enableRotate={true}
-                  enableDamping={true}
-                />
-              </Canvas>
+              <>
+                <Canvas
+                  shadows
+                  dpr={[1, 2]}
+                  camera={{ fov: 35 }}
+                  resize={{ scroll: false }}
+                  style={{
+                    height:
+                      windowDimensions.width > 768
+                        ? windowDimensions.height * 0.75
+                        : windowDimensions.height * 0.45,
+                  }}
+                >
+                  <Suspense fallback={null}>
+                    <Stage
+                      controls={orbitControlsRef}
+                      preset="rembrandt"
+                      intensity={1}
+                      environment="city"
+                      adjustCamera={windowDimensions.width > 768 ? 1.36 : 1.2}
+                    >
+                      <BlueprintModel />
+                    </Stage>
+                  </Suspense>
+                  <OrbitControls
+                    ref={orbitControlsRef}
+                    makeDefault
+                    autoRotate={true}
+                    enableZoom={false}
+                    enablePan={false}
+                    enableRotate={true}
+                    enableDamping={true}
+                  />
+                </Canvas>
+                <span className="block text-center uppercase -translate-y-4 animate-pulse">
+                  Spin me
+                </span>
+              </>
             )}
           </div>
           <div className="w-full lg:w-[60%]">

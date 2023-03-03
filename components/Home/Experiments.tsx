@@ -62,7 +62,7 @@ export const Experiments = () => {
                     'w-[90%] lg:w-[75%] h-16 overflow-hidden duration-0',
                   item.id !== activeExperiment &&
                     activeExperiment === 0 &&
-                    'w-[90%] lg:w-[75%] h-14 overflow-hidden duration-0',
+                    'w-[90%] lg:w-[75%] lg:hover:w-[85%] h-14 overflow-hidden duration-0',
                   item.id === activeExperiment &&
                     'w-[90%] h-full duration-1000 pt-8 pb-12'
                 )}

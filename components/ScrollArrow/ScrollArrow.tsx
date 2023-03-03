@@ -13,13 +13,13 @@ function ScrollArrow({ position = 'fixed', className }: ScrollArrow) {
       <div
         data-scroll
         className={clsx(
-          'hidden md:flex bottom-[40px] w-full z-[999999] flex-col items-center justify-center text-sm gap-2 transition duration-1000',
+          'hidden md:flex uppercase bottom-[40px] w-full z-[999999] text-zinc-700 font-mono flex-col items-center justify-center gap-2 transition duration-1000',
           position,
           className
         )}
       >
         Scroll
-        <BsChevronDown className="text-lg text-black animate-bounce" />
+        <BsChevronDown className="text-lg text-zinc-700 animate-bounce" />
       </div>
     </Fade>
   )
