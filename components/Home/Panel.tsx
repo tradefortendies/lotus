@@ -24,7 +24,9 @@ export const Panel = ({
       <div
         className={clsx(
           'flex flex-col relative w-full z-20 items-center min-h-[100vh]',
-          floating && 'justify-center'
+          floating && 'justify-center',
+          !first && !last && mode !== 'dark' && 'pb-8 lg:pb-0',
+          !last && 'pb-16 lg:pb-0'
         )}
       >
         {floating && (

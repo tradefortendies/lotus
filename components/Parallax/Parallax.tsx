@@ -60,7 +60,7 @@ const Parallax = ({
   }, [])
 
   // Don't parallax if the user has "reduced motion" enabled
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || clientWidth < 768) {
     return <div ref={ref}>{children}</div>
   }
 

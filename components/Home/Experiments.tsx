@@ -78,9 +78,9 @@ export const Experiments = () => {
               >
                 <h3
                   className={clsx(
-                    item.id !== activeExperiment && 'text-2xl',
+                    item.id !== activeExperiment && 'text-xl lg:text-2xl',
                     item.id === activeExperiment &&
-                      'text-4xl transition delay-200'
+                      'text-3xl lg:text-4xl transition delay-200'
                   )}
                 >
                   {item.title}
