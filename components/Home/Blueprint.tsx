@@ -71,9 +71,6 @@ export const Blueprint = () => {
                     enableDamping={true}
                   />
                 </Canvas>
-                <span className="block text-center uppercase -translate-y-4 animate-pulse">
-                  Spin me
-                </span>
               </>
             )}
           </div>
