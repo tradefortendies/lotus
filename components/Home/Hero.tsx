@@ -127,9 +127,10 @@ export const Hero = () => {
         playsInline
         loop
         muted
-        className="absolute transition-opacity duration-1000 bottom-[2vh] right-0 lg:-right-16 2xl:right-[5vw] object-cover w-auto h-[50vh] md:h-[70vh] lg:h-[90vh] z-0 opacity-0"
+        className="absolute transition-opacity duration-1000 bottom-0 right-0 lg:-right-16 2xl:right-[5vw] object-cover w-auto h-[50vh] md:h-[70vh] lg:h-[86vh] z-0 opacity-0"
       >
         <source src="/video/lotus-splash.webm" type="video/webm" />
+        <source src="/video/lotus-splash.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </Panel>
