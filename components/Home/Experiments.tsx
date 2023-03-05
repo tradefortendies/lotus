@@ -48,7 +48,7 @@ const experiments = [
 export const Experiments = () => {
   const [activeExperiment, setActiveExperiment] = useState(0)
   return (
-    <Panel floating={false} fixedHeight={false}>
+    <Panel floating={false} fixedHeight={false} className="!pb-0">
       <div className="flex flex-col-reverse items-center justify-center w-full gap-4 lg:flex-row">
         <div className="relative w-full h-full lg:w-1/2">
           <div className="absolute h-[80%] md:h-[60%] left-0 flex flex-col justify-center w-full -translate-y-[50%] md:-translate-y-[70%] lg:-translate-y-1/2 top-1/2">

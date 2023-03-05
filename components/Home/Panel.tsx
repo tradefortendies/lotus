@@ -9,6 +9,7 @@ type PanelPropsType = {
   first?: boolean
   last?: boolean
   fixedHeight?: boolean
+  className?: string
 }
 
 export const Panel = ({
@@ -18,6 +19,7 @@ export const Panel = ({
   first = false,
   last = false,
   fixedHeight = false,
+  className = '',
 }: PanelPropsType) => {
   return (
     <div className="relative">
@@ -26,7 +28,8 @@ export const Panel = ({
           'flex flex-col relative w-full z-20 items-center min-h-[100vh]',
           floating && 'justify-center',
           !first && !last && mode !== 'dark' && 'pb-8 lg:pb-0',
-          !last && 'pb-16 lg:pb-0'
+          !last && 'pb-16 lg:pb-0',
+          className
         )}
       >
         {floating && (
