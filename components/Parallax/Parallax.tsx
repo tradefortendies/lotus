@@ -41,14 +41,11 @@ const Parallax = ({
   useEffect(() => {
     const element = ref.current
 
-    if (!element || window.innerWidth < 500) {
+    if (!element) {
       return
     }
 
     const onResize = () => {
-      if (window.innerWidth < 500) {
-        return
-      }
       setElementTop(
         element.getBoundingClientRect().top + window.scrollY ||
           window.pageYOffset

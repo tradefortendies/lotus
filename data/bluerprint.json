@@ -1,0 +1,39 @@
+{
+  "tracks": [
+    {
+      "title": "Legendary",
+      "artist": "The Lotus, Cardinal",
+      "url": "https://legendary.thelotus.io"
+    },
+    {
+      "title": "My Way",
+      "artist": "The Lotus, [Redacted]",
+      "active": true,
+      "url": "/myway"
+    },
+    {
+      "title": "Blooming",
+      "artist": "The Lotus, Cardinal"
+    },
+    {
+      "title": "LILYPad",
+      "artist": "The Lotus"
+    },
+    {
+      "title": "Lotus Library",
+      "artist": "The Lotus"
+    },
+    {
+      "title": "Art Attack",
+      "artist": "The Lotus"
+    },
+    {
+      "title": "Drip Too Hard",
+      "artist": "The Lotus"
+    },
+    {
+      "title": "The Game (Trilogy)",
+      "artist": "The Lotus"
+    }
+  ]
+}
