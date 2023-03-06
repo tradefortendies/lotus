@@ -39,3 +39,7 @@ export const splitNftName = (name: string): string[] => {
     nameParts[nameParts.length - 1],
   ]
 }
+
+export const preciseRound = (n: number): number => {
+  return Math.round((n + Number.EPSILON) * 100) / 100
+}
