@@ -37,7 +37,7 @@ export const Hero = () => {
       <div className="px-8 w-full h-[95vh] overflow-hidden flex lg:items-center xl:w-auto mx-auto relative z-20 pt-32 md:pt-[15vh] lg:pt-12">
         <div className="w-full md:w-[80%] lg:w-[45%] text-lily-black mr-[10vw]">
           <Fade duration={500} delay={500} fraction={0}>
-            <h1 className="font-bold leading-[1.15] text-7xl md:text-8xl xl:text-9xl relative">
+            <h1 className="font-bold leading-[1.15] text-7xl smLaptop:text-8xl md:text-8xl xl:text-9xl relative">
               Let&apos;s get this shit.
               <Marquee
                 gradient={false}
@@ -115,7 +115,7 @@ export const Hero = () => {
           </ul>
           <ScrollArrow
             position="absolute"
-            className="smLaptop:bottom-auto smLaptop:top-[90vh]"
+            // className="smLaptop:bottom-auto smLaptop:top-[80vh]"
           />
         </div>
       </div>
