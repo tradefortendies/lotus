@@ -76,9 +76,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Meta
-        title={
-          isLoading ? 'Loading Lotus...' : 'Lotus - a community of optimalists'
-        }
+        title={isLoading ? 'Loading Lotus...' : 'Lotus'}
         desc="The landing page of Web3."
       />
       <>
