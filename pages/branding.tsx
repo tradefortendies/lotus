@@ -1,4 +1,5 @@
-import { ColorCards } from "../components/Branding/colorCard";
+import { BrandingCard } from "../components/Branding/BrandingCard";
+import { ColorCards } from "../components/Branding/ColorCard";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Meta from "../components/Meta";
@@ -23,121 +24,30 @@ const branding = () => {
                                 <h1 className=" text-6xl font-medium py-8">
                                     Branding
                                 </h1>
-                                <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row py-8 lg:gap-72 gap-6">
-                                    <div className="flex flex-col sm:gap-6 gap-3">
-                                        <h2 className="font-mono text-2xl">
-                                            Wordmark
-                                        </h2>
-                                        <div className="flex gap-4">
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/lotus_wordmark.svg"
-                                                    download
-                                                >
-                                                    SVG
-                                                </a>
-                                            </button>
-                                            <button className=" rounded-full bg-transparent  border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/lotus_wordmark.png"
-                                                    download
-                                                >
-                                                    PNG
-                                                </a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="my-auto">
-                                        <img src="/img/lotus_wordmark.png" />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col sm:flex-row md:flex-row py-8 lg:gap-72 gap-6">
-                                    <div className="flex flex-col gap-3">
-                                        <h2 className="font-mono text-2xl">
-                                            Logo (pack)
-                                        </h2>
-                                        <div className="flex gap-4">
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/logo_pack.svg"
-                                                    download
-                                                >
-                                                    SVG
-                                                </a>
-                                            </button>
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/logo_pack.png"
-                                                    download
-                                                >
-                                                    PNG
-                                                </a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <img
-                                        src="/img/logo_pack.png"
-                                        className="h-1/2 my-auto"
-                                    />
-                                </div>
-                                <div className="flex flex-col sm:flex-row md:flex-row  py-8 lg:gap-72 gap-6">
-                                    <div className="flex flex-col gap-3">
-                                        <h2 className="font-mono text-2xl">
-                                            Logotype (pack)
-                                        </h2>
-                                        <div className="flex gap-4">
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/logotype_pack.svg"
-                                                    download
-                                                >
-                                                    SVG
-                                                </a>
-                                            </button>
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/logotype_pack.png"
-                                                    download
-                                                >
-                                                    PNG
-                                                </a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <img
-                                        src="/img/logotype_pack.png"
-                                        className="h-1/2 my-auto"
-                                    />
-                                </div>
-                                <div className="flex flex-col sm:flex-row md:flex-row py-8 lg:gap-72 gap-6">
-                                    <div className="flex flex-col gap-3">
-                                        <h2 className="font-mono text-2xl">
-                                            Workmark (Pack)
-                                        </h2>
-                                        <div className="flex gap-4">
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/wordmark_pack.svg"
-                                                    download
-                                                >
-                                                    SVG
-                                                </a>
-                                            </button>
-                                            <button className=" rounded-full bg-transparent border-black text-neutral-800 py-1 px-8 border-2">
-                                                <a
-                                                    href="/img/wordmark_pack.png"
-                                                    download
-                                                >
-                                                    PNG
-                                                </a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <img
-                                        src="/img/wordmark_pack.png"
-                                        className="h-1/2 my-auto"
-                                    />
-                                </div>
+                                <BrandingCard
+                                    title="Wordmark"
+                                    svgLink="/img/lotus_wordmark.svg"
+                                    pngLink="/img/lotus_wordmark.png"
+                                    img="/img/lotus_wordmark.png"
+                                />
+                                <BrandingCard
+                                    title="Logo (pack)"
+                                    svgLink="/img/logo_pack.svg"
+                                    pngLink="/img/logo_pack.png"
+                                    img="/img/logo_pack.png"
+                                />
+                                <BrandingCard
+                                    title="Logotype (pack)"
+                                    svgLink="/img/logotype_pack.svg"
+                                    pngLink="/img/logotype_pack.png"
+                                    img="/img/logotype_pack.png"
+                                />
+                                <BrandingCard
+                                    title="Workmark (Pack)"
+                                    svgLink="/img/wordmark_pack.svg"
+                                    pngLink="/img/wordmark_pack.png"
+                                    img="/img/wordmark_pack.png"
+                                />
                                 <div className="py-24 ">
                                     <ColorCards />
                                 </div>
