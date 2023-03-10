@@ -12,7 +12,7 @@ export function BrandingCard({
     img,
 }: BrandingCardProps) {
     return (
-        <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row py-8 lg:gap-72 gap-6">
+        <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row py-8 md:gap-40 xl:gap-72 gap-6">
             <div className="flex flex-col sm:gap-6 gap-3">
                 <h2 className="font-mono text-2xl">{title}</h2>
                 <div className="flex gap-4">
@@ -28,7 +28,7 @@ export function BrandingCard({
                     </button>
                 </div>
             </div>
-            <div className="my-auto">
+            <div className="my-auto shrink-0">
                 <img src={img} />
             </div>
         </div>
