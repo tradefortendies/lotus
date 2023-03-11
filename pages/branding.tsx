@@ -1,5 +1,5 @@
-import { BrandingCard } from "../components/Branding/BrandingColorCard";
-import { ColorCards } from "../components/Branding/ColorCard";
+import { BrandingCard } from "../components/Branding/BrandingCard";
+import { ColorCards } from "../components/Branding/BrandingColorCard";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Meta from "../components/Meta";
@@ -16,12 +16,12 @@ const branding = () => {
                     fadeInAnimation={false}
                     colorChangeAnimation={false}
                 />
-                <div className="w-screen min-h-screen text-neutral-900 bg-lily-white pt-8">
+                <div className="w-screen min-h-screen pt-8 text-neutral-900 bg-lily-white">
                     <div className="relative">
                         <div className="relative z-10"></div>
-                        <div className="font-sans xl:w-1/2 mx-6 md:mx-12 lg:ml-24 text-lily-black mt-32">
+                        <div className="mx-6 mt-32 font-sans xl:w-1/2 md:mx-12 lg:ml-24 text-lily-black">
                             <div className="divide-y divide-black">
-                                <h1 className=" text-6xl font-medium py-8">
+                                <h1 className="py-8 text-6xl font-medium ">
                                     Branding
                                 </h1>
                                 <BrandingCard
