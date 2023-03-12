@@ -28,25 +28,25 @@ const branding = () => {
                                     title="Wordmark"
                                     svgLink="/img/lotus_wordmark.svg"
                                     pngLink="/img/lotus_wordmark.png"
-                                    img="/img/lotus_wordmark.png"
+                                    img="/img/lotus_wordmark.svg"
                                 />
                                 <BrandingCard
                                     title="Logo (pack)"
                                     svgLink="/img/logo_pack.svg"
                                     pngLink="/img/logo_pack.png"
-                                    img="/img/logo_pack.png"
+                                    img="/img/logo_pack.svg"
                                 />
                                 <BrandingCard
                                     title="Logotype (pack)"
                                     svgLink="/img/logotype_pack.svg"
                                     pngLink="/img/logotype_pack.png"
-                                    img="/img/logotype_pack.png"
+                                    img="/img/logotype_pack.svg"
                                 />
                                 <BrandingCard
                                     title="Workmark (Pack)"
                                     svgLink="/img/wordmark_pack.svg"
                                     pngLink="/img/wordmark_pack.png"
-                                    img="/img/wordmark_pack.png"
+                                    img="/img/wordmark_pack.svg"
                                 />
                                 <div className="py-24 ">
                                     <ColorCards />

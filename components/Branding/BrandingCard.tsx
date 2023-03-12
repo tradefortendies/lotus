@@ -28,7 +28,7 @@ export function BrandingCard({
                     </button>
                 </div>
             </div>
-            <div className="my-auto shrink-0 mt-4 lg:mt-8">
+            <div className="my-auto shrink-0 mt-4 lg:mt-8  ">
                 <img src={img} />
             </div>
         </div>
