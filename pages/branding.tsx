@@ -19,7 +19,7 @@ const branding = () => {
                 <div className="w-screen min-h-screen pt-8 text-neutral-900 bg-lily-white">
                     <div className="relative">
                         <div className="relative z-10"></div>
-                        <div className="mx-6 mt-32 font-sans xl:w-7/12 md:mx-12 lg:ml-24 text-lily-black">
+                        <div className="mx-6 mt-32 font-sans xl:w-7/12  md:mx-12 lg:ml-24 text-lily-black">
                             <div className="divide-y divide-black">
                                 <h1 className="py-8 text-6xl font-medium ">
                                     Branding
