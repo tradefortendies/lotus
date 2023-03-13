@@ -13,7 +13,7 @@ function ScrollArrow({ position = 'fixed', className }: ScrollArrow) {
       <div
         data-scroll
         className={clsx(
-          'hidden md:flex uppercase bottom-[40px] w-full z-[999999] text-zinc-700 font-mono flex-col items-center justify-center gap-2 transition duration-1000',
+          'hidden lg:flex uppercase bottom-[40px] w-full z-[999999] text-zinc-700 font-mono flex-col items-center justify-center gap-2 transition duration-1000',
           position,
           className
         )}
