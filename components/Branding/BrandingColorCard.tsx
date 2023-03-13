@@ -84,12 +84,12 @@ export function ColorCard({ rgb, hex, colorName, bgStyle }: ColorCardProps) {
             </div>
             <div className="flex justify-between py-2 px-3">
                 <div>
-                    <p className="font-mono">HEX</p>
-                    <h3>{hex}</h3>
+                    <p className="font-mono text-xs">HEX</p>
+                    <p className="text-xs">{hex}</p>
                 </div>
                 <div>
-                    <p className="font-mono">RGB</p>
-                    <h3>{rgb}</h3>
+                    <p className="font-mono text-xs">RGB</p>
+                    <p className="text-xs">{rgb}</p>
                 </div>
             </div>
         </div>
