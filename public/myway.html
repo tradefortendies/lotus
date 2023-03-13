@@ -102,6 +102,30 @@
       .controls svg:hover path {
         fill: #ffd462;
       }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .button {
+        background: transparent;
+        border-radius: 10000px;
+        padding: 4px 16px;
+        border: solid 1px white;
+        color: white;
+        width: 300px;
+        text-decoration: none;
+        text-align: center;
+        transition: .3s;
+        font-size: 18px;
+      }
+
+      .button:hover {
+        background: white;
+        color: #222222;
+      }
     </style>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
@@ -354,6 +378,11 @@
             fill="white"
           />
         </svg>
+      </div>
+      <div id="buttons" class="buttons">
+        <a href="https://retroyalties.thelotus.io/" target="_blank" rel="noreferrer" class="button">Pay Royalties</a>
+        <a href="https://magiceden.io/marketplace/lily" target="_blank" rel="noreferrer" class="button">Buy LILY</a>
+        <a href="https://magiceden.io/marketplace/lotus_gang_nft" target="_blank" rel="noreferrer" class="button">Buy Lotus Gang</a>
       </div>
     </div>
     <div id="three-container"></div>
