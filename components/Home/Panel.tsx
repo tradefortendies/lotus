@@ -27,8 +27,8 @@ export const Panel = ({
         className={clsx(
           'flex flex-col relative w-full z-20 items-center min-h-[100vh]',
           floating && 'justify-center',
-          !first && !last && mode !== 'dark' && 'pb-8 lg:pb-0',
-          !last && 'pb-16 lg:pb-0',
+          !first && !last && mode !== 'dark' && 'pb-8 lg:pb-0 smLaptop:pb-8',
+          !last && 'pb-16 lg:pb-0 smLaptop:pb-16',
           className
         )}
       >

@@ -27,7 +27,7 @@ export const Blueprint = () => {
     <Panel floating={false}>
       <div
         id="blueprint"
-        className="flex flex-col justify-center w-full px-8 py-16 mx-auto xl:py-4 max-w-screen-lily-container"
+        className="flex flex-col justify-center w-full px-8 py-16 mx-auto xl:py-4 smLaptop:py-16 max-w-screen-lily-container"
       >
         <Fade duration={500} delay={200} fraction={0}>
           <h2 className="mb-12 text-3xl text-center lg:text-4xl">
