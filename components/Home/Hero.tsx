@@ -52,7 +52,7 @@ export const Hero = () => {
               </Marquee>
             </h1>
           </Fade>
-          <ul className="w-full mt-8 space-y-2 font-mono md:w-2/5 lg:w-1/2 xl:text-4xl lg:mt-16 xl:w-2/5">
+          <ul className="w-full mt-8 space-y-2 font-mono md:w-[35%] lg:w-1/2 xl:text-4xl lg:mt-16 xl:w-[35%]">
             <Fade
               cascade={true}
               duration={500}
@@ -113,9 +113,7 @@ export const Hero = () => {
               </li>
             </Fade>
           </ul>
-          <ScrollArrow
-            position="absolute"
-          />
+          <ScrollArrow position="absolute" />
         </div>
       </div>
 
